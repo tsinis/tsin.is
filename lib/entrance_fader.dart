@@ -53,15 +53,14 @@ class _EntranceFaderState extends State<EntranceFader>
   }
 
   @override
-  Widget build(BuildContext context) =>
-    AnimatedBuilder(
-      animation: _controller,
-      builder: (context, child) => Opacity(
-        opacity: _controller.value,
-        child: Transform.translate(
-          offset: Offset(_dxAnimation.value, _dyAnimation.value),
-          child: widget.child,
+  Widget build(BuildContext context) => AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) => Opacity(
+          opacity: _controller.value,
+          child: Transform.translate(
+            offset: Offset(_dxAnimation.value, _dyAnimation.value),
+            child: widget.child,
+          ),
         ),
-      ),
-    );
+      );
 }
