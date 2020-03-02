@@ -84,38 +84,26 @@ class _MyHomePageState extends State<MyHomePage> {
             top: 0.2 * screenHeight,
             left: 0,
             right: 0,
-            child: MainText(_backgroundColor),
+            child: MainText(_backgroundColor, offset),
           ),
           Header(_backgroundColor),
-          // Positioned(
-          //   top: screenHeight * 0.8 - 1 * offset,
-          //   left: 0,
-          //   right: 0,
-          //   height: screenHeight / 3,
-          //   child: RepaintBoundary(
-          //     child: Image.asset(
-          //       'assets/images/middle.jpg',
-          //       fit: BoxFit.fill,
-          //     ),
-          //   ),
-          // ),
-          // Positioned(
-          //   top: screenHeight * 0.8 - 1 * offset,
-          //   left: 0,
-          //   right: 0,
-          //   height: screenHeight * 0.2,
-          //   child: Container(
-          //     width: double.infinity,
-          //     decoration: BoxDecoration(
-          //       gradient: LinearGradient(
-          //         begin: Alignment.topCenter,
-          //         end: Alignment.bottomCenter,
-          //         stops: [0, 1],
-          //         colors: [_backgroundColor.withOpacity(0), _backgroundColor],
-          //       ),
-          //     ),
-          //   ),
-          // ),
+          Positioned(
+            top: screenHeight * 0.8 - 1 * offset,
+            left: 0,
+            right: 0,
+            height: screenHeight * 0.2,
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  stops: [0, 1],
+                  colors: [_backgroundColor.withOpacity(0), _backgroundColor],
+                ),
+              ),
+            ),
+          ),
           Positioned(
             top: screenHeight * 0.95 - 1 * offset,
             left: 0,

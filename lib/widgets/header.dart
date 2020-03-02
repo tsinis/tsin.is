@@ -11,20 +11,24 @@ class Header extends StatelessWidget {
       child: Row(
         children: <Widget>[
           Text(
-            'tsin.is',
-            style: Theme.of(context).textTheme.caption,
+            'tsin.',
+            style: Theme.of(context).textTheme.caption.copyWith(color: Colors.grey[400]),
+          ),
+                    Text(
+            'IS',
+            style: Theme.of(context).textTheme.headline1.copyWith(fontSize: 15, fontWeight: FontWeight.w400, color: Colors.grey[400]),
           ),
           Spacer(),
           if (MediaQuery.of(context).size.width > 900) ...[
-            Text('Home'),
+            // Text('Home'),
+            // SizedBox(width: 32),
+            Text('About', style: Theme.of(context).textTheme.subtitle1,),
             SizedBox(width: 32),
-            Text('Portfolio'),
-            SizedBox(width: 32),
-            Text('About'),
+            Text('Portfolio', style: Theme.of(context).textTheme.subtitle1,),
             SizedBox(width: 32),
             // Text('Gallery'),
             // SizedBox(width: 32),
-            Text('Contact'),
+            Text('Contact', style: Theme.of(context).textTheme.subtitle1,),
             SizedBox(width: 64),
           ],
           Icon(

@@ -9,15 +9,15 @@ class About extends StatelessWidget {
       widthFactor: 0.7,
       child: Column(
         children: <Widget>[
-          Text(
-            'My name is',
+          // Text(
+            // 'My name is',
             // style: TextStyle(
             //   fontFamily: 'Roboto',
             //   color: Colors.black,
             //   fontSize: 16,
             //   fontWeight: FontWeight.w500,
             // ),
-          ),
+          // ),
           // SizedBox(height: 12),
           Row(
             mainAxisSize: MainAxisSize.min,
@@ -27,15 +27,15 @@ class About extends StatelessWidget {
                 'Roman',
                 style: Theme.of(context)
                     .textTheme
-                    .headline6
-                    .copyWith(fontSize: 30),
+                    .headline2
+                    .copyWith(fontSize: 45),
               ),
               Text(
                 ' Cinis',
                 style: Theme.of(context)
                     .textTheme
-                    .headline4
-                    .copyWith(fontSize: 30),
+                    .headline3
+                    .copyWith(fontSize: 45),
               )
             ],
           ),
