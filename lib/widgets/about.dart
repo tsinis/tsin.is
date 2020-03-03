@@ -23,15 +23,15 @@ class About extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              // Text(
+              //   'Roman',
+              //   style: Theme.of(context)
+              //       .textTheme
+              //       .headline2
+              //       .copyWith(fontSize: 45),
+              // ),
               Text(
-                'Roman',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline2
-                    .copyWith(fontSize: 45),
-              ),
-              Text(
-                ' Cinis',
+                'Roman Cinis',
                 style: Theme.of(context)
                     .textTheme
                     .headline3

@@ -9,7 +9,7 @@ class MainText extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         children: <Widget>[
           // SizedBox(height: 100),
-          SizedBox(height: MediaQuery.of(context).size.shortestSide / 6),
+          SizedBox(height: MediaQuery.of(context).size.shortestSide / 10),
           Text('Hello there, I\'m',
               style: Theme.of(context)
                   .textTheme
@@ -18,7 +18,7 @@ class MainText extends StatelessWidget {
               // style: TextStyle(color: _backgroundColor, fontWeight: FontWeight.w100,),
               ),
           // SizedBox(height: 100),
-          SizedBox(height: MediaQuery.of(context).size.shortestSide / 10),
+          SizedBox(height: MediaQuery.of(context).size.shortestSide / 25),
           // Container(
           //   height: 1,
           //   width: 200,
@@ -38,7 +38,7 @@ class MainText extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.w900,
                   fontSize:
-                      MediaQuery.of(context).size.shortestSide > 530 ? 75 : 40,
+                      MediaQuery.of(context).size.shortestSide > 530 ? 60 + (MediaQuery.of(context).size.shortestSide/100) : 40,
                   // shadows: [
                   //   Shadow(
                   //     blurRadius: 10,
@@ -50,18 +50,18 @@ class MainText extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: MediaQuery.of(context).size.shortestSide / 4),
+          SizedBox(height: MediaQuery.of(context).size.height / 4),
           RotatedBox(
             quarterTurns: 2,
             child: Icon(Icons.arrow_upward, color: Colors.grey[600]),
           ),
-          SizedBox(height: 20),
-          Text(
-            'SCROLL DOWN',
-            style: Theme.of(context).textTheme.caption.copyWith(
-                  color: Colors.grey[600],
-                ),
-          ),
+          // SizedBox(height: 20),
+          // Text(
+          //   'SCROLL DOWN',
+          //   style: Theme.of(context).textTheme.caption.copyWith(
+          //         color: Colors.grey[600],
+          //       ),
+          // ),
         ],
       );
 }
