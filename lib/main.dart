@@ -56,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // print(offset);
     return Scaffold(
       backgroundColor: _backgroundColor,
       body: Stack(
@@ -98,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0, 1],
+                  stops: [0, 0.8],
                   colors: [_backgroundColor.withOpacity(0), _backgroundColor],
                 ),
               ),
@@ -138,6 +139,15 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
+          (MediaQuery.of(context).size.width < 641 || offset > 749)
+              ? Positioned(
+                  top: 52,
+                  right: 20,
+                  child: Icon(Icons.menu, color: Colors.grey[700]
+                      // size: 32,
+                      ),
+                )
+              : Container(),
         ],
       ),
     );

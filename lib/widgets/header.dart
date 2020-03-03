@@ -10,20 +10,30 @@ class Header extends StatelessWidget {
       padding: const EdgeInsets.all(50),
       child: Row(
         children: <Widget>[
-          Text(
-            'tsin.',
-            style: Theme.of(context)
-                .textTheme
-                .caption
-                .copyWith(color: Colors.grey[400]),
-          ),
-          Text(
-            'IS',
-            style: Theme.of(context).textTheme.headline1.copyWith(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: Colors.grey[400]),
-          ),
+          // Text(
+          //   'tsin.is',
+          //   style: Theme.of(context)
+          //       .textTheme
+          //       .caption
+          //       .copyWith(color: Colors.grey[400]),
+          // ),
+          RichText(
+  text: TextSpan(
+    // text: 'tsin.is ',
+    style: Theme.of(context).textTheme.caption.copyWith(color: Colors.grey[400]),
+    children: <TextSpan>[
+      TextSpan(text: 'tsin.'),
+      TextSpan(text: 'IS', style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+    ],
+  ),
+),
+          // Text(
+          //   'IS',
+          //   style: Theme.of(context).textTheme.headline1.copyWith(
+          //       fontSize: 16,
+          //       fontWeight: FontWeight.w400,
+          //       color: Colors.grey[400]),
+          // ),
           Spacer(),
           if (MediaQuery.of(context).size.width > 640) ...[
             // Text('Home'),
@@ -45,12 +55,7 @@ class Header extends StatelessWidget {
               style: Theme.of(context).textTheme.subtitle1,
             ),
             // SizedBox(width: 64),
-          ] else
-            Icon(
-              Icons.menu,
-              // color: _backgroundColor,
-              size: 32,
-            ),
+          ],
         ],
       ),
     );

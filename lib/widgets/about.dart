@@ -30,12 +30,16 @@ class About extends StatelessWidget {
               //       .headline2
               //       .copyWith(fontSize: 45),
               // ),
-              Text(
-                'Roman Cinis',
-                style: Theme.of(context)
-                    .textTheme
-                    .headline3
-                    .copyWith(fontSize: 45),
+              Flexible(
+                              child: Text(
+                  'Roman Cinis',
+                  style:
+                  Theme.of(context)
+                      .textTheme
+                      .headline3
+                      .copyWith(
+                        fontSize: 31 + (MediaQuery.of(context).size.shortestSide/100)),
+                ),
               )
             ],
           ),
