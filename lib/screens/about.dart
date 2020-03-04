@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tsin.is/utils/orientation.dart';
-import 'package:tsin.is/utils/social_icons.dart';
+import '../services/orientation_detector.dart';
+import '../widgets/social_icons.dart';
 
 class About extends StatelessWidget {
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../utils/social_icons.dart';
-import '../entrance_fader.dart';
+import '../widgets/social_icons.dart';
+import '../animations/entrance_fader.dart';
 
 class Portfolio extends StatefulWidget {
   final Color _darkerColor;

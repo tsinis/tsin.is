@@ -2,13 +2,13 @@
 
 import 'package:flutter/material.dart';
 
-import 'theme.dart';
-
-import 'widgets/about.dart';
-import 'widgets/header.dart';
-import 'widgets/main_text.dart';
-import 'widgets/portfolio.dart';
-import 'widgets/presentation.dart';
+import 'themes/theme.dart';
+import 'extensions/hover_extensions.dart';
+import 'screens/about.dart';
+import 'screens/header.dart';
+import 'screens/main_text.dart';
+import 'screens/portfolio.dart';
+import 'screens/presentation.dart';
 
 void main() => runApp(MyApp());
 
@@ -29,7 +29,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-final Color _backgroundColor = Colors.grey;
+final Color _backgroundColor = Colors.grey; // ! TODO: Define colors in theme.
 final Color _darkerColor = Colors.grey.shade800;
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -145,7 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   right: 20,
                   child: Icon(Icons.menu, color: Colors.grey[700]
                       // size: 32,
-                      ),
+                      ).showCursorOnHover.moveUpOnHover,
                 )
               : Container(),
         ],

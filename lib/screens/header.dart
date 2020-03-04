@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../extensions/hover_extensions.dart';
 
 class Header extends StatelessWidget {
   final Color _backgroundColor;
@@ -6,6 +7,7 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var showCursorOnHover;
     return Padding(
       padding: const EdgeInsets.all(50),
       child: Row(
@@ -47,19 +49,19 @@ class Header extends StatelessWidget {
             Text(
               'About',
               style: Theme.of(context).textTheme.subtitle1,
-            ),
+            ).showCursorOnHover.moveUpOnHover,
             SizedBox(width: 32),
             Text(
               'Portfolio',
               style: Theme.of(context).textTheme.subtitle1,
-            ),
+            ).showCursorOnHover.moveUpOnHover,
             SizedBox(width: 32),
             // Text('Gallery'),
             // SizedBox(width: 32),
             Text(
               'Contact',
               style: Theme.of(context).textTheme.subtitle1,
-            ),
+            ).showCursorOnHover.moveUpOnHover,
             // SizedBox(width: 64),
           ],
         ],

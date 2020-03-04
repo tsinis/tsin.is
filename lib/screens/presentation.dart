@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../entrance_fader.dart';
+import '../animations/entrance_fader.dart';
 
 class Presentation extends StatelessWidget {
   final Color _backgroundColor;
