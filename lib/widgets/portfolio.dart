@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../utils/social_icons.dart';
 import '../entrance_fader.dart';
 
 class Portfolio extends StatefulWidget {
@@ -46,7 +47,7 @@ class _PortfolioState extends State<Portfolio>
         child: Column(
           children: <Widget>[
             SizedBox(height: height * 0.1),
-            Text('Portfolio', style: TextStyle(color: Colors.black)),
+            Text('Portfolio', style: Theme.of(context).textTheme.headline4),
             SizedBox(height: height * 0.05),
             _header(),
             SizedBox(height: height * 0.1),

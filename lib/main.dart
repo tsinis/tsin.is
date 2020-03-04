@@ -139,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          (MediaQuery.of(context).size.width < 641 || offset > 749)
+          (MediaQuery.of(context).size.width < 641 || offset > 800)
               ? Positioned(
                   top: 52,
                   right: 20,

@@ -1,5 +1,5 @@
 name: tsin.is
-description: Personal website of Roman Cinis
+description: Personal website of Roman Cinis.
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -14,10 +14,15 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
   assets:
     - assets/images/
 
   fonts:
+    - family: SocialIcons
+      fonts:
+        - asset: third-party/fonts/Icons/SocialIcons.ttf
+
     - family: Hagrid Text
       fonts:
         - asset: third-party/fonts/Hagrid/Hagrid-Text-Heavy-trial.otf

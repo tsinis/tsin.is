@@ -1,70 +1,56 @@
 import 'package:flutter/material.dart';
+import 'package:tsin.is/utils/orientation.dart';
+import 'package:tsin.is/utils/social_icons.dart';
 
 class About extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+    bool tooTight = width < 900;
+    const String _aboutMe =
+        'I am awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for “juicy” animations and good UX. Let\'s make something awesome together!';
     return FractionallySizedBox(
-      widthFactor: 0.7,
+      widthFactor: 0.8,
       child: Column(
+        // mainAxisAlignment: MainAxisAlignment.start,
+        // crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
           // Text(
-            // 'My name is',
-            // style: TextStyle(
-            //   fontFamily: 'Roboto',
-            //   color: Colors.black,
-            //   fontSize: 16,
-            //   fontWeight: FontWeight.w500,
-            // ),
+          // 'My name is',
+          // style: TextStyle(
+          //   fontFamily: 'Roboto',
+          //   color: Colors.black,
+          //   fontSize: 16,
+          //   fontWeight: FontWeight.w500,
+          // ),
           // ),
           // SizedBox(height: 12),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
+          Text(
+            'Roman Cinis',
+            style: Theme.of(context).textTheme.headline3.copyWith(
+                fontSize:
+                    30 + (MediaQuery.of(context).size.shortestSide / 100)),
+          ),
+          OrientationSwitcher(
+            tight: tooTight,
             children: <Widget>[
-              // Text(
-              //   'Roman',
-              //   style: Theme.of(context)
-              //       .textTheme
-              //       .headline2
-              //       .copyWith(fontSize: 45),
-              // ),
-              Flexible(
-                              child: Text(
-                  'Roman Cinis',
-                  style:
-                  Theme.of(context)
-                      .textTheme
-                      .headline3
-                      .copyWith(
-                        fontSize: 31 + (MediaQuery.of(context).size.shortestSide/100)),
-                ),
-              )
+              FittedBox(
+                  child: Icon(SocialIcons.github_circled,
+                      size:
+                          333)), // TODO: replace this Rive animation placeholder.
+              SizedBox(width: 64),
+              tooTight
+                  ? Text(_aboutMe)
+                  : Flexible(
+                      child: Text(_aboutMe,
+                          style: TextStyle(fontSize: 15 + width / 100)))
             ],
           ),
-          SizedBox(height: height * 0.1),
-          if (width > 440)
-            Row(
-              children: <Widget>[
-                Expanded(
-                  child: Text(
-                      'I am awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for “juicy” animations and good UX.'),
-                ),
-                SizedBox(width: 64),
-                Expanded(
-                  child: Text(
-                      'In video below, you can see a one of the winning submissions in the Google & Lenovo dev/design contest, called Flutter Clock. More at: www.flutter.dev/clock'),
-                )
-              ],
-            )
-          else ...[
-            Text(
-                'I am awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for “juicy” animations and good UX.'),
-            SizedBox(height: 16),
-            Text(
-                'In video below, you can see a one of the winning submissions in the Google & Lenovo dev/design contest, called Flutter Clock. More at: www.flutter.dev/clock'),
-          ],
+          // else ...[
+          //   Icon(SocialIcons.github_circled, size: 200),
+          //   SizedBox(height: 64),
+          //   Text(_aboutMe),
           SizedBox(height: height * 0.1),
         ],
       ),

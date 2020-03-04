@@ -18,15 +18,21 @@ class Header extends StatelessWidget {
           //       .copyWith(color: Colors.grey[400]),
           // ),
           RichText(
-  text: TextSpan(
-    // text: 'tsin.is ',
-    style: Theme.of(context).textTheme.caption.copyWith(color: Colors.grey[400]),
-    children: <TextSpan>[
-      TextSpan(text: 'tsin.'),
-      TextSpan(text: 'IS', style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
-    ],
-  ),
-),
+            text: TextSpan(
+              // text: 'tsin.is ',
+              style: Theme.of(context)
+                  .textTheme
+                  .caption
+                  .copyWith(color: Colors.grey[400]),
+              children: <TextSpan>[
+                TextSpan(text: 'tsin.'),
+                TextSpan(
+                    text: 'IS',
+                    style:
+                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+              ],
+            ),
+          ),
           // Text(
           //   'IS',
           //   style: Theme.of(context).textTheme.headline1.copyWith(

@@ -9,7 +9,6 @@ class MainText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     double height = MediaQuery.of(context).size.height;
     double shortestSide = MediaQuery.of(context).size.shortestSide;
     return Column(
