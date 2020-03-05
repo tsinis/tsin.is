@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/social_icons.dart';
-import '../animations/entrance_fader.dart';
+import '../animations/portfolio_project.dart';
 
 class Portfolio extends StatefulWidget {
   final Color _darkerColor;
@@ -23,7 +22,7 @@ class _PortfolioState extends State<Portfolio>
       duration: Duration(seconds: 1),
     );
     Future.delayed(
-      Duration(milliseconds: 1000),
+      Duration(seconds: 1),
       () {
         if (mounted) _animationController.forward();
       },
@@ -47,23 +46,11 @@ class _PortfolioState extends State<Portfolio>
         child: Column(
           children: <Widget>[
             SizedBox(height: height * 0.1),
-            Text('Portfolio', style: Theme.of(context).textTheme.headline4),
+            Text('Portfolio', style: Theme.of(context).textTheme.headline6),
             SizedBox(height: height * 0.05),
             _header(),
             SizedBox(height: height * 0.1),
-            if (width > height)
-              Row(
-                children: <Widget>[
-                  Expanded(child: _leftSide(width)),
-                  SizedBox(width: width * 0.1),
-                  Expanded(child: _rightSide(height, width))
-                ],
-              )
-            else ...[
-              _leftSide(width),
-              _rightSide(height, width),
-            ],
-            SizedBox(height: height * 0.1),
+            Project(projectName: 'Steampunk Flutter Clock', pathToImage: 'assets/images/clock.jpg', projectDesc: 'I have made a analog clock variant, with look and feel of Victorian era. This is mainly design contest, so, there is a lot of details and animations inside, made with Rive (ex Flare) tool.',)
           ],
         ),
       ),
@@ -93,75 +80,6 @@ class _PortfolioState extends State<Portfolio>
               fontFamily: 'Hagrid Text',
             ),
           )
-        ],
-      ),
-    );
-  }
-
-  Widget _rightSide(double height, double width) {
-    return EntranceFader(
-      offset: Offset(width / 2, 0),
-      delay: Duration(milliseconds: 1000),
-      duration: Duration(seconds: 1),
-      child: Container(
-        height: height / 2,
-        child: Stack(
-          alignment: Alignment(0, 0.5),
-          children: <Widget>[
-            AnimatedBuilder(
-              animation: _animationController,
-              builder: (context, _) {
-                return Container(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Colors.white.withOpacity(0.7),
-                        Colors.white.withOpacity(0),
-                      ],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                    ),
-                  ),
-                );
-              },
-            ),
-            Image.asset('assets/images/clock.jpg'),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _leftSide(double width) {
-    return EntranceFader(
-      offset: Offset(-width / 2, 0),
-      delay: Duration(milliseconds: 1000),
-      duration: Duration(seconds: 1),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            'Steampunk Flutter Clock',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 38,
-            ),
-          ),
-          SizedBox(height: 32),
-          Text(
-            'I have made a analog clock variant, with look and feel of Victorian era. This is mainly design contest, so, there is a lot of details and animations inside, made with Rive (ex Flare) tool.',
-            style: TextStyle(fontSize: 24),
-          ),
-          SizedBox(height: 32),
-          Text(
-            'GitHub Repository',
-            style: TextStyle(
-              decoration: TextDecoration.underline,
-              color: Colors.black,
-              fontSize: 24,
-            ),
-          ),
         ],
       ),
     );

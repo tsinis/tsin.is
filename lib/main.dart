@@ -15,6 +15,10 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
+        builder: (BuildContext context, Widget child) => MediaQuery(
+          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+          child: child,
+        ),
         title: 'Roman Cinis',
         theme: MyTheme.defaultTheme,
         debugShowCheckedModeBanner: false,
@@ -144,8 +148,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   top: 52,
                   right: 20,
                   child: Icon(Icons.menu, color: Colors.grey[700]
-                      // size: 32,
-                      ).showCursorOnHover.moveUpOnHover,
+                          // size: 32,
+                          )
+                      .showCursorOnHover
+                      .moveUpOnHover,
                 )
               : Container(),
         ],
