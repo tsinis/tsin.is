@@ -8,6 +8,18 @@ class MyTheme {
 
     return _base.copyWith(
       primaryColor: Colors.grey,
+      primaryColorLight: Colors.grey[400],
+      primaryColorDark: Colors.grey[800],
+      accentColor: Colors.grey[700],
+      backgroundColor: Colors.grey[600],
+      scaffoldBackgroundColor: Colors.grey,
+      // cardColor: Color(0xffffffff),
+      // dividerColor: Color(0x1f000000),
+      // highlightColor: Color(0x66bcbcbc),
+      // splashColor: Color(0x66c8c8c8),
+      // selectedRowColor: Color(0xfff5f5f5),
+      // unselectedWidgetColor: Color(0x8a000000),
+      // disabledColor: Color(0x61000000),
       textTheme: _base.textTheme.copyWith(
         headline6: _base.textTheme.headline6.copyWith(
           fontFamily: 'Hagrid',

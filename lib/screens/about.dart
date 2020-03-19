@@ -7,7 +7,7 @@ class About extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    bool tooTight = width < 900;
+    bool tooTight = width < 900.0;
     const String _aboutMe =
         'I am awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for “juicy” animations and good UX. Let\'s make something awesome together!';
     return FractionallySizedBox(
@@ -30,7 +30,7 @@ class About extends StatelessWidget {
             'Roman Cinis',
             style: Theme.of(context).textTheme.headline3.copyWith(
                 fontSize:
-                    30 + (MediaQuery.of(context).size.shortestSide / 100)),
+                    30.0 + (MediaQuery.of(context).size.shortestSide / 100.0)),
           ),
           OrientationSwitcher(
             tight: tooTight,
@@ -38,13 +38,16 @@ class About extends StatelessWidget {
               FittedBox(
                   child: Icon(SocialIcons.github_circled,
                       size:
-                          333)), // TODO: replace this Rive animation placeholder.
-              SizedBox(width: 64),
+                          333.0)), // TODO: replace this Rive animation placeholder.
+              SizedBox(width: 64.0),
               tooTight
                   ? Text(_aboutMe)
                   : Flexible(
-                      child: Text(_aboutMe,
-                          style: TextStyle(fontSize: 15 + width / 100)))
+                      child: Text(
+                        _aboutMe,
+                        style: TextStyle(fontSize: 15.0 + width / 100.0),
+                      ),
+                    )
             ],
           ),
           // else ...[

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/social_icons.dart';
+// import '../widgets/social_icons.dart';
 import '../animations/entrance_fader.dart';
 
 class Project extends StatefulWidget {
@@ -84,23 +84,25 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
 
   Widget _leftSide(double width) {
     return EntranceFader(
-      offset: Offset(-width / 2, 0),
+      offset: Offset(-width / 2.0, 0),
       delay: Duration(seconds: 1),
       duration: Duration(seconds: 1),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          Text(widget.projectName,
+          Text(
+            widget.projectName,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 38 + width/1000,
+              fontSize: 38.0 + width / 1000.0,
             ),
           ),
-          SizedBox(height: 32),
+          SizedBox(height: 32.0),
           Text(
             widget.projectDesc,
-            style: TextStyle(fontSize: 24 + ((width>1980)? width/150 : 0)),
+            style: TextStyle(
+                fontSize: 24.0 + ((width > 1980.0) ? width / 150.0 : 0)),
             textScaleFactor: 1.0,
           ),
         ],

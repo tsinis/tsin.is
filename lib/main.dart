@@ -1,5 +1,3 @@
-// import 'dart:math' show pi;
-
 import 'package:flutter/material.dart';
 
 import 'themes/theme.dart';
@@ -22,26 +20,23 @@ class MyApp extends StatelessWidget {
         title: 'Roman Cinis',
         theme: MyTheme.defaultTheme,
         debugShowCheckedModeBanner: false,
-        home: MyHomePage(),
+        home: _MyHomePage(),
       );
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
+class _MyHomePage extends StatefulWidget {
+  _MyHomePage({Key key}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-final Color _backgroundColor = Colors.grey; // ! TODO: Define colors in theme.
-final Color _darkerColor = Colors.grey.shade800;
-
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<_MyHomePage> {
   ScrollController _scrollController;
 
-  double get screenHeight => MediaQuery.of(context).size.height;
-
-  double get screenWidth => MediaQuery.of(context).size.width;
+  double get _screenHeight => MediaQuery.of(context).size.height;
+  // double get _screenWidth => MediaQuery.of(context).size.width;
+  Color get _grey => Theme.of(context).primaryColor;
 
   @override
   void initState() {
@@ -62,20 +57,19 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // print(offset);
     return Scaffold(
-      backgroundColor: _backgroundColor,
       body: Stack(
         children: <Widget>[
           Positioned(
             top: -0.3 * offset,
             left: 0,
             right: 0,
-            height: screenHeight,
-            // width: screenWidth * 0.7,
+            height: _screenHeight,
+            // width: _screenWidth * 0.7,
             child: Opacity(
               opacity: 0.05,
               child: RepaintBoundary(
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 50),
+                  padding: EdgeInsets.symmetric(vertical: 50.0),
                   child: Image.asset(
                     'assets/images/header.gif',
                     fit: BoxFit.fill,
@@ -86,17 +80,17 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           Positioned(
-            top: 0.2 * screenHeight,
+            top: 0.2 * _screenHeight,
             left: 0,
             right: 0,
-            child: MainText(_backgroundColor, offset),
+            child: MainText(offset),
           ),
-          Header(_backgroundColor),
+          Header(),
           Positioned(
-            top: screenHeight * 0.8 - 1 * offset,
+            top: _screenHeight * 0.8 - offset,
             left: 0,
             right: 0,
-            height: screenHeight * 0.2,
+            height: _screenHeight * 0.2,
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -104,20 +98,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   stops: [0, 0.8],
-                  colors: [_backgroundColor.withOpacity(0), _backgroundColor],
+                  colors: [_grey.withOpacity(0), _grey],
                 ),
               ),
             ),
           ),
           Positioned(
-            top: screenHeight * 0.95 - 1 * offset,
+            top: _screenHeight * 0.95 - offset,
             left: 0,
             right: 0,
-            height: screenHeight / 3,
+            height: _screenHeight / 3.0,
             child: Container(
-              height: screenHeight / 3,
+              height: _screenHeight / 3.0,
               width: double.infinity,
-              color: _backgroundColor,
+              color: _grey,
             ),
           ),
           Scrollbar(
@@ -125,29 +119,29 @@ class _MyHomePageState extends State<MyHomePage> {
               cacheExtent: 64,
               controller: _scrollController,
               children: <Widget>[
-                Container(height: screenHeight),
+                Container(height: _screenHeight),
                 Container(
-                  height: 100,
-                  color: _backgroundColor,
+                  height: 100.0,
+                  color: _grey,
                 ),
                 Container(
-                  color: _backgroundColor,
+                  color: _grey,
                   child: About(),
                 ),
-                Portfolio(_darkerColor),
-                Presentation(_backgroundColor, _darkerColor),
+                Portfolio(),
+                Presentation(),
                 Container(
-                  height: 100,
-                  color: _darkerColor,
+                  height: 100.0,
+                  color: Theme.of(context).primaryColorDark,
                 ),
               ],
             ),
           ),
-          (MediaQuery.of(context).size.width < 641 || offset > 800)
+          (MediaQuery.of(context).size.width < 641.0 || offset > 800.0)
               ? Positioned(
-                  top: 52,
-                  right: 20,
-                  child: Icon(Icons.menu, color: Colors.grey[700]
+                  top: 52.0,
+                  right: 20.0,
+                  child: Icon(Icons.menu, color: Theme.of(context).accentColor
                           // size: 32,
                           )
                       .showCursorOnHover

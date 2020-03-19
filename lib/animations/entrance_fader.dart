@@ -18,7 +18,7 @@ class EntranceFader extends StatefulWidget {
     this.child,
     this.delay = const Duration(milliseconds: 0),
     this.duration = const Duration(milliseconds: 500),
-    this.offset = const Offset(0.0, 32.0),
+    this.offset = const Offset(0, 32.0),
   }) : super(key: key);
 
   @override

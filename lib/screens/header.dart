@@ -2,14 +2,11 @@ import 'package:flutter/material.dart';
 import '../extensions/hover_extensions.dart';
 
 class Header extends StatelessWidget {
-  final Color _backgroundColor;
-  const Header(this._backgroundColor);
-
   @override
   Widget build(BuildContext context) {
-    var showCursorOnHover;
+    // var showCursorOnHover;
     return Padding(
-      padding: const EdgeInsets.all(50),
+      padding: const EdgeInsets.all(50.0),
       child: Row(
         children: <Widget>[
           // Text(
@@ -25,13 +22,13 @@ class Header extends StatelessWidget {
               style: Theme.of(context)
                   .textTheme
                   .caption
-                  .copyWith(color: Colors.grey[400]),
+                  .copyWith(color: Theme.of(context).primaryColorLight),
               children: <TextSpan>[
                 TextSpan(text: 'tsin.'),
                 TextSpan(
                     text: 'IS',
                     style:
-                        TextStyle(fontSize: 16, fontStyle: FontStyle.italic)),
+                        TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
               ],
             ),
           ),
@@ -43,19 +40,19 @@ class Header extends StatelessWidget {
           //       color: Colors.grey[400]),
           // ),
           Spacer(),
-          if (MediaQuery.of(context).size.width > 640) ...[
+          if (MediaQuery.of(context).size.width > 640.0) ...[
             // Text('Home'),
             // SizedBox(width: 32),
             Text(
               'About',
               style: Theme.of(context).textTheme.subtitle1,
             ).showCursorOnHover.moveUpOnHover,
-            SizedBox(width: 32),
+            SizedBox(width: 32.0),
             Text(
               'Portfolio',
               style: Theme.of(context).textTheme.subtitle1,
             ).showCursorOnHover.moveUpOnHover,
-            SizedBox(width: 32),
+            SizedBox(width: 32.0),
             // Text('Gallery'),
             // SizedBox(width: 32),
             Text(

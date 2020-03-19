@@ -3,16 +3,13 @@ import 'package:flutter/material.dart';
 import '../animations/entrance_fader.dart';
 
 class Presentation extends StatelessWidget {
-  final Color _backgroundColor;
-  final Color _darkerColor;
-  const Presentation(this._backgroundColor, this._darkerColor);
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+    Color _darkGrey = Theme.of(context).primaryColorDark;
     return Container(
-      color: _backgroundColor,
+      color: Theme.of(context).primaryColor,
       height: height > width ? height * 0.5 : height * 0.8,
       width: double.infinity,
       child: Stack(
@@ -24,12 +21,12 @@ class Presentation extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.fitWidth,
               child: EntranceFader(
-                offset: Offset(width / 4, 0),
+                offset: Offset(width / 4.0, 0),
                 duration: Duration(seconds: 1),
                 child: Text(
                   'AWARDED',
                   style: TextStyle(
-                    color: _darkerColor,
+                    color: _darkGrey,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -42,7 +39,7 @@ class Presentation extends StatelessWidget {
             bottom: 0,
             height: height * 0.4,
             child: Container(
-              color: _darkerColor,
+              color: _darkGrey,
             ),
           ),
           Positioned(
@@ -62,7 +59,7 @@ class Presentation extends StatelessWidget {
                   ),
                   Icon(
                     Icons.play_circle_outline,
-                    size: 100,
+                    size: 100.0,
                   ),
                 ],
               ),

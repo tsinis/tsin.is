@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import '../animations/portfolio_project.dart';
 
 class Portfolio extends StatefulWidget {
-  final Color _darkerColor;
-  const Portfolio(this._darkerColor);
-
   @override
   _PortfolioState createState() => _PortfolioState();
 }
@@ -38,9 +35,8 @@ class _PortfolioState extends State<Portfolio>
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Container(
-      color: widget._darkerColor,
+      color: Theme.of(context).primaryColorDark,
       child: FractionallySizedBox(
         widthFactor: 0.7,
         child: Column(
@@ -50,7 +46,12 @@ class _PortfolioState extends State<Portfolio>
             SizedBox(height: height * 0.05),
             _header(),
             SizedBox(height: height * 0.1),
-            Project(projectName: 'Steampunk Flutter Clock', pathToImage: 'assets/images/clock.jpg', projectDesc: 'I have made a analog clock variant, with look and feel of Victorian era. This is mainly design contest, so, there is a lot of details and animations inside, made with Rive (ex Flare) tool.',)
+            Project(
+              projectName: 'Steampunk Flutter Clock',
+              pathToImage: 'assets/images/clock.jpg',
+              projectDesc:
+                  'I have made a analog clock variant, with look and feel of Victorian era. This is mainly design contest, so, there is a lot of details and animations inside, made with Rive (ex Flare) tool.',
+            )
           ],
         ),
       ),
@@ -63,7 +64,7 @@ class _PortfolioState extends State<Portfolio>
       text: TextSpan(
         style: TextStyle(
           color: Colors.white,
-          fontSize: 40,
+          fontSize: 40.0,
           fontFamily: 'Hagrid Text',
         ),
         children: [
