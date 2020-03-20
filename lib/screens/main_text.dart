@@ -1,6 +1,7 @@
 import 'dart:math' show max;
 
 import 'package:flutter/material.dart';
+import '../generated/l10n.dart';
 
 class MainText extends StatelessWidget {
   final double _offset;
@@ -14,7 +15,7 @@ class MainText extends StatelessWidget {
       children: <Widget>[
         // SizedBox(height: 100),
         SizedBox(height: shortestSide / 9.0 - ((height < 351.0) ? 22.0 : 0)),
-        Text('Hello there, I\'m',
+        Text(S.of(context).greeting,
             style: Theme.of(context)
                 .textTheme
                 .bodyText2

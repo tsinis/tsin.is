@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'themes/theme.dart';
 import 'extensions/hover_extensions.dart';
+import 'generated/l10n.dart';
 import 'screens/about.dart';
 import 'screens/header.dart';
 import 'screens/main_text.dart';
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
           child: child,
         ),
+        localizationsDelegates: [S.delegate],
+        supportedLocales: S.delegate.supportedLocales,
         title: 'Roman Cinis',
         theme: MyTheme.defaultTheme,
         debugShowCheckedModeBanner: false,
@@ -41,6 +44,7 @@ class _MyHomePageState extends State<_MyHomePage> {
   @override
   void initState() {
     super.initState();
+
     _scrollController = ScrollController()..addListener(() => setState(() {}));
   }
 
