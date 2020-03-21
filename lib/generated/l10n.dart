@@ -10,18 +10,19 @@ import 'intl/messages_all.dart';
 
 class S {
   S(this.localeName);
-  
-  static const AppLocalizationDelegate delegate =
-    AppLocalizationDelegate();
+
+  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final String name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final String name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       return S(localeName);
     });
-  } 
+  }
 
   static S of(BuildContext context) {
     return Localizations.of<S>(context, S);
@@ -29,10 +30,10 @@ class S {
 
   final String localeName;
 
-  String get name {
+  String get fullName {
     return Intl.message(
       'Roman Cinis',
-      name: 'name',
+      name: 'fullName',
       desc: '',
       args: [],
     );
@@ -53,7 +54,10 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
 
   List<Locale> get supportedLocales {
     return const <Locale>[
-      Locale.fromSubtags(languageCode: 'cz'), Locale.fromSubtags(languageCode: 'en'), Locale.fromSubtags(languageCode: 'ru'),
+      Locale.fromSubtags(languageCode: 'cz'),
+      Locale.fromSubtags(languageCode: 'de'),
+      Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ru'),
     ];
   }
 

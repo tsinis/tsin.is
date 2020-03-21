@@ -16,22 +16,22 @@ class Header extends StatelessWidget {
           //       .caption
           //       .copyWith(color: Colors.grey[400]),
           // ),
-          RichText(
-            text: TextSpan(
-              // text: 'tsin.is ',
-              style: Theme.of(context)
-                  .textTheme
-                  .caption
-                  .copyWith(color: Theme.of(context).primaryColorLight),
-              children: <TextSpan>[
-                TextSpan(text: 'tsin.'),
-                TextSpan(
-                    text: 'IS',
-                    style:
-                        TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
-              ],
-            ),
-          ),
+          // RichText(
+          //   text: TextSpan(
+          //     // text: 'tsin.is ',
+          //     style: Theme.of(context)
+          //         .textTheme
+          //         .caption
+          //         .copyWith(color: Theme.of(context).primaryColorLight),
+          //     children: <TextSpan>[
+          //       TextSpan(text: 'tsin.'),
+          //       TextSpan(
+          //           text: 'IS',
+          //           style:
+          //               TextStyle(fontSize: 16.0, fontStyle: FontStyle.italic)),
+          //     ],
+          //   ),
+          // ),
           // Text(
           //   'IS',
           //   style: Theme.of(context).textTheme.headline1.copyWith(
@@ -42,23 +42,30 @@ class Header extends StatelessWidget {
           Spacer(),
           if (MediaQuery.of(context).size.width > 640.0) ...[
             // Text('Home'),
-            // SizedBox(width: 32),
+            // SizedBox(width: 3),
             Text(
               'About',
               style: Theme.of(context).textTheme.subtitle1,
             ).showCursorOnHover.moveUpOnHover,
-            SizedBox(width: 32.0),
+            SizedBox(width: 30.0),
             Text(
               'Portfolio',
               style: Theme.of(context).textTheme.subtitle1,
             ).showCursorOnHover.moveUpOnHover,
-            SizedBox(width: 32.0),
-            // Text('Gallery'),
-            // SizedBox(width: 32),
+            SizedBox(width: 30.0),
             Text(
               'Contact',
               style: Theme.of(context).textTheme.subtitle1,
             ).showCursorOnHover.moveUpOnHover,
+            // SizedBox(width: 30.0),
+            // GestureDetector(
+            //   onTap: () => print('lol'),
+            //   behavior: HitTestBehavior.opaque,
+            //   child: Text(
+            //     'Language',
+            //     style: Theme.of(context).textTheme.subtitle1,
+            //   ).showCursorOnHover.moveUpOnHover,
+            // )
             // SizedBox(width: 64),
           ],
         ],

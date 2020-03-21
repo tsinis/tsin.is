@@ -8,6 +8,7 @@ import 'screens/header.dart';
 import 'screens/main_text.dart';
 import 'screens/portfolio.dart';
 import 'screens/presentation.dart';
+import 'widgets/language_menu.dart';
 
 void main() => runApp(MyApp());
 
@@ -151,7 +152,22 @@ class _MyHomePageState extends State<_MyHomePage> {
                       .showCursorOnHover
                       .moveUpOnHover,
                 )
-              : Container(),
+              : Padding(
+                  padding: const EdgeInsets.fromLTRB(30.0, 50.0, 0, 0),
+                  child: PopupMenuButton<String>(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          Icon(Icons.translate),
+                          SizedBox(width: 10),
+                          Text('Language'),
+                        ],
+                      ),
+                      onSelected: (value) => setState(() {
+                            S.load(Locale(value));
+                          }),
+                      itemBuilder: (context) => languageMenu),
+                ).showCursorOnHover,
         ],
       ),
     );
