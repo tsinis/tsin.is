@@ -9,13 +9,6 @@ class Header extends StatelessWidget {
       padding: const EdgeInsets.all(50.0),
       child: Row(
         children: <Widget>[
-          // Text(
-          //   'tsin.is',
-          //   style: Theme.of(context)
-          //       .textTheme
-          //       .caption
-          //       .copyWith(color: Colors.grey[400]),
-          // ),
           // RichText(
           //   text: TextSpan(
           //     // text: 'tsin.is ',
@@ -39,34 +32,23 @@ class Header extends StatelessWidget {
           //       fontWeight: FontWeight.w400,
           //       color: Colors.grey[400]),
           // ),
-          Spacer(),
+
           if (MediaQuery.of(context).size.width > 640.0) ...[
-            // Text('Home'),
-            // SizedBox(width: 3),
-            Text(
-              'About',
-              style: Theme.of(context).textTheme.subtitle1,
-            ).showCursorOnHover.moveUpOnHover,
+            GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onTap: () => print('About Click'),
+              child: Text(
+                'About',
+              ).showCursorOnHover.moveUpOnHover,
+            ),
             SizedBox(width: 30.0),
             Text(
               'Portfolio',
-              style: Theme.of(context).textTheme.subtitle1,
             ).showCursorOnHover.moveUpOnHover,
             SizedBox(width: 30.0),
             Text(
               'Contact',
-              style: Theme.of(context).textTheme.subtitle1,
             ).showCursorOnHover.moveUpOnHover,
-            // SizedBox(width: 30.0),
-            // GestureDetector(
-            //   onTap: () => print('lol'),
-            //   behavior: HitTestBehavior.opaque,
-            //   child: Text(
-            //     'Language',
-            //     style: Theme.of(context).textTheme.subtitle1,
-            //   ).showCursorOnHover.moveUpOnHover,
-            // )
-            // SizedBox(width: 64),
           ],
         ],
       ),

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import '../generated/l10n.dart';
 
 class MainText extends StatelessWidget {
-  final double _offset;
-  const MainText(this._offset);
+  final double offset;
+  const MainText(this.offset);
 
   @override
   Widget build(BuildContext context) {
@@ -32,11 +32,12 @@ class MainText extends StatelessWidget {
         Container(
           margin: EdgeInsets.all(shortestSide / 20.0),
           child: Opacity(
-            opacity: max(0, 0.5 - _offset / 800.0),
+            opacity: max(0, 0.6 - offset / height),
             child: Text(
               'Flutter Developer & Designer',
               textAlign: TextAlign.center,
               style: TextStyle(
+                // color: Colors.black,
                 fontWeight: FontWeight.w900,
                 fontSize: shortestSide > 530.0
                     ? 60 + (shortestSide / 100.0)

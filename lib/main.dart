@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import 'themes/theme.dart';
@@ -38,14 +40,13 @@ class _MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<_MyHomePage> {
   ScrollController _scrollController;
 
-  double get _screenHeight => MediaQuery.of(context).size.height;
+  double get height => MediaQuery.of(context).size.height;
   // double get _screenWidth => MediaQuery.of(context).size.width;
   Color get _grey => Theme.of(context).primaryColor;
 
   @override
   void initState() {
     super.initState();
-
     _scrollController = ScrollController()..addListener(() => setState(() {}));
   }
 
@@ -56,7 +57,7 @@ class _MyHomePageState extends State<_MyHomePage> {
   }
 
   double get offset =>
-      _scrollController.hasClients ? _scrollController.offset : 0.0;
+      _scrollController.hasClients ? _scrollController.offset : 0;
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +69,7 @@ class _MyHomePageState extends State<_MyHomePage> {
             top: -0.3 * offset,
             left: 0,
             right: 0,
-            height: _screenHeight,
+            height: height,
             // width: _screenWidth * 0.7,
             child: Opacity(
               opacity: 0.05,
@@ -85,17 +86,16 @@ class _MyHomePageState extends State<_MyHomePage> {
             ),
           ),
           Positioned(
-            top: 0.2 * _screenHeight,
+            top: 0.2 * height,
             left: 0,
             right: 0,
             child: MainText(offset),
           ),
-          Header(),
           Positioned(
-            top: _screenHeight * 0.8 - offset,
+            top: height * 0.8 - offset,
             left: 0,
             right: 0,
-            height: _screenHeight * 0.2,
+            height: height * 0.2,
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -109,12 +109,12 @@ class _MyHomePageState extends State<_MyHomePage> {
             ),
           ),
           Positioned(
-            top: _screenHeight * 0.95 - offset,
+            top: height * 0.95 - offset,
             left: 0,
             right: 0,
-            height: _screenHeight / 3.0,
+            height: height / 3.0,
             child: Container(
-              height: _screenHeight / 3.0,
+              height: height / 3.0,
               width: double.infinity,
               color: _grey,
             ),
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               cacheExtent: 64,
               controller: _scrollController,
               children: <Widget>[
-                Container(height: _screenHeight),
+                Container(height: height),
                 Container(
                   height: 100.0,
                   color: _grey,
@@ -142,7 +142,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               ],
             ),
           ),
-          (MediaQuery.of(context).size.width < 641.0 || offset > 800.0)
+          (MediaQuery.of(context).size.width < 641.0 || offset > height)
               ? Positioned(
                   top: 52.0,
                   right: 20.0,
@@ -152,22 +152,23 @@ class _MyHomePageState extends State<_MyHomePage> {
                       .showCursorOnHover
                       .moveUpOnHover,
                 )
-              : Padding(
-                  padding: const EdgeInsets.fromLTRB(30.0, 50.0, 0, 0),
-                  child: PopupMenuButton<String>(
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          Icon(Icons.translate),
-                          SizedBox(width: 10),
-                          Text('Language'),
-                        ],
-                      ),
-                      onSelected: (value) => setState(() {
+              : Opacity(
+                  opacity: max(0, 1.0 - offset / height),
+                  child: Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(left: 40.0),
+                        child: LanguageMenu(
+                          onSelected: (value) => setState(() {
                             S.load(Locale(value));
                           }),
-                      itemBuilder: (context) => languageMenu),
-                ).showCursorOnHover,
+                        ).showCursorOnHover,
+                      ),
+                      Spacer(),
+                      Header(),
+                    ],
+                  ),
+                ),
         ],
       ),
     );

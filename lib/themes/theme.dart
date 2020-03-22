@@ -13,6 +13,7 @@ class MyTheme {
       accentColor: Colors.grey[700],
       backgroundColor: Colors.grey[600],
       scaffoldBackgroundColor: Colors.grey,
+      hoverColor: Colors.grey,
       // cardColor: Color(0xffffffff),
       // dividerColor: Color(0x1f000000),
       // highlightColor: Color(0x66bcbcbc),
@@ -76,6 +77,28 @@ class MyTheme {
           fontFamily: 'Hagrid Text',
           fontSize: 12,
           fontWeight: FontWeight.w300,
+        ),
+      ),
+      tooltipTheme: TooltipThemeData(
+        decoration: BoxDecoration(
+            color: Colors.grey[100].withOpacity(0.1),
+            borderRadius: BorderRadius.circular(5.0)),
+        textStyle: TextStyle(
+          fontFamily: 'Hagrid',
+          // fontWeight: FontWeight.w200,
+          fontSize: 13,
+          color: Colors.grey[900],
+        ),
+      ),
+      popupMenuTheme: PopupMenuThemeData(
+        color: Colors.grey[400].withOpacity(0.85),
+        elevation: 0.5,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+        textStyle: TextStyle(
+          fontFamily: 'Hagrid',
+          fontWeight: FontWeight.w300,
+          fontSize: 20,
+          color: Colors.grey[900],
         ),
       ),
     );
