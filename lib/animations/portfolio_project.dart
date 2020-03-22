@@ -17,6 +17,12 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
   AnimationController _animationController;
 
   @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   void initState() {
     super.initState();
     _animationController = AnimationController(
@@ -31,49 +37,18 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
     );
   }
 
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-    return Container(
-      child: Column(
-        children: <Widget>[
-          if (width > height)
-            Row(
-              children: <Widget>[
-                Expanded(child: _leftSide(width)),
-                SizedBox(width: width * 0.1),
-                Expanded(child: _rightSide(height, width))
-              ],
-            )
-          else ...[
-            _leftSide(width),
-            _rightSide(height, width),
-          ],
-          SizedBox(height: height * 0.1),
-        ],
-      ),
-    );
-  }
-
   Widget _rightSide(double height, double width) {
     return EntranceFader(
-      offset: Offset(width / 2, 0),
+      offset: Offset(width / 2.0, 0),
       delay: Duration(seconds: 1),
       duration: Duration(seconds: 1),
       child: Container(
-        height: height / 2,
+        height: height / 2.0,
         child: Column(
           children: <Widget>[
-            SizedBox(height: 50),
+            SizedBox(height: 50.0),
             ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
+              borderRadius: BorderRadius.circular(10.0),
               child: Image.asset(widget.pathToImage),
             ),
           ],
@@ -92,19 +67,43 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            widget.projectName,
+            widget.projectDesc,
             style: TextStyle(
-              fontWeight: FontWeight.bold,
+              fontSize: 24.0 + ((width > 1980.0) ? width / 150.0 : 0),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
+    return Container(
+      child: Column(
+        children: <Widget>[
+          Text(
+            widget.projectName,
+            style: Theme.of(context).textTheme.headline2.copyWith(
               fontSize: 38.0 + width / 1000.0,
             ),
           ),
           SizedBox(height: 32.0),
-          Text(
-            widget.projectDesc,
-            style: TextStyle(
-                fontSize: 24.0 + ((width > 1980.0) ? width / 150.0 : 0)),
-            textScaleFactor: 1.0,
-          ),
+          if (width > height)
+            Row(
+              children: <Widget>[
+                Expanded(child: _leftSide(width)),
+                SizedBox(width: width * 0.1),
+                Expanded(child: _rightSide(height, width))
+              ],
+            )
+          else ...[
+            _leftSide(width),
+            _rightSide(height, width),
+          ],
+          SizedBox(height: height * 0.1),
         ],
       ),
     );

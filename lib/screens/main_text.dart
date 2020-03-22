@@ -1,11 +1,13 @@
 import 'dart:math' show max;
 
 import 'package:flutter/material.dart';
+
 import '../generated/l10n.dart';
 
 class MainText extends StatelessWidget {
-  final double offset;
   const MainText(this.offset);
+
+  final double offset;
 
   @override
   Widget build(BuildContext context) {
@@ -13,44 +15,30 @@ class MainText extends StatelessWidget {
     double shortestSide = MediaQuery.of(context).size.shortestSide;
     return Column(
       children: <Widget>[
-        // SizedBox(height: 100),
         SizedBox(height: shortestSide / 9.0 - ((height < 351.0) ? 22.0 : 0)),
         Text(S.of(context).greeting,
             style: Theme.of(context)
                 .textTheme
                 .bodyText2
                 .copyWith(color: Theme.of(context).backgroundColor)),
-        // SizedBox(height: 100),
         SizedBox(height: shortestSide / 100.0),
-        // Container(
-        //   height: 1,
-        //   width: 200,
-        //   color: Colors.transparent,
-        //   // color: Colors.grey.shade600,
-        // ),
-        // SizedBox(height: 50),
         Container(
           margin: EdgeInsets.all(shortestSide / 20.0),
           child: Opacity(
             opacity: max(0, 0.6 - offset / height),
             child: Text(
-              'Flutter Developer & Designer',
+              S.of(context).devAndDesigner,
               textAlign: TextAlign.center,
-              style: TextStyle(
-                // color: Colors.black,
-                fontWeight: FontWeight.w900,
+              style: Theme.of(context).textTheme.headline6.copyWith(
                 fontSize: shortestSide > 530.0
-                    ? 60 + (shortestSide / 100.0)
-                    : 40 - (shortestSide / 50.0),
+                    ? 60.0 + (shortestSide / 100.0)
+                    : 40.0 - (shortestSide / 50.0),
               ),
             ),
           ),
         ),
         SizedBox(height: height / 4.0),
-        RotatedBox(
-          quarterTurns: 2,
-          child: Icon(Icons.arrow_upward, color: Theme.of(context).accentColor),
-        ),
+        Icon(Icons.arrow_downward, color: Theme.of(context).accentColor),
         // SizedBox(height: 20),
         // Text(
         //   'SCROLL DOWN',

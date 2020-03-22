@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 
 class EntranceFader extends StatefulWidget {
+  const EntranceFader({
+    Key key,
+    this.child,
+    this.delay = const Duration(milliseconds: 0),
+    this.duration = const Duration(milliseconds: 500),
+    this.offset = const Offset(0, 32.0),
+  }) : super(key: key);
+
   /// Child to be animated on entrance
   final Widget child;
 
@@ -13,14 +21,6 @@ class EntranceFader extends StatefulWidget {
   /// Starting point from which the widget will fade to its default position
   final Offset offset;
 
-  const EntranceFader({
-    Key key,
-    this.child,
-    this.delay = const Duration(milliseconds: 0),
-    this.duration = const Duration(milliseconds: 500),
-    this.offset = const Offset(0, 32.0),
-  }) : super(key: key);
-
   @override
   _EntranceFaderState createState() => _EntranceFaderState();
 }
@@ -30,6 +30,12 @@ class _EntranceFaderState extends State<EntranceFader>
   AnimationController _controller;
   Animation _dxAnimation;
   Animation _dyAnimation;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -44,12 +50,6 @@ class _EntranceFaderState extends State<EntranceFader>
         _controller.forward();
       }
     });
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 
   @override

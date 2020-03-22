@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
 class TranslateOnHover extends StatefulWidget {
-  final Widget child;
   TranslateOnHover({Key key, this.child}) : super(key: key);
+
+  final Widget child;
 
   @override
   _TranslateOnHoverState createState() => _TranslateOnHoverState();
 }
 
 class _TranslateOnHoverState extends State<TranslateOnHover> {
-  final _nonHoverTransform = Matrix4.identity();
-  final _hoverTransform = Matrix4.identity()..translate(0, -5.0, 0);
-
   bool _hovering = false;
+  final _hoverTransform = Matrix4.identity()..translate(0, -5.0, 0);
+  final _nonHoverTransform = Matrix4.identity();
+
+  void _mouseEnter(bool hovering) => setState(() => _hovering = hovering);
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +28,4 @@ class _TranslateOnHoverState extends State<TranslateOnHover> {
       ),
     );
   }
-
-  void _mouseEnter(bool hovering) => setState(() => _hovering = hovering);
 }

@@ -33,6 +33,7 @@ class MyTheme {
         headline4: _base.textTheme.headline4.copyWith(
           fontFamily: 'Hagrid',
           fontWeight: FontWeight.w800,
+          fontSize: 40.0,
         ),
         headline3: _base.textTheme.headline3.copyWith(
             fontFamily: 'Hagrid',
@@ -41,6 +42,7 @@ class MyTheme {
         headline2: _base.textTheme.headline2.copyWith(
           fontFamily: 'Hagrid',
           fontWeight: FontWeight.w500,
+          fontSize: 30.0
         ),
         headline1: _base.textTheme.headline1.copyWith(
             fontFamily: 'Hagrid',
@@ -49,33 +51,33 @@ class MyTheme {
         subtitle2: _base.textTheme.subtitle2.copyWith(
           fontFamily: 'Hagrid',
           fontWeight: FontWeight.w400,
-          fontSize: 24,
+          fontSize: 24.0,
         ),
         subtitle1: _base.textTheme.subtitle1.copyWith(
           fontFamily: 'Hagrid',
           fontWeight: FontWeight.w300,
-          fontSize: 22,
+          fontSize: 22.0,
         ),
         bodyText2: _base.textTheme.bodyText2.copyWith(
           fontFamily: 'Hagrid Text',
           fontWeight: FontWeight.w300,
-          fontSize: 24,
+          fontSize: 24.0,
         ),
         bodyText1: _base.textTheme.bodyText1.copyWith(
           fontFamily: 'Hagrid Text',
-          fontSize: 20,
+          fontSize: 20.0,
         ),
         caption: _base.textTheme.caption.copyWith(
           fontFamily: 'Hagrid Text',
-          fontSize: 18,
+          fontSize: 18.0,
         ),
         button: _base.textTheme.button.copyWith(
           fontFamily: 'Hagrid Text',
-          fontSize: 14,
+          fontSize: 14.0,
         ),
         overline: _base.textTheme.overline.copyWith(
           fontFamily: 'Hagrid Text',
-          fontSize: 12,
+          fontSize: 12.0,
           fontWeight: FontWeight.w300,
         ),
       ),
@@ -84,9 +86,8 @@ class MyTheme {
             color: Colors.grey[100].withOpacity(0.1),
             borderRadius: BorderRadius.circular(5.0)),
         textStyle: TextStyle(
-          fontFamily: 'Hagrid',
-          // fontWeight: FontWeight.w200,
-          fontSize: 13,
+          fontFamily: 'Hagrid Text',
+          fontSize: 13.0,
           color: Colors.grey[900],
         ),
       ),
@@ -97,7 +98,7 @@ class MyTheme {
         textStyle: TextStyle(
           fontFamily: 'Hagrid',
           fontWeight: FontWeight.w300,
-          fontSize: 20,
+          fontSize: 20.0,
           color: Colors.grey[900],
         ),
       ),

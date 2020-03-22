@@ -1,4 +1,4 @@
-import 'dart:math';
+import 'dart:math' show max;
 
 import 'package:flutter/material.dart';
 
@@ -18,21 +18,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         builder: (BuildContext context, Widget child) => MediaQuery(
-          data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-          child: child,
-        ),
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            child: child),
         localizationsDelegates: [S.delegate],
         supportedLocales: S.delegate.supportedLocales,
-        title: 'Roman Cinis',
-        theme: MyTheme.defaultTheme,
         debugShowCheckedModeBanner: false,
+        theme: MyTheme.defaultTheme,
         home: _MyHomePage(),
       );
 }
 
 class _MyHomePage extends StatefulWidget {
-  _MyHomePage({Key key}) : super(key: key);
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -40,9 +36,11 @@ class _MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<_MyHomePage> {
   ScrollController _scrollController;
 
-  double get height => MediaQuery.of(context).size.height;
-  // double get _screenWidth => MediaQuery.of(context).size.width;
-  Color get _grey => Theme.of(context).primaryColor;
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -50,27 +48,23 @@ class _MyHomePageState extends State<_MyHomePage> {
     _scrollController = ScrollController()..addListener(() => setState(() {}));
   }
 
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
+  double get height => MediaQuery.of(context).size.height;
+
+  Color get _grey => Theme.of(context).primaryColor;
 
   double get offset =>
       _scrollController.hasClients ? _scrollController.offset : 0;
 
   @override
   Widget build(BuildContext context) {
-    // print(offset);
     return Scaffold(
       body: Stack(
         children: <Widget>[
           Positioned(
             top: -0.3 * offset,
-            left: 0,
+            // left: 0,
             right: 0,
             height: height,
-            // width: _screenWidth * 0.7,
             child: Opacity(
               opacity: 0.05,
               child: RepaintBoundary(
@@ -121,7 +115,7 @@ class _MyHomePageState extends State<_MyHomePage> {
           ),
           Scrollbar(
             child: ListView(
-              cacheExtent: 64,
+              cacheExtent: 64.0,
               controller: _scrollController,
               children: <Widget>[
                 Container(height: height),
@@ -142,13 +136,11 @@ class _MyHomePageState extends State<_MyHomePage> {
               ],
             ),
           ),
-          (MediaQuery.of(context).size.width < 641.0 || offset > height)
+          (MediaQuery.of(context).size.width < 646.5 || offset > height)
               ? Positioned(
-                  top: 52.0,
-                  right: 20.0,
-                  child: Icon(Icons.menu, color: Theme.of(context).accentColor
-                          // size: 32,
-                          )
+                  top: 30.0,
+                  right: 30.0,
+                  child: Icon(Icons.menu, color: Theme.of(context).accentColor)
                       .showCursorOnHover
                       .moveUpOnHover,
                 )
@@ -159,7 +151,8 @@ class _MyHomePageState extends State<_MyHomePage> {
                       Padding(
                         padding: const EdgeInsets.only(left: 40.0),
                         child: LanguageMenu(
-                          onSelected: (value) => setState(() {
+                          tooltip: S.of(context).selectLang,
+                          onSelected: (String value) => setState(() {
                             S.load(Locale(value));
                           }),
                         ).showCursorOnHover,

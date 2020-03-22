@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 class LanguageMenu<String> extends PopupMenuButton<String> {
   LanguageMenu({
     @required PopupMenuItemSelected<String> onSelected,
-    String tooltip,
-    Widget child,
+    @required tooltip,
     PopupMenuItemBuilder<String> itemBuilder,
   }) : super(
           itemBuilder: _langMenuBuilder(itemBuilder),
+          tooltip: tooltip,
           onSelected: onSelected,
-          tooltip: 'Select your language',
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -34,18 +33,18 @@ class LanguageMenu<String> extends PopupMenuButton<String> {
 const List<PopupMenuEntry<String>> _languageMenu = [
   const PopupMenuItem<String>(
     value: 'en',
-    child: Text('English'),
+    child: Center(child: Text('English')),
   ),
   const PopupMenuItem<String>(
-    value: 'cz',
-    child: Text('Čeština'),
+    value: 'cs',
+    child: Center(child: Text('Čeština')),
   ),
   const PopupMenuItem<String>(
     value: 'ru',
-    child: Text('Русский'),
+    child: Center(child: Text('Русский')),
   ),
   const PopupMenuItem<String>(
     value: 'de',
-    child: Text('Deutsch'),
+    child: Center(child: Text('Deutsch')),
   ),
 ];

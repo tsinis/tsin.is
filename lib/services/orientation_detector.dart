@@ -8,16 +8,6 @@ class OrientationSwitcher extends StatelessWidget {
   final bool tight;
 
   @override
-  Widget build(BuildContext context) {
-    // double width = MediaQuery.of(context).size.width;
-    return tight
-        ? Column(
-            children: children,
-            // mainAxisAlignment: MainAxisAlignment.spaceAround)
-          )
-        : Row(
-            children: children,
-            // mainAxisAlignment: MainAxisAlignment.spaceAround)
-          );
-  }
+  Widget build(BuildContext context) =>
+      tight ? Column(children: children) : Row(children: children);
 }

@@ -10,19 +10,18 @@ import 'intl/messages_all.dart';
 
 class S {
   S(this.localeName);
-
-  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
+  
+  static const AppLocalizationDelegate delegate =
+    AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final String name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final String name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       return S(localeName);
     });
-  }
+  } 
 
   static S of(BuildContext context) {
     return Localizations.of<S>(context, S);
@@ -30,10 +29,46 @@ class S {
 
   final String localeName;
 
-  String get fullName {
+  String get language {
     return Intl.message(
-      'Roman Cinis',
-      name: 'fullName',
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get selectLang {
+    return Intl.message(
+      'select your language',
+      name: 'selectLang',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get about {
+    return Intl.message(
+      'About',
+      name: 'about',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get portfolio {
+    return Intl.message(
+      'Portfolio',
+      name: 'portfolio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get contact {
+    return Intl.message(
+      'Contact',
+      name: 'contact',
       desc: '',
       args: [],
     );
@@ -47,6 +82,114 @@ class S {
       args: [],
     );
   }
+
+  String get devAndDesigner {
+    return Intl.message(
+      'Flutter Developer & Designer',
+      name: 'devAndDesigner',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get fullName {
+    return Intl.message(
+      'Roman Cinis',
+      name: 'fullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get iAm {
+    return Intl.message(
+      'I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!',
+      name: 'iAm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get findInPortfolio {
+    return Intl.message(
+      'Here you can find',
+      name: 'findInPortfolio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get somePortfilio {
+    return Intl.message(
+      'some of my ',
+      name: 'somePortfilio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get projectsPortfolio {
+    return Intl.message(
+      'projects and repositories.',
+      name: 'projectsPortfolio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get flutterClock {
+    return Intl.message(
+      'Steampunk Flutter Clock',
+      name: 'flutterClock',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get flutterClockDesc {
+    return Intl.message(
+      'This project is one of the winning submissions in Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).',
+      name: 'flutterClockDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get helloDribbble {
+    return Intl.message(
+      'Hello Dribbble',
+      name: 'helloDribbble',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get helloDribbbleDesc {
+    return Intl.message(
+      'A interactive animations showcase project, I\'ve as my Debut Shot for famous Dribbble.com, аfter I won the invitation, in March 2020, now as a “Dribbble Player”.',
+      name: 'helloDribbbleDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get a {
+    return Intl.message(
+      'a',
+      name: 'a',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get b {
+    return Intl.message(
+      'b',
+      name: 'b',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -54,10 +197,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
 
   List<Locale> get supportedLocales {
     return const <Locale>[
-      Locale.fromSubtags(languageCode: 'cz'),
-      Locale.fromSubtags(languageCode: 'de'),
-      Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ru'),
+      Locale.fromSubtags(languageCode: 'cs'), Locale.fromSubtags(languageCode: 'de'), Locale.fromSubtags(languageCode: 'en'), Locale.fromSubtags(languageCode: 'ru'),
     ];
   }
 

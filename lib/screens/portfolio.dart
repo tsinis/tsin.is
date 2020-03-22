@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../generated/l10n.dart';
 import '../animations/portfolio_project.dart';
 
 class Portfolio extends StatefulWidget {
@@ -10,6 +11,12 @@ class Portfolio extends StatefulWidget {
 class _PortfolioState extends State<Portfolio>
     with SingleTickerProviderStateMixin {
   AnimationController _animationController;
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -26,10 +33,27 @@ class _PortfolioState extends State<Portfolio>
     );
   }
 
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
+  RichText _header() {
+    return RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(
+        style: Theme.of(context).textTheme.headline2.copyWith(
+              color: Theme.of(context).primaryColorLight,
+            ),
+        children: [
+          TextSpan(
+            text: S.of(context).findInPortfolio,
+          ),
+          TextSpan(
+            text: S.of(context).somePortfilio,
+          ),
+          TextSpan(
+            text: S.of(context).projectsPortfolio,
+            style: Theme.of(context).textTheme.headline2,
+          )
+        ],
+      ),
+    );
   }
 
   @override
@@ -42,46 +66,18 @@ class _PortfolioState extends State<Portfolio>
         child: Column(
           children: <Widget>[
             SizedBox(height: height * 0.1),
-            Text('Portfolio', style: Theme.of(context).textTheme.headline6),
+            Text(S.of(context).portfolio,
+                style: Theme.of(context).textTheme.headline4),
             SizedBox(height: height * 0.05),
             _header(),
             SizedBox(height: height * 0.1),
             Project(
-              projectName: 'Steampunk Flutter Clock',
+              projectName: S.of(context).flutterClock,
               pathToImage: 'assets/images/clock.jpg',
-              projectDesc:
-                  'I have made a analog clock variant, with look and feel of Victorian era. This is mainly design contest, so, there is a lot of details and animations inside, made with Rive (ex Flare) tool.',
+              projectDesc: S.of(context).flutterClockDesc,
             )
           ],
         ),
-      ),
-    );
-  }
-
-  RichText _header() {
-    return RichText(
-      textAlign: TextAlign.center,
-      text: TextSpan(
-        style: TextStyle(
-          color: Colors.white,
-          fontSize: 40.0,
-          fontFamily: 'Hagrid Text',
-        ),
-        children: [
-          TextSpan(
-            text: 'Here you can find ',
-          ),
-          TextSpan(
-            text: 'some of my ',
-          ),
-          TextSpan(
-            text: 'projects and repositories',
-            style: TextStyle(
-              color: Colors.black,
-              fontFamily: 'Hagrid Text',
-            ),
-          )
-        ],
       ),
     );
   }

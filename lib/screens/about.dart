@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import '../services/orientation_detector.dart';
 import '../widgets/social_icons.dart';
+import '../generated/l10n.dart';
 
 class About extends StatelessWidget {
   @override
@@ -8,24 +10,10 @@ class About extends StatelessWidget {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     bool tooTight = width < 900.0;
-    const String _aboutMe =
-        'I am awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for “juicy” animations and good UX. Let\'s make something awesome together!';
     return FractionallySizedBox(
       widthFactor: 0.8,
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
-        // crossAxisAlignment: CrossAxisAlignment.end,
         children: <Widget>[
-          // Text(
-          // 'My name is',
-          // style: TextStyle(
-          //   fontFamily: 'Roboto',
-          //   color: Colors.black,
-          //   fontSize: 16,
-          //   fontWeight: FontWeight.w500,
-          // ),
-          // ),
-          // SizedBox(height: 12),
           Text(
             'Roman Cinis',
             style: Theme.of(context).textTheme.headline3.copyWith(
@@ -41,19 +29,15 @@ class About extends StatelessWidget {
                           333.0)), // TODO: replace this Rive animation placeholder.
               SizedBox(width: 64.0),
               tooTight
-                  ? Text(_aboutMe)
+                  ? Text(S.of(context).iAm)
                   : Flexible(
                       child: Text(
-                        _aboutMe,
+                        S.of(context).iAm,
                         style: TextStyle(fontSize: 15.0 + width / 100.0),
                       ),
                     )
             ],
           ),
-          // else ...[
-          //   Icon(SocialIcons.github_circled, size: 200),
-          //   SizedBox(height: 64),
-          //   Text(_aboutMe),
           SizedBox(height: height * 0.1),
         ],
       ),
