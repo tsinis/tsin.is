@@ -20,24 +20,32 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static _notInlinedMessages(_) => <String, Function> {
-    "a" : MessageLookupByLibrary.simpleMessage("a"),
-    "about" : MessageLookupByLibrary.simpleMessage("About"),
-    "b" : MessageLookupByLibrary.simpleMessage("b"),
-    "contact" : MessageLookupByLibrary.simpleMessage("Contact"),
-    "devAndDesigner" : MessageLookupByLibrary.simpleMessage("Flutter Developer & Designer"),
-    "findInPortfolio" : MessageLookupByLibrary.simpleMessage("Here you can find"),
-    "flutterClock" : MessageLookupByLibrary.simpleMessage("Steampunk Flutter Clock"),
-    "flutterClockDesc" : MessageLookupByLibrary.simpleMessage("This project is one of the winning submissions in Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide)."),
-    "fullName" : MessageLookupByLibrary.simpleMessage("Roman Cinis"),
-    "greeting" : MessageLookupByLibrary.simpleMessage("Hello there, I\'m"),
-    "helloDribbble" : MessageLookupByLibrary.simpleMessage("Hello Dribbble"),
-    "helloDribbbleDesc" : MessageLookupByLibrary.simpleMessage("A interactive animations showcase project, I\'ve as my Debut Shot for famous Dribbble.com, аfter I won the invitation, in March 2020, now as a “Dribbble Player”."),
-    "iAm" : MessageLookupByLibrary.simpleMessage("I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!"),
-    "language" : MessageLookupByLibrary.simpleMessage("Language"),
-    "portfolio" : MessageLookupByLibrary.simpleMessage("Portfolio"),
-    "projectsPortfolio" : MessageLookupByLibrary.simpleMessage("projects and repositories."),
-    "selectLang" : MessageLookupByLibrary.simpleMessage("select your language"),
-    "somePortfilio" : MessageLookupByLibrary.simpleMessage("some of my ")
-  };
+  static _notInlinedMessages(_) => <String, Function>{
+        "a": MessageLookupByLibrary.simpleMessage("a"),
+        "about": MessageLookupByLibrary.simpleMessage("About"),
+        "b": MessageLookupByLibrary.simpleMessage("b"),
+        "contact": MessageLookupByLibrary.simpleMessage("Contact"),
+        "devAndDesigner": MessageLookupByLibrary.simpleMessage(
+            "Flutter Developer & Designer"),
+        "findInPortfolio":
+            MessageLookupByLibrary.simpleMessage("Here you can find"),
+        "flutterClock":
+            MessageLookupByLibrary.simpleMessage("Steampunk Flutter Clock"),
+        "flutterClockDesc": MessageLookupByLibrary.simpleMessage(
+            "This project is one of the winning submissions in Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide)."),
+        "fullName": MessageLookupByLibrary.simpleMessage("Roman Cinis"),
+        "greeting": MessageLookupByLibrary.simpleMessage("Hello there, I\'m"),
+        "helloDribbble": MessageLookupByLibrary.simpleMessage("Hello Dribbble"),
+        "helloDribbbleDesc": MessageLookupByLibrary.simpleMessage(
+            "A interactive animations showcase project, I\'ve made as my Debut Shot for famous Dribbble.com, аfter I won the invitation, so now as a Dribbble “Player”."),
+        "iAm": MessageLookupByLibrary.simpleMessage(
+            "I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!"),
+        "language": MessageLookupByLibrary.simpleMessage("Language"),
+        "portfolio": MessageLookupByLibrary.simpleMessage("Portfolio"),
+        "projectsPortfolio":
+            MessageLookupByLibrary.simpleMessage("projects and repositories."),
+        "selectLang":
+            MessageLookupByLibrary.simpleMessage("select your language"),
+        "somePortfilio": MessageLookupByLibrary.simpleMessage("some of my ")
+      };
 }

@@ -37,9 +37,7 @@ class _PortfolioState extends State<Portfolio>
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: Theme.of(context).textTheme.headline2.copyWith(
-              color: Theme.of(context).primaryColorLight,
-            ),
+        style: Theme.of(context).textTheme.headline2,
         children: [
           TextSpan(
             text: S.of(context).findInPortfolio,
@@ -49,7 +47,9 @@ class _PortfolioState extends State<Portfolio>
           ),
           TextSpan(
             text: S.of(context).projectsPortfolio,
-            style: Theme.of(context).textTheme.headline2,
+            style: Theme.of(context).textTheme.headline2.copyWith(
+                  color: Theme.of(context).primaryColorLight,
+                ),
           )
         ],
       ),
@@ -64,18 +64,26 @@ class _PortfolioState extends State<Portfolio>
       child: FractionallySizedBox(
         widthFactor: 0.7,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          // crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(height: height * 0.1),
             Text(S.of(context).portfolio,
                 style: Theme.of(context).textTheme.headline4),
             SizedBox(height: height * 0.05),
             _header(),
-            SizedBox(height: height * 0.1),
+            SizedBox(height: height * 0.025),
             Project(
               projectName: S.of(context).flutterClock,
               pathToImage: 'assets/images/clock.jpg',
               projectDesc: S.of(context).flutterClockDesc,
-            )
+            ),
+            Project(
+              projectName: S.of(context).helloDribbble,
+              pathToImage: 'assets/images/clock.jpg',
+              projectDesc: S.of(context).helloDribbbleDesc,
+            ),
+            SizedBox(height: height * 0.1),
           ],
         ),
       ),

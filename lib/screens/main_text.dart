@@ -30,10 +30,10 @@ class MainText extends StatelessWidget {
               S.of(context).devAndDesigner,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline6.copyWith(
-                fontSize: shortestSide > 530.0
-                    ? 60.0 + (shortestSide / 100.0)
-                    : 40.0 - (shortestSide / 50.0),
-              ),
+                    fontSize: shortestSide > 530.0
+                        ? 60.0 + (shortestSide / 100.0)
+                        : 40.0 - (shortestSide / 50.0),
+                  ),
             ),
           ),
         ),

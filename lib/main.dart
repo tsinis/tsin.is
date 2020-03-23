@@ -62,7 +62,7 @@ class _MyHomePageState extends State<_MyHomePage> {
         children: <Widget>[
           Positioned(
             top: -0.3 * offset,
-            // left: 0,
+            left: 0,
             right: 0,
             height: height,
             child: Opacity(
@@ -151,6 +151,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                       Padding(
                         padding: const EdgeInsets.only(left: 40.0),
                         child: LanguageMenu(
+                          language: S.of(context).language,
                           tooltip: S.of(context).selectLang,
                           onSelected: (String value) => setState(() {
                             S.load(Locale(value));

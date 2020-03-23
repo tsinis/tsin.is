@@ -13,7 +13,7 @@ class MyTheme {
       accentColor: Colors.grey[700],
       backgroundColor: Colors.grey[600],
       scaffoldBackgroundColor: Colors.grey,
-      hoverColor: Colors.grey,
+      hoverColor: Colors.grey.withOpacity(0.33),
       // cardColor: Color(0xffffffff),
       // dividerColor: Color(0x1f000000),
       // highlightColor: Color(0x66bcbcbc),
@@ -40,10 +40,7 @@ class MyTheme {
             fontWeight: FontWeight.w800,
             fontStyle: FontStyle.italic),
         headline2: _base.textTheme.headline2.copyWith(
-          fontFamily: 'Hagrid',
-          fontWeight: FontWeight.w500,
-          fontSize: 30.0
-        ),
+            fontFamily: 'Hagrid', fontWeight: FontWeight.w500, fontSize: 30.0),
         headline1: _base.textTheme.headline1.copyWith(
             fontFamily: 'Hagrid',
             fontWeight: FontWeight.w500,

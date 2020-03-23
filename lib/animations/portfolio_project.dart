@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// import '../widgets/social_icons.dart';
+import '../widgets/project_buttons.dart';
 import '../animations/entrance_fader.dart';
 
 class Project extends StatefulWidget {
@@ -14,6 +14,7 @@ class Project extends StatefulWidget {
 }
 
 class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
+  static const Duration _oneSec = const Duration(seconds: 1);
   AnimationController _animationController;
 
   @override
@@ -27,52 +28,55 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 1),
+      duration: _oneSec,
     );
     Future.delayed(
-      Duration(seconds: 1),
+      _oneSec,
       () {
         if (mounted) _animationController.forward();
       },
     );
   }
 
-  Widget _rightSide(double height, double width) {
+  EntranceFader _preview(double height, double width) {
     return EntranceFader(
-      offset: Offset(width / 2.0, 0),
-      delay: Duration(seconds: 1),
-      duration: Duration(seconds: 1),
-      child: Container(
-        height: height / 2.0,
-        child: Column(
-          children: <Widget>[
-            SizedBox(height: 50.0),
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Image.asset(widget.pathToImage),
-            ),
-          ],
+      offset: Offset(-width / 2.0, 0),
+      delay: _oneSec,
+      duration: _oneSec,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 40.0),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10.0),
+          child: Image.asset(widget.pathToImage),
         ),
       ),
     );
   }
 
-  Widget _leftSide(double width) {
+  EntranceFader _description(double width) {
     return EntranceFader(
-      offset: Offset(-width / 2.0, 0),
-      delay: Duration(seconds: 1),
-      duration: Duration(seconds: 1),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Text(
-            widget.projectDesc,
-            style: TextStyle(
-              fontSize: 24.0 + ((width > 1980.0) ? width / 150.0 : 0),
+      offset: Offset(width / 2.0, 0),
+      delay: _oneSec,
+      duration: _oneSec,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 40.0),
+        child: Column(
+          // crossAxisAlignment: CrossAxisAlignment.start,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            // SizedBox(height: 50.0),
+            Text(
+              widget.projectDesc,
+              style: TextStyle(
+                fontSize: 22.0 + ((width > 1500.0) ? width / 220.0 : 0),
+              ),
             ),
-          ),
-        ],
+            SizedBox(
+              height: 10,
+            ),
+            ProjectButtonBar(),
+          ],
+        ),
       ),
     );
   }
@@ -84,26 +88,32 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
     return Container(
       child: Column(
         children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 40.0),
+            child: Divider(
+              indent: width / 5.0,
+              endIndent: width / 5.0,
+            ),
+          ),
           Text(
             widget.projectName,
             style: Theme.of(context).textTheme.headline2.copyWith(
-              fontSize: 38.0 + width / 1000.0,
-            ),
+                  fontSize: 33.0 + width / 1000.0,
+                ),
           ),
-          SizedBox(height: 32.0),
-          if (width > height)
+          if (width / 1.775 > height)
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Expanded(child: _leftSide(width)),
-                SizedBox(width: width * 0.1),
-                Expanded(child: _rightSide(height, width))
+                Expanded(child: _preview(height, width)),
+                SizedBox(width: width * 0.05),
+                Expanded(child: _description(width)),
               ],
             )
           else ...[
-            _leftSide(width),
-            _rightSide(height, width),
+            _description(width),
+            _preview(height, width),
           ],
-          SizedBox(height: height * 0.1),
         ],
       ),
     );

@@ -4,6 +4,7 @@ class LanguageMenu<String> extends PopupMenuButton<String> {
   LanguageMenu({
     @required PopupMenuItemSelected<String> onSelected,
     @required tooltip,
+    @required language,
     PopupMenuItemBuilder<String> itemBuilder,
   }) : super(
           itemBuilder: _langMenuBuilder(itemBuilder),
@@ -18,7 +19,7 @@ class LanguageMenu<String> extends PopupMenuButton<String> {
               ),
               SizedBox(width: 10.0),
               Text(
-                'Language',
+                language,
                 style: TextStyle(color: Colors.grey[700]),
               ),
             ],
@@ -32,8 +33,16 @@ class LanguageMenu<String> extends PopupMenuButton<String> {
 
 const List<PopupMenuEntry<String>> _languageMenu = [
   const PopupMenuItem<String>(
+    value: 'de',
+    child: Center(child: Text('Deutsch')),
+  ),
+  const PopupMenuItem<String>(
     value: 'en',
     child: Center(child: Text('English')),
+  ),
+  const PopupMenuItem<String>(
+    value: 'sk',
+    child: Center(child: Text('Slovenčina')),
   ),
   const PopupMenuItem<String>(
     value: 'cs',
@@ -42,9 +51,5 @@ const List<PopupMenuEntry<String>> _languageMenu = [
   const PopupMenuItem<String>(
     value: 'ru',
     child: Center(child: Text('Русский')),
-  ),
-  const PopupMenuItem<String>(
-    value: 'de',
-    child: Center(child: Text('Deutsch')),
   ),
 ];
