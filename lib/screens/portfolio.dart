@@ -60,7 +60,7 @@ class _PortfolioState extends State<Portfolio>
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Container(
-      color: Theme.of(context).primaryColorDark,
+      color: Colors.grey[600],
       child: FractionallySizedBox(
         widthFactor: 0.7,
         child: Column(
@@ -77,11 +77,15 @@ class _PortfolioState extends State<Portfolio>
               projectName: S.of(context).flutterClock,
               pathToImage: 'assets/images/clock.jpg',
               projectDesc: S.of(context).flutterClockDesc,
+              designURL: 'shot1',
+              appURL: 'github',
             ),
             Project(
               projectName: S.of(context).helloDribbble,
               pathToImage: 'assets/images/clock.jpg',
               projectDesc: S.of(context).helloDribbbleDesc,
+              designURL: 'shot2',
+              appURL: 'store',
             ),
             SizedBox(height: height * 0.1),
           ],

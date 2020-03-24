@@ -4,10 +4,16 @@ import '../widgets/project_buttons.dart';
 import '../animations/entrance_fader.dart';
 
 class Project extends StatefulWidget {
-  const Project({Key key, this.projectName, this.projectDesc, this.pathToImage})
+  const Project(
+      {Key key,
+      this.projectName,
+      this.projectDesc,
+      this.pathToImage,
+      this.designURL,
+      this.appURL})
       : super(key: key);
 
-  final String projectName, projectDesc, pathToImage;
+  final String projectName, projectDesc, pathToImage, designURL, appURL;
 
   @override
   _ProjectState createState() => _ProjectState();
@@ -74,7 +80,7 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
             SizedBox(
               height: 10,
             ),
-            ProjectButtonBar(),
+            ProjectButtonBar(widget.designURL, widget.appURL),
           ],
         ),
       ),
