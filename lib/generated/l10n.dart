@@ -10,19 +10,18 @@ import 'intl/messages_all.dart';
 
 class S {
   S(this.localeName);
-
-  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
+  
+  static const AppLocalizationDelegate delegate =
+    AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final String name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final String name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       return S(localeName);
     });
-  }
+  } 
 
   static S of(BuildContext context) {
     return Localizations.of<S>(context, S);
@@ -167,7 +166,7 @@ class S {
 
   String get helloDribbbleDesc {
     return Intl.message(
-      'A interactive animations showcase project, I\'ve made as my Debut Shot for famous Dribbble.com, аfter I won the invitation, so now as a Dribbble “Player”.',
+      'A interactive animations showcase project, I\'ve made as my Debut Shot for famous Dribbble.com, аfter I won the invitation (so now as a “Player”).',
       name: 'helloDribbbleDesc',
       desc: '',
       args: [],
@@ -198,11 +197,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
 
   List<Locale> get supportedLocales {
     return const <Locale>[
-      Locale.fromSubtags(languageCode: 'cs'),
-      Locale.fromSubtags(languageCode: 'de'),
-      Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ru'),
-      Locale.fromSubtags(languageCode: 'sk'),
+      Locale.fromSubtags(languageCode: 'cs'), Locale.fromSubtags(languageCode: 'de'), Locale.fromSubtags(languageCode: 'en'), Locale.fromSubtags(languageCode: 'ru'), Locale.fromSubtags(languageCode: 'sk'),
     ];
   }
 

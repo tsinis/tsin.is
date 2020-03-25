@@ -60,11 +60,11 @@ class _PortfolioState extends State<Portfolio>
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Container(
-      color: Colors.grey[600],
+      color: Theme.of(context).backgroundColor,
       child: FractionallySizedBox(
         widthFactor: 0.7,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(height: height * 0.1),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 import '../widgets/project_buttons.dart';
 import '../animations/entrance_fader.dart';
@@ -49,12 +50,15 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
       offset: Offset(-width / 2.0, 0),
       delay: _oneSec,
       duration: _oneSec,
-      child: Padding(
-        padding: const EdgeInsets.only(top: 40.0),
-        child: ClipRRect(
+      child: Card(
+        borderOnForeground: false,
+        clipBehavior: Clip.hardEdge,
+        elevation: 6.0,
+        margin: EdgeInsets.only(top: 40.0),
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
-          child: Image.asset(widget.pathToImage),
         ),
+        child: Image.asset(widget.pathToImage),
       ),
     );
   }
@@ -68,17 +72,21 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
         padding: const EdgeInsets.only(top: 40.0),
         child: Column(
           // crossAxisAlignment: CrossAxisAlignment.start,
-          // mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             // SizedBox(height: 50.0),
             Text(
               widget.projectDesc,
+              textAlign: TextAlign.justify,
               style: TextStyle(
                 fontSize: 22.0 + ((width > 1500.0) ? width / 220.0 : 0),
               ),
             ),
-            SizedBox(
-              height: 10,
+            ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: 20.0,
+                maxHeight: 30.0,
+              ),
             ),
             ProjectButtonBar(widget.designURL, widget.appURL),
           ],
@@ -91,37 +99,35 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
-    return Container(
-      child: Column(
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 40.0),
-            child: Divider(
-              indent: width / 5.0,
-              endIndent: width / 5.0,
-            ),
+    return Column(
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 40.0),
+          child: Divider(
+            // indent: width / 5.0,
+            // endIndent: width / 5.0,
           ),
-          Text(
-            widget.projectName,
-            style: Theme.of(context).textTheme.headline2.copyWith(
-                  fontSize: 33.0 + width / 1000.0,
-                ),
-          ),
-          if (width / 1.775 > height)
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Expanded(child: _preview(height, width)),
-                SizedBox(width: width * 0.05),
-                Expanded(child: _description(width)),
-              ],
-            )
-          else ...[
-            _description(width),
-            _preview(height, width),
-          ],
+        ),
+        Text(
+          widget.projectName,
+          style: Theme.of(context).textTheme.headline2.copyWith(
+                fontSize: 33.0 + width / 1000.0,
+              ),
+        ),
+        if (width / 1.775 > height)
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Expanded(child: _preview(height, width)),
+              SizedBox(width: width * 0.05),
+              Expanded(child: _description(width)),
+            ],
+          )
+        else ...[
+          _description(width),
+          _preview(height, width),
         ],
-      ),
+      ],
     );
   }
 }
