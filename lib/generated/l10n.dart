@@ -173,19 +173,28 @@ class S {
     );
   }
 
-  String get a {
+  String get contactDesc {
     return Intl.message(
-      'a',
-      name: 'a',
+      'Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:',
+      name: 'contactDesc',
       desc: '',
       args: [],
     );
   }
 
-  String get b {
+  String get socilalNetworks {
     return Intl.message(
-      'b',
-      name: 'b',
+      '',
+      name: 'socilalNetworks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get email {
+    return Intl.message(
+      'or just simply write me on the good old email here:',
+      name: 'email',
       desc: '',
       args: [],
     );

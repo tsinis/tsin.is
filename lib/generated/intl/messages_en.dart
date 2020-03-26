@@ -21,11 +21,11 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "a" : MessageLookupByLibrary.simpleMessage("a"),
     "about" : MessageLookupByLibrary.simpleMessage("About"),
-    "b" : MessageLookupByLibrary.simpleMessage("b"),
     "contact" : MessageLookupByLibrary.simpleMessage("Contact"),
+    "contactDesc" : MessageLookupByLibrary.simpleMessage("Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:"),
     "devAndDesigner" : MessageLookupByLibrary.simpleMessage("Flutter Developer & Designer"),
+    "email" : MessageLookupByLibrary.simpleMessage("or just simply write me on the good old email here:"),
     "findInPortfolio" : MessageLookupByLibrary.simpleMessage("Here you can find"),
     "flutterClock" : MessageLookupByLibrary.simpleMessage("Steampunk Flutter Clock"),
     "flutterClockDesc" : MessageLookupByLibrary.simpleMessage("This project is one of the winning submissions in Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide)."),
@@ -38,6 +38,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "portfolio" : MessageLookupByLibrary.simpleMessage("Portfolio"),
     "projectsPortfolio" : MessageLookupByLibrary.simpleMessage("projects and repositories."),
     "selectLang" : MessageLookupByLibrary.simpleMessage("select your language"),
+    "socilalNetworks" : MessageLookupByLibrary.simpleMessage(""),
     "somePortfilio" : MessageLookupByLibrary.simpleMessage("some of my ")
   };
 }

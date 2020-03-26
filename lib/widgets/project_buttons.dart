@@ -76,7 +76,7 @@ class ProjectButtonBar extends ButtonBar {
                         Text(
                           'Google Play',
                           style: TextStyle(color: Colors.white),
-                        )
+                        ),
                       ],
               ),
             ),

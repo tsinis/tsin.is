@@ -2,6 +2,7 @@ import 'dart:math' show max;
 
 import 'package:flutter/material.dart';
 
+import 'screens/contacts.dart';
 import 'themes/theme.dart';
 import 'extensions/hover_extensions.dart';
 import 'generated/l10n.dart';
@@ -9,8 +10,8 @@ import 'screens/about.dart';
 import 'screens/header.dart';
 import 'screens/main_text.dart';
 import 'screens/portfolio.dart';
-import 'screens/presentation.dart';
 import 'widgets/language_menu.dart';
+// import 'screens/presentation.dart';
 
 void main() => runApp(MyApp());
 
@@ -128,10 +129,11 @@ class _MyHomePageState extends State<_MyHomePage> {
                   child: About(),
                 ),
                 Portfolio(),
-                Presentation(),
+                Contact(),
                 Container(
                   height: 100.0,
-                  color: Theme.of(context).primaryColorDark,
+                  color: Colors.black,
+                  // color: Theme.of(context).primaryColorDark,
                 ),
               ],
             ),
