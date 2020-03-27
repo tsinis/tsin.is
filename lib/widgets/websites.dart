@@ -3,27 +3,70 @@ import 'dart:html' as html;
 import '../widgets/social_icons.dart';
 import '../extensions/hover_extensions.dart';
 
-
 class Website extends FlatButton {
-  Website(this.website);
+  Website(this.web);
+  final String web;
 
-  final IconData website;
-
-  String get _url => _urls[website];
-
-  String get _name => _url.substring(0, _url.indexOf("."));
+  Color get _color => _getColor();
+  IconData get _icon => _getIcon();
+  String get _name => web.substring(0, web.indexOf("."));
 
   @override
-  Widget build(BuildContext context) => FlatButton.icon(
-      icon: Icon(website),
+  Widget build(BuildContext context) {
+    return FlatButton.icon(
+      textColor: Theme.of(context).disabledColor,
+      hoverColor: _color.withOpacity(0.25),
+      highlightColor: _color,
+      icon: Icon(_icon),
       label: Text(_name),
-      onPressed: () => html.window.open('https://' + _url + 'tsinis', _name),).showCursorOnHover.moveUpOnHover;
+      onPressed: () =>
+          html.window.open('https://' + web.toLowerCase() + 'tsinis', _name),
+    ).showCursorOnHover.moveUpOnHover;
+  }
+
+  IconData _getIcon() {
+    switch (web) {
+      case 'Dribbble.com/':
+        return SocialIcons.dribbble;
+        break;
+      case 'LinkedIn.com/in/':
+        return SocialIcons.linkedin_squared;
+        break;
+      case 'GitHub.com/':
+        return SocialIcons.github_squared;
+        break;
+      case 'Rive.app/a/':
+        return SocialIcons.laptop;
+        break;
+      case 'Medium.com/@':
+        return SocialIcons.medium;
+        break;
+      case 'Vimeo.com/':
+        return SocialIcons.vimeo_squared;
+        break;
+    }
+  }
+
+  Color _getColor() {
+    switch (web) {
+      case 'Dribbble.com/':
+        return Colors.pink;
+        break;
+      case 'LinkedIn.com/in/':
+        return Colors.lightBlue[300];
+        break;
+      case 'GitHub.com/':
+        return Colors.grey;
+        break;
+      case 'Rive.app/a/':
+        return Colors.purple;
+        break;
+      case 'Medium.com/@':
+        return Colors.white;
+        break;
+      case 'Vimeo.com/':
+        return Colors.cyan;
+        break;
+    }
+  }
 }
-final Map<IconData, String> _urls = {
-  SocialIcons.dribbble: 'Dribbble.com/',
-  SocialIcons.linkedin_squared: 'LinkedIn.com/in/',
-  SocialIcons.github_squared: 'Github.com/',
-  SocialIcons.medium: 'Medium.com/@',
-  SocialIcons.cloud: 'Rive.app/a/',
-  SocialIcons.vimeo_squared: 'Vimeo.com/',
-};

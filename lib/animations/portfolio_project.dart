@@ -71,7 +71,7 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
       child: Padding(
         padding: const EdgeInsets.only(top: 40.0),
         child: Column(
-          // crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             // SizedBox(height: 50.0),
@@ -110,6 +110,7 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
         ),
         Text(
           widget.projectName,
+          textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.headline2.copyWith(
                 fontSize: 33.0 + width / 1000.0,
               ),

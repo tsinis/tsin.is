@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widgets/social_icons.dart';
 import '../widgets/websites.dart';
 import '../generated/l10n.dart';
 
@@ -12,7 +11,7 @@ class Contact extends StatelessWidget {
       child: FractionallySizedBox(
         widthFactor: 0.7,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           // crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(height: height * 0.1),
@@ -22,17 +21,17 @@ class Contact extends StatelessWidget {
             Text(S.of(context).contactDesc, textAlign: TextAlign.center),
             SizedBox(height: height * 0.025),
             Wrap(
-              spacing: 30.0,
+              spacing: 15.0,
               crossAxisAlignment: WrapCrossAlignment.center,
-              // runAlignment: WrapAlignment.spaceEvenly,
-              alignment: WrapAlignment.spaceEvenly,
+              // runAlignment: WrapAlignment.spaceAround,
+              alignment: WrapAlignment.start,
               children: <Widget>[
-              Website(SocialIcons.dribbble),
-              Website(SocialIcons.linkedin_squared),
-              Website(SocialIcons.github_squared),
-              Website(SocialIcons.medium),
-              Website(SocialIcons.cloud),
-              Website(SocialIcons.vimeo_squared),
+              Website('LinkedIn.com/in/'),
+              Website('GitHub.com/'),
+              Website('Rive.app/a/'),
+              Website('Dribbble.com/'),
+              Website('Vimeo.com/'),
+              Website('Medium.com/@'),
             ]),
             SizedBox(height: height * 0.1),
           ],
