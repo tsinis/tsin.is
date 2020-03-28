@@ -2,6 +2,7 @@ import 'dart:math' show max;
 
 import 'package:flutter/material.dart';
 
+import 'screens/footer.dart';
 import 'screens/contacts.dart';
 import 'themes/theme.dart';
 import 'extensions/hover_extensions.dart';
@@ -130,11 +131,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                 ),
                 Portfolio(),
                 Contact(),
-                Container(
-                  height: 100.0,
-                  color: Colors.black,
-                  // color: Theme.of(context).primaryColorDark,
-                ),
+                Footer()
               ],
             ),
           ),

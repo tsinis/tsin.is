@@ -4,7 +4,7 @@
     "selectLang": "select your language",
     "about": "About",
     "portfolio": "Portfolio",
-    "contact": "Contact",
+    "contact": "Contacts",
     "greeting": "Hello there, I'm",
     "devAndDesigner": "Flutter Developer & Designer",
     "fullName": "Roman Cinis",
@@ -17,6 +17,6 @@
     "helloDribbble": "Hello Dribbble",
     "helloDribbbleDesc": "A interactive animations showcase project, I've made as my Debut Shot for famous Dribbble.com, аfter I won the invitation (so now as a “Player”).",
     "contactDesc": "Physically in the city of Brno, on the internets, I'm known as a “tsinis”:",
-    "socilalNetworks": "",
-    "email": "or just simply write me on the good old email here:"
+    "email": "or just simply write me the good old e-mail here: ",
+    "socilalNetworks": ""
 }

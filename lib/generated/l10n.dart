@@ -67,7 +67,7 @@ class S {
 
   String get contact {
     return Intl.message(
-      'Contact',
+      'Contacts',
       name: 'contact',
       desc: '',
       args: [],
@@ -182,19 +182,19 @@ class S {
     );
   }
 
-  String get socilalNetworks {
+  String get email {
     return Intl.message(
-      '',
-      name: 'socilalNetworks',
+      'or just simply write me the good old e-mail here: ',
+      name: 'email',
       desc: '',
       args: [],
     );
   }
 
-  String get email {
+  String get socilalNetworks {
     return Intl.message(
-      'or just simply write me on the good old email here:',
-      name: 'email',
+      '',
+      name: 'socilalNetworks',
       desc: '',
       args: [],
     );

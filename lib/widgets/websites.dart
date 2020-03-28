@@ -13,15 +13,18 @@ class Website extends FlatButton {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton.icon(
-      textColor: Theme.of(context).disabledColor,
-      hoverColor: _color.withOpacity(0.25),
-      highlightColor: _color,
-      icon: Icon(_icon),
-      label: Text(_name),
-      onPressed: () =>
-          html.window.open('https://' + web.toLowerCase() + 'tsinis', _name),
-    ).showCursorOnHover.moveUpOnHover;
+    return SizedBox(
+        width: 140.0,
+          child: FlatButton.icon(
+        textColor: Theme.of(context).disabledColor,
+        hoverColor: _color.withOpacity(0.25),
+        highlightColor: _color,
+        icon: Icon(_icon),
+        label: Text(_name),
+        onPressed: () =>
+            html.window.open('https://' + web.toLowerCase() + 'tsinis', _name),
+      ).showCursorOnHover,
+    );
   }
 
   IconData _getIcon() {

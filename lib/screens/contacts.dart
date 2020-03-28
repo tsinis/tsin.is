@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import '../widgets/social_icons.dart';
 import '../widgets/websites.dart';
 import '../generated/l10n.dart';
+import '../extensions/hover_extensions.dart';
 
 class Contact extends StatelessWidget {
   @override
@@ -12,28 +14,38 @@ class Contact extends StatelessWidget {
         widthFactor: 0.7,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          // crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: height * 0.1),
+            SizedBox(height: height * 0.05),
             Text(S.of(context).contact,
                 style: Theme.of(context).textTheme.headline4),
             SizedBox(height: height * 0.05),
             Text(S.of(context).contactDesc, textAlign: TextAlign.center),
             SizedBox(height: height * 0.025),
             Wrap(
-              spacing: 15.0,
+                spacing: 10.0,
+                alignment: WrapAlignment.center,
+                children: <Widget>[
+                  Website('LinkedIn.com/in/'),
+                  Website('GitHub.com/'),
+                  Website('Dribbble.com/'),
+                  Website('Medium.com/@'),
+                  Website('Vimeo.com/'),
+                  Website('Rive.app/a/'),
+                ]),
+            SizedBox(height: height * 0.01),
+            Wrap(
+              direction: Axis.horizontal,
+              alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
-              // runAlignment: WrapAlignment.spaceAround,
-              alignment: WrapAlignment.start,
               children: <Widget>[
-              Website('LinkedIn.com/in/'),
-              Website('GitHub.com/'),
-              Website('Rive.app/a/'),
-              Website('Dribbble.com/'),
-              Website('Vimeo.com/'),
-              Website('Medium.com/@'),
-            ]),
-            SizedBox(height: height * 0.1),
+                Text(S.of(context).email, textAlign: TextAlign.center,),
+                IconButton(
+                  icon: Icon(SocialIcons.mail_alt, color: Theme.of(context).primaryColorLight,),
+                  onPressed: () => print('Send mail'),
+                ).showCursorOnHover.moveUpOnHover
+              ],
+            ),
+            SizedBox(height: height * 0.025),
           ],
         ),
       ),
