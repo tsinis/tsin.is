@@ -19,7 +19,7 @@ class Contact extends StatelessWidget {
             Text(S.of(context).contact,
                 style: Theme.of(context).textTheme.headline4),
             SizedBox(height: height * 0.05),
-            Text(S.of(context).contactDesc, textAlign: TextAlign.center),
+            Text(S.of(context).contactsDesc, textAlign: TextAlign.center),
             SizedBox(height: height * 0.025),
             Wrap(
               alignment: WrapAlignment.center,

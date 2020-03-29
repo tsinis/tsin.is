@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'dart:html' as html;
+import 'package:tsin.is/services/url_click.dart';
+// import 'dart:html' as html;
 import '../widgets/social_icons.dart';
 import '../extensions/hover_extensions.dart';
 
 class Website extends FlatButton {
-  Website(this.web);
-  final String web;
+  Website(this.url);
+  final String url;
 
   Color get _color => _getColor();
   IconData get _icon => _getIcon();
-  String get _name => web.substring(0, web.indexOf("."));
+  String get _name => url.substring(0, url.indexOf("."));
 
   @override
   Widget build(BuildContext context) {
@@ -21,14 +22,13 @@ class Website extends FlatButton {
         highlightColor: _color,
         icon: Icon(_icon),
         label: Text(_name),
-        onPressed: () =>
-            html.window.open('https://' + web.toLowerCase() + 'tsinis', _name),
+        onPressed: () => click(url, name: _name)
       ).showCursorOnHover,
     );
   }
 
   IconData _getIcon() {
-    switch (web) {
+    switch (url) {
       case 'Dribbble.com/':
         return SocialIcons.dribbble;
         break;
@@ -51,7 +51,7 @@ class Website extends FlatButton {
   }
 
   Color _getColor() {
-    switch (web) {
+    switch (url) {
       case 'Dribbble.com/':
         return Colors.pink;
         break;

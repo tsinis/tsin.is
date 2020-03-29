@@ -18,7 +18,7 @@ class Footer extends StatelessWidget {
             alignment: WrapAlignment.center,
             crossAxisAlignment: WrapCrossAlignment.center,
             children: <Widget>[
-              Text('All rights reserved — copyright© Roman Cinis.',
+              Text('All rights reserved — ©2020 Roman Cinis.',
                   textAlign: TextAlign.center, style: _footerTextStyle),
               SizedBox(height: 5.0),
               Text(

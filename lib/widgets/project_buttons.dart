@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
+import '../services/url_click.dart';
+// import 'dart:html' as html;
 import 'social_icons.dart';
+import '../extensions/hover_extensions.dart';
 
 class ProjectButtonBar extends ButtonBar {
   ProjectButtonBar(this.designURL, this.appURL);
@@ -19,12 +21,12 @@ class ProjectButtonBar extends ButtonBar {
             padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: _video
                 ? OutlineButton(
-                    borderSide: BorderSide(width: 4.0, color: Colors.cyan[700]),
+                    borderSide: BorderSide(width: 4.8, color: Colors.cyan[700]),
                     highlightedBorderColor: Colors.cyan[300],
                     hoverColor: Colors.cyan.withOpacity(0.1),
                     textColor: Colors.cyan[400],
                     color: Colors.cyan[600],
-                    onPressed: () => print('Video is at $designURL'),
+                    onPressed: () => click(designURL),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -41,14 +43,14 @@ class ProjectButtonBar extends ButtonBar {
                         Text('See in Action'),
                       ],
                     ),
-                  )
+                  ).showCursorOnHover
                 : OutlineButton(
-                    borderSide: BorderSide(width: 4.0, color: Colors.pink[600]),
+                    borderSide: BorderSide(width: 4.8, color: Colors.pink[600]),
                     highlightedBorderColor: Colors.pink[200],
                     hoverColor: Colors.pink.withOpacity(0.1),
                     textColor: Colors.pink[300],
                     color: Colors.pink,
-                    onPressed: () => print('Link to $designURL'),
+                    onPressed: () => click(designURL),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -65,7 +67,7 @@ class ProjectButtonBar extends ButtonBar {
                         Text('See the Design'),
                       ],
                     ),
-                  ),
+                  ).showCursorOnHover,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
@@ -74,7 +76,7 @@ class ProjectButtonBar extends ButtonBar {
               elevation: 1.5,
               hoverElevation: 2.5,
               highlightElevation: 3.0,
-              onPressed: () => print('Link to $appURL'),
+              onPressed: () => click(appURL),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _openSource
@@ -105,7 +107,7 @@ class ProjectButtonBar extends ButtonBar {
                         ),
                       ],
               ),
-            ),
+            ).showCursorOnHover,
           ),
         ],
       );

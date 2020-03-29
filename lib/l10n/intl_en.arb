@@ -12,11 +12,9 @@
     "findInPortfolio": "Here you can find",
     "somePortfilio": "some of my ",
     "projectsPortfolio": "projects and repositories.",
-    "flutterClock": "Steampunk Flutter Clock",
-    "flutterClockDesc": "This project is one of the winning submissions in Official Google's & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).",
-    "helloDribbble": "Hello Dribbble",
-    "helloDribbbleDesc": "A interactive animations showcase project, I've made as my Debut Shot for famous Dribbble.com, аfter I won the invitation (so now as a “Player”).",
-    "contactDesc": "Physically in the city of Brno, on the internets, I'm known as a “tsinis”:",
+    "flutterClock": "This project is one of the winning submissions in Official Google's & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).",
+    "helloDribbble": "Interactive animations showcase project, I've made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”).",
+    "contactsDesc": "Physically in the city of Brno, on the internets, I'm known as a “tsinis”:",
     "email": "or just simply write me the good old e-mail here:",
     "socilalNetworks": ""
 }

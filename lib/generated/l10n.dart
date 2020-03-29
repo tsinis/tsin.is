@@ -10,19 +10,18 @@ import 'intl/messages_all.dart';
 
 class S {
   S(this.localeName);
-
-  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
+  
+  static const AppLocalizationDelegate delegate =
+    AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final String name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final String name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       return S(localeName);
     });
-  }
+  } 
 
   static S of(BuildContext context) {
     return Localizations.of<S>(context, S);
@@ -140,17 +139,8 @@ class S {
 
   String get flutterClock {
     return Intl.message(
-      'Steampunk Flutter Clock',
-      name: 'flutterClock',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get flutterClockDesc {
-    return Intl.message(
       'This project is one of the winning submissions in Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).',
-      name: 'flutterClockDesc',
+      name: 'flutterClock',
       desc: '',
       args: [],
     );
@@ -158,26 +148,17 @@ class S {
 
   String get helloDribbble {
     return Intl.message(
-      'Hello Dribbble',
+      'Interactive animations showcase project, I\'ve made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”).',
       name: 'helloDribbble',
       desc: '',
       args: [],
     );
   }
 
-  String get helloDribbbleDesc {
-    return Intl.message(
-      'A interactive animations showcase project, I\'ve made as my Debut Shot for famous Dribbble.com, аfter I won the invitation (so now as a “Player”).',
-      name: 'helloDribbbleDesc',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get contactDesc {
+  String get contactsDesc {
     return Intl.message(
       'Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:',
-      name: 'contactDesc',
+      name: 'contactsDesc',
       desc: '',
       args: [],
     );
@@ -207,11 +188,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
 
   List<Locale> get supportedLocales {
     return const <Locale>[
-      Locale.fromSubtags(languageCode: 'cs'),
-      Locale.fromSubtags(languageCode: 'de'),
-      Locale.fromSubtags(languageCode: 'en'),
-      Locale.fromSubtags(languageCode: 'ru'),
-      Locale.fromSubtags(languageCode: 'sk'),
+      Locale.fromSubtags(languageCode: 'cs'), Locale.fromSubtags(languageCode: 'de'), Locale.fromSubtags(languageCode: 'en'), Locale.fromSubtags(languageCode: 'ru'), Locale.fromSubtags(languageCode: 'sk'),
     ];
   }
 
