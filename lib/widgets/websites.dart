@@ -14,8 +14,8 @@ class Website extends FlatButton {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: 140.0,
-          child: FlatButton.icon(
+      width: 140.0,
+      child: FlatButton.icon(
         textColor: Theme.of(context).disabledColor,
         hoverColor: _color.withOpacity(0.25),
         highlightColor: _color,

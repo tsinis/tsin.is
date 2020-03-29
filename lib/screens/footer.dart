@@ -1,21 +1,39 @@
 import 'package:flutter/material.dart';
-import '../generated/l10n.dart';
+
+final _footerTextStyle = TextStyle(
+  fontFamily: 'Roboto',
+  fontWeight: FontWeight.w100,
+  fontSize: 12.0,
+);
 
 class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
     return Container(
-      height: 50.0,
-      color: Colors.blueGrey,
-      child: FractionallySizedBox(
-        widthFactor: 0.7,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          // crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-
-          ],
+      color: Colors.amber[300],
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 5.0),
+        child: Center(
+          child: Wrap(
+            alignment: WrapAlignment.center,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: <Widget>[
+              Text('All rights reserved — copyright© Roman Cinis.',
+                  textAlign: TextAlign.center, style: _footerTextStyle),
+              SizedBox(height: 5.0),
+              Text(
+                  '(Font: Hagrid Family by Zetafonts -http://www.zetafonts.com/collection/3760).',
+                  textAlign: TextAlign.center,
+                  style: _footerTextStyle),
+              Text(' Made with 💙 in ',
+                  strutStyle: StrutStyle(forceStrutHeight: true),
+                  textAlign: TextAlign.center,
+                  style: _footerTextStyle),
+              FlutterLogo(
+                size: 14.0,
+              ),
+            ],
+          ),
         ),
       ),
     );

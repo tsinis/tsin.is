@@ -104,9 +104,9 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 40.0),
           child: Divider(
-            // indent: width / 5.0,
-            // endIndent: width / 5.0,
-          ),
+              // indent: width / 5.0,
+              // endIndent: width / 5.0,
+              ),
         ),
         Text(
           widget.projectName,

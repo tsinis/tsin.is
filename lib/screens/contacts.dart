@@ -22,26 +22,32 @@ class Contact extends StatelessWidget {
             Text(S.of(context).contactDesc, textAlign: TextAlign.center),
             SizedBox(height: height * 0.025),
             Wrap(
-                spacing: 10.0,
-                alignment: WrapAlignment.center,
-                children: <Widget>[
-                  Website('LinkedIn.com/in/'),
-                  Website('GitHub.com/'),
-                  Website('Dribbble.com/'),
-                  Website('Medium.com/@'),
-                  Website('Vimeo.com/'),
-                  Website('Rive.app/a/'),
-                ]),
+              alignment: WrapAlignment.center,
+              children: <Widget>[
+                Website('LinkedIn.com/in/'),
+                Website('GitHub.com/'),
+                Website('Dribbble.com/'),
+                Website('Medium.com/@'),
+                Website('Vimeo.com/'),
+                Website('Rive.app/a/'),
+              ],
+            ),
             SizedBox(height: height * 0.01),
             Wrap(
-              direction: Axis.horizontal,
+              spacing: 10.0,
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: <Widget>[
-                Text(S.of(context).email, textAlign: TextAlign.center,),
+                Text(
+                  S.of(context).email,
+                  textAlign: TextAlign.center,
+                ),
                 IconButton(
-                  icon: Icon(SocialIcons.mail_alt, color: Theme.of(context).primaryColorLight,),
-                  onPressed: () => print('Send mail'),
+                  icon: Icon(
+                    SocialIcons.mail_alt,
+                    color: Theme.of(context).primaryColorLight,
+                  ),
+                  onPressed: () => print('Send email'),
                 ).showCursorOnHover.moveUpOnHover
               ],
             ),

@@ -7,6 +7,7 @@ class ProjectButtonBar extends ButtonBar {
   final String designURL, appURL;
 
   bool get _openSource => appURL.contains('github');
+  bool get _video => designURL.contains('vimeo');
 
   @override
   Widget build(BuildContext context) => ButtonBar(
@@ -16,30 +17,55 @@ class ProjectButtonBar extends ButtonBar {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
-            child: OutlineButton(
-              borderSide: BorderSide(width: 4.0, color: Colors.pink[600]),
-              highlightedBorderColor: Colors.pink[200],
-              hoverColor: Colors.pink.withOpacity(0.1),
-              textColor: Colors.pink[300],
-              color: Colors.pink,
-              onPressed: () => print('Link to $designURL'),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(
-                    SocialIcons.dribbble,
+            child: _video
+                ? OutlineButton(
+                    borderSide: BorderSide(width: 4.0, color: Colors.cyan[700]),
+                    highlightedBorderColor: Colors.cyan[300],
+                    hoverColor: Colors.cyan.withOpacity(0.1),
+                    textColor: Colors.cyan[400],
+                    color: Colors.cyan[600],
+                    onPressed: () => print('Video is at $designURL'),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          SocialIcons.vimeo,
+                          color: Colors.cyan,
+                        ),
+                        ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minWidth: 10.0,
+                            maxWidth: 15.0,
+                          ),
+                        ),
+                        Text('See in Action'),
+                      ],
+                    ),
+                  )
+                : OutlineButton(
+                    borderSide: BorderSide(width: 4.0, color: Colors.pink[600]),
+                    highlightedBorderColor: Colors.pink[200],
+                    hoverColor: Colors.pink.withOpacity(0.1),
+                    textColor: Colors.pink[300],
                     color: Colors.pink,
-                  ),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(
-                      minWidth: 10.0,
-                      maxWidth: 15.0,
+                    onPressed: () => print('Link to $designURL'),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          SocialIcons.dribbble,
+                          color: Colors.pink,
+                        ),
+                        ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minWidth: 10.0,
+                            maxWidth: 15.0,
+                          ),
+                        ),
+                        Text('See the Design'),
+                      ],
                     ),
                   ),
-                  Text('See the Design'),
-                ],
-              ),
-            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
