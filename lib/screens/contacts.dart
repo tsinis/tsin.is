@@ -16,7 +16,7 @@ class Contact extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             SizedBox(height: height * 0.05),
-            Text(S.of(context).contact,
+            Text(S.of(context).contacts,
                 style: Theme.of(context).textTheme.headline4),
             SizedBox(height: height * 0.05),
             Text(S.of(context).contactsDesc, textAlign: TextAlign.center),

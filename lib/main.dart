@@ -2,6 +2,7 @@ import 'dart:math' show max;
 
 import 'package:flutter/material.dart';
 
+import 'widgets/navigation/side_menu.dart';
 import 'screens/footer.dart';
 import 'screens/contacts.dart';
 import 'themes/theme.dart';
@@ -11,7 +12,7 @@ import 'screens/about.dart';
 import 'screens/header.dart';
 import 'screens/main_text.dart';
 import 'screens/portfolio.dart';
-import 'widgets/language_menu.dart';
+import 'widgets/navigation/language_menu.dart';
 // import 'screens/presentation.dart';
 
 void main() => runApp(MyApp());
@@ -37,7 +38,7 @@ class _MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<_MyHomePage> {
   ScrollController _scrollController;
-
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   void dispose() {
     _scrollController.dispose();
@@ -60,6 +61,8 @@ class _MyHomePageState extends State<_MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      endDrawer: SideMenu(),
       body: Stack(
         children: <Widget>[
           Positioned(
@@ -139,9 +142,17 @@ class _MyHomePageState extends State<_MyHomePage> {
               ? Positioned(
                   top: 30.0,
                   right: 30.0,
-                  child: Icon(Icons.menu, color: Theme.of(context).accentColor)
-                      .showCursorOnHover
-                      .moveUpOnHover,
+                  child: IconButton(
+                    icon: Icon(Icons.menu),
+                    color: Theme.of(context).accentColor,
+                    onPressed: () {
+                      (_scaffoldKey.currentState.isEndDrawerOpen)
+                          ?
+                          // print('no'): print('yes');
+                          _scaffoldKey.currentState.openDrawer()
+                          : _scaffoldKey.currentState.openEndDrawer();
+                    },
+                  ).showCursorOnHover.moveUpOnHover,
                 )
               : Opacity(
                   opacity: max(0, 1.0 - offset / height),

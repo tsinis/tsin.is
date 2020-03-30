@@ -16,12 +16,13 @@ class MyTheme {
       scaffoldBackgroundColor: Colors.grey,
       hoverColor: Colors.grey.withOpacity(0.33),
       cardColor: Colors.grey[600],
+      canvasColor: Colors.grey.withOpacity(0.5),
+      disabledColor: Colors.grey[900],
       // dividerColor: Colors.grey[800],
       // highlightColor: Color(0x66bcbcbc),
       // splashColor: Color(0x66c8c8c8),
       // selectedRowColor: Color(0xfff5f5f5),
       // unselectedWidgetColor: Color(0x8a000000),
-      disabledColor: Colors.grey[900],
       textTheme: _theme.textTheme.copyWith(
         headline6: _theme.textTheme.headline6.copyWith(
           fontFamily: _displayFont,

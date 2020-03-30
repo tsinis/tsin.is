@@ -17,13 +17,12 @@ class Website extends FlatButton {
     return SizedBox(
       width: 140.0,
       child: FlatButton.icon(
-        textColor: Theme.of(context).disabledColor,
-        hoverColor: _color.withOpacity(0.25),
-        highlightColor: _color,
-        icon: Icon(_icon),
-        label: Text(_name),
-        onPressed: () => click(url, name: _name)
-      ).showCursorOnHover,
+          textColor: Theme.of(context).disabledColor,
+          hoverColor: _color.withOpacity(0.25),
+          highlightColor: _color,
+          icon: Icon(_icon),
+          label: Text(_name),
+          onPressed: () => click(url, name: _name)).showCursorOnHover,
     );
   }
 
