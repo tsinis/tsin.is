@@ -115,7 +115,7 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                 fontSize: 33.0 + width / 1000.0,
               ),
         ),
-        if (width / 1.775 > height)
+        if (width / 1.775 > height && width > 1019.0)
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[

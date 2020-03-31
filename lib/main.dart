@@ -13,7 +13,6 @@ import 'screens/header.dart';
 import 'screens/main_text.dart';
 import 'screens/portfolio.dart';
 import 'widgets/navigation/language_menu.dart';
-// import 'screens/presentation.dart';
 
 void main() => runApp(MyApp());
 
@@ -39,6 +38,7 @@ class _MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<_MyHomePage> {
   ScrollController _scrollController;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   void dispose() {
     _scrollController.dispose();
@@ -53,6 +53,9 @@ class _MyHomePageState extends State<_MyHomePage> {
 
   double get height => MediaQuery.of(context).size.height;
 
+  bool get _isSamartPhone =>
+      (MediaQuery.of(context).size.width < 646.5 || offset > height);
+
   Color get _grey => Theme.of(context).primaryColor;
 
   double get offset =>
@@ -62,7 +65,7 @@ class _MyHomePageState extends State<_MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer: SideMenu(),
+      endDrawer: SideMenu(_scaffoldKey),
       body: Stack(
         children: <Widget>[
           Positioned(
@@ -138,41 +141,42 @@ class _MyHomePageState extends State<_MyHomePage> {
               ],
             ),
           ),
-          (MediaQuery.of(context).size.width < 646.5 || offset > height)
-              ? Positioned(
-                  top: 30.0,
-                  right: 30.0,
-                  child: IconButton(
-                    icon: Icon(Icons.menu),
-                    color: Theme.of(context).accentColor,
-                    onPressed: () {
-                      (_scaffoldKey.currentState.isEndDrawerOpen)
-                          ?
-                          // print('no'): print('yes');
-                          _scaffoldKey.currentState.openDrawer()
-                          : _scaffoldKey.currentState.openEndDrawer();
-                    },
-                  ).showCursorOnHover.moveUpOnHover,
-                )
-              : Opacity(
-                  opacity: max(0, 1.0 - offset / height),
-                  child: Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(left: 40.0),
-                        child: LanguageMenu(
-                          language: S.of(context).language,
-                          tooltip: S.of(context).selectLang,
-                          onSelected: (String value) => setState(() {
-                            S.load(Locale(value));
-                          }),
-                        ).showCursorOnHover,
-                      ),
-                      Spacer(),
-                      Header(),
-                    ],
-                  ),
+          Row(
+            children: <Widget>[
+              Opacity(
+                opacity: max(0, 1.0 - offset / height),
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      top: 30.0, left: _isSamartPhone ? 30.0 : 50.0),
+                  child: LanguageMenu(
+                    isSmartphone: _isSamartPhone,
+                    language: S.of(context).language,
+                    tooltip: S.of(context).selectLang,
+                    onSelected: (String value) => setState(() {
+                      S.load(Locale(value));
+                    }),
+                  ).showCursorOnHover,
                 ),
+              ),
+              Spacer(),
+              Padding(
+                padding: EdgeInsets.only(
+                    top: 30.0, right: _isSamartPhone ? 20.0 : 50.0),
+                child: _isSamartPhone
+                    ? IconButton(
+                        icon: Icon(Icons.menu),
+                        color: Theme.of(context).accentColor,
+                        onPressed: () {
+                          _scaffoldKey.currentState.openEndDrawer();
+                        },
+                      ).showCursorOnHover.moveUpOnHover
+                    : Opacity(
+                        opacity: max(0, 1.0 - offset / height),
+                        child: Header(),
+                      ),
+              )
+            ],
+          )
         ],
       ),
     );

@@ -5,6 +5,7 @@ class LanguageMenu<String> extends PopupMenuButton<String> {
     @required PopupMenuItemSelected<String> onSelected,
     @required tooltip,
     @required language,
+    @required bool isSmartphone,
     PopupMenuItemBuilder<String> itemBuilder,
   }) : super(
           itemBuilder: _langMenuBuilder(itemBuilder),
@@ -18,10 +19,13 @@ class LanguageMenu<String> extends PopupMenuButton<String> {
                 color: Colors.grey[800],
               ),
               SizedBox(width: 10.0),
-              Text(
-                language,
-                style: TextStyle(color: Colors.grey[700]),
-              ),
+              isSmartphone
+                  ? SizedBox(height: 0)
+                  : Text(
+                      language,
+                      style: TextStyle(color: Colors.grey[700]),
+                    )
+              // : null,
             ],
           ),
         );
