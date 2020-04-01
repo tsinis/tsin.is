@@ -17,17 +17,18 @@ class About extends StatelessWidget {
           Text(
             'Roman Cinis',
             style: Theme.of(context).textTheme.headline3.copyWith(
-                fontSize:
-                    30.0 + (MediaQuery.of(context).size.shortestSide / 100.0)),
+                  fontSize:
+                      30.0 + (MediaQuery.of(context).size.shortestSide / 100.0),
+                ),
           ),
           OrientationSwitcher(
-            tight: tooTight,
+            columnNotRow: tooTight,
             children: <Widget>[
-              FittedBox(
+              const FittedBox(
                   child: Icon(SocialIcons.github_circled,
                       size:
                           333.0)), // TODO: replace this Rive animation placeholder.
-              SizedBox(width: 64.0),
+              const SizedBox(width: 64.0),
               tooTight
                   ? Text(S.of(context).iAm)
                   : Flexible(

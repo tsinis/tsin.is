@@ -154,6 +154,24 @@ class S {
     );
   }
 
+  String get thisWeb {
+    return Intl.message(
+      'This Website',
+      name: 'thisWeb',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get thisWebDesc {
+    return Intl.message(
+      'Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.',
+      name: 'thisWebDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
   String get contactsDesc {
     return Intl.message(
       'Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:',

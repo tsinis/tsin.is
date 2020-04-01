@@ -46,6 +46,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectLang":
             MessageLookupByLibrary.simpleMessage("select your language"),
         "socilalNetworks": MessageLookupByLibrary.simpleMessage(""),
-        "somePortfilio": MessageLookupByLibrary.simpleMessage("some of my ")
+        "somePortfilio": MessageLookupByLibrary.simpleMessage("some of my "),
+        "thisWeb": MessageLookupByLibrary.simpleMessage("This Website"),
+        "thisWebDesc": MessageLookupByLibrary.simpleMessage(
+            "Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.")
       };
 }

@@ -2,6 +2,7 @@ import 'dart:math' show max;
 
 import 'package:flutter/material.dart';
 
+import 'animations/background.dart';
 import 'widgets/navigation/side_menu.dart';
 import 'screens/footer.dart';
 import 'screens/contacts.dart';
@@ -12,7 +13,7 @@ import 'screens/about.dart';
 import 'screens/header.dart';
 import 'screens/main_text.dart';
 import 'screens/portfolio.dart';
-import 'widgets/navigation/language_menu.dart';
+import 'widgets/language_menu.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,19 +37,22 @@ class _MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<_MyHomePage> {
-  ScrollController _scrollController;
+  static final scrollDirection = Axis.vertical;
+
+  ScrollController scrollController;
+
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    scrollController.dispose();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController()..addListener(() => setState(() {}));
+    scrollController = ScrollController()..addListener(() => setState(() {}));
   }
 
   double get height => MediaQuery.of(context).size.height;
@@ -59,13 +63,13 @@ class _MyHomePageState extends State<_MyHomePage> {
   Color get _grey => Theme.of(context).primaryColor;
 
   double get offset =>
-      _scrollController.hasClients ? _scrollController.offset : 0;
+      scrollController.hasClients ? scrollController.offset : 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer: SideMenu(_scaffoldKey),
+      endDrawer: SideMenu(scrollController),
       body: Stack(
         children: <Widget>[
           Positioned(
@@ -73,18 +77,8 @@ class _MyHomePageState extends State<_MyHomePage> {
             left: 0,
             right: 0,
             height: height,
-            child: Opacity(
-              opacity: 0.05,
-              child: RepaintBoundary(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 50.0),
-                  child: Image.asset(
-                    'assets/images/header.gif',
-                    fit: BoxFit.fill,
-                    filterQuality: FilterQuality.none,
-                  ),
-                ),
-              ),
+            child: RepaintBoundary(
+              child: AnimatedBackground(),
             ),
           ),
           Positioned(
@@ -123,8 +117,9 @@ class _MyHomePageState extends State<_MyHomePage> {
           ),
           Scrollbar(
             child: ListView(
-              cacheExtent: 64.0,
-              controller: _scrollController,
+              scrollDirection: scrollDirection,
+              cacheExtent: double.infinity,
+              controller: scrollController,
               children: <Widget>[
                 Container(height: height),
                 Container(
@@ -172,7 +167,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                       ).showCursorOnHover.moveUpOnHover
                     : Opacity(
                         opacity: max(0, 1.0 - offset / height),
-                        child: Header(),
+                        child: Header(scrollController),
                       ),
               )
             ],

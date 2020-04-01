@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
-import '../services/url_click.dart';
-// import 'dart:html' as html;
-import 'social_icons.dart';
-import '../extensions/hover_extensions.dart';
+
+import '../../services/url_click.dart';
+import '../social_icons.dart';
+import '../../extensions/hover_extensions.dart';
 
 class ProjectButtonBar extends ButtonBar {
-  ProjectButtonBar(this.designURL, this.appURL);
-  final String designURL, appURL;
+  ProjectButtonBar(this.designURL, this.appURL, this.tooTight);
 
-  bool get _openSource => appURL.contains('github');
-  bool get _video => designURL.contains('vimeo');
+  final String designURL, appURL;
+  final bool tooTight;
+
+  bool get _openSource => appURL.toLowerCase().contains('github');
+
+  bool get _video => designURL.toLowerCase().contains('vimeo');
 
   @override
   Widget build(BuildContext context) => ButtonBar(
-        buttonPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+        buttonPadding:
+            const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
         buttonMinWidth: 180.0,
         alignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -21,7 +25,10 @@ class ProjectButtonBar extends ButtonBar {
             padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: _video
                 ? OutlineButton(
-                    borderSide: BorderSide(width: 4.8, color: Colors.cyan[700]),
+                    borderSide: BorderSide(
+                      width: 4.8,
+                      color: Colors.cyan[700],
+                    ),
                     highlightedBorderColor: Colors.cyan[300],
                     hoverColor: Colors.cyan.withOpacity(0.1),
                     textColor: Colors.cyan[400],
@@ -35,12 +42,12 @@ class ProjectButtonBar extends ButtonBar {
                           color: Colors.cyan,
                         ),
                         ConstrainedBox(
-                          constraints: BoxConstraints(
+                          constraints: const BoxConstraints(
                             minWidth: 10.0,
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text('See in Action'),
+                        Text((tooTight ? 'See ' : '') + 'in Action'),
                       ],
                     ),
                   ).showCursorOnHover
@@ -59,12 +66,12 @@ class ProjectButtonBar extends ButtonBar {
                           color: Colors.pink,
                         ),
                         ConstrainedBox(
-                          constraints: BoxConstraints(
+                          constraints: const BoxConstraints(
                             minWidth: 10.0,
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text('See the Design'),
+                        Text((tooTight ? 'See ' : '') + 'the Design'),
                       ],
                     ),
                   ).showCursorOnHover,
@@ -83,12 +90,12 @@ class ProjectButtonBar extends ButtonBar {
                     ? <Widget>[
                         Icon(SocialIcons.github_circled),
                         ConstrainedBox(
-                          constraints: BoxConstraints(
+                          constraints: const BoxConstraints(
                             minWidth: 5.0,
                             maxWidth: 10.0,
                           ),
                         ),
-                        Text('Check the Code')
+                        Text((tooTight ? 'Check ' : '') + 'the Code'),
                       ]
                     : <Widget>[
                         Icon(

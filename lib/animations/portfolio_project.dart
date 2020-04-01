@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
-import '../widgets/project_buttons.dart';
+import '../widgets/portfolio_projects/project_preview.dart';
+import '../widgets/portfolio_projects/project_buttons.dart';
 import '../animations/entrance_fader.dart';
 
 class Project extends StatefulWidget {
@@ -21,7 +21,6 @@ class Project extends StatefulWidget {
 }
 
 class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
-  static const Duration _oneSec = const Duration(seconds: 1);
   AnimationController _animationController;
 
   @override
@@ -35,65 +34,51 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: _oneSec,
+      duration: const Duration(seconds: 1),
     );
     Future.delayed(
-      _oneSec,
+      const Duration(seconds: 1),
       () {
         if (mounted) _animationController.forward();
       },
     );
   }
 
-  EntranceFader _preview(double height, double width) {
-    return EntranceFader(
-      offset: Offset(-width / 2.0, 0),
-      delay: _oneSec,
-      duration: _oneSec,
-      child: Card(
-        borderOnForeground: false,
-        clipBehavior: Clip.hardEdge,
-        elevation: 6.0,
-        margin: EdgeInsets.only(top: 40.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
-        child: Image.asset(widget.pathToImage),
-      ),
-    );
-  }
+  EntranceFader _preview(double width) => EntranceFader(
+        offset: Offset(-width / 2.0, 0),
+        child: ProjectPreview(widget.pathToImage),
+      );
 
-  EntranceFader _description(double width) {
-    return EntranceFader(
-      offset: Offset(width / 2.0, 0),
-      delay: _oneSec,
-      duration: _oneSec,
-      child: Padding(
-        padding: const EdgeInsets.only(top: 40.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            // SizedBox(height: 50.0),
-            Text(
-              widget.projectDesc,
-              textAlign: TextAlign.justify,
-              style: TextStyle(
-                fontSize: 22.0 + ((width > 1500.0) ? width / 220.0 : 0),
+  EntranceFader _description(double width) => EntranceFader(
+        offset: Offset(width / 2.0, 0),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 40.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Text(
+                widget.projectDesc,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontSize: 22.0 + ((width > 1500.0) ? width / 220.0 : 0),
+                ),
               ),
-            ),
-            ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: 20.0,
-                maxHeight: 30.0,
+              ConstrainedBox(
+                constraints: const BoxConstraints(
+                  minHeight: 20.0,
+                  maxHeight: 30.0,
+                ),
               ),
-            ),
-            ProjectButtonBar(widget.designURL, widget.appURL),
-          ],
+              ProjectButtonBar(
+                widget.designURL,
+                widget.appURL,
+                (MediaQuery.of(context).size.width > 230.0),
+              ),
+            ],
+          ),
         ),
-      ),
-    );
-  }
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -103,10 +88,7 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 40.0),
-          child: Divider(
-              // indent: width / 5.0,
-              // endIndent: width / 5.0,
-              ),
+          child: const Divider(),
         ),
         Text(
           widget.projectName,
@@ -119,14 +101,14 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Expanded(child: _preview(height, width)),
+              Expanded(child: _preview(width)),
               SizedBox(width: width * 0.05),
               Expanded(child: _description(width)),
             ],
           )
         else ...[
           _description(width),
-          _preview(height, width),
+          _preview(width),
         ],
       ],
     );

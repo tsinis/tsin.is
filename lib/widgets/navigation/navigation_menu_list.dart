@@ -1,38 +1,40 @@
 import 'package:flutter/material.dart';
 
-import '../../extensions/hover_extensions.dart';
+import '../../extensions/navigation_menu_extensions.dart';
+import '../../services/orientation_detector.dart';
 import '../../generated/l10n.dart';
+import 'navigation_menu_items.dart';
 
-List<Widget> navigationMenuList(BuildContext context) {
-  return <Widget>[
-    GestureDetector(
-      // behavior: HitTestBehavior.translucent,
-      onTap: () => print('About Click'),
-      child: Text(
-        S.of(context).about,
-      ).showCursorOnHover.moveUpOnHover,
-    ),
-    SizedBox(
-      width: 30.0,
-      height: 20.0,
-    ),
-    GestureDetector(
-      // behavior: HitTestBehavior.translucent,
-      onTap: () => print('Portfolio Click'),
-      child: Text(
-        S.of(context).portfolio,
-      ).showCursorOnHover.moveUpOnHover,
-    ),
-    SizedBox(
-      width: 30.0,
-      height: 20.0,
-    ),
-    GestureDetector(
-      // behavior: HitTestBehavior.translucent,
-      onTap: () => print('Contacts Click'),
-      child: Text(
-        S.of(context).contacts,
-      ).showCursorOnHover.moveUpOnHover,
-    ),
-  ];
+class NavigationMenu extends StatelessWidget {
+  const NavigationMenu(this.scrollController, [this.columnNotRow = true]);
+
+  final bool columnNotRow;
+  final ScrollController scrollController;
+
+  @override
+  Widget build(BuildContext context) => OrientationSwitcher(
+        columnNotRow: columnNotRow,
+        children: <Widget>[
+          MenuItem(
+            menuItem: S.of(context).about,
+            onTap: () => Menu.about.scrollTo(context, scrollController),
+          ),
+          ConstrainedBox(
+            constraints: const BoxConstraints(
+                maxHeight: double.infinity, minHeight: 8.5, minWidth: 30.0),
+          ),
+          MenuItem(
+            menuItem: S.of(context).portfolio,
+            onTap: () => Menu.portfolio.scrollTo(context, scrollController),
+          ),
+          ConstrainedBox(
+            constraints: const BoxConstraints(
+                maxHeight: double.infinity, minHeight: 8.5, minWidth: 30.0),
+          ),
+          MenuItem(
+            menuItem: S.of(context).contacts,
+            onTap: () => Menu.contacts.scrollTo(context, scrollController),
+          ),
+        ],
+      );
 }

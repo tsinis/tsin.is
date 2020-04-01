@@ -15,12 +15,16 @@ class MainText extends StatelessWidget {
     double shortestSide = MediaQuery.of(context).size.shortestSide;
     return Column(
       children: <Widget>[
-        SizedBox(height: shortestSide / 9.0 - ((height < 351.0) ? 22.0 : 0)),
-        Text(S.of(context).greeting,
-            style: Theme.of(context)
-                .textTheme
-                .bodyText2
-                .copyWith(color: Theme.of(context).backgroundColor)),
+        SizedBox(
+          height: shortestSide / 9.0 - ((height < 351.0) ? 22.0 : 0),
+        ),
+        Text(
+          S.of(context).greeting,
+          style: Theme.of(context)
+              .textTheme
+              .bodyText2
+              .copyWith(color: Theme.of(context).backgroundColor),
+        ),
         SizedBox(height: shortestSide / 100.0),
         Container(
           margin: EdgeInsets.all(shortestSide / 20.0),
@@ -39,13 +43,6 @@ class MainText extends StatelessWidget {
         ),
         SizedBox(height: height / 4.0),
         Icon(Icons.arrow_downward, color: Theme.of(context).accentColor),
-        // SizedBox(height: 20),
-        // Text(
-        //   'SCROLL DOWN',
-        //   style: Theme.of(context).textTheme.caption.copyWith(
-        //         color: Colors.grey[600],
-        //       ),
-        // ),
       ],
     );
   }

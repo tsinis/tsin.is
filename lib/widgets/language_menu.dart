@@ -23,9 +23,10 @@ class LanguageMenu<String> extends PopupMenuButton<String> {
                   ? SizedBox(height: 0)
                   : Text(
                       language,
-                      style: TextStyle(color: Colors.grey[700]),
-                    )
-              // : null,
+                      style: TextStyle(
+                        color: Colors.grey[700],
+                      ),
+                    ),
             ],
           ),
         );
@@ -38,22 +39,22 @@ class LanguageMenu<String> extends PopupMenuButton<String> {
 const List<PopupMenuEntry<String>> _languageMenu = [
   const PopupMenuItem<String>(
     value: 'de',
-    child: Center(child: Text('Deutsch')),
+    child: const Center(child: const Text('Deutsch')),
   ),
   const PopupMenuItem<String>(
     value: 'en',
-    child: Center(child: Text('English')),
+    child: const Center(child: const Text('English')),
   ),
   const PopupMenuItem<String>(
     value: 'sk',
-    child: Center(child: Text('Slovenčina')),
+    child: const Center(child: const Text('Slovenčina')),
   ),
   const PopupMenuItem<String>(
     value: 'cs',
-    child: Center(child: Text('Čeština')),
+    child: const Center(child: const Text('Čeština')),
   ),
   const PopupMenuItem<String>(
     value: 'ru',
-    child: Center(child: Text('Русский')),
+    child: const Center(child: const Text('Русский')),
   ),
 ];

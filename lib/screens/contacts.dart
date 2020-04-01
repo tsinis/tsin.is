@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../widgets/social_icons.dart';
 import '../widgets/websites.dart';
 import '../generated/l10n.dart';
@@ -23,6 +24,7 @@ class Contact extends StatelessWidget {
             SizedBox(height: height * 0.025),
             Wrap(
               alignment: WrapAlignment.center,
+              spacing: 5.0,
               children: <Widget>[
                 Website('LinkedIn.com/in/'),
                 Website('GitHub.com/'),

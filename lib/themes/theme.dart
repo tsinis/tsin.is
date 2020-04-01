@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class MyTheme {
-  static const String _displayFont = 'Hagrid', _textFont = '$_displayFont Text';
   static final ThemeData defaultTheme = _buildTheme();
+
+  static const String _displayFont = 'Hagrid', _textFont = '$_displayFont Text';
 
   static ThemeData _buildTheme() {
     final ThemeData _theme = ThemeData.light();
