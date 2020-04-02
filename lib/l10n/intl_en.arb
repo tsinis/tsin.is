@@ -14,6 +14,8 @@
     "projectsPortfolio": "projects and repositories.",
     "flutterClock": "This project is one of the winning submissions in Official Google's & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).",
     "helloDribbble": "Interactive animations showcase project, I've made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”).",
+    "tongueTwisters": "Tongue Twisters",
+    "tongueTwistersDesc": "Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations).",
     "thisWeb": "This Website",
     "thisWebDesc": "Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.",
     "contactsDesc": "Physically in the city of Brno, on the internets, I'm known as a “tsinis”:",

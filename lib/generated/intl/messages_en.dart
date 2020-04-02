@@ -20,35 +20,27 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static _notInlinedMessages(_) => <String, Function>{
-        "about": MessageLookupByLibrary.simpleMessage("About"),
-        "contacts": MessageLookupByLibrary.simpleMessage("Contacts"),
-        "contactsDesc": MessageLookupByLibrary.simpleMessage(
-            "Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:"),
-        "devAndDesigner": MessageLookupByLibrary.simpleMessage(
-            "Flutter Developer & Designer"),
-        "email": MessageLookupByLibrary.simpleMessage(
-            "or just simply write me the good old e-mail here:"),
-        "findInPortfolio":
-            MessageLookupByLibrary.simpleMessage("Here you can find"),
-        "flutterClock": MessageLookupByLibrary.simpleMessage(
-            "This project is one of the winning submissions in Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide)."),
-        "fullName": MessageLookupByLibrary.simpleMessage("Roman Cinis"),
-        "greeting": MessageLookupByLibrary.simpleMessage("Hello there, I\'m"),
-        "helloDribbble": MessageLookupByLibrary.simpleMessage(
-            "Interactive animations showcase project, I\'ve made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”)."),
-        "iAm": MessageLookupByLibrary.simpleMessage(
-            "I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!"),
-        "language": MessageLookupByLibrary.simpleMessage("Language"),
-        "portfolio": MessageLookupByLibrary.simpleMessage("Portfolio"),
-        "projectsPortfolio":
-            MessageLookupByLibrary.simpleMessage("projects and repositories."),
-        "selectLang":
-            MessageLookupByLibrary.simpleMessage("select your language"),
-        "socilalNetworks": MessageLookupByLibrary.simpleMessage(""),
-        "somePortfilio": MessageLookupByLibrary.simpleMessage("some of my "),
-        "thisWeb": MessageLookupByLibrary.simpleMessage("This Website"),
-        "thisWebDesc": MessageLookupByLibrary.simpleMessage(
-            "Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.")
-      };
+  static _notInlinedMessages(_) => <String, Function> {
+    "about" : MessageLookupByLibrary.simpleMessage("About"),
+    "contacts" : MessageLookupByLibrary.simpleMessage("Contacts"),
+    "contactsDesc" : MessageLookupByLibrary.simpleMessage("Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:"),
+    "devAndDesigner" : MessageLookupByLibrary.simpleMessage("Flutter Developer & Designer"),
+    "email" : MessageLookupByLibrary.simpleMessage("or just simply write me the good old e-mail here:"),
+    "findInPortfolio" : MessageLookupByLibrary.simpleMessage("Here you can find"),
+    "flutterClock" : MessageLookupByLibrary.simpleMessage("This project is one of the winning submissions in Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide)."),
+    "fullName" : MessageLookupByLibrary.simpleMessage("Roman Cinis"),
+    "greeting" : MessageLookupByLibrary.simpleMessage("Hello there, I\'m"),
+    "helloDribbble" : MessageLookupByLibrary.simpleMessage("Interactive animations showcase project, I\'ve made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”)."),
+    "iAm" : MessageLookupByLibrary.simpleMessage("I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!"),
+    "language" : MessageLookupByLibrary.simpleMessage("Language"),
+    "portfolio" : MessageLookupByLibrary.simpleMessage("Portfolio"),
+    "projectsPortfolio" : MessageLookupByLibrary.simpleMessage("projects and repositories."),
+    "selectLang" : MessageLookupByLibrary.simpleMessage("select your language"),
+    "socilalNetworks" : MessageLookupByLibrary.simpleMessage(""),
+    "somePortfilio" : MessageLookupByLibrary.simpleMessage("some of my "),
+    "thisWeb" : MessageLookupByLibrary.simpleMessage("This Website"),
+    "thisWebDesc" : MessageLookupByLibrary.simpleMessage("Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive."),
+    "tongueTwisters" : MessageLookupByLibrary.simpleMessage("Tongue Twisters"),
+    "tongueTwistersDesc" : MessageLookupByLibrary.simpleMessage("Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations).")
+  };
 }

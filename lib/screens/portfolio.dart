@@ -77,7 +77,7 @@ class _PortfolioState extends State<Portfolio>
                 pathToImage: 'assets/images/clock.jpg',
                 projectDesc: S.of(context).flutterClock,
                 designURL: 'vimeo.com/tsinis/flutterclock',
-                appURL: 'play.google.com/store/apps',
+                appURL: 'github.com/tsinis/flutter_clock',
               ),
               Project(
                 projectName: 'Hello Dribbble',
@@ -88,11 +88,17 @@ class _PortfolioState extends State<Portfolio>
                 appURL: 'github.com/tsinis/hello_dribbble',
               ),
               Project(
+                projectName: S.of(context).tongueTwisters,
+                pathToImage: 'assets/images/clock.jpg',
+                projectDesc: S.of(context).tongueTwistersDesc,
+                designURL: 'dribbble.com/shots/',
+                appURL: 'play.google.com/store/apps/',
+              ),
+              Project(
                 projectName: S.of(context).thisWeb,
                 pathToImage: 'assets/images/header.gif',
                 projectDesc: S.of(context).thisWebDesc,
-                designURL:
-                    'dribbble.com/shots/10772196-hello-dribbble-interactive-animation',
+                designURL: 'dribbble.com/shots/',
                 appURL: 'github.com/tsinis/hello_dribbble',
               ),
               SizedBox(height: height * 0.1),
