@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 const _footerTextStyle = const TextStyle(
   fontFamily: 'Roboto',
-  fontWeight: FontWeight.w100,
+  // fontWeight: FontWeight.w100,
   fontSize: 12.0,
 );
 

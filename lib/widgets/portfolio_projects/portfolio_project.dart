@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/portfolio_projects/project_preview.dart';
-import '../widgets/portfolio_projects/project_buttons.dart';
-import '../animations/entrance_fader.dart';
+import 'project_preview.dart';
+import 'project_buttons.dart';
+import '../../animations/entrance_fader.dart';
 
 class Project extends StatefulWidget {
   const Project(

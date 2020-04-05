@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'dart:math' show max;
 
 import 'package:flutter/material.dart';
@@ -25,6 +26,12 @@ class MyApp extends StatelessWidget {
             child: child),
         localizationsDelegates: [S.delegate],
         supportedLocales: S.delegate.supportedLocales,
+        localeResolutionCallback:
+            (Locale locale, Iterable<Locale> supportedLocales) {
+          S.load(Locale(locale.languageCode));
+          print(window.location);
+          return locale;
+        },
         debugShowCheckedModeBanner: false,
         theme: MyTheme.defaultTheme,
         home: _MyHomePage(),

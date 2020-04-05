@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../generated/l10n.dart';
 import '../../services/url_click.dart';
 import '../social_icons.dart';
 import '../../extensions/hover_extensions.dart';
@@ -47,7 +48,7 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text((tooTight ? 'See ' : '') + 'in Action'),
+                        Text((tooTight ? S.of(context).see + ' ' : '') + S.of(context).inAction),
                       ],
                     ),
                   ).showCursorOnHover
@@ -55,7 +56,7 @@ class ProjectButtonBar extends ButtonBar {
                     borderSide: BorderSide(width: 4.8, color: Colors.pink[600]),
                     highlightedBorderColor: Colors.pink[200],
                     hoverColor: Colors.pink.withOpacity(0.1),
-                    textColor: Colors.pink[300],
+                    textColor: Colors.pink[400],
                     color: Colors.pink,
                     onPressed: () => click(designURL),
                     child: Row(
@@ -71,7 +72,7 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text((tooTight ? 'See ' : '') + 'the Design'),
+                        Text((tooTight ? S.of(context).see + ' ' : '') + S.of(context).theDesign),
                       ],
                     ),
                   ).showCursorOnHover,
@@ -95,7 +96,7 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 10.0,
                           ),
                         ),
-                        Text((tooTight ? 'Check ' : '') + 'the Code'),
+                        Text((tooTight ? S.of(context).check + ' ' : '') + S.of(context).theCode),
                       ]
                     : <Widget>[
                         Icon(

@@ -24,7 +24,9 @@ class ProjectPreview extends StatelessWidget {
               children: <Widget>[
                 AspectRatio(
                   aspectRatio: 5 / 3.4,
-                  child: AnimatedBackground(),
+                  child: Container(
+                      color: Theme.of(context).primaryColor,
+                      child: AnimatedBackground()),
                 ),
                 FractionallySizedBox(
                   widthFactor: 0.7,
@@ -37,7 +39,7 @@ class ProjectPreview extends StatelessWidget {
                       // softWrap: true,
                       style: Theme.of(context).textTheme.headline6.copyWith(
                           fontSize: 60.0,
-                          color: Theme.of(context).primaryColorDark),
+                          color: Theme.of(context).accentColor),
                     ),
                   ),
                 )

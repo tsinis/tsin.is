@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import '../widgets/portfolio_projects/portfolio_project.dart';
 
 import '../generated/l10n.dart';
-import '../animations/portfolio_project.dart';
 
 class Portfolio extends StatefulWidget {
   @override
@@ -40,10 +40,10 @@ class _PortfolioState extends State<Portfolio>
         style: Theme.of(context).textTheme.headline2,
         children: [
           TextSpan(
-            text: S.of(context).findInPortfolio,
+            text: S.of(context).findInPortfolio + ' ',
           ),
           TextSpan(
-            text: S.of(context).somePortfilio,
+            text: S.of(context).somePortfilio + ' ',
           ),
           TextSpan(
             text: S.of(context).projectsPortfolio,

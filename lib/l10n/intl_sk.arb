@@ -1,3 +1,103 @@
 {
-    "@@locale": "sk"
+  "@@locale" : "sk",
+  "about" : "O mne",
+  "@about" : {
+    "type" : "text"
+  },
+  "check" : "Skúmať",
+  "@check" : {
+    "type" : "text"
+  },
+  "contacts" : "Kontakty",
+  "@contacts" : {
+    "type" : "text"
+  },
+  "contactsDesc" : "Fyzicky som v Brne, na internete, známy skôr ako „tsinis“:",
+  "@contactsDesc" : {
+    "type" : "text"
+  },
+  "devAndDesigner" : "Flutter vývojár a grafik",
+  "@devAndDesigner" : {
+    "type" : "text"
+  },
+  "email" : "alebo mi jednoducho napíšte starý dobrý e-mail:",
+  "@email" : {
+    "type" : "text"
+  },
+  "findInPortfolio" : "Tu nájdete",
+  "@findInPortfolio" : {
+    "type" : "text"
+  },
+  "flutterClock" : "Tento projekt je jedným z víťazov v spoločnej vývojárske/dizajn súťaži firiem Google a Lenovo, pod názvom \"Flutter Clock\" (sa skoro tisíckou príspevkov z celého sveta).",
+  "@flutterClock" : {
+    "type" : "text"
+  },
+  "fullName" : "Roman Cinis",
+  "@fullName" : {
+    "type" : "text"
+  },
+  "greeting" : "Vitajte, som",
+  "@greeting" : {
+    "type" : "text"
+  },
+  "helloDribbble" : "Toto je projekt ukazujúce Interaktívne animácie, ktoré som vytvoril ako svoj Debut na legendárnom Dribbble, potom čo som, nedávno, dostal vytúžené pozvaní.",
+  "@helloDribbble" : {
+    "type" : "text"
+  },
+  "iAm" : "Som oceneným „T-shaped“ špecialistom ako Flutter vývojár a grafik, s veľkou láskou k interaktívnym animáciám a dobrému UX. Urobme niečo úžasné spoločne!",
+  "@iAm" : {
+    "type" : "text"
+  },
+  "inAction" : "v akcii",
+  "@inAction" : {
+    "type" : "text"
+  },
+  "language" : "Jazyk",
+  "@language" : {
+    "type" : "text"
+  },
+  "portfolio" : "Portfólio",
+  "@portfolio" : {
+    "type" : "text"
+  },
+  "projectsPortfolio" : "projektov a repozitárov.",
+  "@projectsPortfolio" : {
+    "type" : "text"
+  },
+  "see" : "Pozrieť",
+  "@see" : {
+    "type" : "text"
+  },
+  "selectLang" : "select your language",
+  "@selectLang" : {
+    "type" : "text"
+  },
+  "somePortfilio" : "niektoré z mojich",
+  "@somePortfilio" : {
+    "type" : "text"
+  },
+  "theCode" : "kód",
+  "@theCode" : {
+    "type" : "text"
+  },
+  "theDesign" : "dizajn",
+  "@theDesign" : {
+    "type" : "text"
+  },
+  "thisWeb" : "Táto webová stránka",
+  "@thisWeb" : {
+    "type" : "text"
+  },
+  "thisWebDesc" : "Samozrejmé, že celý tento web je vytvorený vo Flutter a je napísaný na čistom Dart. Závislosť jednej a jediné, tretie strany je animácia v sekcii \"O mne\", ktorá bola vytvorená v Rive.",
+  "@thisWebDesc" : {
+    "type" : "text"
+  },
+  "tongueTwisters" : "Jazykolamy",
+  "@tongueTwisters" : {
+    "type" : "text"
+  },
+  "tongueTwistersDesc" : "Aplikácia pre testovanie jazykolamov, so zameraním na dizajn. Vytvorené v spolupráci s ilustrátorom - preto licencie mi neumožňuje otvoriť zdroj (tj. aj ilustrácie).",
+  "@tongueTwistersDesc" : {
+    "type" : "text"
+  }
 }

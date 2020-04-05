@@ -27,24 +27,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  String get language {
-    return Intl.message(
-      'Language',
-      name: 'language',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get selectLang {
-    return Intl.message(
-      'select your language',
-      name: 'selectLang',
-      desc: '',
-      args: [],
-    );
-  }
-
   String get about {
     return Intl.message(
       'About',
@@ -54,10 +36,10 @@ class S {
     );
   }
 
-  String get portfolio {
+  String get check {
     return Intl.message(
-      'Portfolio',
-      name: 'portfolio',
+      'Check ',
+      name: 'check',
       desc: '',
       args: [],
     );
@@ -72,10 +54,10 @@ class S {
     );
   }
 
-  String get greeting {
+  String get contactsDesc {
     return Intl.message(
-      'Hello there, I\'m',
-      name: 'greeting',
+      'Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:',
+      name: 'contactsDesc',
       desc: '',
       args: [],
     );
@@ -90,19 +72,10 @@ class S {
     );
   }
 
-  String get fullName {
+  String get email {
     return Intl.message(
-      'Roman Cinis',
-      name: 'fullName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get iAm {
-    return Intl.message(
-      'I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!',
-      name: 'iAm',
+      'or just simply write me the good old e-mail here:',
+      name: 'email',
       desc: '',
       args: [],
     );
@@ -117,28 +90,28 @@ class S {
     );
   }
 
-  String get somePortfilio {
-    return Intl.message(
-      'some of my ',
-      name: 'somePortfilio',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get projectsPortfolio {
-    return Intl.message(
-      'projects and repositories.',
-      name: 'projectsPortfolio',
-      desc: '',
-      args: [],
-    );
-  }
-
   String get flutterClock {
     return Intl.message(
       'This project is one of the winning submissions in Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).',
       name: 'flutterClock',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get fullName {
+    return Intl.message(
+      'Roman Cinis',
+      name: 'fullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get greeting {
+    return Intl.message(
+      'Hello there, I\'m',
+      name: 'greeting',
       desc: '',
       args: [],
     );
@@ -153,19 +126,91 @@ class S {
     );
   }
 
-  String get tongueTwisters {
+  String get iAm {
     return Intl.message(
-      'Tongue Twisters',
-      name: 'tongueTwisters',
+      'I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!',
+      name: 'iAm',
       desc: '',
       args: [],
     );
   }
 
-  String get tongueTwistersDesc {
+  String get inAction {
     return Intl.message(
-      'Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations).',
-      name: 'tongueTwistersDesc',
+      'in Action',
+      name: 'inAction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get language {
+    return Intl.message(
+      'Language',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get portfolio {
+    return Intl.message(
+      'Portfolio',
+      name: 'portfolio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get projectsPortfolio {
+    return Intl.message(
+      'projects and repositories.',
+      name: 'projectsPortfolio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get see {
+    return Intl.message(
+      'See ',
+      name: 'see',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get selectLang {
+    return Intl.message(
+      'select your language',
+      name: 'selectLang',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get somePortfilio {
+    return Intl.message(
+      'some of my ',
+      name: 'somePortfilio',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get theCode {
+    return Intl.message(
+      'the Code',
+      name: 'theCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get theDesign {
+    return Intl.message(
+      'the Design',
+      name: 'theDesign',
       desc: '',
       args: [],
     );
@@ -189,28 +234,19 @@ class S {
     );
   }
 
-  String get contactsDesc {
+  String get tongueTwisters {
     return Intl.message(
-      'Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:',
-      name: 'contactsDesc',
+      'Tongue Twisters',
+      name: 'tongueTwisters',
       desc: '',
       args: [],
     );
   }
 
-  String get email {
+  String get tongueTwistersDesc {
     return Intl.message(
-      'or just simply write me the good old e-mail here:',
-      name: 'email',
-      desc: '',
-      args: [],
-    );
-  }
-
-  String get socilalNetworks {
-    return Intl.message(
-      '',
-      name: 'socilalNetworks',
+      'Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations).',
+      name: 'tongueTwistersDesc',
       desc: '',
       args: [],
     );

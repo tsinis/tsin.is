@@ -15,7 +15,7 @@ class About extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Text(
-            'Roman Cinis',
+            S.of(context).fullName,
             style: Theme.of(context).textTheme.headline3.copyWith(
                   fontSize:
                       30.0 + (MediaQuery.of(context).size.shortestSide / 100.0),
