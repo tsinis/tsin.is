@@ -48,7 +48,8 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text((tooTight ? S.of(context).see + ' ' : '') + S.of(context).inAction),
+                        Text((tooTight ? S.of(context).see + ' ' : '') +
+                            S.of(context).inAction),
                       ],
                     ),
                   ).showCursorOnHover
@@ -72,7 +73,8 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text((tooTight ? S.of(context).see + ' ' : '') + S.of(context).theDesign),
+                        Text((tooTight ? S.of(context).see + ' ' : '') +
+                            S.of(context).theDesign),
                       ],
                     ),
                   ).showCursorOnHover,
@@ -96,7 +98,8 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 10.0,
                           ),
                         ),
-                        Text((tooTight ? S.of(context).check + ' ' : '') + S.of(context).theCode),
+                        Text((tooTight ? S.of(context).check + ' ' : '') +
+                            S.of(context).theCode),
                       ]
                     : <Widget>[
                         Icon(

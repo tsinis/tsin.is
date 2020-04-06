@@ -38,8 +38,7 @@ class ProjectPreview extends StatelessWidget {
                       // maxLines: 3,
                       // softWrap: true,
                       style: Theme.of(context).textTheme.headline6.copyWith(
-                          fontSize: 60.0,
-                          color: Theme.of(context).accentColor),
+                          fontSize: 60.0, color: Theme.of(context).accentColor),
                     ),
                   ),
                 )

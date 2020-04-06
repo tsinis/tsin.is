@@ -1,9 +1,10 @@
-import 'dart:html';
-import 'dart:math' show max;
+import 'dart:math' show max, min, pi;
 
 import 'package:flutter/material.dart';
 
 import 'animations/background.dart';
+import 'widgets/circular_text.dart';
+import 'widgets/navigation/scroll_progress_bar.dart';
 import 'widgets/navigation/side_menu.dart';
 import 'screens/footer.dart';
 import 'screens/contacts.dart';
@@ -26,12 +27,6 @@ class MyApp extends StatelessWidget {
             child: child),
         localizationsDelegates: [S.delegate],
         supportedLocales: S.delegate.supportedLocales,
-        localeResolutionCallback:
-            (Locale locale, Iterable<Locale> supportedLocales) {
-          S.load(Locale(locale.languageCode));
-          print(window.location);
-          return locale;
-        },
         debugShowCheckedModeBanner: false,
         theme: MyTheme.defaultTheme,
         home: _MyHomePage(),
@@ -64,7 +59,7 @@ class _MyHomePageState extends State<_MyHomePage> {
 
   double get height => MediaQuery.of(context).size.height;
 
-  bool get _isSamartPhone =>
+  bool get _isSmartPhone =>
       (MediaQuery.of(context).size.width < 646.5 || offset > height);
 
   Color get _grey => Theme.of(context).primaryColor;
@@ -122,36 +117,62 @@ class _MyHomePageState extends State<_MyHomePage> {
               color: _grey,
             ),
           ),
-          Scrollbar(
-            child: ListView(
-              scrollDirection: scrollDirection,
-              cacheExtent: double.infinity,
-              controller: scrollController,
-              children: <Widget>[
-                Container(height: height),
-                Container(
-                  height: 100.0,
-                  color: _grey,
-                ),
-                Container(
-                  color: _grey,
-                  child: About(),
-                ),
-                Portfolio(),
-                Contact(),
-                Footer()
-              ],
-            ),
+          ListView(
+            scrollDirection: scrollDirection,
+            cacheExtent: double.infinity,
+            controller: scrollController,
+            children: <Widget>[
+              Container(height: height),
+              Container(
+                height: 100.0,
+                color: _grey,
+              ),
+              Container(
+                color: _grey,
+                child: About(),
+              ),
+              Portfolio(),
+              Contact(),
+              Footer()
+            ],
           ),
+          Positioned(
+            right: -(height / 3.0),
+            top: height / 2.0,
+            height: 2.0,
+            width: height * 0.75,
+            child: scrollController.hasClients
+                ? ScrollProgress(
+                    height: height,
+                    offset: offset,
+                    scrollController: scrollController)
+                : Container(),
+          ),
+          (height > MediaQuery.of(context).size.width)
+              ? Container()
+              : Positioned(
+                  left: 80,
+                  bottom: 70,
+                  child: CircularText(
+                    textStyle: Theme.of(context).textTheme.overline.copyWith(
+                          fontSize: 10,
+                          color: Colors.white.withOpacity(
+                            min(offset / 1000, 0.3),
+                          ),
+                        ),
+                    startAngle: -pi / 2.0 + offset / 500,
+                  ),
+                ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Opacity(
                 opacity: max(0, 1.0 - offset / height),
                 child: Padding(
                   padding: EdgeInsets.only(
-                      top: 30.0, left: _isSamartPhone ? 30.0 : 50.0),
+                      top: 30.0, left: _isSmartPhone ? 30.0 : 50.0),
                   child: LanguageMenu(
-                    isSmartphone: _isSamartPhone,
+                    isSmartphone: _isSmartPhone,
                     language: S.of(context).language,
                     tooltip: S.of(context).selectLang,
                     onSelected: (String value) => setState(() {
@@ -160,11 +181,10 @@ class _MyHomePageState extends State<_MyHomePage> {
                   ).showCursorOnHover,
                 ),
               ),
-              Spacer(),
               Padding(
                 padding: EdgeInsets.only(
-                    top: 30.0, right: _isSamartPhone ? 20.0 : 50.0),
-                child: _isSamartPhone
+                    top: 30.0, right: _isSmartPhone ? 20.0 : 50.0),
+                child: _isSmartPhone
                     ? IconButton(
                         icon: Icon(Icons.menu),
                         color: Theme.of(context).accentColor,
