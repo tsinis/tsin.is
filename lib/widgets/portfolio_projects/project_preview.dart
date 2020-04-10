@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
 import '../../animations/background.dart';
+import '../../extensions/hover_extensions.dart';
 
 class ProjectPreview extends StatelessWidget {
   ProjectPreview(this.pathToImage);
@@ -18,7 +19,7 @@ class ProjectPreview extends StatelessWidget {
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: (pathToImage != 'assets/images/header.gif')
-          ? Image.asset(pathToImage)
+          ? Image.asset(pathToImage).zoomInOnHover
           : Stack(
               alignment: Alignment.center,
               children: <Widget>[
@@ -29,6 +30,7 @@ class ProjectPreview extends StatelessWidget {
                       child: AnimatedBackground()),
                 ),
                 FractionallySizedBox(
+                  alignment: FractionalOffset.bottomRight,
                   widthFactor: 0.7,
                   child: FittedBox(
                     // fit: BoxFit.contain,
@@ -43,7 +45,7 @@ class ProjectPreview extends StatelessWidget {
                   ),
                 )
               ],
-            ),
+            ).zoomInOnHover,
     );
   }
 }
