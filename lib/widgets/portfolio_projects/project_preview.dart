@@ -24,7 +24,7 @@ class ProjectPreview extends StatelessWidget {
               alignment: Alignment.center,
               children: <Widget>[
                 AspectRatio(
-                  aspectRatio: 5 / 3.4,
+                  aspectRatio: 5 / 3,
                   child: Container(
                       color: Theme.of(context).primaryColor,
                       child: AnimatedBackground()),

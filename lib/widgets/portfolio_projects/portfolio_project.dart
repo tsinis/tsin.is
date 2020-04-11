@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'project_preview.dart';
 import 'project_buttons.dart';
+import '../../services/height_detector.dart';
 import '../../animations/entrance_fader.dart';
 
 class Project extends StatefulWidget {
@@ -49,41 +50,47 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
         child: ProjectPreview(widget.pathToImage),
       );
 
-  EntranceFader _description(double width) => EntranceFader(
-        offset: Offset(width / 2.0, 0),
+  EntranceFader _description(double widthProvided, [double heightProvided]) => EntranceFader(
+        offset: Offset(widthProvided / 2.0, 0),
         child: Padding(
           padding: const EdgeInsets.only(top: 40.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Text(
-                widget.projectDesc,
-                textAlign: TextAlign.justify,
-                style: TextStyle(
-                  fontSize: 22.0 + ((width > 1500.0) ? width / 220.0 : 0),
+          child: HeightContainer(
+            heightProvided: heightProvided,
+            widthProvided: widthProvided,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Text(
+                  widget.projectDesc,
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 22.0
+                      //  + ((width > 1500.0) ? width / 2000.0 : 0),
+                      ),
                 ),
-              ),
-              ConstrainedBox(
-                constraints: const BoxConstraints(
-                  minHeight: 20.0,
-                  maxHeight: 30.0,
+                // ConstrainedBox(
+                //   constraints: const BoxConstraints(
+                //     minHeight: 1.0,
+                //     maxHeight: 20.0,
+                //   ),
+                // ),
+                ProjectButtonBar(
+                  widget.designURL,
+                  widget.appURL,
+                  (MediaQuery.of(context).size.width > 230.0),
                 ),
-              ),
-              ProjectButtonBar(
-                widget.designURL,
-                widget.appURL,
-                (MediaQuery.of(context).size.width > 230.0),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       );
-
+  // double get height => MediaQuery.of(context).size.height;
+  // double get width => MediaQuery.of(context).size.width;
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+
+  double  _height = MediaQuery.of(context).size.height;
+  double  _width = MediaQuery.of(context).size.width;
     return Column(
       children: <Widget>[
         Padding(
@@ -94,21 +101,24 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
           widget.projectName,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.headline2.copyWith(
-                fontSize: 33.0 + width / 1000.0,
+                fontSize: 33.0 + _width / 1000.0,
               ),
         ),
-        if (width / 1.775 > height && width > 1019.0)
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Expanded(child: _preview(width)),
-              SizedBox(width: width * 0.05),
-              Expanded(child: _description(width)),
-            ],
+        if (_width / 1.775 > _height && _width > 1019.0)
+          Container(
+            height: _height / 2,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Flexible(child: _preview(_width)),
+                SizedBox(width: _width * 0.05),
+                Flexible(child: _description(_width, _height)),
+              ],
+            ),
           )
         else ...[
-          _description(width),
-          _preview(width),
+          _description(_width),
+          _preview(_width),
         ],
       ],
     );
