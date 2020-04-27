@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../extensions/hover_extensions.dart';
 import '../generated/l10n.dart';
-import '../widgets/social_icons.dart';
+import '../generated/social_icons.dart';
 import '../widgets/websites.dart';
 
 class Contact extends StatelessWidget {

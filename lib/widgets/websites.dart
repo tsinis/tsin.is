@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../extensions/hover_extensions.dart';
+import '../generated/social_icons.dart';
 import '../services/url_click.dart';
-import '../widgets/social_icons.dart';
 
 class Website extends StatelessWidget {
   Website(this.url, [Key key]) : super(key: key);

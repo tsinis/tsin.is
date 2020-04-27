@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../generated/l10n.dart';
+import '../generated/social_icons.dart';
 import '../services/orientation_detector.dart';
-import '../widgets/social_icons.dart';
 
 class About extends StatelessWidget {
   const About({Key key}) : super(key: key);

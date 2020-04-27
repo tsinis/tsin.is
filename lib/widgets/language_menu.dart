@@ -18,7 +18,7 @@ class LanguageMenu<String> extends StatelessWidget {
   @required
   final PopupMenuItemSelected<String> onSelected;
 
-  static const Map _languagesMap = {
+  static const Map _languagesMap = <dynamic, dynamic>{
     'cs': 'Čeština',
     'de': 'Deutsch',
     'en': 'English',
@@ -33,19 +33,18 @@ class LanguageMenu<String> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopupMenuButton(
-      itemBuilder: (context) {
-        Map languagesMap = _languagesMap;
-        return languagesMap
-            .map(
-              (_languageCode, _langugeName) => MapEntry(
-                _languageCode,
-                PopupMenuItem<String>(
-                  value: (_languageCode),
-                  child: Center(
-                    child: Text(_langugeName.toString()),
+      itemBuilder: (_) {
+        return _languagesMap
+            .map<String, PopupMenuItem<String>>(
+              (dynamic _langCode, dynamic _langName) {
+                return MapEntry<String, PopupMenuItem<String>>(
+                  _langCode as String,
+                  PopupMenuItem<String>(
+                    value: _langCode as String,
+                    child: Center(child: Text(_langName.toString())),
                   ),
-                ),
-              ),
+                );
+              },
             )
             .values
             .toList();

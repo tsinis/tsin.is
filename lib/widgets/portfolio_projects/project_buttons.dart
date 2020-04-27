@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../extensions/hover_extensions.dart';
 import '../../generated/l10n.dart';
+import '../../generated/social_icons.dart';
 import '../../services/url_click.dart';
-import '../social_icons.dart';
 
 class ProjectButtonBar extends ButtonBar {
   const ProjectButtonBar(this.designURL, this.appURL, {this.tooTight, Key key})

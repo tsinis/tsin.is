@@ -169,8 +169,8 @@ class _MyHomePageState extends State<_MyHomePage> {
                       isSmartphone: _isSmartPhone,
                       language: S.of(context).language,
                       tooltip: S.of(context).selectLang,
-                      onSelected: (String _selectedLand) => setState(() {
-                        S.load(Locale(_selectedLand));
+                      onSelected: (String _selectedLang) => setState(() {
+                        S.load(Locale(_selectedLang));
                       }),
                     ).showCursorOnHover,
                   ),

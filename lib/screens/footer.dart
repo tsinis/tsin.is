@@ -26,7 +26,7 @@ class Footer extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: _footerTextStyle),
                 Text(' Made with 💙 in ',
-                    strutStyle: const StrutStyle(forceStrutHeight: true),
+                    strutStyle: StrutStyle(forceStrutHeight: true),
                     textAlign: TextAlign.center,
                     style: _footerTextStyle),
                 FlutterLogo(

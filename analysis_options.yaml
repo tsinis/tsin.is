@@ -1,13 +1,11 @@
 # https://dart.dev/guides/language/analysis-options
 
-include: package:pedantic/analysis_options.yaml
-# include: package:effective_dart/analysis_options.yaml
+# include: package:pedantic/analysis_options.yaml
+include: package:effective_dart/analysis_options.yaml
 
 analyzer:
   exclude:
-    - 'lib/generated/**'
-    - 'lib/widgets/language_menu.dart'
-    - 'lib/widgets/social_icons.dart'
+    - 'lib/generated/*'
     - 'example/**'
     - 'build/**'
     - '**.g.dart'
