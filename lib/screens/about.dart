@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../generated/l10n.dart';
 import '../services/orientation_detector.dart';
 import '../widgets/social_icons.dart';
-import '../generated/l10n.dart';
 
 class About extends StatelessWidget {
+  const About({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;

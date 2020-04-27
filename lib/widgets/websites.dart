@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../extensions/hover_extensions.dart';
 import '../services/url_click.dart';
 import '../widgets/social_icons.dart';
-import '../extensions/hover_extensions.dart';
 
 class Website extends StatelessWidget {
-  Website(this.url);
+  Website(this.url, [Key key]) : super(key: key);
 
   final String url;
 
@@ -13,7 +13,7 @@ class Website extends StatelessWidget {
 
   IconData get _icon => _getIcon();
 
-  String get _name => url.substring(0, url.indexOf("."));
+  String get _name => url.substring(0, url.indexOf('.'));
 
   IconData _getIcon() {
     switch (url) {

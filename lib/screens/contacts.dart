@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../extensions/hover_extensions.dart';
+import '../generated/l10n.dart';
 import '../widgets/social_icons.dart';
 import '../widgets/websites.dart';
-import '../generated/l10n.dart';
-import '../extensions/hover_extensions.dart';
 
 class Contact extends StatelessWidget {
+  const Contact({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -49,7 +50,7 @@ class Contact extends StatelessWidget {
                     SocialIcons.mail_alt,
                     color: Theme.of(context).primaryColorLight,
                   ),
-                  onPressed: () => print('Send email'),
+                  onPressed: () => null, //TODO: Add email address.
                 ).showCursorOnHover.moveUpOnHover
               ],
             ),

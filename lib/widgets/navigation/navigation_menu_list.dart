@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 import '../../extensions/navigation_menu_extensions.dart';
-import '../../services/orientation_detector.dart';
 import '../../generated/l10n.dart';
+import '../../services/orientation_detector.dart';
 import 'navigation_menu_items.dart';
 
 class NavigationMenu extends StatelessWidget {
-  const NavigationMenu(this.scrollController, [this.columnNotRow = true]);
+  const NavigationMenu(this.scrollController,
+      {this.columnNotRow = true, Key key})
+      : super(key: key);
 
   final bool columnNotRow;
   final ScrollController scrollController;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ZoomOnHover extends StatefulWidget {
-  ZoomOnHover({this.child});
+  const ZoomOnHover({Key key, this.child}) : super(key: key);
 
   final Widget child;
 
@@ -19,13 +19,11 @@ class _TranslateOnHoverState extends State<ZoomOnHover>
     super.initState();
     _controller =
         AnimationController(duration: const Duration(seconds: 1), vsync: this);
-
   }
   // double get height => MediaQuery.of(context).size.height;
 
   final _hoverTransform = Matrix4.identity()..scale(1.1, 1.1);
   final _nonHoverTransform = Matrix4.identity();
-
 
   void _mouseEnter(bool hovering) => setState(() => _hovering = hovering);
 

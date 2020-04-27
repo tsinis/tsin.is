@@ -24,8 +24,8 @@ class EntranceFader extends StatefulWidget {
 class _EntranceFaderState extends State<EntranceFader>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
-  Animation _dxAnimation;
-  Animation _dyAnimation;
+  Animation<num> _dxAnimation;
+  Animation<num> _dyAnimation;
 
   @override
   void dispose() {
@@ -42,7 +42,7 @@ class _EntranceFaderState extends State<EntranceFader>
     Future.delayed(
       widget.delay,
       () {
-        if (this.mounted) {
+        if (mounted) {
           _controller.forward();
         }
       },
@@ -55,7 +55,8 @@ class _EntranceFaderState extends State<EntranceFader>
         builder: (context, child) => Opacity(
           opacity: _controller.value,
           child: Transform.translate(
-            offset: Offset(_dxAnimation.value, _dyAnimation.value),
+            offset: Offset(
+                _dxAnimation.value.toDouble(), _dyAnimation.value.toDouble()),
             child: widget.child,
           ),
         ),

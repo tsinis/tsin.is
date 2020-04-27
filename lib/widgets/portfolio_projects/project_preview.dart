@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../generated/l10n.dart';
 import '../../animations/background.dart';
 import '../../extensions/hover_extensions.dart';
+import '../../generated/l10n.dart';
 
 class ProjectPreview extends StatelessWidget {
-  ProjectPreview(this.pathToImage);
+  const ProjectPreview(this.pathToImage, [Key key]) : super(key: key);
 
   final String pathToImage;
 
+  @override
   Widget build(BuildContext context) {
     return Card(
       borderOnForeground: false,

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../generated/l10n.dart';
 
 class MainText extends StatelessWidget {
-  const MainText(this.offset);
+  const MainText(this.offset, [Key key]) : super(key: key);
 
   final double offset;
 

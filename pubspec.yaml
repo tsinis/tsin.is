@@ -10,10 +10,11 @@ dependencies:
   flutter_localizations:
         sdk: flutter
 
-
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  # flutter_test:
+  #   sdk: flutter
+  pedantic: any
+  effective_dart: any
 
 flutter:
   uses-material-design: true

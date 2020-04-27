@@ -3,23 +3,24 @@ import 'dart:math' show max, min, pi;
 import 'package:flutter/material.dart';
 
 import 'animations/background.dart';
-import 'widgets/circular_text.dart';
-import 'widgets/navigation/scroll_progress_bar.dart';
-import 'widgets/navigation/side_menu.dart';
-import 'screens/footer.dart';
-import 'screens/contacts.dart';
-import 'themes/theme.dart';
 import 'extensions/hover_extensions.dart';
 import 'generated/l10n.dart';
 import 'screens/about.dart';
+import 'screens/contacts.dart';
+import 'screens/footer.dart';
 import 'screens/header.dart';
 import 'screens/main_text.dart';
 import 'screens/portfolio.dart';
+import 'themes/theme.dart';
+import 'widgets/circular_text.dart';
 import 'widgets/language_menu.dart';
+import 'widgets/navigation/scroll_progress_bar.dart';
+import 'widgets/navigation/side_menu.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) => MaterialApp(
         builder: (BuildContext context, Widget child) => MediaQuery(
@@ -122,11 +123,11 @@ class _MyHomePageState extends State<_MyHomePage> {
                 Container(height: height),
                 Container(
                   color: _grey,
-                  child: About(),
+                  child: const About(),
                 ),
-                Portfolio(),
-                Contact(),
-                Footer()
+                const Portfolio(),
+                const Contact(),
+                const Footer()
               ],
             ),
             Positioned(
@@ -179,7 +180,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                       top: 30.0, right: _isSmartPhone ? 20.0 : 50.0),
                   child: _isSmartPhone
                       ? IconButton(
-                          icon: Icon(Icons.menu),
+                          icon: const Icon(Icons.menu),
                           color: Theme.of(context).accentColor,
                           onPressed: () =>
                               _scaffoldKey.currentState.openEndDrawer(),

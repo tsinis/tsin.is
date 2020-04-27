@@ -6,7 +6,8 @@ const _footerTextStyle = TextStyle(
   fontSize: 12.0,
 );
 
- class Footer extends StatelessWidget {
+class Footer extends StatelessWidget {
+  const Footer({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) => Container(
         color: Colors.amber[300],

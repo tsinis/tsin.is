@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'project_preview.dart';
-import 'project_buttons.dart';
-import '../../services/height_detector.dart';
 import '../../animations/entrance_fader.dart';
+import '../../services/height_detector.dart';
+import 'project_buttons.dart';
+import 'project_preview.dart';
 
 class Project extends StatefulWidget {
   const Project(
@@ -50,7 +50,8 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
         child: ProjectPreview(widget.pathToImage),
       );
 
-  EntranceFader _description(double widthProvided, [double heightProvided]) => EntranceFader(
+  EntranceFader _description(double widthProvided, [double heightProvided]) =>
+      EntranceFader(
         offset: Offset(widthProvided / 2.0, 0),
         child: Padding(
           padding: const EdgeInsets.only(top: 40.0),
@@ -64,7 +65,7 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                 Text(
                   widget.projectDesc,
                   textAlign: TextAlign.justify,
-                  style: TextStyle(fontSize: 22.0
+                  style: const TextStyle(fontSize: 22.0
                       //  + ((width > 1500.0) ? width / 2000.0 : 0),
                       ),
                 ),
@@ -77,7 +78,7 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                 ProjectButtonBar(
                   widget.designURL,
                   widget.appURL,
-                  (MediaQuery.of(context).size.width > 230.0),
+                  tooTight: (MediaQuery.of(context).size.width > 230.0),
                 ),
               ],
             ),
@@ -88,14 +89,13 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
   // double get width => MediaQuery.of(context).size.width;
   @override
   Widget build(BuildContext context) {
-
-  double  _height = MediaQuery.of(context).size.height;
-  double  _width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
+    double _width = MediaQuery.of(context).size.width;
     return Column(
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 40.0),
-          child: const Divider(),
+        const Padding(
+          padding: EdgeInsets.symmetric(vertical: 40.0),
+          child: Divider(),
         ),
         Text(
           widget.projectName,

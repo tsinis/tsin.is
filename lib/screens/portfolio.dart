@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import '../widgets/portfolio_projects/portfolio_project.dart';
 
 import '../generated/l10n.dart';
+import '../widgets/portfolio_projects/portfolio_project.dart';
 
 class Portfolio extends StatefulWidget {
+  const Portfolio({Key key}) : super(key: key);
   @override
   _PortfolioState createState() => _PortfolioState();
 }
@@ -40,10 +41,10 @@ class _PortfolioState extends State<Portfolio>
         style: Theme.of(context).textTheme.headline2,
         children: [
           TextSpan(
-            text: S.of(context).findInPortfolio + ' ',
+            text: '${S.of(context).findInPortfolio} ',
           ),
           TextSpan(
-            text: S.of(context).somePortfilio + ' ',
+            text: '${S.of(context).somePortfilio} ',
           ),
           TextSpan(
             text: S.of(context).projectsPortfolio,
@@ -74,7 +75,7 @@ class _PortfolioState extends State<Portfolio>
               SizedBox(height: height * 0.025),
               Project(
                 projectName: 'Steampunk Flutter Clock',
-                pathToImage: 'assets/images/clock.jpg',
+                pathToImage: 'assets/images/clock.jpg', // TODO: Add zoomed image assets for projects
                 projectDesc: S.of(context).flutterClock,
                 designURL: 'vimeo.com/tsinis/flutterclock',
                 appURL: 'github.com/tsinis/flutter_clock',

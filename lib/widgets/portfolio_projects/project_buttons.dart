@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../extensions/hover_extensions.dart';
 import '../../generated/l10n.dart';
 import '../../services/url_click.dart';
 import '../social_icons.dart';
-import '../../extensions/hover_extensions.dart';
 
 class ProjectButtonBar extends ButtonBar {
-  ProjectButtonBar(this.designURL, this.appURL, this.tooTight);
+  const ProjectButtonBar(this.designURL, this.appURL, {this.tooTight, Key key})
+      : super(key: key);
 
   final String designURL, appURL;
   final bool tooTight;
@@ -38,7 +39,7 @@ class ProjectButtonBar extends ButtonBar {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(
+                        const Icon(
                           SocialIcons.vimeo,
                           color: Colors.cyan,
                         ),
@@ -48,7 +49,7 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text((tooTight ? S.of(context).see + ' ' : '') +
+                        Text((tooTight ? '${S.of(context).see} ' : '') +
                             S.of(context).inAction),
                       ],
                     ),
@@ -63,7 +64,7 @@ class ProjectButtonBar extends ButtonBar {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(
+                        const Icon(
                           SocialIcons.dribbble,
                           color: Colors.pink,
                         ),
@@ -73,7 +74,7 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text((tooTight ? S.of(context).see + ' ' : '') +
+                        Text((tooTight ? '${S.of(context).see} ' : '') +
                             S.of(context).theDesign),
                       ],
                     ),
@@ -91,14 +92,14 @@ class ProjectButtonBar extends ButtonBar {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _openSource
                     ? <Widget>[
-                        Icon(SocialIcons.github_circled),
+                        const Icon(SocialIcons.github_circled),
                         ConstrainedBox(
                           constraints: const BoxConstraints(
                             minWidth: 5.0,
                             maxWidth: 10.0,
                           ),
                         ),
-                        Text((tooTight ? S.of(context).check + ' ' : '') +
+                        Text((tooTight ? '${S.of(context).check} ' : '') +
                             S.of(context).theCode),
                       ]
                     : <Widget>[
@@ -107,12 +108,12 @@ class ProjectButtonBar extends ButtonBar {
                           color: Colors.grey[100],
                         ),
                         ConstrainedBox(
-                          constraints: BoxConstraints(
+                          constraints: const BoxConstraints(
                             minWidth: 5.0,
                             maxWidth: 10.0,
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Google Play',
                           style: TextStyle(color: Colors.white),
                         ),

@@ -2,11 +2,11 @@ import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
 
-import 'navigation_menu_list.dart';
 import '../../extensions/hover_extensions.dart';
+import 'navigation_menu_list.dart';
 
 class SideMenu extends Drawer {
-  SideMenu(this.scrollController);
+  const SideMenu(this.scrollController, [Key key]) : super(key: key);
 
   final ScrollController scrollController;
 
@@ -27,7 +27,7 @@ class SideMenu extends Drawer {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 30.0, right: 20.0),
                     child: IconButton(
-                      icon: Icon(Icons.menu),
+                      icon: const Icon(Icons.menu),
                       color: Theme.of(context).accentColor,
                       onPressed: () => Scaffold.of(context).openDrawer(),
                     ).showCursorOnHover,
