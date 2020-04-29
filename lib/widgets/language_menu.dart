@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LanguageMenu<String> extends StatelessWidget {
-  const LanguageMenu(
+   LanguageMenu(
       {Key key,
       this.onSelected,
       this.tooltip,
@@ -18,37 +18,23 @@ class LanguageMenu<String> extends StatelessWidget {
   @required
   final PopupMenuItemSelected<String> onSelected;
 
-  static const Map _languagesMap = <dynamic, dynamic>{
-    'cs': 'Čeština',
-    'de': 'Deutsch',
-    'en': 'English',
-    // 'hr': "Hrvatski",
-    // 'pl': "Polski",
-    'ru': 'Русский',
-    'sk': 'Slovenčina',
-    // 'sl': "Slovenščina",
-    // 'sr': "Српски",
-  };
+  final List<PopupMenuItem<String>> _langList = _languagesMap
+      .map<String, PopupMenuItem<String>>(
+        (dynamic _langCode, dynamic _langName) =>
+            MapEntry<String, PopupMenuItem<String>>(
+          _langCode as String,
+          PopupMenuItem<String>(
+            value: _langCode as String,
+            child: Center(child: Text(_langName.toString())),
+          ),
+        ),
+      )
+      .values
+      .toList();
 
   @override
-  Widget build(BuildContext context) {
-    return PopupMenuButton(
-      itemBuilder: (_) {
-        return _languagesMap
-            .map<String, PopupMenuItem<String>>(
-              (dynamic _langCode, dynamic _langName) {
-                return MapEntry<String, PopupMenuItem<String>>(
-                  _langCode as String,
-                  PopupMenuItem<String>(
-                    value: _langCode as String,
-                    child: Center(child: Text(_langName.toString())),
-                  ),
-                );
-              },
-            )
-            .values
-            .toList();
-      },
+  Widget build(BuildContext context) => PopupMenuButton(
+      itemBuilder: (_) => _langList,
       tooltip: tooltip.toString(),
       onSelected: onSelected,
       child: Row(
@@ -70,5 +56,16 @@ class LanguageMenu<String> extends StatelessWidget {
         ],
       ),
     );
-  }
 }
+
+const Map _languagesMap = <String, String>{
+  'cs': 'Čeština',
+  'de': 'Deutsch',
+  'en': 'English',
+  // 'hr': "Hrvatski",
+  // 'pl': "Polski",
+  'ru': 'Русский',
+  'sk': 'Slovenčina',
+  // 'sl': "Slovenščina",
+  // 'sr': "Српски",
+};

@@ -1,6 +1,8 @@
 import 'dart:math' show max, min, pi;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/intl_browser.dart';
 
 import 'animations/background.dart';
 import 'extensions/hover_extensions.dart';
@@ -17,16 +19,22 @@ import 'widgets/language_menu.dart';
 import 'widgets/navigation/scroll_progress_bar.dart';
 import 'widgets/navigation/side_menu.dart';
 
-void main() => runApp(const MyApp());
+void main() async => await findSystemLocale()
+    .then((_locale) => runApp(MyWeb(_locale.substring(0, 2))));
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+class MyWeb extends StatelessWidget {
+  const MyWeb(this._locale, {Key key}) : super(key: key);
+  final String _locale;
+
   @override
   Widget build(BuildContext context) => MaterialApp(
-        builder: (BuildContext context, Widget child) => MediaQuery(
-            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-            child: child),
-        localizationsDelegates: [S.delegate],
+        localizationsDelegates: [
+          S.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        locale: Locale(_locale ?? 'en'),
         supportedLocales: S.delegate.supportedLocales,
         debugShowCheckedModeBanner: false,
         theme: MyTheme.defaultTheme,
@@ -40,20 +48,20 @@ class _MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<_MyHomePage> {
-  ScrollController scrollController;
+  static ScrollController _scrollController;
 
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void dispose() {
-    scrollController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    scrollController = ScrollController()..addListener(() => setState(() {}));
+    _scrollController = ScrollController()..addListener(() => setState(() {}));
   }
 
   double get height => MediaQuery.of(context).size.height;
@@ -64,12 +72,12 @@ class _MyHomePageState extends State<_MyHomePage> {
   Color get _grey => Theme.of(context).primaryColor;
 
   double get offset =>
-      scrollController.hasClients ? scrollController.offset : 0;
+      _scrollController.hasClients ? _scrollController.offset : 0;
 
   @override
   Widget build(BuildContext context) => Scaffold(
         key: _scaffoldKey,
-        endDrawer: SideMenu(scrollController),
+        endDrawer: SideMenu(_scrollController),
         body: Stack(
           children: <Widget>[
             Positioned(
@@ -118,7 +126,7 @@ class _MyHomePageState extends State<_MyHomePage> {
             ListView(
               scrollDirection: Axis.vertical,
               cacheExtent: double.infinity,
-              controller: scrollController,
+              controller: _scrollController,
               children: <Widget>[
                 Container(height: height),
                 Container(
@@ -135,11 +143,11 @@ class _MyHomePageState extends State<_MyHomePage> {
               top: height / 2.0,
               height: 2.0,
               width: height * 0.75,
-              child: scrollController.hasClients
+              child: _scrollController.hasClients
                   ? ScrollProgress(
                       height: height,
                       offset: offset,
-                      scrollController: scrollController)
+                      scrollController: _scrollController)
                   : Container(),
             ),
             (height > MediaQuery.of(context).size.width)
@@ -187,7 +195,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                         ).showCursorOnHover.moveUpOnHover
                       : Opacity(
                           opacity: max(0, 1.0 - offset / height),
-                          child: Header(scrollController),
+                          child: Header(_scrollController),
                         ),
                 )
               ],
