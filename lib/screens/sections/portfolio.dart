@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../generated/l10n.dart';
-import '../widgets/portfolio_projects/portfolio_project.dart';
+import '../../generated/l10n.dart';
+import '../../widgets/portfolio_projects/portfolio_project.dart';
 
 class Portfolio extends StatefulWidget {
   const Portfolio({Key key}) : super(key: key);

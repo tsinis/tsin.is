@@ -7,9 +7,9 @@ enum Menu {
 }
 
 extension MenuExtension on Menu {
-  void scrollTo(BuildContext context, ScrollController scrollController) {
-    scrollController.animateTo(
-      _getValue(context, scrollController),
+  void scrollTo(BuildContext context, ScrollController _scrollController) {
+    _scrollController.animateTo(
+      _getValue(context, _scrollController),
       duration: const Duration(seconds: 2),
       curve: Curves.easeInOut,
     );

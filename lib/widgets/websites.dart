@@ -54,6 +54,7 @@ class Website extends StatelessWidget {
   Widget build(BuildContext context) => SizedBox(
         width: 140.0,
         child: FlatButton.icon(
+          color: Colors.grey.withOpacity(0.2),
           textColor: Theme.of(context).disabledColor,
           hoverColor: _color.withOpacity(0.25),
           highlightColor: _color,

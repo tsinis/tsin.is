@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../generated/l10n.dart';
-import '../generated/social_icons.dart';
-import '../services/orientation_detector.dart';
+import '../../generated/l10n.dart';
+import '../../generated/social_icons.dart';
+import '../../services/orientation_detector.dart';
 
 class About extends StatelessWidget {
   const About({Key key}) : super(key: key);
@@ -28,7 +28,7 @@ class About extends StatelessWidget {
               const FittedBox(
                   child: Icon(SocialIcons.github_circled,
                       size:
-                          333.0)), // TODO: replace this Rive animation placeholder.
+                          333.0)), // TODO: Replace this Rive animation placeholder.
               const SizedBox(width: 64.0),
               tooTight
                   ? Text(S.of(context).iAm)

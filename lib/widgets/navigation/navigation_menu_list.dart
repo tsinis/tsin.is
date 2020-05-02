@@ -6,12 +6,12 @@ import '../../services/orientation_detector.dart';
 import 'navigation_menu_items.dart';
 
 class NavigationMenu extends StatelessWidget {
-  const NavigationMenu(this.scrollController,
+  const NavigationMenu(this._scrollController,
       {this.columnNotRow = true, Key key})
       : super(key: key);
 
   final bool columnNotRow;
-  final ScrollController scrollController;
+  final ScrollController _scrollController;
 
   @override
   Widget build(BuildContext context) => OrientationSwitcher(
@@ -19,7 +19,7 @@ class NavigationMenu extends StatelessWidget {
         children: <Widget>[
           MenuItem(
             menuItem: S.of(context).about,
-            onTap: () => Menu.about.scrollTo(context, scrollController),
+            onTap: () => Menu.about.scrollTo(context, _scrollController),
           ),
           ConstrainedBox(
             constraints: const BoxConstraints(
@@ -27,7 +27,7 @@ class NavigationMenu extends StatelessWidget {
           ),
           MenuItem(
             menuItem: S.of(context).portfolio,
-            onTap: () => Menu.portfolio.scrollTo(context, scrollController),
+            onTap: () => Menu.portfolio.scrollTo(context, _scrollController),
           ),
           ConstrainedBox(
             constraints: const BoxConstraints(
@@ -35,7 +35,7 @@ class NavigationMenu extends StatelessWidget {
           ),
           MenuItem(
             menuItem: S.of(context).contacts,
-            onTap: () => Menu.contacts.scrollTo(context, scrollController),
+            onTap: () => Menu.contacts.scrollTo(context, _scrollController),
           ),
         ],
       );

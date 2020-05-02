@@ -6,9 +6,9 @@ import '../../extensions/hover_extensions.dart';
 import 'navigation_menu_list.dart';
 
 class SideMenu extends Drawer {
-  const SideMenu(this.scrollController, [Key key]) : super(key: key);
+  const SideMenu(this._scrollController, [Key key]) : super(key: key);
 
-  final ScrollController scrollController;
+  final ScrollController _scrollController;
 
   @override
   Widget build(BuildContext context) => SizedBox(
@@ -33,7 +33,7 @@ class SideMenu extends Drawer {
                     ).showCursorOnHover,
                   ),
                 ),
-                NavigationMenu(scrollController),
+                NavigationMenu(_scrollController),
                 ConstrainedBox(
                   constraints: const BoxConstraints(maxHeight: 30.0),
                 ),

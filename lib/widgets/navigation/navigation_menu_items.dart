@@ -6,9 +6,9 @@ class MenuItem extends GestureDetector {
   MenuItem({
     Key key,
     @required String menuItem,
-    @required Function onTap,
+    @required void Function() onTap,
   }) : super(
             key: key,
-            onTap: () => onTap,
+            onTap: () => onTap(),
             child: Text(menuItem).showCursorOnHover.moveUpOnHover);
 }
