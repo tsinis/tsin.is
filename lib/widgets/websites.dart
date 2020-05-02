@@ -18,7 +18,7 @@ class Website extends StatelessWidget {
   IconData _getIcon() {
     switch (url) {
       case 'Dribbble.com/':
-        return SocialIcons.dribbble;
+        return SocialIcons.dribbble_squared;
       case 'LinkedIn.com/in/':
         return SocialIcons.linkedin_squared;
       case 'GitHub.com/':
@@ -28,9 +28,8 @@ class Website extends StatelessWidget {
       case 'Vimeo.com/':
         return SocialIcons.vimeo_squared;
       default:
-        return SocialIcons.tablet;
+        return SocialIcons.rive;
     }
-    //TODO add squared variants of icons in Contacts.
   }
 
   Color _getColor() {

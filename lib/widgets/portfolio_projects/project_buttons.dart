@@ -104,7 +104,7 @@ class ProjectButtonBar extends ButtonBar {
                       ]
                     : <Widget>[
                         Icon(
-                          SocialIcons.google,
+                          SocialIcons.google_play,
                           color: Colors.grey[100],
                         ),
                         ConstrainedBox(
@@ -124,3 +124,5 @@ class ProjectButtonBar extends ButtonBar {
         ],
       );
 }
+
+// TODO: New Icons Added: codepen, appstore_squared, appstore.
