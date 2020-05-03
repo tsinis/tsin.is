@@ -27,7 +27,7 @@ class SideMenu extends Drawer {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 30.0, right: 20.0),
                     child: IconButton(
-                      icon: const Icon(Icons.menu),
+                      icon: const Icon(Icons.arrow_back),
                       color: Theme.of(context).accentColor,
                       onPressed: () => Scaffold.of(context).openDrawer(),
                     ).showCursorOnHover,

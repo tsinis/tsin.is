@@ -27,12 +27,17 @@ class ProjectPreview extends StatelessWidget {
                 AspectRatio(
                   aspectRatio: 5 / 3,
                   child: Container(
-                      color: Theme.of(context).primaryColor,
-                      child: AnimatedBackground()),
+                    color: Theme.of(context).primaryColor,
+                    child: FractionallySizedBox(
+                      widthFactor: 0.5,
+                      heightFactor: 0.5,
+                      child: AnimatedBackground(),
+                    ),
+                  ),
                 ),
                 FractionallySizedBox(
                   alignment: FractionalOffset.bottomRight,
-                  widthFactor: 0.7,
+                  widthFactor: 0.3,
                   child: FittedBox(
                     // fit: BoxFit.contain,
                     child: Text(

@@ -82,7 +82,7 @@ class _PortfolioState extends State<Portfolio>
               ),
               Project(
                 projectName: 'Hello Dribbble',
-                pathToImage: 'assets/images/clock.jpg',
+                pathToImage: 'assets/images/dribbble.jpg',
                 projectDesc: S.of(context).helloDribbble,
                 designURL:
                     'dribbble.com/shots/10772196-hello-dribbble-interactive-animation',

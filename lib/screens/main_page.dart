@@ -6,7 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import '../animations/background.dart';
 import '../extensions/hover_extensions.dart';
 import '../generated/l10n.dart';
-import '../services/rebuilder.dart';
+import '../services/locale_builder.dart';
 import '../themes/theme.dart';
 import '../widgets/circular_text.dart';
 import '../widgets/language_menu.dart';

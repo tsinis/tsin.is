@@ -11,27 +11,28 @@ class ZoomOnHover extends StatefulWidget {
 
 class _TranslateOnHoverState extends State<ZoomOnHover>
     with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  AnimationController _animationController;
   bool _hovering = false;
   Animation<double> _animationCurve;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(
+    _animationController = AnimationController(
       duration: const Duration(seconds: 1),
       vsync: this,
     );
     _animationCurve = CurvedAnimation(
-      parent: _controller,
+      parent: _animationController,
       curve: Curves.easeInOutQuint,
+      reverseCurve: Curves.easeInOutQuart
     );
-    _controller.forward();
+    _animationController.forward();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    _animationController.dispose();
     super.dispose();
   }
 
@@ -45,8 +46,8 @@ class _TranslateOnHoverState extends State<ZoomOnHover>
       onExit: (e) => _mouseEnter(false),
       child: AnimatedBuilder(
         animation: _animation,
-        builder: (BuildContext context, Widget child) {
-          _hovering ? _controller.forward() : _controller.reverse();
+        builder: (context, child) {
+          _hovering ? _animationController.forward() : _animationController.reverse();
           return Transform.scale(
             scale: (_animationCurve.value * 1.15) + 1,
             child: widget.child,
