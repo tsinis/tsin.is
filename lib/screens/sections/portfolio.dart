@@ -11,28 +11,7 @@ class Portfolio extends StatefulWidget {
 
 class _PortfolioState extends State<Portfolio>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1),
-    );
-    Future.delayed(
-      const Duration(seconds: 1),
-      () {
-        if (mounted) _animationController.forward();
-      },
-    );
-  }
+  // AnimationController _animationController;
 
   RichText _header() {
     return RichText(
@@ -58,6 +37,7 @@ class _PortfolioState extends State<Portfolio>
   }
 
   double get height => MediaQuery.of(context).size.height;
+  double get width => MediaQuery.of(context).size.width;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -65,42 +45,57 @@ class _PortfolioState extends State<Portfolio>
         child: FractionallySizedBox(
           widthFactor: 0.7,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.min,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              SizedBox(height: height * 0.1),
+              SizedBox(height: height * 0.1, width: 0),
               Text(S.of(context).portfolio,
                   style: Theme.of(context).textTheme.headline4),
-              SizedBox(height: height * 0.05),
+              SizedBox(height: height * 0.05, width: 0),
               _header(),
-              SizedBox(height: height * 0.025),
-              Project(
-                projectName: 'Steampunk Flutter Clock',
-                pathToImage: 'assets/images/clock.jpg', // TODO: Add zoomed image assets for projects
-                projectDesc: S.of(context).flutterClock,
-                designURL: 'vimeo.com/tsinis/flutterclock',
-                appURL: 'github.com/tsinis/flutter_clock',
+              SizedBox(height: height * 0.025, width: 0),
+              Wrap(
+                spacing: width * 0.025,
+                direction: Axis.horizontal,
+                alignment: WrapAlignment.spaceBetween,
+                children: [
+                  Project(
+                    projectName: 'Steampunk Flutter Clock',
+                    pathToImage:
+                        'assets/images/clock.jpg', // TODO: Add zoomed image assets for projects
+                    projectDesc: S.of(context).flutterClock,
+                    designURL: 'vimeo.com/tsinis/flutterclock',
+                    appURL: 'github.com/tsinis/flutter_clock',
+                  ),
+                  Project(
+                    projectName: 'Hello Dribbble',
+                    pathToImage: 'assets/images/dribbble.jpg',
+                    projectDesc: S.of(context).helloDribbble,
+                    designURL:
+                        'dribbble.com/shots/10772196-hello-dribbble-interactive-animation',
+                    appURL: 'github.com/tsinis/hello_dribbble',
+                  ),
+                ],
               ),
-              Project(
-                projectName: 'Hello Dribbble',
-                pathToImage: 'assets/images/dribbble.jpg',
-                projectDesc: S.of(context).helloDribbble,
-                designURL:
-                    'dribbble.com/shots/10772196-hello-dribbble-interactive-animation',
-                appURL: 'github.com/tsinis/hello_dribbble',
-              ),
-              Project(
-                projectName: S.of(context).tongueTwisters,
-                pathToImage: 'assets/images/clock.jpg',
-                projectDesc: S.of(context).tongueTwistersDesc,
-                designURL: 'dribbble.com/shots/',
-                appURL: 'play.google.com/store/apps/',
-              ),
-              Project(
-                projectName: S.of(context).thisWeb,
-                pathToImage: 'assets/images/header.gif',
-                projectDesc: S.of(context).thisWebDesc,
-                designURL: 'dribbble.com/shots/',
-                appURL: 'github.com/tsinis/hello_dribbble',
+              Wrap(
+                spacing: width * 0.025,
+                direction: Axis.horizontal,
+                children: [
+                  Project(
+                    projectName: S.of(context).tongueTwisters,
+                    pathToImage: 'assets/images/clock.jpg',
+                    projectDesc: S.of(context).tongueTwistersDesc,
+                    designURL: 'dribbble.com/shots/',
+                    appURL: 'play.google.com/store/apps/',
+                  ),
+                  Project(
+                    projectName: S.of(context).thisWeb,
+                    pathToImage: 'assets/images/header.gif',
+                    projectDesc: S.of(context).thisWebDesc,
+                    designURL: 'dribbble.com/shots/',
+                    appURL: 'github.com/tsinis/hello_dribbble',
+                  ),
+                ],
               ),
               SizedBox(height: height * 0.1),
             ],
