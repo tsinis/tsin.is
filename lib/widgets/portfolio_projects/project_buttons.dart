@@ -20,7 +20,7 @@ class ProjectButtonBar extends ButtonBar {
   Widget build(BuildContext context) => ButtonBar(
         buttonPadding:
             const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
-        buttonMinWidth: 180.0,
+        buttonMinWidth: 220.0,
         alignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Padding(
@@ -29,19 +29,19 @@ class ProjectButtonBar extends ButtonBar {
                 ? OutlineButton(
                     borderSide: BorderSide(
                       width: 4.8,
-                      color: Colors.cyan[700],
+                      color: Colors.cyan[300],
                     ),
-                    highlightedBorderColor: Colors.cyan[300],
+                    highlightedBorderColor: Colors.cyanAccent[400],
                     hoverColor: Colors.cyan.withOpacity(0.1),
-                    textColor: Colors.cyan[400],
+                    textColor: Colors.cyanAccent[700],
                     color: Colors.cyan[600],
                     onPressed: () => click(designURL),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        const Icon(
+                        Icon(
                           SocialIcons.vimeo,
-                          color: Colors.cyan,
+                          color: Colors.cyan[300],
                         ),
                         ConstrainedBox(
                           constraints: const BoxConstraints(
@@ -55,7 +55,7 @@ class ProjectButtonBar extends ButtonBar {
                     ),
                   ).showCursorOnHover
                 : OutlineButton(
-                    borderSide: BorderSide(width: 4.8, color: Colors.pink[600]),
+                    borderSide: BorderSide(width: 4.8, color: Colors.pinkAccent[100]),
                     highlightedBorderColor: Colors.pink[200],
                     hoverColor: Colors.pink.withOpacity(0.1),
                     textColor: Colors.pink[400],
@@ -64,9 +64,9 @@ class ProjectButtonBar extends ButtonBar {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        const Icon(
+                        Icon(
                           SocialIcons.dribbble,
-                          color: Colors.pink,
+                          color: Colors.pink[300],
                         ),
                         ConstrainedBox(
                           constraints: const BoxConstraints(
@@ -83,7 +83,7 @@ class ProjectButtonBar extends ButtonBar {
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0),
             child: RaisedButton(
-              color: _openSource ? null : Colors.green,
+              color: _openSource ? Colors.grey[300] : Colors.lightGreen,
               elevation: 1.5,
               hoverElevation: 2.5,
               highlightElevation: 3.0,
@@ -92,7 +92,7 @@ class ProjectButtonBar extends ButtonBar {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _openSource
                     ? <Widget>[
-                        const Icon(SocialIcons.github_circled),
+                        Icon(SocialIcons.github_circled, color: Colors.grey[700]),
                         ConstrainedBox(
                           constraints: const BoxConstraints(
                             minWidth: 5.0,
@@ -100,22 +100,22 @@ class ProjectButtonBar extends ButtonBar {
                           ),
                         ),
                         Text((tooTight ? '${S.of(context).check} ' : '') +
-                            S.of(context).theCode),
+                            S.of(context).theCode, style: TextStyle(color: Colors.grey[800]),),
                       ]
                     : <Widget>[
                         Icon(
                           SocialIcons.google_play,
-                          color: Colors.grey[100],
+                          color: Colors.lightGreen[50],
                         ),
                         ConstrainedBox(
                           constraints: const BoxConstraints(
-                            minWidth: 5.0,
-                            maxWidth: 10.0,
+                            minWidth: 10.0,
+                            maxWidth: 15.0,
                           ),
                         ),
-                        const Text(
+                        Text(
                           'Google Play',
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.lightGreen[50]),
                         ),
                       ],
               ),
@@ -125,4 +125,4 @@ class ProjectButtonBar extends ButtonBar {
       );
 }
 
-// TODO: New Icons Added: codepen, appstore_squared, appstore.
+// XXX: New Icons Added: codepen, appstore_squared, appstore.

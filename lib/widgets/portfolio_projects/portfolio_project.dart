@@ -1,11 +1,10 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 
 import '../../animations/background.dart';
-import '../../animations/entrance_fader.dart';
 import '../../extensions/hover_extensions.dart';
 import '../../generated/l10n.dart';
-import '../../services/height_detector.dart';
 import 'project_buttons.dart';
 
 class Project extends StatefulWidget {
@@ -25,45 +24,7 @@ class Project extends StatefulWidget {
 }
 
 class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
 
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(seconds: 1),
-    );
-    Future.delayed(
-      const Duration(seconds: 1),
-      () {
-        if (mounted) _animationController.forward();
-      },
-    );
-  }
-
-  EntranceFader _description(double widthProvided, [double heightProvided]) =>
-      EntranceFader(
-        offset: Offset(widthProvided / 2.0, 0),
-        child: Padding(
-          padding: const EdgeInsets.only(top: 40.0),
-          child: HeightContainer(
-            heightProvided: heightProvided,
-            widthProvided: widthProvided,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[],
-            ),
-          ),
-        ),
-      );
   // double get height => MediaQuery.of(context).size.height;
   double get _width => MediaQuery.of(context).size.width;
 
@@ -161,20 +122,26 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                     ],
                   ),
                 ),
-              ),
+              ).showCursorOnHover,
               expanded: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Text(
+                    padding: const EdgeInsets.symmetric(horizontal: 35.0, vertical: 20.0),
+                    child: AutoSizeText(
                       widget.projectDesc,
+                      textAlign: TextAlign.justify,
+                      maxLines: 8,
+                      maxFontSize: 20.0,
                       softWrap: true,
                     ),
                   ),
-                  ProjectButtonBar(
-                    widget.designURL,
-                    widget.appURL,
-                    tooTight: (MediaQuery.of(context).size.width > 230.0),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    child: ProjectButtonBar(
+                      widget.designURL,
+                      widget.appURL,
+                      tooTight: (MediaQuery.of(context).size.width > 399.0),
+                    ),
                   ),
                 ],
               ),

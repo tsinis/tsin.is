@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
@@ -11,7 +12,6 @@ class Portfolio extends StatefulWidget {
 
 class _PortfolioState extends State<Portfolio>
     with SingleTickerProviderStateMixin {
-  // AnimationController _animationController;
 
   RichText _header() {
     return RichText(
@@ -30,7 +30,7 @@ class _PortfolioState extends State<Portfolio>
             style: Theme.of(context).textTheme.headline2.copyWith(
                   color: Theme.of(context).primaryColorLight,
                 ),
-          )
+          ),
         ],
       ),
     );
@@ -49,7 +49,8 @@ class _PortfolioState extends State<Portfolio>
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               SizedBox(height: height * 0.1, width: 0),
-              Text(S.of(context).portfolio,
+              AutoSizeText(S.of(context).portfolio,
+              maxLines: 1,
                   style: Theme.of(context).textTheme.headline4),
               SizedBox(height: height * 0.05, width: 0),
               _header(),
@@ -98,6 +99,7 @@ class _PortfolioState extends State<Portfolio>
                 ],
               ),
               SizedBox(height: height * 0.1),
+              // Divider(indent: width/10, endIndent: width/10, thickness: 2.0),
             ],
           ),
         ),
