@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import '../animations/background.dart';
 import '../extensions/hover_extensions.dart';
 import '../generated/l10n.dart';
+import '../generated/social_icons.dart';
 import '../services/locale_builder.dart';
 import '../themes/theme.dart';
 import '../widgets/circular_text.dart';
@@ -183,7 +184,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                     top: 30.0, right: _isSmartPhone ? 20.0 : 50.0),
                 child: _isSmartPhone
                     ? IconButton(
-                        icon: const Icon(Icons.menu), // Add Hero Animation
+                        icon: const Icon(SocialIcons.menu), // Add Hero Animation
                         color: Theme.of(context).accentColor,
                         onPressed: () =>
                             _scaffoldKey.currentState.openEndDrawer(),

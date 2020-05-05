@@ -3,6 +3,7 @@ import 'dart:ui' show ImageFilter;
 import 'package:flutter/material.dart';
 
 import '../../extensions/hover_extensions.dart';
+import '../../generated/social_icons.dart';
 import 'navigation_menu_list.dart';
 
 class SideMenu extends Drawer {
@@ -27,7 +28,7 @@ class SideMenu extends Drawer {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 30.0, right: 20.0),
                     child: IconButton(
-                      icon: const Icon(Icons.arrow_back),
+                      icon: const Icon(SocialIcons.left_big),
                       color: Theme.of(context).accentColor,
                       onPressed: () => Scaffold.of(context).openDrawer(),
                     ).showCursorOnHover,

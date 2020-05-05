@@ -3,6 +3,7 @@ import 'dart:math' show max;
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
+import '../../generated/social_icons.dart';
 
 class MainText extends StatelessWidget {
   const MainText(this.offset, [Key key]) : super(key: key);
@@ -42,7 +43,7 @@ class MainText extends StatelessWidget {
           ),
         ),
         SizedBox(height: height / 4.0),
-        Icon(Icons.arrow_downward, color: Theme.of(context).accentColor),
+        Icon(SocialIcons.down_big, color: Theme.of(context).accentColor),
       ],
     );
   }
