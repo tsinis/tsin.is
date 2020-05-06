@@ -23,10 +23,9 @@ class _TranslateOnHoverState extends State<ZoomOnHover>
       vsync: this,
     );
     _animationCurve = CurvedAnimation(
-      parent: _animationController,
-      curve: Curves.easeInOutQuint,
-      reverseCurve: Curves.easeInOutQuart
-    );
+        parent: _animationController,
+        curve: Curves.easeInOutQuint,
+        reverseCurve: Curves.easeInOutQuart);
     _animationController.forward();
   }
 
@@ -47,7 +46,9 @@ class _TranslateOnHoverState extends State<ZoomOnHover>
       child: AnimatedBuilder(
         animation: _animation,
         builder: (context, child) {
-          _hovering ? _animationController.forward() : _animationController.reverse();
+          _hovering
+              ? _animationController.forward()
+              : _animationController.reverse();
           return Transform.scale(
             scale: (_animationCurve.value * 1.15) + 1,
             child: widget.child,

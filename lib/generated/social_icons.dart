@@ -16,6 +16,10 @@
 ///         Author:    Dave Gandy
 ///         License:   SIL ()
 ///         Homepage:  http://fortawesome.github.com/Font-Awesome/
+/// * Material Design Icons, Copyright (C) Google, Inc
+///         Author:    Google
+///         License:   Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
+///         Homepage:  https://design.google.com/icons/
 ///
 import 'package:flutter/widgets.dart';
 
@@ -25,20 +29,20 @@ class SocialIcons {
   static const _kFontFam = 'SocialIcons';
   static const _kFontPkg = null;
 
-  static const IconData google_play = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData dribbble_squared = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData codepen = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData up_open = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData translate = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData appstore_squared = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData down_open = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData down_big = IconData(0xe804, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData left_big = IconData(0xe805, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData download = IconData(0xe806, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData award = IconData(0xe807, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData heart_empty = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData appstore_squared = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData appstore = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData rive = IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData medium = IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData heart = IconData(0xe80e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData codepen = IconData(0xe808, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData dribbble_squared = IconData(0xe809, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData google_play = IconData(0xe80a, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData medium = IconData(0xe80b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData rive = IconData(0xe80c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData appstore = IconData(0xe80d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData play = IconData(0xe80f, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData link_ext = IconData(0xf08e, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData github_circled = IconData(0xf09b, fontFamily: _kFontFam, fontPackage: _kFontPkg);
@@ -48,13 +52,9 @@ class SocialIcons {
   static const IconData angle_double_down = IconData(0xf103, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData angle_down = IconData(0xf107, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData code = IconData(0xf121, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData ellipsis_vert = IconData(0xf142, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData link_ext_alt = IconData(0xf14c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData down = IconData(0xf175, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData dribbble = IconData(0xf17d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData vimeo_squared = IconData(0xf194, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData language = IconData(0xf1ab, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData behance_squared = IconData(0xf1b5, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData file_pdf = IconData(0xf1c1, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData vimeo = IconData(0xf27d, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData github_squared = IconData(0xf300, fontFamily: _kFontFam, fontPackage: _kFontPkg);

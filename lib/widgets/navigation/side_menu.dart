@@ -20,25 +20,28 @@ class SideMenu extends Drawer {
             sigmaY: 4.0,
           ),
           child: Drawer(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 30.0, right: 20.0),
-                    child: IconButton(
-                      icon: const Icon(SocialIcons.left_big),
-                      color: Theme.of(context).accentColor,
-                      onPressed: () => Scaffold.of(context).openDrawer(),
-                    ).showCursorOnHover,
+            child: Container(
+              color: Colors.grey[600],
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 30.0, right: 20.0),
+                      child: IconButton(
+                        icon: const Icon(SocialIcons.left_big),
+                        color: Theme.of(context).accentColor,
+                        onPressed: () => Scaffold.of(context).openDrawer(),
+                      ).showCursorOnHover,
+                    ),
                   ),
-                ),
-                NavigationMenu(_scrollController),
-                ConstrainedBox(
-                  constraints: const BoxConstraints(maxHeight: 30.0),
-                ),
-              ],
+                  NavigationMenu(_scrollController),
+                  ConstrainedBox(
+                    constraints: const BoxConstraints(maxHeight: 30.0),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

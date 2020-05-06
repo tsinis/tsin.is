@@ -55,7 +55,8 @@ class ProjectButtonBar extends ButtonBar {
                     ),
                   ).showCursorOnHover
                 : OutlineButton(
-                    borderSide: BorderSide(width: 4.8, color: Colors.pinkAccent[100]),
+                    borderSide:
+                        BorderSide(width: 4.8, color: Colors.pinkAccent[100]),
                     highlightedBorderColor: Colors.pink[200],
                     hoverColor: Colors.pink.withOpacity(0.1),
                     textColor: Colors.pink[400],
@@ -92,15 +93,19 @@ class ProjectButtonBar extends ButtonBar {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _openSource
                     ? <Widget>[
-                        Icon(SocialIcons.github_circled, color: Colors.grey[700]),
+                        Icon(SocialIcons.github_circled,
+                            color: Colors.grey[700]),
                         ConstrainedBox(
                           constraints: const BoxConstraints(
                             minWidth: 5.0,
                             maxWidth: 10.0,
                           ),
                         ),
-                        Text((tooTight ? '${S.of(context).check} ' : '') +
-                            S.of(context).theCode, style: TextStyle(color: Colors.grey[800]),),
+                        Text(
+                          (tooTight ? '${S.of(context).check} ' : '') +
+                              S.of(context).theCode,
+                          style: TextStyle(color: Colors.grey[800]),
+                        ),
                       ]
                     : <Widget>[
                         Icon(

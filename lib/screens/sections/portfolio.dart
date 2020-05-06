@@ -12,7 +12,6 @@ class Portfolio extends StatefulWidget {
 
 class _PortfolioState extends State<Portfolio>
     with SingleTickerProviderStateMixin {
-
   RichText _header() {
     return RichText(
       textAlign: TextAlign.center,
@@ -50,8 +49,7 @@ class _PortfolioState extends State<Portfolio>
             children: <Widget>[
               SizedBox(height: height * 0.1, width: 0),
               AutoSizeText(S.of(context).portfolio,
-              maxLines: 1,
-                  style: Theme.of(context).textTheme.headline4),
+                  maxLines: 1, style: Theme.of(context).textTheme.headline4),
               SizedBox(height: height * 0.05, width: 0),
               _header(),
               SizedBox(height: height * 0.025, width: 0),
@@ -62,8 +60,7 @@ class _PortfolioState extends State<Portfolio>
                 children: [
                   Project(
                     projectName: 'Steampunk Flutter Clock',
-                    pathToImage:
-                        'assets/images/clock.jpg', // TODO: Add zoomed image assets for projects
+                    pathToImage: 'assets/images/clock.jpg',
                     projectDesc: S.of(context).flutterClock,
                     designURL: 'vimeo.com/tsinis/flutterclock',
                     appURL: 'github.com/tsinis/flutter_clock',

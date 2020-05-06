@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../animations/background.dart';
 import '../../extensions/hover_extensions.dart';
 import '../../generated/l10n.dart';
+import '../../generated/social_icons.dart';
 import 'project_buttons.dart';
 
 class Project extends StatefulWidget {
@@ -24,7 +25,6 @@ class Project extends StatefulWidget {
 }
 
 class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
-
   // double get height => MediaQuery.of(context).size.height;
   double get _width => MediaQuery.of(context).size.width;
 
@@ -99,6 +99,13 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
             ),
             ExpandablePanel(
               theme: const ExpandableThemeData(
+                  iconColor: Colors.black26,
+                  iconPadding: EdgeInsets.symmetric(horizontal: 15),
+                  iconSize: 15.0,
+                  fadeCurve: Curves.fastOutSlowIn,
+                  sizeCurve: Curves.easeInToLinear,
+                  expandIcon: SocialIcons.down_open,
+                  collapseIcon: SocialIcons.up_open,
                   headerAlignment: ExpandablePanelHeaderAlignment.center,
                   tapBodyToCollapse: true,
                   useInkWell: true),
@@ -111,7 +118,7 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                     children: [
                       const SizedBox(width: 35.0),
                       Text(
-                        widget.projectName, // FIXME: Fix font size.
+                        widget.projectName,
                         textAlign: TextAlign.center,
                         softWrap: true,
                         //   style: Theme.of(context)
@@ -126,7 +133,8 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
               expanded: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 35.0, vertical: 20.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 35.0, vertical: 20.0),
                     child: AutoSizeText(
                       widget.projectDesc,
                       textAlign: TextAlign.justify,

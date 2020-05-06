@@ -19,7 +19,7 @@ dev_dependencies:
   effective_dart: any
 
 flutter:
-  uses-material-design: true
+  uses-material-design: false
 
   assets:
     - assets/images/

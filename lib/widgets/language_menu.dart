@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../generated/social_icons.dart';
 
 class LanguageMenu<String> extends StatelessWidget {
-   LanguageMenu(
+  LanguageMenu(
       {Key key,
       this.onSelected,
       this.tooltip,
@@ -35,28 +35,28 @@ class LanguageMenu<String> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => PopupMenuButton(
-      itemBuilder: (_) => _langList,
-      tooltip: tooltip.toString(),
-      onSelected: onSelected,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Icon(
-            SocialIcons.language,
-            color: Colors.grey[800],
-          ),
-          const SizedBox(width: 10.0),
-          isSmartphone
-              ? const SizedBox(height: 0)
-              : Text(
-                  language.toString(),
-                  style: TextStyle(
-                    color: Colors.grey[700],
+        itemBuilder: (_) => _langList,
+        tooltip: tooltip.toString(),
+        onSelected: onSelected,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Icon(
+              SocialIcons.translate,
+              color: Colors.grey[800],
+            ),
+            const SizedBox(width: 10.0),
+            isSmartphone
+                ? const SizedBox(height: 0)
+                : Text(
+                    language.toString(),
+                    style: TextStyle(
+                      color: Colors.grey[700],
+                    ),
                   ),
-                ),
-        ],
-      ),
-    );
+          ],
+        ),
+      );
 }
 
 const Map _languagesMap = <String, String>{
