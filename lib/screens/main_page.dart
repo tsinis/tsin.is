@@ -1,6 +1,9 @@
 import 'dart:math' show max, min, pi;
 
+import 'package:flare_flutter/asset_provider.dart' show AssetProvider;
+import 'package:flare_flutter/provider/asset_flare.dart' show AssetFlare;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 import '../animations/background.dart';
@@ -22,7 +25,8 @@ import 'sections/portfolio.dart';
 
 class MyWeb extends StatelessWidget {
   const MyWeb({Key key}) : super(key: key);
-
+  static final AssetProvider cachedAvatar =
+      AssetFlare(bundle: rootBundle, name: 'assets/images/avatar.flr');
   @override
   Widget build(BuildContext context) => LocaleBuilder(
       builder: (context) => MaterialApp(
@@ -128,7 +132,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                 Container(height: height),
                 Container(
                   color: _grey,
-                  child: const About(),
+                  child: About(MyWeb.cachedAvatar),
                 ),
                 const Portfolio(),
                 const Contact(),
@@ -185,8 +189,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                       top: 30.0, right: _isSmartPhone ? 20.0 : 50.0),
                   child: _isSmartPhone
                       ? IconButton(
-                          icon: const Icon(
-                              SocialIcons.menu), // Add Hero Animation
+                          icon: const Icon(SocialIcons.menu),
                           color: Theme.of(context).accentColor,
                           onPressed: () =>
                               _scaffoldKey.currentState.openEndDrawer(),

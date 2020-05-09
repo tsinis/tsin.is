@@ -1,11 +1,13 @@
+import 'package:flare_flutter/asset_provider.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
-import '../../generated/social_icons.dart';
 import '../../services/orientation_detector.dart';
 
 class About extends StatelessWidget {
-  const About({Key key}) : super(key: key);
+  const About(this._cachedAvatar, {Key key}) : super(key: key);
+  final AssetProvider _cachedAvatar;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -22,14 +24,10 @@ class About extends StatelessWidget {
                       30.0 + (MediaQuery.of(context).size.shortestSide / 100.0),
                 ),
           ),
+          SizedBox(height: height / 20),
           OrientationSwitcher(
             columnNotRow: tooTight,
             children: <Widget>[
-              const FittedBox(
-                  child: Icon(SocialIcons.github_circled,
-                      size:
-                          333.0)), // TODO: Replace this Rive animation placeholder.
-              const SizedBox(width: 64.0),
               tooTight
                   ? Text(S.of(context).iAm)
                   : Flexible(
@@ -37,10 +35,19 @@ class About extends StatelessWidget {
                         S.of(context).iAm,
                         style: TextStyle(fontSize: 15.0 + width / 100.0),
                       ),
-                    )
+                    ),
+              // const SizedBox(width: 20.0),
+              SizedBox(
+                width: MediaQuery.of(context).size.shortestSide * 0.7,
+                height: MediaQuery.of(context).size.shortestSide * 0.7,
+                child: FlareActor.asset(_cachedAvatar,
+                    alignment: Alignment.bottomCenter,
+                    fit: BoxFit.scaleDown,
+                    animation: 'live'),
+              ), // FIXME: Remove Trim Paths in Rive Animation for Flutter Web.
             ],
           ),
-          SizedBox(height: height * 0.1),
+          // SizedBox(height: height * 0.1),
         ],
       ),
     );

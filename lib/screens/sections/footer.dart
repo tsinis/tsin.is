@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 const _footerTextStyle = TextStyle(
   fontFamily: 'Roboto',
-  // fontWeight: FontWeight.w100,
   fontSize: 12.0,
 );
 
@@ -25,7 +24,7 @@ class Footer extends StatelessWidget {
                     '(Font: Hagrid Family by Zetafonts -http://www.zetafonts.com/collection/3760).',
                     textAlign: TextAlign.center,
                     style: _footerTextStyle),
-                Text(' Made with 💙 in ',
+                Text(' Made with 💙 in ', //FIXME: Replace emoji with custom Icon
                     strutStyle: StrutStyle(forceStrutHeight: true),
                     textAlign: TextAlign.center,
                     style: _footerTextStyle),
