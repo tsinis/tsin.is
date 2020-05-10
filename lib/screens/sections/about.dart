@@ -1,9 +1,9 @@
 import 'package:flare_flutter/asset_provider.dart';
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
 import '../../services/orientation_detector.dart';
+import '../../widgets/avatar.dart';
 
 class About extends StatelessWidget {
   const About(this._cachedAvatar, {Key key}) : super(key: key);
@@ -38,13 +38,10 @@ class About extends StatelessWidget {
                     ),
               // const SizedBox(width: 20.0),
               SizedBox(
-                width: MediaQuery.of(context).size.shortestSide * 0.7,
-                height: MediaQuery.of(context).size.shortestSide * 0.7,
-                child: FlareActor.asset(_cachedAvatar,
-                    alignment: Alignment.bottomCenter,
-                    fit: BoxFit.scaleDown,
-                    animation: 'live'),
-              ), // FIXME: Remove Trim Paths in Rive Animation for Flutter Web.
+                width: MediaQuery.of(context).size.shortestSide * 0.6,
+                height: MediaQuery.of(context).size.shortestSide * 0.6,
+                child: Avatar(_cachedAvatar),
+              ),
             ],
           ),
           // SizedBox(height: height * 0.1),
