@@ -1,4 +1,3 @@
-import 'package:flare_flutter/asset_provider.dart';
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
@@ -6,8 +5,7 @@ import '../../services/orientation_detector.dart';
 import '../../widgets/avatar.dart';
 
 class About extends StatelessWidget {
-  const About(this._cachedAvatar, {Key key}) : super(key: key);
-  final AssetProvider _cachedAvatar;
+  const About({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -40,7 +38,7 @@ class About extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.shortestSide * 0.6,
                 height: MediaQuery.of(context).size.shortestSide * 0.6,
-                child: Avatar(_cachedAvatar),
+                child: const Avatar(),
               ),
             ],
           ),

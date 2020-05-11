@@ -4,8 +4,9 @@ import 'package:intl/intl_browser.dart';
 
 import 'screens/main_page.dart';
 import 'services/locale_builder.dart';
+import 'widgets/avatar.dart';
 
-Future<void> _cacheAvatar() async => await cachedActor(MyWeb.cachedAvatar);
+Future<void> _cacheAvatar() async => await cachedActor(Avatar.cache);
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
