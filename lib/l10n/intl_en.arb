@@ -1,103 +1,107 @@
 {
-  "@@locale" : "en",
-  "about" : "About",
-  "@about" : {
-    "type" : "text"
+  "@@locale": "en",
+  "about": "About",
+  "@about": {
+    "type": "text"
   },
-  "check" : "Check ",
-  "@check" : {
-    "type" : "text"
+  "check": "Check ",
+  "@check": {
+    "type": "text"
   },
-  "contacts" : "Contacts",
-  "@contacts" : {
-    "type" : "text"
+  "contacts": "Contacts",
+  "@contacts": {
+    "type": "text"
   },
-  "contactsDesc" : "Physically in the city of Brno, on the internets, I'm known as a “tsinis”:",
-  "@contactsDesc" : {
-    "type" : "text"
+  "contactsDesc": "Physically in the city of Brno, on the internets, I'm known as a “tsinis”:",
+  "@contactsDesc": {
+    "type": "text"
   },
-  "devAndDesigner" : "Flutter Developer & Designer",
-  "@devAndDesigner" : {
-    "type" : "text"
+  "devAndDesigner": "Flutter Developer & Designer",
+  "@devAndDesigner": {
+    "type": "text"
   },
-  "email" : "or just simply write me the good old e-mail here:",
-  "@email" : {
-    "type" : "text"
+  "email": "or just simply write me the good old e-mail here:",
+  "@email": {
+    "type": "text"
   },
-  "findInPortfolio" : "Here you can find",
-  "@findInPortfolio" : {
-    "type" : "text"
+  "findInPortfolio": "Here you can find",
+  "@findInPortfolio": {
+    "type": "text"
   },
-  "flutterClock" : "This project is one of the winning submissions in Official Google's & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).",
-  "@flutterClock" : {
-    "type" : "text"
+  "flutterClock": "This project is one of the winning submissions in Official Google's & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).",
+  "@flutterClock": {
+    "type": "text"
   },
-  "fullName" : "Roman Cinis",
-  "@fullName" : {
-    "type" : "text"
+  "fullName": "Roman Cinis",
+  "@fullName": {
+    "type": "text"
   },
-  "greeting" : "Hello there, I'm",
-  "@greeting" : {
-    "type" : "text"
+  "greeting": "Hello there, I'm",
+  "@greeting": {
+    "type": "text"
   },
-  "helloDribbble" : "Interactive animations showcase project, I've made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”).",
-  "@helloDribbble" : {
-    "type" : "text"
+  "helloDribbble": "Interactive animations showcase project, I've made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”).",
+  "@helloDribbble": {
+    "type": "text"
   },
-  "iAm" : "I'm awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let's make something awesome together!",
-  "@iAm" : {
-    "type" : "text"
+  "iAm": "I'm awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let's make something awesome together!\n\n Grab my CV here:",
+  "@iAm": {
+    "type": "text"
   },
-  "inAction" : "in Action",
-  "@inAction" : {
-    "type" : "text"
+  "cloud": "All language versions",
+  "@cloud": {
+    "type": "text"
   },
-  "language" : "Language",
-  "@language" : {
-    "type" : "text"
+  "inAction": "in Action",
+  "@inAction": {
+    "type": "text"
   },
-  "portfolio" : "Portfolio",
-  "@portfolio" : {
-    "type" : "text"
+  "language": "Language",
+  "@language": {
+    "type": "text"
   },
-  "projectsPortfolio" : "projects and repositories.",
-  "@projectsPortfolio" : {
-    "type" : "text"
+  "portfolio": "Portfolio",
+  "@portfolio": {
+    "type": "text"
   },
-  "see" : "See ",
-  "@see" : {
-    "type" : "text"
+  "projectsPortfolio": "projects and repositories.",
+  "@projectsPortfolio": {
+    "type": "text"
   },
-  "selectLang" : "select your language",
-  "@selectLang" : {
-    "type" : "text"
+  "see": "See ",
+  "@see": {
+    "type": "text"
   },
-  "somePortfilio" : "some of my ",
-  "@somePortfilio" : {
-    "type" : "text"
+  "selectLang": "select your language",
+  "@selectLang": {
+    "type": "text"
   },
-  "theCode" : "the Code",
-  "@theCode" : {
-    "type" : "text"
+  "somePortfilio": "some of my ",
+  "@somePortfilio": {
+    "type": "text"
   },
-  "theDesign" : "the Design",
-  "@theDesign" : {
-    "type" : "text"
+  "theCode": "the Code",
+  "@theCode": {
+    "type": "text"
   },
-  "thisWeb" : "This Website",
-  "@thisWeb" : {
-    "type" : "text"
+  "theDesign": "the Design",
+  "@theDesign": {
+    "type": "text"
   },
-  "thisWebDesc" : "Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.",
-  "@thisWebDesc" : {
-    "type" : "text"
+  "thisWeb": "This Website",
+  "@thisWeb": {
+    "type": "text"
   },
-  "tongueTwisters" : "Tongue Twisters",
-  "@tongueTwisters" : {
-    "type" : "text"
+  "thisWebDesc": "Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.",
+  "@thisWebDesc": {
+    "type": "text"
   },
-  "tongueTwistersDesc" : "Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations).",
-  "@tongueTwistersDesc" : {
-    "type" : "text"
+  "tongueTwisters": "Tongue Twisters",
+  "@tongueTwisters": {
+    "type": "text"
+  },
+  "tongueTwistersDesc": "Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations).",
+  "@tongueTwistersDesc": {
+    "type": "text"
   }
 }

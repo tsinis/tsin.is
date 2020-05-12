@@ -1,103 +1,107 @@
 {
-  "@@locale" : "cs",
-  "about" : "O mně",
-  "@about" : {
-    "type" : "text"
+  "@@locale": "cs",
+  "about": "O mně",
+  "@about": {
+    "type": "text"
   },
-  "check" : "Zkoumat",
-  "@check" : {
-    "type" : "text"
+  "check": "Zkoumat",
+  "@check": {
+    "type": "text"
   },
-  "contacts" : "Kontakty",
-  "@contacts" : {
-    "type" : "text"
+  "contacts": "Kontakty",
+  "@contacts": {
+    "type": "text"
   },
-  "contactsDesc" : "Fyzicky jsem v Brně, na internetu, znám spíše jako „tsinis“:",
-  "@contactsDesc" : {
-    "type" : "text"
+  "contactsDesc": "Fyzicky jsem v Brně, na internetu, znám spíše jako „tsinis“:",
+  "@contactsDesc": {
+    "type": "text"
   },
-  "devAndDesigner" : "Flutter vývojář a grafik",
-  "@devAndDesigner" : {
-    "type" : "text"
+  "devAndDesigner": "Flutter vývojář a grafik",
+  "@devAndDesigner": {
+    "type": "text"
   },
-  "email" : "nebo mi prostě napište starý dobrý e-mail:",
-  "@email" : {
-    "type" : "text"
+  "email": "nebo mi prostě napište starý dobrý e-mail:",
+  "@email": {
+    "type": "text"
   },
-  "findInPortfolio" : "Zde najdete",
-  "@findInPortfolio" : {
-    "type" : "text"
+  "findInPortfolio": "Zde najdete",
+  "@findInPortfolio": {
+    "type": "text"
   },
-  "flutterClock" : "Tento projekt je jedním z vítězů ve společné vývojářské/design soutěži firem Google a Lenovo, pod názvem “Flutter Clock” (se skoro tisícovkou příspěvků z celého světa).",
-  "@flutterClock" : {
-    "type" : "text"
+  "flutterClock": "Tento projekt je jedním z vítězů ve společné vývojářské/design soutěži firem Google a Lenovo, pod názvem “Flutter Clock” (se skoro tisícovkou příspěvků z celého světa).",
+  "@flutterClock": {
+    "type": "text"
   },
-  "fullName" : "Roman Cinis",
-  "@fullName" : {
-    "type" : "text"
+  "fullName": "Roman Cinis",
+  "@fullName": {
+    "type": "text"
   },
-  "greeting" : "Vítejte, jsem",
-  "@greeting" : {
-    "type" : "text"
+  "greeting": "Vítejte, jsem",
+  "@greeting": {
+    "type": "text"
   },
-  "helloDribbble" : "Toto je projekt ukazující Interaktivní animace, které jsem vytvořil jako svůj Debut na legendárním Dribbble, poté co jsem, nedávno, dostal vytoužené pozvaní.",
-  "@helloDribbble" : {
-    "type" : "text"
+  "helloDribbble": "Toto je projekt ukazující Interaktivní animace, které jsem vytvořil jako svůj Debut na legendárním Dribbble, poté co jsem, nedávno, dostal vytoužené pozvaní.",
+  "@helloDribbble": {
+    "type": "text"
   },
-  "iAm" : "Jsem oceněným „T-shaped“ specialistou jakožto Flutter vývojář a grafik, s velkou láskou k interaktivním animacím a dobrému UX. Udělejme něco úžasného společně!",
-  "@iAm" : {
-    "type" : "text"
+  "iAm": "Jsem oceněným „T-shaped“ specialistou jakožto Flutter vývojář a grafik, s velkou láskou k interaktivním animacím a dobrému UX. Udělejme něco úžasného společně!\n\n Stáhněte si moje CV zde:",
+  "@iAm": {
+    "type": "text"
   },
-  "inAction" : "v akci",
-  "@inAction" : {
-    "type" : "text"
+  "cloud": "Všechny jazykové verze",
+  "@cloud": {
+    "type": "text"
   },
-  "language" : "Jazyk",
-  "@language" : {
-    "type" : "text"
+  "inAction": "v akci",
+  "@inAction": {
+    "type": "text"
   },
-  "portfolio" : "Portfolio",
-  "@portfolio" : {
-    "type" : "text"
+  "language": "Jazyk",
+  "@language": {
+    "type": "text"
   },
-  "projectsPortfolio" : "projektů a repositářů.",
-  "@projectsPortfolio" : {
-    "type" : "text"
+  "portfolio": "Portfolio",
+  "@portfolio": {
+    "type": "text"
   },
-  "see" : "Zhlédnout",
-  "@see" : {
-    "type" : "text"
+  "projectsPortfolio": "projektů a repositářů.",
+  "@projectsPortfolio": {
+    "type": "text"
   },
-  "selectLang" : "select your language",
-  "@selectLang" : {
-    "type" : "text"
+  "see": "Zhlédnout",
+  "@see": {
+    "type": "text"
   },
-  "somePortfilio" : "některé z mých",
-  "@somePortfilio" : {
-    "type" : "text"
+  "selectLang": "select your language",
+  "@selectLang": {
+    "type": "text"
   },
-  "theCode" : "kód",
-  "@theCode" : {
-    "type" : "text"
+  "somePortfilio": "některé z mých",
+  "@somePortfilio": {
+    "type": "text"
   },
-  "theDesign" : "design",
-  "@theDesign" : {
-    "type" : "text"
+  "theCode": "kód",
+  "@theCode": {
+    "type": "text"
   },
-  "thisWeb" : "Táto webová stránka",
-  "@thisWeb" : {
-    "type" : "text"
+  "theDesign": "design",
+  "@theDesign": {
+    "type": "text"
   },
-  "thisWebDesc" : "Samozřejmé, že celý tento web je vytvořen ve Flutteru a je napsán na čistém Dartu. Závislost jedné a jediné, třetí strany je animace v sekci \"O mně\", která byla vytvořena v Rive.",
-  "@thisWebDesc" : {
-    "type" : "text"
+  "thisWeb": "Táto webová stránka",
+  "@thisWeb": {
+    "type": "text"
   },
-  "tongueTwisters" : "Jazykolamy",
-  "@tongueTwisters" : {
-    "type" : "text"
+  "thisWebDesc": "Samozřejmé, že celý tento web je vytvořen ve Flutteru a je napsán na čistém Dartu. Závislost jedné a jediné, třetí strany je animace v sekci \"O mně\", která byla vytvořena v Rive.",
+  "@thisWebDesc": {
+    "type": "text"
   },
-  "tongueTwistersDesc" : "Aplikace pro testování jazykolamů, se zaměřením na design. Vytvořeno ve spolupráci s ilustrátorem — proto licence mi neumožňuje otevřít zdroj (tj. i ilustrace).",
-  "@tongueTwistersDesc" : {
-    "type" : "text"
+  "tongueTwisters": "Jazykolamy",
+  "@tongueTwisters": {
+    "type": "text"
+  },
+  "tongueTwistersDesc": "Aplikace pro testování jazykolamů, se zaměřením na design. Vytvořeno ve spolupráci s ilustrátorem — proto licence mi neumožňuje otevřít zdroj (tj. i ilustrace).",
+  "@tongueTwistersDesc": {
+    "type": "text"
   }
 }

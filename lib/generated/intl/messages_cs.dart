@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function> {
     "about" : MessageLookupByLibrary.simpleMessage("O mně"),
     "check" : MessageLookupByLibrary.simpleMessage("Zkoumat"),
+    "cloud" : MessageLookupByLibrary.simpleMessage("Všechny jazykové verze"),
     "contacts" : MessageLookupByLibrary.simpleMessage("Kontakty"),
     "contactsDesc" : MessageLookupByLibrary.simpleMessage("Fyzicky jsem v Brně, na internetu, znám spíše jako „tsinis“:"),
     "devAndDesigner" : MessageLookupByLibrary.simpleMessage("Flutter vývojář a grafik"),
@@ -32,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullName" : MessageLookupByLibrary.simpleMessage("Roman Cinis"),
     "greeting" : MessageLookupByLibrary.simpleMessage("Vítejte, jsem"),
     "helloDribbble" : MessageLookupByLibrary.simpleMessage("Toto je projekt ukazující Interaktivní animace, které jsem vytvořil jako svůj Debut na legendárním Dribbble, poté co jsem, nedávno, dostal vytoužené pozvaní."),
-    "iAm" : MessageLookupByLibrary.simpleMessage("Jsem oceněným „T-shaped“ specialistou jakožto Flutter vývojář a grafik, s velkou láskou k interaktivním animacím a dobrému UX. Udělejme něco úžasného společně!"),
+    "iAm" : MessageLookupByLibrary.simpleMessage("Jsem oceněným „T-shaped“ specialistou jakožto Flutter vývojář a grafik, s velkou láskou k interaktivním animacím a dobrému UX. Udělejme něco úžasného společně!\n\n Stáhněte si moje CV zde:"),
     "inAction" : MessageLookupByLibrary.simpleMessage("v akci"),
     "language" : MessageLookupByLibrary.simpleMessage("Jazyk"),
     "portfolio" : MessageLookupByLibrary.simpleMessage("Portfolio"),

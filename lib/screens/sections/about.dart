@@ -17,7 +17,7 @@ class About extends StatelessWidget {
         children: <Widget>[
           Text(
             S.of(context).fullName,
-            style: Theme.of(context).textTheme.headline3.copyWith(
+            style: Theme.of(context).textTheme.headline4.copyWith(
                   fontSize:
                       30.0 + (MediaQuery.of(context).size.shortestSide / 100.0),
                 ),
@@ -34,7 +34,7 @@ class About extends StatelessWidget {
                         style: TextStyle(fontSize: 15.0 + width / 100.0),
                       ),
                     ),
-              // const SizedBox(width: 20.0),
+              const SizedBox(width: 10.0),
               SizedBox(
                 width: MediaQuery.of(context).size.shortestSide * 0.6,
                 height: MediaQuery.of(context).size.shortestSide * 0.6,

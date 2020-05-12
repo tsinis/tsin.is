@@ -1,103 +1,107 @@
 {
-  "@@locale" : "ru",
-  "about" : "Обо мне",
-  "@about" : {
-    "type" : "text"
+  "@@locale": "ru",
+  "about": "Обо мне",
+  "@about": {
+    "type": "text"
   },
-  "check" : "Проверьте",
-  "@check" : {
-    "type" : "text"
+  "check": "Проверьте",
+  "@check": {
+    "type": "text"
   },
-  "contacts" : "Контакты",
-  "@contacts" : {
-    "type" : "text"
+  "contacts": "Контакты",
+  "@contacts": {
+    "type": "text"
   },
-  "contactsDesc" : "Физически нахожусь в Брно, в этих интернетах я известен как «tsinis»:",
-  "@contactsDesc" : {
-    "type" : "text"
+  "contactsDesc": "Физически нахожусь в Брно, в этих интернетах я известен как «tsinis»:",
+  "@contactsDesc": {
+    "type": "text"
   },
-  "devAndDesigner" : "Flutter разработчик и дизайнер",
-  "@devAndDesigner" : {
-    "type" : "text"
+  "devAndDesigner": "Flutter разработчик и дизайнер",
+  "@devAndDesigner": {
+    "type": "text"
   },
-  "email" : "или же просто напишите мне на электронную почту:",
-  "@email" : {
-    "type" : "text"
+  "email": "или же просто напишите мне на электронную почту:",
+  "@email": {
+    "type": "text"
   },
-  "findInPortfolio" : "Здесь вы найдёте",
-  "@findInPortfolio" : {
-    "type" : "text"
+  "findInPortfolio": "Здесь вы найдёте",
+  "@findInPortfolio": {
+    "type": "text"
   },
-  "flutterClock" : "Этот проект является одним из победителей совместного конкурса, компаний Google и Lenovo, под названием «Flutter Clock» (с почти тысячей проектов со всего мира).",
-  "@flutterClock" : {
-    "type" : "text"
+  "flutterClock": "Этот проект является одним из победителей совместного конкурса, компаний Google и Lenovo, под названием «Flutter Clock» (с почти тысячей проектов со всего мира).",
+  "@flutterClock": {
+    "type": "text"
   },
-  "fullName" : "Роман Цинис",
-  "@fullName" : {
-    "type" : "text"
+  "fullName": "Роман Цинис",
+  "@fullName": {
+    "type": "text"
   },
-  "greeting" : "Приветствую, я",
-  "@greeting" : {
-    "type" : "text"
+  "greeting": "Приветствую, я",
+  "@greeting": {
+    "type": "text"
   },
-  "helloDribbble" : "Этот проект — демонстрация интерактивных анимаций, сделанных в качестве Дебюта на легендарном Dribbble, на который я получил долгожданное приглашение.",
-  "@helloDribbble" : {
-    "type" : "text"
+  "helloDribbble": "Этот проект — демонстрация интерактивных анимаций, сделанных в качестве Дебюта на легендарном Dribbble, на который я получил долгожданное приглашение.",
+  "@helloDribbble": {
+    "type": "text"
   },
-  "iAm" : "Я награждённый T-специалист в области Flutter разработки и дизайна, с большой любовью к интерактивным анимациям и хорошему UX.  Давайте сделаем что-то классное вместе!",
-  "@iAm" : {
-    "type" : "text"
+  "iAm": "Я награждённый T-специалист в области Flutter разработки и дизайна, с большой любовью к интерактивным анимациям и хорошему UX.  Давайте сделаем что-то классное вместе!\n\n Скачайте моё резюме тут:",
+  "@iAm": {
+    "type": "text"
   },
-  "inAction" : "в действии",
-  "@inAction" : {
-    "type" : "text"
+  "cloud": "Все языковые варианты",
+  "@cloud": {
+    "type": "text"
   },
-  "language" : "Язык",
-  "@language" : {
-    "type" : "text"
+  "inAction": "в действии",
+  "@inAction": {
+    "type": "text"
   },
-  "portfolio" : "Портфолио",
-  "@portfolio" : {
-    "type" : "text"
+  "language": "Язык",
+  "@language": {
+    "type": "text"
   },
-  "projectsPortfolio" : "проектов и репозиториев",
-  "@projectsPortfolio" : {
-    "type" : "text"
+  "portfolio": "Портфолио",
+  "@portfolio": {
+    "type": "text"
   },
-  "see" : "Смотреть",
-  "@see" : {
-    "type" : "text"
+  "projectsPortfolio": "проектов и репозиториев",
+  "@projectsPortfolio": {
+    "type": "text"
   },
-  "selectLang" : "select your language",
-  "@selectLang" : {
-    "type" : "text"
+  "see": "Смотреть",
+  "@see": {
+    "type": "text"
   },
-  "somePortfilio" : "некоторые из моих",
-  "@somePortfilio" : {
-    "type" : "text"
+  "selectLang": "select your language",
+  "@selectLang": {
+    "type": "text"
   },
-  "theCode" : "код",
-  "@theCode" : {
-    "type" : "text"
+  "somePortfilio": "некоторые из моих",
+  "@somePortfilio": {
+    "type": "text"
   },
-  "theDesign" : "дизайн",
-  "@theDesign" : {
-    "type" : "text"
+  "theCode": "код",
+  "@theCode": {
+    "type": "text"
   },
-  "thisWeb" : "Этот веб-сайт",
-  "@thisWeb" : {
-    "type" : "text"
+  "theDesign": "дизайн",
+  "@theDesign": {
+    "type": "text"
   },
-  "thisWebDesc" : "Разумеется, весь этот сайт написан в Flutter на чистейшем Dart. Единственная сторонняя зависимость тут — это анимация в секции «Обо мне», которая сделана в Rive.",
-  "@thisWebDesc" : {
-    "type" : "text"
+  "thisWeb": "Этот веб-сайт",
+  "@thisWeb": {
+    "type": "text"
   },
-  "tongueTwisters" : "Скороговорки",
-  "@tongueTwisters" : {
-    "type" : "text"
+  "thisWebDesc": "Разумеется, весь этот сайт написан в Flutter на чистейшем Dart. Единственная сторонняя зависимость тут — это анимация в секции «Обо мне», которая сделана в Rive.",
+  "@thisWebDesc": {
+    "type": "text"
   },
-  "tongueTwistersDesc" : "Аппликация создана для тестирования скороговорок с главным упором на дизайн. Создана совместно с иллюстратором, потому правила лицензии не позволяет мне выложить проект (т.е. и иллюстрации) в открытый доступ.",
-  "@tongueTwistersDesc" : {
-    "type" : "text"
+  "tongueTwisters": "Скороговорки",
+  "@tongueTwisters": {
+    "type": "text"
+  },
+  "tongueTwistersDesc": "Аппликация создана для тестирования скороговорок с главным упором на дизайн. Создана совместно с иллюстратором, потому правила лицензии не позволяет мне выложить проект (т.е. и иллюстрации) в открытый доступ.",
+  "@tongueTwistersDesc": {
+    "type": "text"
   }
 }

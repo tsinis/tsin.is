@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function> {
     "about" : MessageLookupByLibrary.simpleMessage("Обо мне"),
     "check" : MessageLookupByLibrary.simpleMessage("Проверьте"),
+    "cloud" : MessageLookupByLibrary.simpleMessage("Все языковые варианты"),
     "contacts" : MessageLookupByLibrary.simpleMessage("Контакты"),
     "contactsDesc" : MessageLookupByLibrary.simpleMessage("Физически нахожусь в Брно, в этих интернетах я известен как «tsinis»:"),
     "devAndDesigner" : MessageLookupByLibrary.simpleMessage("Flutter разработчик и дизайнер"),
@@ -32,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullName" : MessageLookupByLibrary.simpleMessage("Роман Цинис"),
     "greeting" : MessageLookupByLibrary.simpleMessage("Приветствую, я"),
     "helloDribbble" : MessageLookupByLibrary.simpleMessage("Этот проект — демонстрация интерактивных анимаций, сделанных в качестве Дебюта на легендарном Dribbble, на который я получил долгожданное приглашение."),
-    "iAm" : MessageLookupByLibrary.simpleMessage("Я награждённый T-специалист в области Flutter разработки и дизайна, с большой любовью к интерактивным анимациям и хорошему UX.  Давайте сделаем что-то классное вместе!"),
+    "iAm" : MessageLookupByLibrary.simpleMessage("Я награждённый T-специалист в области Flutter разработки и дизайна, с большой любовью к интерактивным анимациям и хорошему UX.  Давайте сделаем что-то классное вместе!\n\n Скачайте моё резюме тут:"),
     "inAction" : MessageLookupByLibrary.simpleMessage("в действии"),
     "language" : MessageLookupByLibrary.simpleMessage("Язык"),
     "portfolio" : MessageLookupByLibrary.simpleMessage("Портфолио"),

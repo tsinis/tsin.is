@@ -11,6 +11,8 @@ class Avatar extends StatefulWidget {
   const Avatar({Key key}) : super(key: key);
   static AssetProvider cache =
       AssetFlare(bundle: rootBundle, name: 'assets/images/avatar.flr');
+  AssetProvider get _cache => cache;
+  // set cache(AssetProvider asset) => asset = _cache;
   @override
   _AvatarState createState() => _AvatarState();
 }
@@ -26,10 +28,10 @@ class _AvatarState extends State<Avatar> {
         onExit: (_) => _headController.hovering = true,
         onEnter: (_) => _headController.hovering = false,
         onHover: _pointerHover,
-        child: FlareActor.asset(Avatar.cache,
+        child: FlareActor.asset(widget._cache,
             controller: _headController,
             alignment: Alignment.bottomCenter,
-            fit: BoxFit.scaleDown,
+            fit: BoxFit.fitWidth,
             animation: 'blink'),
       );
 }

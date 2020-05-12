@@ -23,6 +23,7 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function> {
     "about" : MessageLookupByLibrary.simpleMessage("About"),
     "check" : MessageLookupByLibrary.simpleMessage("Check "),
+    "cloud" : MessageLookupByLibrary.simpleMessage("All language versions"),
     "contacts" : MessageLookupByLibrary.simpleMessage("Contacts"),
     "contactsDesc" : MessageLookupByLibrary.simpleMessage("Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:"),
     "devAndDesigner" : MessageLookupByLibrary.simpleMessage("Flutter Developer & Designer"),
@@ -32,7 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "fullName" : MessageLookupByLibrary.simpleMessage("Roman Cinis"),
     "greeting" : MessageLookupByLibrary.simpleMessage("Hello there, I\'m"),
     "helloDribbble" : MessageLookupByLibrary.simpleMessage("Interactive animations showcase project, I\'ve made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”)."),
-    "iAm" : MessageLookupByLibrary.simpleMessage("I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!"),
+    "iAm" : MessageLookupByLibrary.simpleMessage("I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!\n\n Grab my CV here:"),
     "inAction" : MessageLookupByLibrary.simpleMessage("in Action"),
     "language" : MessageLookupByLibrary.simpleMessage("Language"),
     "portfolio" : MessageLookupByLibrary.simpleMessage("Portfolio"),

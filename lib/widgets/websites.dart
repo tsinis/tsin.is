@@ -39,9 +39,9 @@ class Website extends StatelessWidget {
       case 'LinkedIn.com/in/':
         return Colors.lightBlue[300];
       case 'Rive.app/a/':
-        return Colors.purple;
-      case 'Medium.com/@':
         return Colors.white;
+      case 'Medium.com/@':
+        return Colors.black;
       case 'Vimeo.com/':
         return Colors.cyan;
       default:
@@ -53,11 +53,11 @@ class Website extends StatelessWidget {
   Widget build(BuildContext context) => SizedBox(
         width: 140.0,
         child: FlatButton.icon(
-          color: Colors.grey.withOpacity(0.2),
+          color: Colors.grey[600],
           textColor: Theme.of(context).disabledColor,
           hoverColor: _color.withOpacity(0.25),
           highlightColor: _color,
-          icon: Icon(_icon),
+          icon: Icon(_icon, color: _getColor().withOpacity(0.66)),
           label: Text(_name),
           onPressed: () => click(url, name: _name),
         ).showCursorOnHover,

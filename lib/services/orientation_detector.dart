@@ -8,6 +8,10 @@ class OrientationSwitcher extends StatelessWidget {
   final bool columnNotRow;
 
   @override
-  Widget build(BuildContext context) =>
-      columnNotRow ? Column(children: children) : Row(children: children);
+  Widget build(BuildContext context) => columnNotRow
+      ? Column(
+          children: children, mainAxisAlignment: MainAxisAlignment.spaceBetween)
+      : Row(
+          children: children,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween);
 }
