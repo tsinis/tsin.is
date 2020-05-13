@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../extensions/hover_extensions.dart';
@@ -11,14 +12,14 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     return Container(
-      color: Theme.of(context).backgroundColor,
+      color: Theme.of(context).primaryColor,
       child: FractionallySizedBox(
         widthFactor: 0.7,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             SizedBox(height: height * 0.05),
-            Text(S.of(context).contacts,
+            AutoSizeText(S.of(context).contacts, maxLines: 1,
                 style: Theme.of(context).textTheme.headline4),
             SizedBox(height: height * 0.05),
             Text(S.of(context).contactsDesc, textAlign: TextAlign.center),

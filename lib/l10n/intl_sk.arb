@@ -44,11 +44,15 @@
   "@helloDribbble": {
     "type": "text"
   },
-  "iAm": "Som oceneným „T-shaped“ špecialistom ako Flutter vývojár a grafik, s veľkou láskou k interaktívnym animáciám a dobrému UX. Urobme niečo úžasné spoločne!\n\n Stiahnite si moje CV tu:",
+  "iAm": "Som oceneným „T-shaped“ špecialistom ako Flutter vývojár a grafik, s veľkou láskou k interaktívnym animáciám a dobrému UX. Urobme niečo úžasné spoločne!\n\nChcete vedieť viac?",
   "@iAm": {
     "type": "text"
   },
-  "cloud": "Všetky jazykové verzie",
+  "cv": "Stiahnuť si CV",
+  "@cv": {
+    "type": "text"
+  },
+  "cloud": "Všetky jazyky",
   "@cloud": {
     "type": "text"
   },

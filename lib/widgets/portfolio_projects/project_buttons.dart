@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../extensions/hover_extensions.dart';
@@ -35,7 +36,7 @@ class ProjectButtonBar extends ButtonBar {
                     hoverColor: Colors.cyan.withOpacity(0.1),
                     textColor: Colors.cyanAccent[700],
                     color: Colors.cyan[600],
-                    onPressed: () => click(designURL),
+                    onPressed: () => openURL(designURL),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -49,8 +50,8 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text((tooTight ? '${S.of(context).see} ' : '') +
-                            S.of(context).inAction),
+                        AutoSizeText((tooTight ? '${S.of(context).see} ' : '') +
+                            S.of(context).inAction, maxLines: 1),
                       ],
                     ),
                   ).showCursorOnHover
@@ -61,7 +62,7 @@ class ProjectButtonBar extends ButtonBar {
                     hoverColor: Colors.pink.withOpacity(0.1),
                     textColor: Colors.pink[400],
                     color: Colors.pink,
-                    onPressed: () => click(designURL),
+                    onPressed: () => openURL(designURL),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
@@ -75,8 +76,8 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text((tooTight ? '${S.of(context).see} ' : '') +
-                            S.of(context).theDesign),
+                        AutoSizeText((tooTight ? '${S.of(context).see} ' : '') +
+                            S.of(context).theDesign, maxLines: 1),
                       ],
                     ),
                   ).showCursorOnHover,
@@ -88,7 +89,7 @@ class ProjectButtonBar extends ButtonBar {
               elevation: 1.5,
               hoverElevation: 2.5,
               highlightElevation: 3.0,
-              onPressed: () => click(appURL),
+              onPressed: () => openURL(appURL),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _openSource
@@ -101,9 +102,10 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 10.0,
                           ),
                         ),
-                        Text(
+                        AutoSizeText(
                           (tooTight ? '${S.of(context).check} ' : '') +
-                              S.of(context).theCode,
+                              S.of(context).theCode, maxLines: 1,
+
                           style: TextStyle(color: Colors.grey[800]),
                         ),
                       ]
@@ -118,8 +120,9 @@ class ProjectButtonBar extends ButtonBar {
                             maxWidth: 15.0,
                           ),
                         ),
-                        Text(
+                        AutoSizeText(
                           'Google Play',
+                          maxLines: 1,
                           style: TextStyle(color: Colors.lightGreen[50]),
                         ),
                       ],

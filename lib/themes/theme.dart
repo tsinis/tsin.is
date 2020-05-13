@@ -10,7 +10,7 @@ class MyTheme {
 
     return _theme.copyWith(
       primaryColor: Colors.grey,
-      primaryColorLight: Colors.grey[400],
+      primaryColorLight: Colors.grey[300],
       primaryColorDark: Colors.grey[800],
       accentColor: Colors.grey[700],
       backgroundColor: Colors.grey[600],
@@ -75,7 +75,8 @@ class MyTheme {
         ),
         button: _theme.textTheme.button.copyWith(
           fontFamily: _textFont,
-          fontSize: 14.0,
+          fontSize: 16.0,
+          fontWeight: FontWeight.w400,
         ),
         overline: _theme.textTheme.overline.copyWith(
           fontFamily: _textFont,

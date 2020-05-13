@@ -1,5 +1,6 @@
 import 'dart:math' show max;
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
@@ -19,8 +20,9 @@ class MainText extends StatelessWidget {
         SizedBox(
           height: shortestSide / 9.0 - ((height < 351.0) ? 22.0 : 0),
         ),
-        Text(
+        AutoSizeText(
           S.of(context).greeting,
+          maxLines: 1,
           style: Theme.of(context)
               .textTheme
               .bodyText2

@@ -132,9 +132,9 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
               ).showCursorOnHover,
               expanded: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 35.0, vertical: 20.0),
+                  const SizedBox(height: 10.0),
+                  FractionallySizedBox(
+                    widthFactor: 0.85,
                     child: AutoSizeText(
                       widget.projectDesc,
                       textAlign: TextAlign.justify,
@@ -144,11 +144,11 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                    padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: ProjectButtonBar(
                       widget.designURL,
                       widget.appURL,
-                      tooTight: (MediaQuery.of(context).size.width > 399.0),
+                      tooTight: (_width > 399.0),
                     ),
                   ),
                 ],

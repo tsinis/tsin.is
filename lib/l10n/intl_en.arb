@@ -44,11 +44,15 @@
   "@helloDribbble": {
     "type": "text"
   },
-  "iAm": "I'm awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let's make something awesome together!\n\n Grab my CV here:",
+  "iAm": "I'm awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let's make something awesome together!\n\nWant to know more?",
   "@iAm": {
     "type": "text"
   },
-  "cloud": "All language versions",
+  "cv": "Grab my CV",
+  "@cv": {
+    "type": "text"
+  },
+  "cloud": "All languages",
   "@cloud": {
     "type": "text"
   },

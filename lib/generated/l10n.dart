@@ -128,8 +128,17 @@ class S {
 
   String get iAm {
     return Intl.message(
-      'I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!\n\n Grab my CV here:',
+      'I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!\n\nWant to know more?',
       name: 'iAm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get cv {
+    return Intl.message(
+      'Grab my CV',
+      name: 'cv',
       desc: '',
       args: [],
     );
@@ -137,7 +146,7 @@ class S {
 
   String get cloud {
     return Intl.message(
-      'All language versions',
+      'All languages',
       name: 'cloud',
       desc: '',
       args: [],

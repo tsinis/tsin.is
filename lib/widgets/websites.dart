@@ -37,7 +37,7 @@ class Website extends StatelessWidget {
       case 'Dribbble.com/':
         return Colors.pink;
       case 'LinkedIn.com/in/':
-        return Colors.lightBlue[300];
+        return Colors.blue;
       case 'Rive.app/a/':
         return Colors.white;
       case 'Medium.com/@':
@@ -45,7 +45,7 @@ class Website extends StatelessWidget {
       case 'Vimeo.com/':
         return Colors.cyan;
       default:
-        return Colors.grey;
+        return Colors.grey[700];
     }
   }
 
@@ -53,13 +53,13 @@ class Website extends StatelessWidget {
   Widget build(BuildContext context) => SizedBox(
         width: 140.0,
         child: FlatButton.icon(
-          color: Colors.grey[600],
+          // color: Colors.grey[600],
           textColor: Theme.of(context).disabledColor,
-          hoverColor: _color.withOpacity(0.25),
+          hoverColor: _color.withOpacity(0.15),
           highlightColor: _color,
           icon: Icon(_icon, color: _getColor().withOpacity(0.66)),
-          label: Text(_name),
-          onPressed: () => click(url, name: _name),
+          label: Text(_name ),
+          onPressed: () => openURL(url, name: _name),
         ).showCursorOnHover,
       );
 }
