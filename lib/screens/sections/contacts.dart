@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 
 import '../../extensions/hover_extensions.dart';
 import '../../generated/l10n.dart';
-import '../../generated/social_icons.dart';
+import '../../generated/my_icons.dart';
 import '../../widgets/websites.dart';
 
 class Contact extends StatelessWidget {
   const Contact({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
+    double _height = MediaQuery.of(context).size.height;
     return Container(
       color: Theme.of(context).primaryColor,
       child: FractionallySizedBox(
@@ -18,12 +19,13 @@ class Contact extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            SizedBox(height: height * 0.05),
-            AutoSizeText(S.of(context).contacts, maxLines: 1,
-                style: Theme.of(context).textTheme.headline4),
-            SizedBox(height: height * 0.05),
-            Text(S.of(context).contactsDesc, textAlign: TextAlign.center),
-            SizedBox(height: height * 0.025),
+            SizedBox(height: _height * 0.05),
+            AutoSizeText(S.of(context).contacts,
+                maxLines: 1, style: Theme.of(context).textTheme.headline4),
+            SizedBox(height: _height * 0.05),
+            AutoSizeText(S.of(context).contactsDesc,
+                textAlign: TextAlign.center, maxLines: 6),
+            SizedBox(height: _height * 0.025),
             Wrap(
               alignment: WrapAlignment.center,
               spacing: 5.0,
@@ -36,26 +38,24 @@ class Contact extends StatelessWidget {
                 Website('Rive.app/a/'),
               ],
             ),
-            SizedBox(height: height * 0.01),
+            SizedBox(height: _height * 0.01),
             Wrap(
               spacing: 10.0,
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: <Widget>[
-                Text(
-                  S.of(context).email,
-                  textAlign: TextAlign.center,
-                ),
+                AutoSizeText(S.of(context).email,
+                    textAlign: TextAlign.center, maxLines: 4),
                 IconButton(
                   icon: Icon(
-                    SocialIcons.mail_alt,
+                    MyIcon.mail_alt,
                     color: Theme.of(context).primaryColorLight,
                   ),
                   onPressed: () => null, //TODO: Add email address.
                 ).showCursorOnHover.moveUpOnHover
               ],
             ),
-            SizedBox(height: height * 0.025),
+            SizedBox(height: _height * 0.025),
           ],
         ),
       ),

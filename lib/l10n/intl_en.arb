@@ -4,7 +4,7 @@
   "@about": {
     "type": "text"
   },
-  "check": "Check ",
+  "check": "Check the",
   "@check": {
     "type": "text"
   },
@@ -56,7 +56,7 @@
   "@cloud": {
     "type": "text"
   },
-  "inAction": "in Action",
+  "inAction": "Video",
   "@inAction": {
     "type": "text"
   },
@@ -72,7 +72,7 @@
   "@projectsPortfolio": {
     "type": "text"
   },
-  "see": "See ",
+  "see": "See the",
   "@see": {
     "type": "text"
   },
@@ -84,11 +84,11 @@
   "@somePortfilio": {
     "type": "text"
   },
-  "theCode": "the Code",
+  "theCode": "Code",
   "@theCode": {
     "type": "text"
   },
-  "theDesign": "the Design",
+  "theDesign": "Design",
   "@theDesign": {
     "type": "text"
   },

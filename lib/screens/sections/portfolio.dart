@@ -9,8 +9,8 @@ class Portfolio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    double _height = MediaQuery.of(context).size.height;
+    double _width = MediaQuery.of(context).size.width;
     return Container(
       color: Theme.of(context).backgroundColor,
       child: FractionallySizedBox(
@@ -19,10 +19,10 @@ class Portfolio extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            SizedBox(height: height * 0.1, width: 0),
+            SizedBox(height: _height * 0.1, width: 0),
             AutoSizeText(S.of(context).portfolio,
                 maxLines: 1, style: Theme.of(context).textTheme.headline4),
-            SizedBox(height: height * 0.05, width: 0),
+            SizedBox(height: _height * 0.05, width: 0),
             AutoSizeText.rich(
                 TextSpan(
                   children: <TextSpan>[
@@ -40,9 +40,9 @@ class Portfolio extends StatelessWidget {
                 ),
                 maxLines: 6,
                 textAlign: TextAlign.center),
-            SizedBox(height: height * 0.025, width: 0),
+            SizedBox(height: _height * 0.025, width: 0),
             Wrap(
-              spacing: width * 0.025,
+              spacing: _width * 0.025,
               direction: Axis.horizontal,
               alignment: WrapAlignment.spaceBetween,
               children: [
@@ -64,7 +64,7 @@ class Portfolio extends StatelessWidget {
               ],
             ),
             Wrap(
-              spacing: width * 0.025,
+              spacing: _width * 0.025,
               direction: Axis.horizontal,
               children: [
                 Project(
@@ -83,8 +83,7 @@ class Portfolio extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: height * 0.1),
-            // Divider(indent: width/10, endIndent: width/10, thickness: 2.0),
+            SizedBox(height: _height * 0.1),
           ],
         ),
       ),

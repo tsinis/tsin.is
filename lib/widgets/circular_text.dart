@@ -13,8 +13,8 @@ class CircularText extends StatelessWidget {
   }) : super(key: key);
 
   final double radius;
-  final String text;
   final double startAngle;
+  final String text;
   final TextStyle textStyle;
 
   @override
@@ -31,9 +31,9 @@ class CircularText extends StatelessWidget {
 class _Painter extends CustomPainter {
   _Painter(this.radius, this.text, this.textStyle, {this.initialAngle = 0});
 
+  final double initialAngle;
   final num radius;
   final String text;
-  final double initialAngle;
   final TextStyle textStyle;
 
   final _textPainter = TextPainter(textDirection: TextDirection.ltr);
@@ -54,6 +54,9 @@ class _Painter extends CustomPainter {
       angle = _drawLetter(canvas, text[i], angle);
     }
   }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
 
   double _drawLetter(Canvas canvas, String letter, double prevAngle) {
     _textPainter.text = TextSpan(text: letter, style: textStyle);
@@ -76,7 +79,4 @@ class _Painter extends CustomPainter {
 
   double _calculateRotationAngle(double prevAngle, double alpha) =>
       (alpha + prevAngle) / 2.0;
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => true;
 }

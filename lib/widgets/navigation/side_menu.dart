@@ -3,7 +3,7 @@ import 'dart:ui' show ImageFilter;
 import 'package:flutter/material.dart';
 
 import '../../extensions/hover_extensions.dart';
-import '../../generated/social_icons.dart';
+import '../../generated/my_icons.dart';
 import 'navigation_menu_list.dart';
 
 class SideMenu extends Drawer {
@@ -21,7 +21,7 @@ class SideMenu extends Drawer {
           ),
           child: Drawer(
             child: Container(
-              color: Colors.grey[600],
+              color: Theme.of(context).cardColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -30,7 +30,7 @@ class SideMenu extends Drawer {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 30.0, right: 20.0),
                       child: IconButton(
-                        icon: const Icon(SocialIcons.left_big),
+                        icon: const Icon(MyIcon.left_big),
                         color: Theme.of(context).accentColor,
                         onPressed: () => Scaffold.of(context).openDrawer(),
                       ).showCursorOnHover,

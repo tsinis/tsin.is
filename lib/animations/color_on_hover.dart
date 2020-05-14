@@ -12,23 +12,20 @@ class ColorOnHover extends StatefulWidget {
 
 class _ColorOnHoverState extends State<ColorOnHover> {
   bool _hovering = false;
-  final Color _greyscale = Colors.grey;
-  final Color _colored = Colors.red;
 
   void _mouseEnter(bool hovering) => setState(() => _hovering = hovering);
 
   @override
-  Widget build(BuildContext context) {
-    return MouseRegion(
+  Widget build(BuildContext context) => MouseRegion(
       onEnter: (e) => _mouseEnter(true),
       onExit: (e) => _mouseEnter(false),
       child: AnimatedContainer(
         duration: const Duration(seconds: 1),
         child: ColorFiltered(
             colorFilter: ColorFilter.mode(
-                _hovering ? _greyscale : _colored, BlendMode.saturation),
+                _hovering ? Theme.of(context).primaryColor : Colors.transparent,
+                BlendMode.saturation),
             child: widget.child),
       ),
     );
   }
-}

@@ -6,7 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import '../animations/background.dart';
 import '../extensions/hover_extensions.dart';
 import '../generated/l10n.dart';
-import '../generated/social_icons.dart';
+import '../generated/my_icons.dart';
 import '../services/locale_builder.dart';
 import '../themes/theme.dart';
 import '../widgets/circular_text.dart';
@@ -60,10 +60,10 @@ class _MyHomePageState extends State<_MyHomePage> {
     _scrollController = ScrollController()..addListener(() => setState(() {}));
   }
 
-  double get height => MediaQuery.of(context).size.height;
+  double get _height => MediaQuery.of(context).size.height;
 
   bool get _isSmartPhone =>
-      (MediaQuery.of(context).size.width < 646.5 || offset > height);
+      (MediaQuery.of(context).size.width < 646.5 || offset > _height);
 
   Color get _grey => Theme.of(context).primaryColor;
 
@@ -80,22 +80,22 @@ class _MyHomePageState extends State<_MyHomePage> {
               top: -0.3 * offset,
               left: 0,
               right: 0,
-              height: height,
+              height: _height,
               child: RepaintBoundary(
                 child: AnimatedBackground(),
               ),
             ),
             Positioned(
-              top: 0.2 * height,
+              top: 0.2 * _height,
               left: 0,
               right: 0,
               child: MainText(offset),
             ),
             Positioned(
-              top: height * 0.8 - offset,
+              top: _height * 0.8 - offset,
               left: 0,
               right: 0,
-              height: height * 0.2,
+              height: _height * 0.2,
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -109,12 +109,12 @@ class _MyHomePageState extends State<_MyHomePage> {
               ),
             ),
             Positioned(
-              top: height * 0.95 - offset,
+              top: _height * 0.95 - offset,
               left: 0,
               right: 0,
-              height: height / 3.0,
+              height: _height / 3.0,
               child: Container(
-                height: height / 3.0,
+                height: _height / 3.0,
                 width: double.infinity,
                 color: _grey,
               ),
@@ -124,7 +124,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               cacheExtent: double.infinity,
               controller: _scrollController,
               children: <Widget>[
-                Container(height: height),
+                Container(height: _height),
                 Container(
                   color: _grey,
                   child: const About(),
@@ -135,19 +135,19 @@ class _MyHomePageState extends State<_MyHomePage> {
               ],
             ),
             Positioned(
-              right: -(height / 3.0),
-              top: height / 2.0,
+              right: -(_height / 3.0),
+              top: _height / 2.0,
               height: 2.0,
-              width: height * 0.75,
+              width: _height * 0.75,
               child: _scrollController.hasClients
                   ? ScrollProgress(
-                      height: height,
+                      height: _height,
                       offset: offset,
                       scrollController: _scrollController)
-                  : Container(),
+                  : const SizedBox(),
             ),
-            (height > MediaQuery.of(context).size.width)
-                ? Container()
+            (_height > MediaQuery.of(context).size.width)
+                ? const SizedBox()
                 : Positioned(
                     left: 80.0,
                     bottom: 70.0,
@@ -165,7 +165,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Opacity(
-                  opacity: max(0, 1.0 - offset / height),
+                  opacity: max(0, 1.0 - offset / _height),
                   child: Padding(
                     padding: EdgeInsets.only(
                         top: 30.0, left: _isSmartPhone ? 30.0 : 50.0),
@@ -184,13 +184,13 @@ class _MyHomePageState extends State<_MyHomePage> {
                       top: 30.0, right: _isSmartPhone ? 20.0 : 50.0),
                   child: _isSmartPhone
                       ? IconButton(
-                          icon: const Icon(SocialIcons.menu),
+                          icon: const Icon(MyIcon.menu),
                           color: Theme.of(context).accentColor,
                           onPressed: () =>
                               _scaffoldKey.currentState.openEndDrawer(),
                         ).showCursorOnHover.moveUpOnHover
                       : Opacity(
-                          opacity: max(0, 1.0 - offset / height),
+                          opacity: max(0, 1.0 - offset / _height),
                           child: Header(_scrollController),
                         ),
                 )

@@ -9,11 +9,11 @@ import 'package:flare_dart/math/mat2d.dart' show Mat2D;
 import 'package:flare_dart/math/vec2d.dart' show Vec2D;
 
 class HeadController implements FlareController {
+  bool _exit;
   FlareAnimationLayer _exitAnimation;
   ActorNode _eyesControl, _headControl;
   Offset _pointer;
   Mat2D _viewTransform;
-  bool _exit;
 
   @override
   ValueNotifier<bool> isActive;
@@ -67,17 +67,19 @@ class HeadController implements FlareController {
       ..mix = 1.0;
   }
 
+  @override
+  void setViewTransform(Mat2D viewTransform) => _viewTransform = viewTransform;
+
   // Offset get moveEyes => _pointer;
+
   set moveEyes(Offset _offset) => _pointer = _offset;
 
   // bool get hovering => _exit;
+
   set hovering(bool _isHovering) {
     if (!_isHovering) {
       _exitAnimation.time = 0;
     }
     _exit = _isHovering;
   }
-
-  @override
-  void setViewTransform(Mat2D viewTransform) => _viewTransform = viewTransform;
 }

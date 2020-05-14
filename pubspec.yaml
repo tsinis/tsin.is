@@ -9,7 +9,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
         sdk: flutter
-  expandable: ^4.1.3
+  expandable: ^4.1.4
   auto_size_text: ^2.1.0
   flare_flutter: ^2.0.3
 
@@ -26,9 +26,9 @@ flutter:
     - assets/images/
 
   fonts:
-    - family: SocialIcons
+    - family: MyIcons
       fonts:
-        - asset: third-party/fonts/Icons/SocialIcons.ttf
+        - asset: third-party/fonts/Icons/MyIcons.ttf
 
     - family: Hagrid Text
       fonts:

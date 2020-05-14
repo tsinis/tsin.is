@@ -10,18 +10,19 @@ import 'intl/messages_all.dart';
 
 class S {
   S();
-  
-  static const AppLocalizationDelegate delegate =
-    AppLocalizationDelegate();
+
+  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name); 
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
+    final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       return S();
     });
-  } 
+  }
 
   static S of(BuildContext context) {
     return Localizations.of<S>(context, S);
@@ -38,7 +39,7 @@ class S {
 
   String get check {
     return Intl.message(
-      'Check ',
+      'Check the',
       name: 'check',
       desc: '',
       args: [],
@@ -155,7 +156,7 @@ class S {
 
   String get inAction {
     return Intl.message(
-      'in Action',
+      'Video',
       name: 'inAction',
       desc: '',
       args: [],
@@ -191,7 +192,7 @@ class S {
 
   String get see {
     return Intl.message(
-      'See ',
+      'See the',
       name: 'see',
       desc: '',
       args: [],
@@ -218,7 +219,7 @@ class S {
 
   String get theCode {
     return Intl.message(
-      'the Code',
+      'Code',
       name: 'theCode',
       desc: '',
       args: [],
@@ -227,7 +228,7 @@ class S {
 
   String get theDesign {
     return Intl.message(
-      'the Design',
+      'Design',
       name: 'theDesign',
       desc: '',
       args: [],

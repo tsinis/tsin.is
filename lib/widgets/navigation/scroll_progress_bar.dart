@@ -22,7 +22,7 @@ class ScrollProgress extends StatelessWidget {
                 min(offset / 1000, 1.0),
               ),
           valueColor: AlwaysStoppedAnimation<Color>(
-            Theme.of(context).primaryColor.withOpacity(0.8),
+            Theme.of(context).primaryColor,
           ),
           value: (scrollController.position.maxScrollExtent -
                   scrollController.position.pixels) /

@@ -2,135 +2,157 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 import '../../extensions/hover_extensions.dart';
+import '../../extensions/string_capitalize.dart';
 import '../../generated/l10n.dart';
-import '../../generated/social_icons.dart';
+import '../../generated/my_icons.dart';
 import '../../services/url_click.dart';
 
 class ProjectButtonBar extends ButtonBar {
-  const ProjectButtonBar(this.designURL, this.appURL, {this.tooTight, Key key})
+  const ProjectButtonBar(this._designURL, this._appURL, {this.isWide, Key key})
       : super(key: key);
 
-  final String designURL, appURL;
-  final bool tooTight;
+  final bool isWide;
 
-  bool get _openSource => appURL.toLowerCase().contains('github');
+  final String _designURL, _appURL;
 
-  bool get _video => designURL.toLowerCase().contains('vimeo');
+  bool get _openSource => _appURL.toLowerCase().contains('github');
+
+  bool get _video => _designURL.toLowerCase().contains('vimeo');
 
   @override
-  Widget build(BuildContext context) => ButtonBar(
-        buttonPadding:
-            const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
-        buttonMinWidth: 220.0,
-        alignment: MainAxisAlignment.spaceEvenly,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10.0),
-            child: _video
-                ? OutlineButton(
-                    borderSide: BorderSide(
-                      width: 4.8,
-                      color: Colors.cyan[300],
-                    ),
-                    highlightedBorderColor: Colors.cyanAccent[400],
-                    hoverColor: Colors.cyan.withOpacity(0.1),
-                    textColor: Colors.cyanAccent[700],
-                    color: Colors.cyan[600],
-                    onPressed: () => openURL(designURL),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          SocialIcons.vimeo,
-                          color: Colors.cyan[300],
+  Widget build(BuildContext context) {
+    bool _isSmartWatch = MediaQuery.of(context).size.width < 321.0;
+    return ButtonBar(
+      buttonPadding:
+          const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
+      buttonMinWidth: 220.0,
+      alignment: MainAxisAlignment.spaceEvenly,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          child: _video
+              ? OutlineButton(
+                  borderSide: BorderSide(
+                    width: 4.8,
+                    color: Colors.cyan[300],
+                  ),
+                  highlightedBorderColor: Colors.cyanAccent[400],
+                  hoverColor: Colors.cyan.withOpacity(0.1),
+                  textColor: Colors.cyanAccent[700],
+                  color: Colors.cyan[600],
+                  onPressed: () => openURL(_designURL),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      _isSmartWatch
+                          ? const SizedBox()
+                          : Icon(
+                              MyIcon.vimeo,
+                              color: Colors.cyan[400],
+                            ),
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          minWidth: 10.0,
+                          maxWidth: 15.0,
                         ),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints(
-                            minWidth: 10.0,
-                            maxWidth: 15.0,
-                          ),
+                      ),
+                      AutoSizeText(
+                          ((isWide ? '${S.of(context).see} ' : '') +
+                                  S.of(context).inAction)
+                              .capitalizeFirstLetter(),
+                          maxLines: 1),
+                    ],
+                  ),
+                ).showCursorOnHover
+              : OutlineButton(
+                  borderSide:
+                      BorderSide(width: 4.8, color: Colors.pinkAccent[100]),
+                  highlightedBorderColor: Colors.pink[200],
+                  hoverColor: Colors.pink.withOpacity(0.1),
+                  textColor: Colors.pink[400],
+                  color: Colors.pink,
+                  onPressed: () => openURL(_designURL),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      _isSmartWatch
+                          ? const SizedBox()
+                          : Icon(
+                              MyIcon.dribbble,
+                              color: Colors.pink[300],
+                            ),
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          minWidth: 10.0,
+                          maxWidth: 15.0,
                         ),
-                        AutoSizeText((tooTight ? '${S.of(context).see} ' : '') +
-                            S.of(context).inAction, maxLines: 1),
-                      ],
-                    ),
-                  ).showCursorOnHover
-                : OutlineButton(
-                    borderSide:
-                        BorderSide(width: 4.8, color: Colors.pinkAccent[100]),
-                    highlightedBorderColor: Colors.pink[200],
-                    hoverColor: Colors.pink.withOpacity(0.1),
-                    textColor: Colors.pink[400],
-                    color: Colors.pink,
-                    onPressed: () => openURL(designURL),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          SocialIcons.dribbble,
-                          color: Colors.pink[300],
+                      ),
+                      AutoSizeText(
+                          ((isWide ? '${S.of(context).see} ' : '') +
+                                  S.of(context).theDesign)
+                              .capitalizeFirstLetter(),
+                          maxLines: 1),
+                    ],
+                  ),
+                ).showCursorOnHover,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10.0),
+          child: RaisedButton(
+            color: _openSource
+                ? Theme.of(context).primaryColorLight
+                : Colors.lightGreen,
+            elevation: 1.5,
+            hoverElevation: 2.5,
+            highlightElevation: 3.0,
+            onPressed: () => openURL(_appURL),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: _openSource
+                  ? <Widget>[
+                      _isSmartWatch
+                          ? const SizedBox()
+                          : const Icon(
+                              MyIcon.github_circled,
+                              // color: Colors.black
+                            ),
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          minWidth: 5.0,
+                          maxWidth: 10.0,
                         ),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints(
-                            minWidth: 10.0,
-                            maxWidth: 15.0,
-                          ),
+                      ),
+                      AutoSizeText(
+                        ((isWide ? '${S.of(context).check} ' : '') +
+                                S.of(context).theCode)
+                            .capitalizeFirstLetter(),
+                        maxLines: 1,
+                        style: TextStyle(
+                            color: Theme.of(context).primaryColorDark),
+                      ),
+                    ]
+                  : <Widget>[
+                      _isSmartWatch
+                          ? const SizedBox()
+                          : const Icon(MyIcon.google_play, color: Colors.white),
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(
+                          minWidth: 10.0,
+                          maxWidth: 15.0,
                         ),
-                        AutoSizeText((tooTight ? '${S.of(context).see} ' : '') +
-                            S.of(context).theDesign, maxLines: 1),
-                      ],
-                    ),
-                  ).showCursorOnHover,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10.0),
-            child: RaisedButton(
-              color: _openSource ? Colors.grey[300] : Colors.lightGreen,
-              elevation: 1.5,
-              hoverElevation: 2.5,
-              highlightElevation: 3.0,
-              onPressed: () => openURL(appURL),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: _openSource
-                    ? <Widget>[
-                        Icon(SocialIcons.github_circled,
-                            color: Colors.grey[700]),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints(
-                            minWidth: 5.0,
-                            maxWidth: 10.0,
-                          ),
+                      ),
+                      AutoSizeText(
+                        isWide ? 'Google Play' : 'Play',
+                        maxLines: 1,
+                        style: const TextStyle(
+                          color: Colors.white,
                         ),
-                        AutoSizeText(
-                          (tooTight ? '${S.of(context).check} ' : '') +
-                              S.of(context).theCode, maxLines: 1,
-
-                          style: TextStyle(color: Colors.grey[800]),
-                        ),
-                      ]
-                    : <Widget>[
-                        Icon(
-                          SocialIcons.google_play,
-                          color: Colors.lightGreen[50],
-                        ),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints(
-                            minWidth: 10.0,
-                            maxWidth: 15.0,
-                          ),
-                        ),
-                        AutoSizeText(
-                          'Google Play',
-                          maxLines: 1,
-                          style: TextStyle(color: Colors.lightGreen[50]),
-                        ),
-                      ],
-              ),
-            ).showCursorOnHover,
-          ),
-        ],
-      );
+                      ),
+                    ],
+            ),
+          ).showCursorOnHover,
+        ),
+      ],
+    );
+  }
 }
-
-// XXX: New Icons Added: codepen, appstore_squared, appstore.

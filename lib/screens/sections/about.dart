@@ -8,15 +8,14 @@ import '../../widgets/cv_buttons.dart';
 
 class About extends StatelessWidget {
   const About({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    // double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
-    bool tooTight = width < 1023.9;
+    bool _isWide = MediaQuery.of(context).size.width > 1023.9;
     return FractionallySizedBox(
       widthFactor: 0.8,
       child: OrientationSwitcher(
-        columnNotRow: tooTight,
+        rowIfWide: _isWide,
         children: <Widget>[
           Flexible(
             child: Column(
@@ -25,9 +24,9 @@ class About extends StatelessWidget {
                 AutoSizeText(S.of(context).fullName,
                     maxLines: 1, style: Theme.of(context).textTheme.headline4),
                 const SizedBox(height: 15.0),
-                AutoSizeText(S.of(context).iAm, maxLines: tooTight ? 16 : 8),
+                AutoSizeText(S.of(context).iAm, maxLines: _isWide ? 8 : 16),
                 const SizedBox(width: 10.0, height: 10.0),
-                CVButtons(tooTight),
+                const CVButtons(),
               ],
             ),
           ),

@@ -19,7 +19,7 @@ class MyTheme {
       cardColor: Colors.grey[600],
       canvasColor: Colors.grey.withOpacity(0.5),
       disabledColor: Colors.grey[900],
-      // dividerColor: Colors.grey[800],
+      dividerColor: Colors.grey[400],
       // highlightColor: Color(0x66bcbcbc),
       // splashColor: Color(0x66c8c8c8),
       // selectedRowColor: Color(0xfff5f5f5),

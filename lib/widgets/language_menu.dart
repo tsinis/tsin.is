@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../generated/social_icons.dart';
+import '../generated/my_icons.dart';
 
 class LanguageMenu<String> extends StatelessWidget {
   LanguageMenu(
@@ -42,16 +42,16 @@ class LanguageMenu<String> extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Icon(
-              SocialIcons.translate,
-              color: Colors.grey[800],
+              MyIcon.translate,
+              color: Theme.of(context).primaryColorDark,
             ),
             const SizedBox(width: 10.0),
             isSmartphone
-                ? const SizedBox(height: 0)
+                ? const SizedBox()
                 : Text(
                     language.toString(),
                     style: TextStyle(
-                      color: Colors.grey[700],
+                      color: Theme.of(context).accentColor,
                     ),
                   ),
           ],
