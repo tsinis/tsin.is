@@ -24,18 +24,21 @@ class Avatar extends StatefulWidget {
 class _AvatarState extends State<Avatar> {
   final HeadController _headController = HeadController();
 
-  void _pointerHover(PointerHoverEvent pointer) => _headController.moveEyes =
+  void _pointerHover(PointerHoverEvent pointer) => _headController.move =
       (Offset(pointer.localPosition.dx, pointer.localPosition.dy));
 
   @override
-  Widget build(BuildContext context) => MouseRegion(
-        onExit: (_) => _headController.hovering = true,
-        onEnter: (_) => _headController.hovering = false,
-        onHover: _pointerHover,
-        child: FlareActor.asset(widget._cache,
-            controller: _headController,
-            alignment: Alignment.bottomCenter,
-            fit: BoxFit.fitWidth,
-            animation: 'blink'),
+  Widget build(BuildContext context) => GestureDetector(
+        onTap: _headController.clicked,
+        child: MouseRegion(
+          onExit: (_) => _headController.notHovering(),
+          onEnter: (_) => _headController.isHovering(),
+          onHover: _pointerHover,
+          child: FlareActor.asset(widget._cache,
+              controller: _headController,
+              alignment: Alignment.bottomCenter,
+              fit: BoxFit.fitWidth,
+              animation: 'blink'),
+        ),
       );
 }

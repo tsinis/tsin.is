@@ -9,8 +9,8 @@ import 'package:flare_dart/math/mat2d.dart' show Mat2D;
 import 'package:flare_dart/math/vec2d.dart' show Vec2D;
 
 class HeadController implements FlareController {
-  bool _exit;
-  FlareAnimationLayer _exitAnimation;
+  bool _notHovering = false, _clicked = false;
+  FlareAnimationLayer _exitAnimation, _backgroundAnimation;
   ActorNode _eyesControl, _headControl;
   Offset _pointer;
   Mat2D _viewTransform;
@@ -19,51 +19,65 @@ class HeadController implements FlareController {
   ValueNotifier<bool> isActive;
 
   @override
-  bool advance(FlutterActorArtboard artboard, double elapsed) {
-    if (_exit) {
-      _exitAnimation.time = (_exitAnimation.time + elapsed);
-      _exitAnimation.apply(artboard);
+  bool advance(FlutterActorArtboard _artboard, double _elapsed) {
+    if (_notHovering) {
+      if (_exitAnimation.time < _exitAnimation.animation.duration) {
+        _exitAnimation.time += _elapsed;
+        _exitAnimation.apply(_artboard);
+      }
       return true;
     } else {
+      if (_clicked) {
+        if (_backgroundAnimation.time <
+            _backgroundAnimation.animation.duration) {
+          _backgroundAnimation.time += _elapsed;
+          _backgroundAnimation.apply(_artboard);
+        } else {
+          _clicked = false;
+        }
+      }
+
       if (_viewTransform == null ||
           _eyesControl == null ||
           _headControl == null ||
           _pointer == null) {
-        return true;
+        return false;
       }
 
       Mat2D inverseViewTransform = Mat2D();
       if (!Mat2D.invert(inverseViewTransform, _viewTransform)) {
-        return true;
+        return false;
       }
 
-      Vec2D worldTouch = Vec2D();
-      Vec2D.transformMat2D(worldTouch,
+      Vec2D _globalPointer = Vec2D();
+      Vec2D.transformMat2D(_globalPointer,
           Vec2D.fromValues(_pointer.dx, _pointer.dy), inverseViewTransform);
 
-      Mat2D inverseTargetWorld = Mat2D();
+      Mat2D _inversePointerGlobal = Mat2D();
       if (!Mat2D.invert(
-          inverseTargetWorld, _eyesControl.parent.worldTransform)) {
-        return true;
+          _inversePointerGlobal, _eyesControl.parent.worldTransform)) {
+        return false;
       }
 
-      Vec2D localTouchCoordinates = Vec2D();
+      Vec2D _pointerCoordinates = Vec2D();
       Vec2D.transformMat2D(
-          localTouchCoordinates, worldTouch, inverseTargetWorld);
+          _pointerCoordinates, _globalPointer, _inversePointerGlobal);
 
-      _eyesControl.translation = localTouchCoordinates;
-      _headControl.translation = localTouchCoordinates;
+      _eyesControl.translation = _headControl.translation = _pointerCoordinates;
       return true;
     }
   }
 
   @override
   void initialize(FlutterActorArtboard _artboard) {
-    _exit = false;
     _eyesControl = _artboard.getNode('eye_control');
     _headControl = _artboard.getNode('head_control');
     _exitAnimation = FlareAnimationLayer()
       ..animation = _artboard.getAnimation('exit')
+      ..mixSeconds = 1.0
+      ..mix = 1.0;
+    _backgroundAnimation = FlareAnimationLayer()
+      ..animation = _artboard.getAnimation('background')
       ..mix = 1.0;
   }
 
@@ -72,14 +86,17 @@ class HeadController implements FlareController {
 
   // Offset get moveEyes => _pointer;
 
-  set moveEyes(Offset _offset) => _pointer = _offset;
+  set move(Offset _offset) => _pointer = _offset;
 
-  // bool get hovering => _exit;
+  void isHovering() {
+    _exitAnimation.time = 0;
+    _notHovering = false;
+  }
 
-  set hovering(bool _isHovering) {
-    if (!_isHovering) {
-      _exitAnimation.time = 0;
-    }
-    _exit = _isHovering;
+  void notHovering() => _notHovering = true;
+
+  void clicked() {
+    _backgroundAnimation.time = 0;
+    _clicked = true;
   }
 }
