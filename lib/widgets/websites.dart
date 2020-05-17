@@ -58,7 +58,7 @@ class Website extends StatelessWidget {
           highlightColor: _color,
           icon: Icon(_icon, color: _getColor().withOpacity(0.66)),
           label: Text(_name),
-          onPressed: () => openURL(_url, name: _name),
+          onPressed: () => Open.socialNetwork(_url),
         ).showCursorOnHover,
       );
 }

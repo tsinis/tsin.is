@@ -25,7 +25,7 @@ class CVButtons extends ButtonBar {
             elevation: 1.5,
             hoverElevation: 2.5,
             highlightElevation: 3.0,
-            onPressed: () => openURL('https'),
+            onPressed: () => Open.url(''),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -58,7 +58,7 @@ class CVButtons extends ButtonBar {
             hoverColor: Colors.blueGrey.withOpacity(0.1),
             textColor: Colors.blueGrey[600],
             color: Colors.blueGrey,
-            onPressed: () => openURL('www'),
+            onPressed: Open.cloud,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[

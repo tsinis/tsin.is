@@ -40,7 +40,7 @@ class ProjectButtonBar extends ButtonBar {
                   hoverColor: Colors.cyan.withOpacity(0.1),
                   textColor: Colors.cyanAccent[700],
                   color: Colors.cyan[600],
-                  onPressed: () => openURL(_designURL),
+                  onPressed: () => Open.url(_designURL),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -71,7 +71,7 @@ class ProjectButtonBar extends ButtonBar {
                   hoverColor: Colors.pink.withOpacity(0.1),
                   textColor: Colors.pink[400],
                   color: Colors.pink,
-                  onPressed: () => openURL(_designURL),
+                  onPressed: () => Open.url(_designURL),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -105,7 +105,7 @@ class ProjectButtonBar extends ButtonBar {
             elevation: 1.5,
             hoverElevation: 2.5,
             highlightElevation: 3.0,
-            onPressed: () => openURL(_appURL),
+            onPressed: () => Open.url(_appURL),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: _openSource

@@ -12,6 +12,8 @@ dependencies:
   expandable: ^4.1.4
   auto_size_text: ^2.1.0
   flare_flutter: ^2.0.3
+  url_launcher: ^5.4.7
+  url_launcher_web: ^0.1.1+5
 
 dev_dependencies:
   # flutter_test:
@@ -24,6 +26,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/cv/
 
   fonts:
     - family: MyIcons
