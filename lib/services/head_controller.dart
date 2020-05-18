@@ -84,8 +84,7 @@ class HeadController implements FlareController {
   @override
   void setViewTransform(Mat2D viewTransform) => _viewTransform = viewTransform;
 
-  // Offset get moveEyes => _pointer;
-
+  // Offset get move => _pointer;
   set move(Offset _offset) => _pointer = _offset;
 
   void isHovering() {

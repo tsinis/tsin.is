@@ -18,15 +18,15 @@ class Website extends StatelessWidget {
   IconData _getIcon() {
     switch (_url) {
       case 'Dribbble.com/':
-        return MyIcon.dribbble_squared;
+        return MyIcon.dribbble_square;
       case 'LinkedIn.com/in/':
-        return MyIcon.linkedin_squared;
+        return MyIcon.linkedin;
       case 'GitHub.com/':
-        return MyIcon.github_squared;
+        return MyIcon.github_square;
       case 'Medium.com/@':
         return MyIcon.medium;
       case 'Vimeo.com/':
-        return MyIcon.vimeo_squared;
+        return MyIcon.vimeo_square;
       default:
         return MyIcon.rive;
     }
@@ -35,7 +35,7 @@ class Website extends StatelessWidget {
   Color _getColor() {
     switch (_url) {
       case 'Dribbble.com/':
-        return Colors.pink;
+        return Colors.pink[600];
       case 'LinkedIn.com/in/':
         return Colors.blue;
       case 'Rive.app/a/':
@@ -43,7 +43,7 @@ class Website extends StatelessWidget {
       // case 'Medium.com/@':
       //   return Colors.black;
       case 'Vimeo.com/':
-        return Colors.cyan;
+        return Colors.cyan[600];
       default:
         return Colors.black;
     }

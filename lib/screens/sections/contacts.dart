@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../extensions/hover_extensions.dart';
 import '../../generated/l10n.dart';
 import '../../generated/my_icons.dart';
+import '../../services/url_click.dart';
 import '../../widgets/websites.dart';
 
 class Contact extends StatelessWidget {
@@ -51,7 +52,7 @@ class Contact extends StatelessWidget {
                     MyIcon.mail_alt,
                     color: Theme.of(context).primaryColorLight,
                   ),
-                  onPressed: () => null, //TODO: Add email address.
+                  onPressed: Open.mail, //TODO: Add email address.
                 ).showCursorOnHover.moveUpOnHover
               ],
             ),

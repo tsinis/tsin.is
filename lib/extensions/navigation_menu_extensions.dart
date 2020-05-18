@@ -29,7 +29,7 @@ extension MenuExtension on Menu {
             MediaQuery.of(context).size.shortestSide /
                 (_isSmartPhone ? 1.2 : 3.0);
       default:
-        return MediaQuery.of(context).size.height * (_isSmartPhone ? 1.0 : 0.8);
+        return MediaQuery.of(context).size.height;
     }
   }
 }

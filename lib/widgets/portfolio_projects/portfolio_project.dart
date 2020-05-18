@@ -99,14 +99,14 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                 theme: const ExpandableThemeData(
                     iconColor: Colors.black26,
                     iconPadding: EdgeInsets.symmetric(horizontal: 15),
-                    iconSize: 15.0,
+                    iconSize: 18.0,
                     fadeCurve: Curves.fastOutSlowIn,
                     sizeCurve: Curves.easeInToLinear,
-                    expandIcon: MyIcon.down_open,
-                    collapseIcon: MyIcon.up_open,
+                    expandIcon: MyIcon.caret_down,
+                    collapseIcon: MyIcon.caret_up,
                     headerAlignment: ExpandablePanelHeaderAlignment.center,
                     tapBodyToCollapse: true,
-                    useInkWell: true),
+                    useInkWell: false),
                 header: SizedBox(
                   height: 35.0,
                   child: FittedBox(

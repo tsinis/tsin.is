@@ -65,7 +65,7 @@ class CVButtons extends ButtonBar {
                 _isSmartWatch
                     ? const SizedBox()
                     : Icon(
-                        MyIcon.download_cloud,
+                        MyIcon.docs,
                         color: Colors.blueGrey[400],
                       ),
                 ConstrainedBox(

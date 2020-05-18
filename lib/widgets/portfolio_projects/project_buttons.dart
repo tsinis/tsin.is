@@ -47,7 +47,7 @@ class ProjectButtonBar extends ButtonBar {
                       _isSmartWatch
                           ? const SizedBox()
                           : Icon(
-                              MyIcon.vimeo,
+                              MyIcon.vimeo_v,
                               color: Colors.cyan[400],
                             ),
                       ConstrainedBox(
@@ -113,7 +113,7 @@ class ProjectButtonBar extends ButtonBar {
                       _isSmartWatch
                           ? const SizedBox()
                           : const Icon(
-                              MyIcon.github_circled,
+                              MyIcon.github,
                               // color: Colors.black
                             ),
                       ConstrainedBox(
