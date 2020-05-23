@@ -8,7 +8,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import '../services/head_controller.dart';
 
 class Avatar extends StatefulWidget {
-  const Avatar({Key key}) : super(key: key);
+  const Avatar([Key key]) : super(key: key);
 
   static AssetProvider cache =
       AssetFlare(bundle: rootBundle, name: 'assets/images/avatar.flr');

@@ -5,7 +5,7 @@ import '../../generated/l10n.dart';
 import '../../widgets/portfolio_projects/portfolio_project.dart';
 
 class Portfolio extends StatelessWidget {
-  const Portfolio({Key key}) : super(key: key);
+  const Portfolio([Key key]) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

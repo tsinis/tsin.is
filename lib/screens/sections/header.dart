@@ -11,5 +11,5 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) =>
       (MediaQuery.of(context).size.width > 639.0)
           ? NavigationMenu(_scrollController, isWide: true)
-          : const SizedBox();
+          : const SizedBox.shrink();
 }

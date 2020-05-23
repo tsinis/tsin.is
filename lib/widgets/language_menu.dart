@@ -47,7 +47,7 @@ class LanguageMenu<String> extends StatelessWidget {
             ),
             const SizedBox(width: 10.0),
             isSmartphone
-                ? const SizedBox()
+                ? const SizedBox.shrink()
                 : Text(
                     language.toString(),
                     style: TextStyle(

@@ -8,7 +8,7 @@ import '../../services/url_click.dart';
 import '../../widgets/websites.dart';
 
 class Contact extends StatelessWidget {
-  const Contact({Key key}) : super(key: key);
+  const Contact([Key key]) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class Contact extends StatelessWidget {
             SizedBox(height: _height * 0.05),
             AutoSizeText(S.of(context).contactsDesc,
                 textAlign: TextAlign.center, maxLines: 6),
-            SizedBox(height: _height * 0.025),
+            SizedBox(height: _height * 0.03),
             Wrap(
               alignment: WrapAlignment.center,
               spacing: 5.0,
@@ -39,7 +39,7 @@ class Contact extends StatelessWidget {
                 Website('Rive.app/a/'),
               ],
             ),
-            SizedBox(height: _height * 0.01),
+            SizedBox(height: _height * 0.02),
             Wrap(
               spacing: 10.0,
               alignment: WrapAlignment.center,

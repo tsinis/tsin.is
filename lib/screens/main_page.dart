@@ -21,21 +21,20 @@ import 'sections/main_text.dart';
 import 'sections/portfolio.dart';
 
 class MyWeb extends StatelessWidget {
-  const MyWeb({Key key}) : super(key: key);
+  const MyWeb([Key key]) : super(key: key);
   @override
-  Widget build(BuildContext context) => LocaleBuilder(
-      builder: (context) => MaterialApp(
-              localizationsDelegates: [
-                S.delegate,
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              locale: Locale(LocaleBuilder.language ?? 'en'),
-              supportedLocales: S.delegate.supportedLocales,
-              debugShowCheckedModeBanner: false,
-              theme: MyTheme.defaultTheme,
-              home: _MyHomePage()));
+  Widget build(BuildContext context) => LocaleBuilder((context) => MaterialApp(
+          localizationsDelegates: [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          locale: Locale(LocaleBuilder.language ?? 'en'),
+          supportedLocales: S.delegate.supportedLocales,
+          debugShowCheckedModeBanner: false,
+          theme: MyTheme.defaultTheme,
+          home: _MyHomePage()));
 }
 
 class _MyHomePage extends StatefulWidget {
@@ -144,10 +143,10 @@ class _MyHomePageState extends State<_MyHomePage> {
                       height: _height,
                       offset: offset,
                       scrollController: _scrollController)
-                  : const SizedBox(),
+                  : const SizedBox.shrink(),
             ),
             (_height > MediaQuery.of(context).size.width)
-                ? const SizedBox()
+                ? const SizedBox.shrink()
                 : Positioned(
                     left: 80.0,
                     bottom: 70.0,

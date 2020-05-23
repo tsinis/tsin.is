@@ -7,7 +7,7 @@ import '../../widgets/avatar.dart';
 import '../../widgets/cv_buttons.dart';
 
 class About extends StatelessWidget {
-  const About({Key key}) : super(key: key);
+  const About([Key key]) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,12 @@ class About extends StatelessWidget {
                 AutoSizeText(S.of(context).fullName,
                     maxLines: 1, style: Theme.of(context).textTheme.headline4),
                 const SizedBox(height: 15.0),
-                AutoSizeText(S.of(context).iAm, maxLines: _isWide ? 8 : 16),
+                AutoSizeText(
+                  S.of(context).iAm,
+                  maxLines: _isWide ? 8 : 16,
+                  strutStyle: const StrutStyle(height: 1.75),
+                  // style: const TextStyle(height: 25.0),
+                ),
                 const SizedBox(width: 10.0, height: 10.0),
                 const CVButtons(),
               ],

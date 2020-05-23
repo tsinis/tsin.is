@@ -2,7 +2,7 @@ name: tsin.is
 description: Personal website of Roman Cinis.
 
 environment:
-  sdk: ">=2.8.0"
+  sdk: ">2.8.0"
 
 dependencies:
   flutter:
@@ -12,8 +12,8 @@ dependencies:
   expandable: ^4.1.4
   auto_size_text: ^2.1.0
   flare_flutter: ^2.0.3
-  url_launcher: ^5.4.7
-  url_launcher_web: ^0.1.1+5
+  url_launcher: ^5.4.10
+  url_launcher_web: ^0.1.1+6
 
 dev_dependencies:
   # flutter_test:
@@ -21,12 +21,15 @@ dev_dependencies:
   pedantic: any
   effective_dart: any
 
+flutter_intl:
+  enabled: true
+
 flutter:
   uses-material-design: false
 
   assets:
     - assets/images/
-    - assets/cv/
+    # - assets/cv/
 
   fonts:
     - family: MyIcon
@@ -92,6 +95,3 @@ flutter:
         - asset: third-party/fonts/Hagrid/Hagrid-Thin-Italic-trial.otf
           weight: 100
           style: italic
-
-flutter_intl:
-  enabled: true

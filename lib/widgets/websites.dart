@@ -11,6 +11,8 @@ class Website extends StatelessWidget {
 
   Color get _color => _getColor();
 
+  String get _contactURL => '${_url.toLowerCase()}tsinis';
+
   IconData get _icon => _getIcon();
 
   String get _name => _url.substring(0, _url.indexOf('.'));
@@ -50,15 +52,19 @@ class Website extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) => SizedBox(
-        width: 140.0,
-        child: FlatButton.icon(
-          textColor: Theme.of(context).disabledColor,
-          hoverColor: _color.withOpacity(0.15),
-          highlightColor: _color,
-          icon: Icon(_icon, color: _getColor().withOpacity(0.66)),
-          label: Text(_name),
-          onPressed: () => Open.socialNetwork(_url),
-        ).showCursorOnHover,
+  Widget build(BuildContext context) => Tooltip(
+        preferBelow: false,
+        message: _contactURL,
+        child: SizedBox(
+          width: 140.0,
+          child: FlatButton.icon(
+            textColor: Theme.of(context).disabledColor,
+            hoverColor: _color.withOpacity(0.15),
+            highlightColor: _color,
+            icon: Icon(_icon, color: _getColor().withOpacity(0.66)),
+            label: Text(_name),
+            onPressed: () => Open.url(_contactURL),
+          ).showCursorOnHover,
+        ),
       );
 }

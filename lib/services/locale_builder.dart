@@ -2,25 +2,25 @@ import 'package:flutter/material.dart';
 import '../generated/l10n.dart';
 
 class LocaleBuilder extends StatefulWidget {
-  const LocaleBuilder({Key key, this.builder}) : super(key: key);
+  const LocaleBuilder(this._builder, [Key key]) : super(key: key);
 
   static String language;
 
   @override
-  LocaleBuilderState createState() => LocaleBuilderState();
+  _LocaleBuilderState createState() => _LocaleBuilderState();
 
-  final Function(BuildContext) builder;
+  final Function(BuildContext) _builder;
 
-  static LocaleBuilderState of(BuildContext context) =>
+  static _LocaleBuilderState of(BuildContext context) =>
       context.findAncestorStateOfType<State<LocaleBuilder>>()
-          as LocaleBuilderState;
+          as _LocaleBuilderState;
 }
 
-class LocaleBuilderState extends State<LocaleBuilder> {
+class _LocaleBuilderState extends State<LocaleBuilder> {
   void rebuild() => S
       .load(Locale(LocaleBuilder.language))
       .whenComplete(() => setState(() {}));
 
   @override
-  Widget build(BuildContext context) => widget.builder(context) as Widget;
+  Widget build(BuildContext context) => widget._builder(context) as Widget;
 }
