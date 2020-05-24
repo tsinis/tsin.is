@@ -12,10 +12,6 @@
 ///       - asset: fonts/MyIcon.ttf
 ///
 /// 
-/// * Material Design Icons, Copyright (C) Google, Inc
-///         Author:    Google
-///         License:   Apache 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
-///         Homepage:  https://design.google.com/icons/
 /// * Font Awesome 5, Copyright (C) 2016 by Dave Gandy
 ///         Author:    Dave Gandy
 ///         License:   SIL (https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt)
@@ -34,7 +30,6 @@ class MyIcon {
   static const _kFontPkg = null;
 
   static const IconData rive = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
-  static const IconData translate = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData heart = IconData(0xf004, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData arrow_left = IconData(0xf060, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData linkedin = IconData(0xf08c, fontFamily: _kFontFam, fontPackage: _kFontPkg);
@@ -55,4 +50,5 @@ class MyIcon {
   static const IconData app_store_ios = IconData(0xf370, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData dribbble_square = IconData(0xf397, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData google_play = IconData(0xf3ab, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData globe_europe = IconData(0xf7a2, fontFamily: _kFontFam, fontPackage: _kFontPkg);
 }

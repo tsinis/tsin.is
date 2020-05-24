@@ -42,7 +42,7 @@ class LanguageMenu<String> extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Icon(
-              MyIcon.translate,
+              MyIcon.globe_europe,
               color: Theme.of(context).primaryColorDark,
             ),
             const SizedBox(width: 10.0),

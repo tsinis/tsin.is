@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 class CircularText extends StatelessWidget {
   const CircularText({
     Key key,
-    this.radius = 25.46,
+    this.radius = 18.7,
     this.text = '· tsin.is · Roman Cinis',
     this.textStyle,
     this.startAngle = 0,

@@ -45,7 +45,7 @@ class MainText extends StatelessWidget {
           ),
         ),
         SizedBox(height: _height / 4.0),
-        Icon(MyIcon.angle_double_down, color: Theme.of(context).accentColor),
+        Icon(MyIcon.angle_double_down, color: Theme.of(context).backgroundColor),
       ],
     );
   }

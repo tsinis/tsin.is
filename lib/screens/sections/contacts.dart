@@ -14,7 +14,7 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
     return Container(
-      color: Theme.of(context).primaryColor,
+      color: Theme.of(context).primaryColor, //TODO: Add map on background
       child: FractionallySizedBox(
         widthFactor: 0.7,
         child: Column(
