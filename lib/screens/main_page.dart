@@ -134,17 +134,16 @@ class _MyHomePageState extends State<_MyHomePage> {
               ],
             ),
             Positioned(
-              right: -(_height / 3.0),
-              top: _height / 2.0,
-              height: 2.0,
-              width: _height * 0.75,
-              child: _scrollController.hasClients
-                  ? ScrollProgress(
-                      height: _height,
-                      offset: offset,
-                      scrollController: _scrollController)
-                  : const SizedBox.shrink(),
-            ),
+                right: -(_height / 3.0),
+                top: _height / 2.0,
+                height: 2.0,
+                width: _height * 0.75,
+                child: _scrollController.hasClients
+                    ? ScrollProgress(
+                        height: _height,
+                        offset: offset,
+                        scrollController: _scrollController)
+                    : const SizedBox.shrink()),
             (_height > MediaQuery.of(context).size.width)
                 ? const SizedBox.shrink()
                 : Positioned(

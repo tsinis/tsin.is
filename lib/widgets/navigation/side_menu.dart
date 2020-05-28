@@ -21,7 +21,7 @@ class SideMenu extends Drawer {
           ),
           child: Drawer(
             child: Container(
-              color: Theme.of(context).cardColor,
+              color: Theme.of(context).backgroundColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[

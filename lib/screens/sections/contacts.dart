@@ -12,53 +12,76 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _height = MediaQuery.of(context).size.height;
+    final double _height = MediaQuery.of(context).size.height;
+    final double _width = MediaQuery.of(context).size.width;
     return Container(
-      color: Theme.of(context).primaryColor, //TODO: Add map on background
-      child: FractionallySizedBox(
-        widthFactor: 0.7,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            SizedBox(height: _height * 0.05),
-            AutoSizeText(S.of(context).contacts,
-                maxLines: 1, style: Theme.of(context).textTheme.headline4),
-            SizedBox(height: _height * 0.05),
-            AutoSizeText(S.of(context).contactsDesc,
-                textAlign: TextAlign.center, maxLines: 6),
-            SizedBox(height: _height * 0.03),
-            Wrap(
-              alignment: WrapAlignment.center,
-              spacing: 5.0,
+      color: Theme.of(context).primaryColor,
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          Positioned(
+            top: (_width > _height) ? -_height / 1.6 : null,
+            bottom: (_width > _height) ? -_height / 1.6 : 0,
+            child: SizedBox(
+              width: _width,
+              child: FittedBox(
+                alignment: (_width > _height)
+                    ? Alignment.center
+                    : Alignment.bottomCenter,
+                fit: BoxFit.cover,
+                child: Icon(
+                  MyIcon.map, //TODO: Animate Map
+                  color: Theme.of(context).backgroundColor.withOpacity(0.2),
+                ),
+              ),
+            ),
+          ),
+          FractionallySizedBox(
+            widthFactor: 0.7,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
-                Website('LinkedIn.com/in/'),
-                Website('GitHub.com/'),
-                Website('Dribbble.com/'),
-                Website('Medium.com/@'),
-                Website('Vimeo.com/'),
-                Website('Rive.app/a/'),
+                SizedBox(height: _height * 0.05),
+                AutoSizeText(S.of(context).contacts,
+                    maxLines: 1, style: Theme.of(context).textTheme.headline4),
+                SizedBox(height: _height * 0.05),
+                AutoSizeText(S.of(context).contactsDesc,
+                    textAlign: TextAlign.center, maxLines: 6),
+                SizedBox(height: _height * 0.03),
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 5.0,
+                  children: <Widget>[
+                    Website('LinkedIn.com/in/'),
+                    Website('GitHub.com/'),
+                    Website('Dribbble.com/'),
+                    Website('Medium.com/@'),
+                    Website('Vimeo.com/'),
+                    Website('Rive.app/a/'),
+                  ],
+                ),
+                SizedBox(height: _height * 0.02),
+                Wrap(
+                  spacing: 10.0,
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: <Widget>[
+                    AutoSizeText(S.of(context).email,
+                        textAlign: TextAlign.center, maxLines: 4),
+                    IconButton(
+                      icon: Icon(
+                        MyIcon.mail_alt,
+                        color: Theme.of(context).primaryColorLight,
+                      ),
+                      onPressed: Open.mail, //TODO: Add email address.
+                    ).showCursorOnHover.moveUpOnHover
+                  ],
+                ),
+                SizedBox(height: _height * 0.025),
               ],
             ),
-            SizedBox(height: _height * 0.02),
-            Wrap(
-              spacing: 10.0,
-              alignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: <Widget>[
-                AutoSizeText(S.of(context).email,
-                    textAlign: TextAlign.center, maxLines: 4),
-                IconButton(
-                  icon: Icon(
-                    MyIcon.mail_alt,
-                    color: Theme.of(context).primaryColorLight,
-                  ),
-                  onPressed: Open.mail, //TODO: Add email address.
-                ).showCursorOnHover.moveUpOnHover
-              ],
-            ),
-            SizedBox(height: _height * 0.025),
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

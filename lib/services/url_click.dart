@@ -14,9 +14,9 @@ class Open {
       case 'sk':
         _langCode = 'cs';
         break;
-      case 'de':
-        _langCode = 'en';
-        break;
+      // case 'de':
+      //   _langCode = 'en';
+      //   break;
       default:
         _langCode = LocaleBuilder.language;
     }

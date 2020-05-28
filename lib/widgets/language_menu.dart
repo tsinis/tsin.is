@@ -61,7 +61,7 @@ class LanguageMenu<String> extends StatelessWidget {
 
 const Map _languagesMap = <String, String>{
   'cs': 'Čeština',
-  'de': 'Deutsch',
+  // 'de': 'Deutsch',
   'en': 'English',
   // 'hr': "Hrvatski",
   // 'pl': "Polski",

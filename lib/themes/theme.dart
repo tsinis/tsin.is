@@ -16,7 +16,7 @@ class MyTheme {
       backgroundColor: Colors.grey[600],
       scaffoldBackgroundColor: Colors.grey,
       hoverColor: Colors.grey.withOpacity(0.33),
-      cardColor: Colors.grey[600],
+      // cardColor: Colors.grey[600],
       canvasColor: Colors.grey.withOpacity(0.5),
       disabledColor: Colors.grey[900],
       dividerColor: Colors.grey[400],
