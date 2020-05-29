@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
+import '../../animations/brno_on_map.dart';
 import '../../extensions/hover_extensions.dart';
 import '../../generated/l10n.dart';
 import '../../generated/my_icons.dart';
@@ -21,19 +22,25 @@ class Contact extends StatelessWidget {
         children: [
           Positioned(
             top: (_width > _height) ? -_height / 1.6 : null,
-            bottom: (_width > _height) ? -_height / 1.6 : 0,
+            bottom: (_width > _height) ? -_height / 1.6 : -10,
             child: SizedBox(
               width: _width,
               child: FittedBox(
-                alignment: (_width > _height)
-                    ? Alignment.center
-                    : Alignment.bottomCenter,
-                fit: BoxFit.cover,
-                child: Icon(
-                  MyIcon.map, //TODO: Animate Map
-                  color: Theme.of(context).backgroundColor.withOpacity(0.2),
-                ),
-              ),
+                  alignment: (_width > _height)
+                      ? Alignment.center
+                      : Alignment.bottomCenter,
+                  fit: BoxFit.cover,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Icon(
+                        MyIcon.map, //TODO: Move map a little bit down
+                        color:
+                            Theme.of(context).backgroundColor.withOpacity(0.2),
+                      ),
+                      const Brno(),
+                    ],
+                  )),
             ),
           ),
           FractionallySizedBox(
