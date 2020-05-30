@@ -9,15 +9,14 @@ class Portfolio extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _height = MediaQuery.of(context).size.height;
-    double _width = MediaQuery.of(context).size.width;
+    final double _height = MediaQuery.of(context).size.height;
+    final double _width = MediaQuery.of(context).size.width;
     return Container(
       color: Theme.of(context).backgroundColor,
       child: FractionallySizedBox(
         widthFactor: 0.7,
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             SizedBox(height: _height * 0.1, width: 0),
             AutoSizeText(S.of(context).portfolio,
@@ -47,20 +46,18 @@ class Portfolio extends StatelessWidget {
               alignment: WrapAlignment.spaceBetween,
               children: [
                 Project(
-                  projectName: 'Steampunk Flutter Clock',
-                  pathToImage: 'assets/images/clock.jpg',
-                  projectDesc: S.of(context).flutterClock,
-                  designURL: 'vimeo.com/tsinis/flutterclock',
-                  appURL: 'github.com/tsinis/flutter_clock',
-                ),
+                    projectName: 'Steampunk Flutter Clock',
+                    pathToImage: 'assets/images/clock.jpg',
+                    projectDesc: S.of(context).flutterClock,
+                    designURL: 'vimeo.com/tsinis/flutterclock',
+                    appURL: 'github.com/tsinis/flutter_clock'),
                 Project(
-                  projectName: 'Hello Dribbble',
-                  pathToImage: 'assets/images/dribbble.jpg',
-                  projectDesc: S.of(context).helloDribbble,
-                  designURL:
-                      'dribbble.com/shots/10772196-hello-dribbble-interactive-animation',
-                  appURL: 'github.com/tsinis/hello_dribbble',
-                ),
+                    projectName: 'Hello Dribbble',
+                    pathToImage: 'assets/images/dribbble.jpg',
+                    projectDesc: S.of(context).helloDribbble,
+                    designURL:
+                        'dribbble.com/shots/10772196-hello-dribbble-interactive-animation',
+                    appURL: 'github.com/tsinis/hello_dribbble'),
               ],
             ),
             Wrap(
@@ -68,19 +65,17 @@ class Portfolio extends StatelessWidget {
               direction: Axis.horizontal,
               children: [
                 Project(
-                  projectName: S.of(context).tongueTwisters,
-                  pathToImage: 'assets/images/clock.jpg',
-                  projectDesc: S.of(context).tongueTwistersDesc,
-                  designURL: 'dribbble.com/shots/',
-                  appURL: 'play.google.com/store/apps/',
-                ),
+                    projectName: S.of(context).tongueTwisters,
+                    pathToImage: 'assets/images/clock.jpg',
+                    projectDesc: S.of(context).tongueTwistersDesc,
+                    designURL: 'dribbble.com/shots/',
+                    appURL: 'play.google.com/store/apps/'),
                 Project(
-                  projectName: S.of(context).thisWeb,
-                  pathToImage: 'assets/images/header.gif',
-                  projectDesc: S.of(context).thisWebDesc,
-                  designURL: 'dribbble.com/shots/',
-                  appURL: 'github.com/tsinis/tsin.is',
-                ),
+                    projectName: S.of(context).thisWeb,
+                    pathToImage: 'assets/images/header.gif',
+                    projectDesc: S.of(context).thisWebDesc,
+                    designURL: 'dribbble.com/shots/',
+                    appURL: 'github.com/tsinis/tsin.is'),
               ],
             ),
             SizedBox(height: _height * 0.1),

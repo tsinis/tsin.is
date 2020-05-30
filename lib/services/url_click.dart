@@ -20,7 +20,7 @@ class Open {
       default:
         _langCode = LocaleBuilder.language;
     }
-    return 'web.site/tsinis_$_langCode.pdf';
+    return 'tsin.is/tsinis_$_langCode.pdf';
   }
 
   static Future<void> url(String _url) async => await launch('https://$_url');

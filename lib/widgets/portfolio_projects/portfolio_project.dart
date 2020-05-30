@@ -26,7 +26,6 @@ class Project extends StatefulWidget {
 
 class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
   // double get _height => MediaQuery.of(context).size.height;
-
   double get _width => MediaQuery.of(context).size.width;
 
   @override
@@ -39,9 +38,7 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
           elevation: 10.0,
           margin: const EdgeInsets.only(top: 40.0),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0
-                // topRight: Radius.circular(25.0)
-                ),
+            borderRadius: BorderRadius.circular(10.0),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -52,11 +49,7 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                 elevation: 0,
                 margin: const EdgeInsets.only(bottom: 10.0),
                 shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.zero,
-                    // topRight: Radius.circular(25.0)
-                  ),
-                ),
+                    borderRadius: BorderRadius.vertical(bottom: Radius.zero)),
                 child: (widget.pathToImage != 'assets/images/header.gif')
                     ? Image.asset(widget.pathToImage).zoomInOnHover
                     : Stack(
@@ -77,12 +70,9 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                             alignment: FractionalOffset.bottomRight,
                             widthFactor: 0.3,
                             child: FittedBox(
-                              // fit: BoxFit.contain,
                               child: Text(
                                 S.of(context).devAndDesigner,
                                 textAlign: TextAlign.center,
-                                // maxLines: 3,
-                                // softWrap: true,
                                 style: Theme.of(context)
                                     .textTheme
                                     .headline6
@@ -115,15 +105,8 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const SizedBox(width: 35.0),
-                        Text(
-                          widget.projectName,
-                          textAlign: TextAlign.center,
-                          softWrap: true,
-                          //   style: Theme.of(context)
-                          //       .textTheme
-                          //       .headline4
-                          //       .copyWith(fontSize: 20.0),
-                        ),
+                        Text(widget.projectName,
+                            textAlign: TextAlign.center, softWrap: true),
                       ],
                     ),
                   ),
@@ -133,20 +116,18 @@ class _ProjectState extends State<Project> with SingleTickerProviderStateMixin {
                     const SizedBox(height: 10.0),
                     FractionallySizedBox(
                       widthFactor: 0.85,
-                      child: AutoSizeText(
-                        widget.projectDesc,
-                        textAlign: TextAlign.justify,
-                        maxLines: 8,
-                        maxFontSize: 20.0,
-                        softWrap: true,
-                      ),
+                      child: AutoSizeText(widget.projectDesc,
+                          textAlign: TextAlign.justify,
+                          maxLines: 8,
+                          maxFontSize: 20.0,
+                          softWrap: true),
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0),
                       child: ProjectButtonBar(
                         widget.designURL,
                         widget.appURL,
-                        isWide: (_width > 399.0),
+                        isWide: _width > 399.0,
                       ),
                     ),
                   ],

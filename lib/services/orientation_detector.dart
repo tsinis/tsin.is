@@ -6,15 +6,12 @@ class OrientationSwitcher extends StatelessWidget {
 
   final List<Widget> children;
   final bool rowIfWide;
+  static const MainAxisSize _min = MainAxisSize.min;
+  static const MainAxisAlignment _between = MainAxisAlignment.spaceBetween;
 
   @override
   Widget build(BuildContext context) => rowIfWide
-      ? Row(
-          children: children,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.min)
+      ? Row(children: children, mainAxisAlignment: _between, mainAxisSize: _min)
       : Column(
-          children: children,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.min);
+          children: children, mainAxisAlignment: _between, mainAxisSize: _min);
 }

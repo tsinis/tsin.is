@@ -11,7 +11,7 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool _isWide = MediaQuery.of(context).size.width > 1023.9;
+    final bool _isWide = MediaQuery.of(context).size.width > 1023.9;
     return FractionallySizedBox(
       widthFactor: 0.8,
       child: OrientationSwitcher(
@@ -24,12 +24,9 @@ class About extends StatelessWidget {
                 AutoSizeText(S.of(context).fullName,
                     maxLines: 1, style: Theme.of(context).textTheme.headline4),
                 const SizedBox(height: 15.0),
-                AutoSizeText(
-                  S.of(context).iAm,
-                  maxLines: _isWide ? 8 : 16,
-                  strutStyle: const StrutStyle(height: 1.75),
-                  // style: const TextStyle(height: 25.0),
-                ),
+                AutoSizeText(S.of(context).iAm,
+                    maxLines: _isWide ? 8 : 16,
+                    strutStyle: const StrutStyle(height: 1.75)),
                 const SizedBox(width: 10.0, height: 10.0),
                 const CVButtons(),
               ],
@@ -38,7 +35,7 @@ class About extends StatelessWidget {
           SizedBox(
               width: MediaQuery.of(context).size.shortestSide * 0.6,
               height: MediaQuery.of(context).size.shortestSide * 0.6,
-              child: const Avatar()),
+              child: const Avatar())
         ],
       ),
     );

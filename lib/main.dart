@@ -11,8 +11,9 @@ Future<void> _cacheAvatar() async => await cachedActor(Avatar.cache);
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   FlareCache.doesPrune = false;
-  await _cacheAvatar().whenComplete(() async => await findSystemLocale()
-      .then<void>((_detectedLocale) =>
+  await _cacheAvatar();
+  await findSystemLocale()
+      .then<String>((_detectedLocale) =>
           LocaleBuilder.language = _detectedLocale.substring(0, 2))
-      .whenComplete(() => runApp(const MyWeb())));
+      .whenComplete(() => runApp(const MyWeb()));
 }

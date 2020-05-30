@@ -18,15 +18,13 @@ class ScrollProgress extends StatelessWidget {
   Widget build(BuildContext context) => Transform.rotate(
         angle: 270 * pi / 180,
         child: LinearProgressIndicator(
-          backgroundColor: Theme.of(context).accentColor.withOpacity(
-                min(offset / 1000, 1.0),
-              ),
-          valueColor: AlwaysStoppedAnimation<Color>(
-            Theme.of(context).primaryColor,
-          ),
-          value: (scrollController.position.maxScrollExtent -
-                  scrollController.position.pixels) /
-              scrollController.position.maxScrollExtent,
-        ),
+            backgroundColor: Theme.of(context).accentColor.withOpacity(
+                  min(offset / 1000, 1.0),
+                ),
+            valueColor:
+                AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
+            value: (scrollController.position.maxScrollExtent -
+                    scrollController.position.pixels) /
+                scrollController.position.maxScrollExtent),
       );
 }

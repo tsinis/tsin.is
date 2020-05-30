@@ -17,8 +17,7 @@ class _TranslateOnHoverState extends State<TranslateOnHover> {
   void _mouseEnter(bool hovering) => setState(() => _hovering = hovering);
 
   @override
-  Widget build(BuildContext context) {
-    return MouseRegion(
+  Widget build(BuildContext context) => MouseRegion(
       onEnter: (e) => _mouseEnter(true),
       onExit: (e) => _mouseEnter(false),
       child: AnimatedContainer(
@@ -27,5 +26,4 @@ class _TranslateOnHoverState extends State<TranslateOnHover> {
         transform: _hovering ? _hoverTransform : _nonHoverTransform,
       ),
     );
-  }
 }

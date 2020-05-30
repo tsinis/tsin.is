@@ -5,7 +5,7 @@ import 'package:flutter/gestures.dart' show PointerHoverEvent;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-import '../services/head_controller.dart';
+import '../animations/head_controller.dart';
 
 class Avatar extends StatefulWidget {
   const Avatar([Key key]) : super(key: key);

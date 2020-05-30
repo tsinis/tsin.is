@@ -12,10 +12,9 @@ extension HoverExtensions on Widget {
 
   Widget get showCursorOnHover {
     return MouseRegion(
-      child: this, // The widget we're using the extension on.
-      onHover: (event) => _appContainer.style.cursor = 'pointer',
-      onExit: (event) => _appContainer.style.cursor = 'default',
-    );
+        child: this,
+        onHover: (event) => _appContainer.style.cursor = 'pointer',
+        onExit: (event) => _appContainer.style.cursor = 'default');
   }
 
   Widget get moveUpOnHover => TranslateOnHover(child: this);

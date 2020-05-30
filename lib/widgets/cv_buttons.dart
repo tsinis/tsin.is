@@ -11,7 +11,7 @@ class CVButtons extends ButtonBar {
 
   @override
   Widget build(BuildContext context) {
-    bool _isSmartWatch = MediaQuery.of(context).size.width < 300.0;
+    final bool _isSmartWatch = MediaQuery.of(context).size.width < 300.0;
     return ButtonBar(
       buttonPadding:
           const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
@@ -34,21 +34,12 @@ class CVButtons extends ButtonBar {
                 children: <Widget>[
                   _isSmartWatch
                       ? const SizedBox.shrink()
-                      : const Icon(
-                          MyIcon.file_pdf,
-                          color: Colors.redAccent,
-                        ),
+                      : const Icon(MyIcon.file_pdf, color: Colors.redAccent),
                   ConstrainedBox(
-                    constraints: const BoxConstraints(
-                      minWidth: 10.0,
-                      maxWidth: 15.0,
-                    ),
-                  ),
-                  AutoSizeText(
-                    S.of(context).cv,
-                    maxLines: 1,
-                    style: Theme.of(context).textTheme.button,
-                  ),
+                      constraints:
+                          const BoxConstraints(minWidth: 10.0, maxWidth: 15.0)),
+                  AutoSizeText(S.of(context).cv,
+                      maxLines: 1, style: Theme.of(context).textTheme.button),
                 ],
               ),
             ).showCursorOnHover,
@@ -72,11 +63,8 @@ class CVButtons extends ButtonBar {
                       ? const SizedBox.shrink()
                       : Icon(MyIcon.docs, color: Colors.blueGrey[400]),
                   ConstrainedBox(
-                    constraints: const BoxConstraints(
-                      minWidth: 10.0,
-                      maxWidth: 15.0,
-                    ),
-                  ),
+                      constraints:
+                          const BoxConstraints(minWidth: 10.0, maxWidth: 15.0)),
                   AutoSizeText(S.of(context).cloud,
                       maxLines: 1, style: Theme.of(context).textTheme.button),
                 ],

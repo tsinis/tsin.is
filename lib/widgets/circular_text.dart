@@ -19,7 +19,7 @@ class CircularText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => CustomPaint(
-        painter: _Painter(
+        painter: _TextPainter(
           radius,
           text,
           textStyle,
@@ -28,8 +28,8 @@ class CircularText extends StatelessWidget {
       );
 }
 
-class _Painter extends CustomPainter {
-  _Painter(this.radius, this.text, this.textStyle, {this.initialAngle = 0});
+class _TextPainter extends CustomPainter {
+  _TextPainter(this.radius, this.text, this.textStyle, {this.initialAngle = 0});
 
   final double initialAngle;
   final num radius;

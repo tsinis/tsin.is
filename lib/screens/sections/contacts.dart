@@ -26,21 +26,20 @@ class Contact extends StatelessWidget {
             child: SizedBox(
               width: _width,
               child: FittedBox(
-                  alignment: (_width > _height)
-                      ? Alignment.center
-                      : Alignment.bottomCenter,
-                  fit: BoxFit.cover,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Icon(
-                        MyIcon.map, //TODO: Move map a little bit down
+                alignment: (_width > _height)
+                    ? Alignment.center
+                    : Alignment.bottomCenter,
+                fit: BoxFit.cover,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Icon(MyIcon.map,
                         color:
-                            Theme.of(context).backgroundColor.withOpacity(0.2),
-                      ),
-                      const Brno(),
-                    ],
-                  )),
+                            Theme.of(context).backgroundColor.withOpacity(0.2)),
+                    const Brno(),
+                  ],
+                ),
+              ),
             ),
           ),
           FractionallySizedBox(
@@ -64,7 +63,7 @@ class Contact extends StatelessWidget {
                     Website('Dribbble.com/'),
                     Website('Medium.com/@'),
                     Website('Vimeo.com/'),
-                    Website('Rive.app/a/'),
+                    Website('Rive.app/a/')
                   ],
                 ),
                 SizedBox(height: _height * 0.02),
@@ -76,11 +75,9 @@ class Contact extends StatelessWidget {
                     AutoSizeText(S.of(context).email,
                         textAlign: TextAlign.center, maxLines: 4),
                     IconButton(
-                      icon: Icon(
-                        MyIcon.mail_alt,
-                        color: Theme.of(context).primaryColorLight,
-                      ),
                       onPressed: Open.mail, //TODO: Add email address.
+                      icon: Icon(MyIcon.mail_alt,
+                          color: Theme.of(context).primaryColorLight),
                     ).showCursorOnHover.moveUpOnHover
                   ],
                 ),

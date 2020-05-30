@@ -7,13 +7,13 @@ class _PulseAnimation extends CustomPainter {
 
   _PulseAnimation(this._animation) : super(repaint: _animation);
 
-  void circle(Canvas _canvas, Rect _rect, double _opacityValue) {
-    double _opacity = (0.5 - (_opacityValue / 4.0)).clamp(0.0, 1.0).toDouble();
-    Color color = Color.fromRGBO(99, 99, 99, _opacity);
+  void circle(Canvas _canvas, Rect _rect, double _value) {
+    double _opacity = (1.0 - (_value / 3)).clamp(0.0, 1.0).toDouble();
+    Color color = Color.fromRGBO(120, 120, 120, _opacity);
 
     double _size = _rect.width / 20;
-    double area = _size * _size * 2;
-    double _radius = sqrt(area * _opacityValue * 4);
+    double area = _size * _size;
+    double _radius = sqrt(area * _value * 4);
 
     final Paint _paint = Paint()..color = color;
     _canvas.drawCircle(_rect.center, _radius, _paint);
@@ -22,7 +22,7 @@ class _PulseAnimation extends CustomPainter {
   @override
   void paint(Canvas _canvas, Size _size) {
     Rect rect = Rect.fromLTRB(0.0, 0.0, _size.width, _size.height);
-    for (int wave = 2; wave >= 0; wave--) {
+    for (int wave = 3; wave >= 0; wave--) {
       circle(_canvas, rect, wave + _animation.value);
     }
   }
@@ -62,5 +62,5 @@ class _BrnoState extends State<Brno> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) => CustomPaint(
       painter: _PulseAnimation(_controller),
-      child: const SizedBox(width: 3.0, height: 3.0));
+      child: const SizedBox(width: 4.0, height: 4.0));
 }

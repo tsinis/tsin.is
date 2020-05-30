@@ -15,10 +15,7 @@ class SideMenu extends Drawer {
   Widget build(BuildContext context) => SizedBox(
         width: 175.0,
         child: BackdropFilter(
-          filter: ImageFilter.blur(
-            sigmaX: 4.0,
-            sigmaY: 4.0,
-          ),
+          filter: ImageFilter.blur(sigmaX: 4.0, sigmaY: 4.0),
           child: Drawer(
             child: Container(
               color: Theme.of(context).backgroundColor,
@@ -38,8 +35,7 @@ class SideMenu extends Drawer {
                   ),
                   NavigationMenu(_scrollController),
                   ConstrainedBox(
-                    constraints: const BoxConstraints(maxHeight: 30.0),
-                  ),
+                      constraints: const BoxConstraints(maxHeight: 30.0)),
                 ],
               ),
             ),

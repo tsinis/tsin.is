@@ -8,11 +8,7 @@ class AnimatedBackground extends FractionallySizedBox {
   }) : super(
           key: key,
           child: Opacity(
-            opacity: 0.1,
-            child: Image.asset(
-              'assets/images/header.gif',
-              fit: BoxFit.fill,
-            ),
-          ),
+              opacity: 0.1,
+              child: Image.asset('assets/images/header.gif', fit: BoxFit.fill)),
         );
 }

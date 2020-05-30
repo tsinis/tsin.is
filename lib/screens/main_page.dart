@@ -28,7 +28,7 @@ class MyWeb extends StatelessWidget {
             S.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate
           ],
           locale: Locale(LocaleBuilder.language ?? 'en'),
           supportedLocales: S.delegate.supportedLocales,
@@ -80,16 +80,10 @@ class _MyHomePageState extends State<_MyHomePage> {
               left: 0,
               right: 0,
               height: _height,
-              child: RepaintBoundary(
-                child: AnimatedBackground(),
-              ),
+              child: RepaintBoundary(child: AnimatedBackground()),
             ),
             Positioned(
-              top: 0.2 * _height,
-              left: 0,
-              right: 0,
-              child: MainText(offset),
-            ),
+                top: 0.2 * _height, left: 0, right: 0, child: MainText(offset)),
             Positioned(
               top: _height * 0.8 - offset,
               left: 0,
@@ -99,11 +93,10 @@ class _MyHomePageState extends State<_MyHomePage> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    stops: [0, 0.8],
-                    colors: [_grey.withOpacity(0), _grey],
-                  ),
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      stops: [0, 0.8],
+                      colors: [_grey.withOpacity(0), _grey]),
                 ),
               ),
             ),
@@ -113,10 +106,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               right: 0,
               height: _height / 3.0,
               child: Container(
-                height: _height / 3.0,
-                width: double.infinity,
-                color: _grey,
-              ),
+                  height: _height / 3.0, width: double.infinity, color: _grey),
             ),
             ListView(
               scrollDirection: Axis.vertical,
@@ -124,10 +114,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               controller: _scrollController,
               children: <Widget>[
                 Container(height: _height),
-                Container(
-                  color: _grey,
-                  child: const About(),
-                ),
+                Container(color: _grey, child: const About()),
                 const Portfolio(),
                 const Contact(),
                 const Footer()
@@ -152,9 +139,8 @@ class _MyHomePageState extends State<_MyHomePage> {
                     child: CircularText(
                       textStyle: Theme.of(context).textTheme.overline.copyWith(
                             fontSize: 10.0,
-                            color: Colors.white.withOpacity(
-                              min(offset / 1000.0, 0.3),
-                            ),
+                            color: Colors.white
+                                .withOpacity(min(offset / 1000.0, 0.3)),
                           ),
                       startAngle: -pi / 2.0 + offset / 500.0,
                     ),
@@ -189,8 +175,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                         ).showCursorOnHover.moveUpOnHover
                       : Opacity(
                           opacity: max(0, 1.0 - offset / _height),
-                          child: Header(_scrollController),
-                        ),
+                          child: Header(_scrollController)),
                 )
               ],
             )

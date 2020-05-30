@@ -20,7 +20,7 @@ class Footer extends StatelessWidget {
             children: const <Widget>[
               Text('All rights reserved — ©2020 Roman Cinis.',
                   textAlign: TextAlign.center, style: _footerTextStyle),
-              SizedBox(height: 5.0),
+              SizedBox(width: 5.0),
               Text(
                   '(Font: Hagrid Family by Zetafonts -http://www.zetafonts.com/collection/3760).',
                   textAlign: TextAlign.center,
@@ -34,9 +34,7 @@ class Footer extends StatelessWidget {
                   strutStyle: StrutStyle(forceStrutHeight: true),
                   textAlign: TextAlign.center,
                   style: _footerTextStyle),
-              FlutterLogo(
-                size: 14.0,
-              ),
+              FlutterLogo(size: 14.0),
             ],
           ),
         ),
