@@ -66,7 +66,7 @@ class Portfolio extends StatelessWidget {
               children: [
                 Project(
                     projectName: S.of(context).tongueTwisters,
-                    pathToImage: 'assets/images/clock.jpg',
+                    pathToImage: 'assets/images/clock.jpg', //TODO: Add Tongue Twisters screenshot
                     projectDesc: S.of(context).tongueTwistersDesc,
                     designURL: 'dribbble.com/shots/',
                     appURL: 'play.google.com/store/apps/'),
