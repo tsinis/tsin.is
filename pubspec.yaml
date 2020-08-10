@@ -11,9 +11,9 @@ dependencies:
         sdk: flutter
   expandable: ^4.1.4
   auto_size_text: ^2.1.0
-  flare_flutter: ^2.0.3
-  url_launcher: ^5.4.10
-  url_launcher_web: ^0.1.1+6
+  flare_flutter: ^2.0.6
+  url_launcher: ^5.5.0
+  url_launcher_web: ^0.1.2
 
 dev_dependencies:
   # flutter_test:

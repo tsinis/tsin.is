@@ -8,8 +8,12 @@ import 'intl/messages_all.dart';
 // Made by Localizely
 // **************************************************************************
 
+// ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
+
 class S {
   S();
+  
+  static S current;
   
   static const AppLocalizationDelegate delegate =
     AppLocalizationDelegate();
@@ -19,7 +23,9 @@ class S {
     final localeName = Intl.canonicalizedLocale(name); 
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
-      return S();
+      S.current = S();
+      
+      return S.current;
     });
   } 
 
@@ -27,6 +33,7 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `About`
   String get about {
     return Intl.message(
       'About',
@@ -36,6 +43,7 @@ class S {
     );
   }
 
+  /// `Check the`
   String get check {
     return Intl.message(
       'Check the',
@@ -45,6 +53,7 @@ class S {
     );
   }
 
+  /// `Contacts`
   String get contacts {
     return Intl.message(
       'Contacts',
@@ -54,6 +63,7 @@ class S {
     );
   }
 
+  /// `Physically in the city of Brno, on the internets, I'm known as a “tsinis”:`
   String get contactsDesc {
     return Intl.message(
       'Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:',
@@ -63,6 +73,7 @@ class S {
     );
   }
 
+  /// `Flutter Developer & Designer`
   String get devAndDesigner {
     return Intl.message(
       'Flutter Developer & Designer',
@@ -72,6 +83,7 @@ class S {
     );
   }
 
+  /// `or just simply write me the good old e-mail here:`
   String get email {
     return Intl.message(
       'or just simply write me the good old e-mail here:',
@@ -81,6 +93,7 @@ class S {
     );
   }
 
+  /// `Here you can find`
   String get findInPortfolio {
     return Intl.message(
       'Here you can find',
@@ -90,6 +103,7 @@ class S {
     );
   }
 
+  /// `This project is one of the winning submissions in Official Google's & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).`
   String get flutterClock {
     return Intl.message(
       'This project is one of the winning submissions in Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).',
@@ -99,6 +113,7 @@ class S {
     );
   }
 
+  /// `Roman Cinis`
   String get fullName {
     return Intl.message(
       'Roman Cinis',
@@ -108,6 +123,7 @@ class S {
     );
   }
 
+  /// `Hello there, I'm`
   String get greeting {
     return Intl.message(
       'Hello there, I\'m',
@@ -117,6 +133,7 @@ class S {
     );
   }
 
+  /// `Interactive animations showcase project, I've made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”).`
   String get helloDribbble {
     return Intl.message(
       'Interactive animations showcase project, I\'ve made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”).',
@@ -126,6 +143,7 @@ class S {
     );
   }
 
+  /// `I'm awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let's make something awesome together!\n\nWant to know more?`
   String get iAm {
     return Intl.message(
       'I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!\n\nWant to know more?',
@@ -135,6 +153,7 @@ class S {
     );
   }
 
+  /// `Grab my CV`
   String get cv {
     return Intl.message(
       'Grab my CV',
@@ -144,6 +163,7 @@ class S {
     );
   }
 
+  /// `All languages`
   String get cloud {
     return Intl.message(
       'All languages',
@@ -153,6 +173,7 @@ class S {
     );
   }
 
+  /// `Video`
   String get inAction {
     return Intl.message(
       'Video',
@@ -162,6 +183,7 @@ class S {
     );
   }
 
+  /// `Language`
   String get language {
     return Intl.message(
       'Language',
@@ -171,6 +193,7 @@ class S {
     );
   }
 
+  /// `Portfolio`
   String get portfolio {
     return Intl.message(
       'Portfolio',
@@ -180,6 +203,7 @@ class S {
     );
   }
 
+  /// `projects and repositories.`
   String get projectsPortfolio {
     return Intl.message(
       'projects and repositories.',
@@ -189,6 +213,7 @@ class S {
     );
   }
 
+  /// `See the`
   String get see {
     return Intl.message(
       'See the',
@@ -198,6 +223,7 @@ class S {
     );
   }
 
+  /// `select your language`
   String get selectLang {
     return Intl.message(
       'select your language',
@@ -207,6 +233,7 @@ class S {
     );
   }
 
+  /// `some of my `
   String get somePortfilio {
     return Intl.message(
       'some of my ',
@@ -216,6 +243,7 @@ class S {
     );
   }
 
+  /// `Code`
   String get theCode {
     return Intl.message(
       'Code',
@@ -225,6 +253,7 @@ class S {
     );
   }
 
+  /// `Design`
   String get theDesign {
     return Intl.message(
       'Design',
@@ -234,6 +263,7 @@ class S {
     );
   }
 
+  /// `This Website`
   String get thisWeb {
     return Intl.message(
       'This Website',
@@ -243,6 +273,7 @@ class S {
     );
   }
 
+  /// `Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.`
   String get thisWebDesc {
     return Intl.message(
       'Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.',
@@ -252,6 +283,7 @@ class S {
     );
   }
 
+  /// `Tongue Twisters`
   String get tongueTwisters {
     return Intl.message(
       'Tongue Twisters',
@@ -261,6 +293,7 @@ class S {
     );
   }
 
+  /// `Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations).`
   String get tongueTwistersDesc {
     return Intl.message(
       'Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations).',
