@@ -22,46 +22,41 @@ class HeadController implements FlareController {
   bool advance(FlutterActorArtboard _artboard, double _elapsed) {
     if (_notHovering) {
       if (_exitAnimation.time < _exitAnimation.animation.duration) {
-        _exitAnimation.time += _elapsed;
-        _exitAnimation.apply(_artboard);
+        _exitAnimation
+          ..time += _elapsed
+          ..apply(_artboard);
       }
       return true;
     } else {
       if (_clicked) {
-        if (_backgroundAnimation.time <
-            _backgroundAnimation.animation.duration) {
-          _backgroundAnimation.time += _elapsed;
-          _backgroundAnimation.apply(_artboard);
+        if (_backgroundAnimation.time < _backgroundAnimation.animation.duration) {
+          _backgroundAnimation
+            ..time += _elapsed
+            ..apply(_artboard);
         } else {
           _clicked = false;
         }
       }
 
-      if (_viewTransform == null ||
-          _eyesControl == null ||
-          _headControl == null ||
-          _pointer == null) {
+      if (_viewTransform == null || _eyesControl == null || _headControl == null || _pointer == null) {
         return false;
       }
 
-      Mat2D inverseViewTransform = Mat2D();
+      final Mat2D inverseViewTransform = Mat2D();
       if (!Mat2D.invert(inverseViewTransform, _viewTransform)) {
         return false;
       }
 
-      Vec2D _globalPointer = Vec2D();
-      Vec2D.transformMat2D(_globalPointer,
-          Vec2D.fromValues(_pointer.dx, _pointer.dy), inverseViewTransform);
+      final Vec2D _globalPointer = Vec2D();
+      Vec2D.transformMat2D(_globalPointer, Vec2D.fromValues(_pointer.dx, _pointer.dy), inverseViewTransform);
 
-      Mat2D _inversePointerGlobal = Mat2D();
-      if (!Mat2D.invert(
-          _inversePointerGlobal, _eyesControl.parent.worldTransform)) {
+      final Mat2D _inversePointerGlobal = Mat2D();
+      if (!Mat2D.invert(_inversePointerGlobal, _eyesControl.parent.worldTransform)) {
         return false;
       }
 
-      Vec2D _pointerCoordinates = Vec2D();
-      Vec2D.transformMat2D(
-          _pointerCoordinates, _globalPointer, _inversePointerGlobal);
+      final Vec2D _pointerCoordinates = Vec2D();
+      Vec2D.transformMat2D(_pointerCoordinates, _globalPointer, _inversePointerGlobal);
 
       _eyesControl.translation = _headControl.translation = _pointerCoordinates;
       return true;
@@ -84,7 +79,7 @@ class HeadController implements FlareController {
   @override
   void setViewTransform(Mat2D viewTransform) => _viewTransform = viewTransform;
 
-  // Offset get move => _pointer;
+  // ignore: avoid_setters_without_getters
   set move(Offset _offset) => _pointer = _offset;
 
   void isHovering() {

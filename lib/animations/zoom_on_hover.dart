@@ -9,8 +9,7 @@ class ZoomOnHover extends StatefulWidget {
   _TranslateOnHoverState createState() => _TranslateOnHoverState();
 }
 
-class _TranslateOnHoverState extends State<ZoomOnHover>
-    with SingleTickerProviderStateMixin {
+class _TranslateOnHoverState extends State<ZoomOnHover> with SingleTickerProviderStateMixin {
   AnimationController _animationController;
   bool _hovering = false;
   Animation<double> _animationCurve;
@@ -23,9 +22,7 @@ class _TranslateOnHoverState extends State<ZoomOnHover>
       vsync: this,
     );
     _animationCurve = CurvedAnimation(
-        parent: _animationController,
-        curve: Curves.easeInOutQuint,
-        reverseCurve: Curves.easeInOutQuart);
+        parent: _animationController, curve: Curves.easeInOutQuint, reverseCurve: Curves.easeInOutQuart);
     _animationController.forward();
   }
 
@@ -39,16 +36,14 @@ class _TranslateOnHoverState extends State<ZoomOnHover>
 
   @override
   Widget build(BuildContext context) {
-    final _animation = Tween<double>(begin: 0, end: 1).animate(_animationCurve);
+    final Animation<double> _animation = Tween<double>(begin: 0, end: 1).animate(_animationCurve);
     return MouseRegion(
-      onEnter: (e) => _mouseEnter(true),
-      onExit: (e) => _mouseEnter(false),
+      onEnter: (_) => _mouseEnter(true),
+      onExit: (_) => _mouseEnter(false),
       child: AnimatedBuilder(
         animation: _animation,
         builder: (context, child) {
-          _hovering
-              ? _animationController.forward()
-              : _animationController.reverse();
+          _hovering ? _animationController.forward() : _animationController.reverse();
           return Transform.scale(
             scale: (_animationCurve.value * 1.15) + 1,
             child: widget.child,

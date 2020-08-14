@@ -45,8 +45,9 @@ class _TextPainter extends CustomPainter {
     if (initialAngle != 0) {
       final d = 2.0 * radius * math.sin(initialAngle / 2.0);
       final rotationAngle = _calculateRotationAngle(0, initialAngle);
-      canvas.rotate(rotationAngle);
-      canvas.translate(d, 0);
+      canvas
+        ..rotate(rotationAngle)
+        ..translate(d, 0);
     }
 
     double angle = initialAngle;
@@ -59,16 +60,14 @@ class _TextPainter extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) => true;
 
   double _drawLetter(Canvas canvas, String letter, double prevAngle) {
-    _textPainter.text = TextSpan(text: letter, style: textStyle);
-    _textPainter.layout(
-      minWidth: 0,
-      maxWidth: double.maxFinite,
-    );
+    _textPainter
+      ..text = TextSpan(text: letter, style: textStyle)
+      ..layout(minWidth: 0, maxWidth: double.maxFinite);
 
     final double d = _textPainter.width;
     final double alpha = 2.0 * math.asin(d / (2.0 * radius));
 
-    final newAngle = _calculateRotationAngle(prevAngle, alpha);
+    final double newAngle = _calculateRotationAngle(prevAngle, alpha);
     canvas.rotate(newAngle);
 
     _textPainter.paint(canvas, Offset(0, -_textPainter.height));
@@ -77,6 +76,5 @@ class _TextPainter extends CustomPainter {
     return alpha;
   }
 
-  double _calculateRotationAngle(double prevAngle, double alpha) =>
-      (alpha + prevAngle) / 2.0;
+  double _calculateRotationAngle(double prevAngle, double alpha) => (alpha + prevAngle) / 2.0;
 }

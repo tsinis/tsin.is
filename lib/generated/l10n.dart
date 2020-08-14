@@ -53,6 +53,16 @@ class S {
     );
   }
 
+  /// `All languages`
+  String get cloud {
+    return Intl.message(
+      'All languages',
+      name: 'cloud',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Contacts`
   String get contacts {
     return Intl.message(
@@ -68,6 +78,16 @@ class S {
     return Intl.message(
       'Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:',
       name: 'contactsDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Grab my CV`
+  String get cv {
+    return Intl.message(
+      'Grab my CV',
+      name: 'cv',
       desc: '',
       args: [],
     );
@@ -153,26 +173,6 @@ class S {
     );
   }
 
-  /// `Grab my CV`
-  String get cv {
-    return Intl.message(
-      'Grab my CV',
-      name: 'cv',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `All languages`
-  String get cloud {
-    return Intl.message(
-      'All languages',
-      name: 'cloud',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Video`
   String get inAction {
     return Intl.message(
@@ -188,6 +188,26 @@ class S {
     return Intl.message(
       'Language',
       name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Plan-et-B Game`
+  String get planetBGame {
+    return Intl.message(
+      'Plan-et-B Game',
+      name: 'planetBGame',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This project is one of the winners of this year's official Flutter Community Hackaton. More than two and a half thousand developers from all over the world took part in it.`
+  String get planetBGameDesc {
+    return Intl.message(
+      'This project is one of the winners of this year\'s official Flutter Community Hackaton. More than two and a half thousand developers from all over the world took part in it.',
+      name: 'planetBGameDesc',
       desc: '',
       args: [],
     );

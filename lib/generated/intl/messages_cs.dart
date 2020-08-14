@@ -37,6 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "iAm" : MessageLookupByLibrary.simpleMessage("Jsem oceněným „T-shaped“ specialistou jakožto Flutter vývojář a grafik, s velkou láskou k interaktivním animacím a dobrému UX. Udělejme něco úžasného společně!\n\nChcete vědět více?"),
     "inAction" : MessageLookupByLibrary.simpleMessage("v akci"),
     "language" : MessageLookupByLibrary.simpleMessage("Jazyk"),
+    "planetBGame" : MessageLookupByLibrary.simpleMessage("Hra Plan-et-а B"),
+    "planetBGameDesc" : MessageLookupByLibrary.simpleMessage("Tato PWA hra je jedním z vítězů v letošním oficiálním, dvoudenním hackathonu Společenství Flutter, kterého se zúčastnilo přes dva a pul tisíce lidi z celého světa."),
     "portfolio" : MessageLookupByLibrary.simpleMessage("Portfolio"),
     "projectsPortfolio" : MessageLookupByLibrary.simpleMessage("projektů a repositářů."),
     "see" : MessageLookupByLibrary.simpleMessage("Zhlédnout"),

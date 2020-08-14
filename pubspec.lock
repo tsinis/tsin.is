@@ -22,13 +22,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0-nullsafety.2"
-  effective_dart:
-    dependency: "direct dev"
-    description:
-      name: effective_dart
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.2.1"
   expandable:
     dependency: "direct main"
     description:
@@ -160,7 +153,7 @@ packages:
       name: url_launcher_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.2"
+    version: "0.1.2+1"
   vector_math:
     dependency: transitive
     description:
@@ -170,4 +163,4 @@ packages:
     version: "2.1.0-nullsafety.2"
 sdks:
   dart: ">=2.10.0-0.0.dev <2.10.0"
-  flutter: ">=1.12.13+hotfix.5 <2.0.0"
+  flutter: ">1.18.0 <2.0.0"

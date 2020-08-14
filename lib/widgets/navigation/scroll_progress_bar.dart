@@ -19,12 +19,10 @@ class ScrollProgress extends StatelessWidget {
         angle: 270 * pi / 180,
         child: LinearProgressIndicator(
             backgroundColor: Theme.of(context).accentColor.withOpacity(
-                  min(offset / 1000, 1.0),
+                  min(offset / 1000, 1),
                 ),
-            valueColor:
-                AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
-            value: (scrollController.position.maxScrollExtent -
-                    scrollController.position.pixels) /
+            valueColor: AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
+            value: (scrollController.position.maxScrollExtent - scrollController.position.pixels) /
                 scrollController.position.maxScrollExtent),
       );
 }

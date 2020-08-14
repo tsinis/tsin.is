@@ -13,7 +13,6 @@ Future<void> main() async {
   FlareCache.doesPrune = false;
   await _cacheAvatar();
   await findSystemLocale()
-      .then<String>((_detectedLocale) =>
-          LocaleBuilder.language = _detectedLocale.substring(0, 2))
+      .then<String>((_detectedLocale) => LocaleBuilder.language = _detectedLocale.substring(0, 2))
       .whenComplete(() => runApp(const MyWeb()));
 }

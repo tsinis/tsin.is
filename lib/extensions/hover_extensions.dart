@@ -1,3 +1,4 @@
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
@@ -7,15 +8,12 @@ import '../animations/translate_on_hover.dart';
 import '../animations/zoom_on_hover.dart';
 
 extension HoverExtensions on Widget {
-  static final _appContainer =
-      html.window.document.getElementById('app-container');
+  static final html.Element _appContainer = html.window.document.getElementById('app-container');
 
-  Widget get showCursorOnHover {
-    return MouseRegion(
-        child: this,
-        onHover: (event) => _appContainer.style.cursor = 'pointer',
-        onExit: (event) => _appContainer.style.cursor = 'default');
-  }
+  Widget get showCursorOnHover => MouseRegion(
+      onHover: (_) => _appContainer.style.cursor = 'pointer',
+      onExit: (_) => _appContainer.style.cursor = 'default',
+      child: this);
 
   Widget get moveUpOnHover => TranslateOnHover(child: this);
   Widget get zoomInOnHover => ZoomOnHover(child: this);

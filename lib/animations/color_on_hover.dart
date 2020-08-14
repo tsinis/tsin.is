@@ -17,15 +17,14 @@ class _ColorOnHoverState extends State<ColorOnHover> {
 
   @override
   Widget build(BuildContext context) => MouseRegion(
-      onEnter: (e) => _mouseEnter(true),
-      onExit: (e) => _mouseEnter(false),
-      child: AnimatedContainer(
-        duration: const Duration(seconds: 1),
-        child: ColorFiltered(
-            colorFilter: ColorFilter.mode(
-                _hovering ? Theme.of(context).primaryColor : Colors.transparent,
-                BlendMode.saturation),
-            child: widget.child),
-      ),
-    );
-  }
+        onEnter: (_) => _mouseEnter(true),
+        onExit: (_) => _mouseEnter(false),
+        child: AnimatedContainer(
+          duration: const Duration(seconds: 1),
+          child: ColorFiltered(
+              colorFilter: ColorFilter.mode(
+                  _hovering ? Theme.of(context).primaryColor : Colors.transparent, BlendMode.saturation),
+              child: widget.child),
+        ),
+      );
+}

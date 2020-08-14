@@ -19,15 +19,13 @@ class Portfolio extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             SizedBox(height: _height * 0.1, width: 0),
-            AutoSizeText(S.of(context).portfolio,
-                maxLines: 1, style: Theme.of(context).textTheme.headline4),
+            AutoSizeText(S.of(context).portfolio, maxLines: 1, style: Theme.of(context).textTheme.headline4),
             SizedBox(height: _height * 0.05, width: 0),
             AutoSizeText.rich(
                 TextSpan(
                   children: <TextSpan>[
                     TextSpan(
-                      text:
-                          '${S.of(context).findInPortfolio} ${S.of(context).somePortfilio} ',
+                      text: '${S.of(context).findInPortfolio} ${S.of(context).somePortfilio} ',
                     ),
                     TextSpan(
                       text: S.of(context).projectsPortfolio,
@@ -47,16 +45,15 @@ class Portfolio extends StatelessWidget {
               children: [
                 Project(
                     projectName: 'Steampunk Flutter Clock',
-                    pathToImage: 'assets/images/clock.jpg',
+                    pathToImage: 'assets/images/projects/clock.jpg',
                     projectDesc: S.of(context).flutterClock,
                     designURL: 'vimeo.com/tsinis/flutterclock',
                     appURL: 'github.com/tsinis/flutter_clock'),
                 Project(
                     projectName: 'Hello Dribbble',
-                    pathToImage: 'assets/images/dribbble.jpg',
+                    pathToImage: 'assets/images/projects/dribbble.jpg',
                     projectDesc: S.of(context).helloDribbble,
-                    designURL:
-                        'dribbble.com/shots/10772196-hello-dribbble-interactive-animation',
+                    designURL: 'dribbble.com/shots/10772196-hello-dribbble-interactive-animation',
                     appURL: 'github.com/tsinis/hello_dribbble'),
               ],
             ),
@@ -65,11 +62,11 @@ class Portfolio extends StatelessWidget {
               direction: Axis.horizontal,
               children: [
                 Project(
-                    projectName: S.of(context).tongueTwisters,
-                    pathToImage: 'assets/images/clock.jpg', //TODO: Add Tongue Twisters screenshot
-                    projectDesc: S.of(context).tongueTwistersDesc,
-                    designURL: 'dribbble.com/shots/',
-                    appURL: 'play.google.com/store/apps/'),
+                    projectName: S.of(context).planetBGame,
+                    pathToImage: 'assets/images/projects/planet.jpg',
+                    projectDesc: S.of(context).planetBGameDesc,
+                    designURL: 'vimeo.com/tsinis/hack20',
+                    appURL: 'github.com/tsinis/plan_et_b'),
                 Project(
                     projectName: S.of(context).thisWeb,
                     pathToImage: 'assets/images/header.gif',
@@ -78,6 +75,7 @@ class Portfolio extends StatelessWidget {
                     appURL: 'github.com/tsinis/tsin.is'),
               ],
             ),
+            //TODO: Add Tongue Twisters Project Later
             SizedBox(height: _height * 0.1),
           ],
         ),

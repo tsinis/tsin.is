@@ -5,11 +5,11 @@ import '../generated/my_icons.dart';
 import '../services/url_click.dart';
 
 class Website extends StatelessWidget {
-  Website(this._url, [Key key]) : super(key: key);
+  const Website(this._url, [Key key]) : super(key: key);
 
   final String _url;
 
-  Color get _color => _getColor();
+  // Color get _color => _getColor();
 
   String get _contactURL => '${_url.toLowerCase()}tsinis';
 
@@ -34,7 +34,7 @@ class Website extends StatelessWidget {
     }
   }
 
-  Color _getColor() {
+  Color get _color {
     switch (_url) {
       case 'Dribbble.com/':
         return Colors.pink[600];
@@ -56,12 +56,12 @@ class Website extends StatelessWidget {
         preferBelow: false,
         message: _contactURL,
         child: SizedBox(
-          width: 140.0,
+          width: 140,
           child: FlatButton.icon(
             textColor: Theme.of(context).disabledColor,
-            hoverColor: _color.withOpacity(0.15),
+            hoverColor: _color.withOpacity(0.25),
             highlightColor: _color,
-            icon: Icon(_icon, color: _getColor().withOpacity(0.66)),
+            icon: Icon(_icon, color: _color.withOpacity(0.66)),
             label: Text(_name),
             onPressed: () => Open.url(_contactURL),
           ).showCursorOnHover,

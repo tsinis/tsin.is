@@ -21,13 +21,10 @@ class About extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                AutoSizeText(S.of(context).fullName,
-                    maxLines: 1, style: Theme.of(context).textTheme.headline4),
-                const SizedBox(height: 15.0),
-                AutoSizeText(S.of(context).iAm,
-                    maxLines: _isWide ? 8 : 16,
-                    strutStyle: const StrutStyle(height: 1.75)),
-                const SizedBox(width: 10.0, height: 10.0),
+                AutoSizeText(S.of(context).fullName, maxLines: 1, style: Theme.of(context).textTheme.headline4),
+                const SizedBox(height: 15),
+                AutoSizeText(S.of(context).iAm, maxLines: _isWide ? 8 : 16, strutStyle: const StrutStyle(height: 1.75)),
+                const SizedBox(width: 10, height: 10),
                 const CVButtons(),
               ],
             ),

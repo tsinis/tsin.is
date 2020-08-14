@@ -1,111 +1,61 @@
 {
   "@@locale": "cs",
   "about": "O mně",
-  "@about": {
-    "type": "text"
-  },
+  "@about": {},
   "check": "Zkoumat",
-  "@check": {
-    "type": "text"
-  },
-  "contacts": "Kontakty",
-  "@contacts": {
-    "type": "text"
-  },
-  "contactsDesc": "Fyzicky jsem v Brně, na internetu, znám spíše jako „tsinis“:",
-  "@contactsDesc": {
-    "type": "text"
-  },
-  "devAndDesigner": "Flutter vývojář a grafik",
-  "@devAndDesigner": {
-    "type": "text"
-  },
-  "email": "nebo mi prostě napište starý dobrý e-mail:",
-  "@email": {
-    "type": "text"
-  },
-  "findInPortfolio": "Zde najdete",
-  "@findInPortfolio": {
-    "type": "text"
-  },
-  "flutterClock": "Tento projekt je jedním z vítězů ve společné vývojářské/design soutěži firem Google a Lenovo, pod názvem “Flutter Clock” (se skoro tisícovkou příspěvků z celého světa).",
-  "@flutterClock": {
-    "type": "text"
-  },
-  "fullName": "Roman Cinis",
-  "@fullName": {
-    "type": "text"
-  },
-  "greeting": "Vítejte, jsem",
-  "@greeting": {
-    "type": "text"
-  },
-  "helloDribbble": "Toto je projekt ukazující Interaktivní animace, které jsem vytvořil jako svůj Debut na legendárním Dribbble, poté co jsem, nedávno, dostal vytoužené pozvaní.",
-  "@helloDribbble": {
-    "type": "text"
-  },
-  "iAm": "Jsem oceněným „T-shaped“ specialistou jakožto Flutter vývojář a grafik, s velkou láskou k interaktivním animacím a dobrému UX. Udělejme něco úžasného společně!\n\nChcete vědět více?",
-  "@iAm": {
-    "type": "text"
-  },
-  "cv": "Stáhnout si CV",
-  "@cv": {
-    "type": "text"
-  },
+  "@check": {},
   "cloud": "Všechny jazyky",
-  "@cloud": {
-    "type": "text"
-  },
+  "@cloud": {},
+  "contacts": "Kontakty",
+  "@contacts": {},
+  "contactsDesc": "Fyzicky jsem v Brně, na internetu, znám spíše jako „tsinis“:",
+  "@contactsDesc": {},
+  "cv": "Stáhnout si CV",
+  "@cv": {},
+  "devAndDesigner": "Flutter vývojář a grafik",
+  "@devAndDesigner": {},
+  "email": "nebo mi prostě napište starý dobrý e-mail:",
+  "@email": {},
+  "findInPortfolio": "Zde najdete",
+  "@findInPortfolio": {},
+  "flutterClock": "Tento projekt je jedním z vítězů ve společné vývojářské/design soutěži firem Google a Lenovo, pod názvem “Flutter Clock” (se skoro tisícovkou příspěvků z celého světa).",
+  "@flutterClock": {},
+  "fullName": "Roman Cinis",
+  "@fullName": {},
+  "greeting": "Vítejte, jsem",
+  "@greeting": {},
+  "helloDribbble": "Toto je projekt ukazující Interaktivní animace, které jsem vytvořil jako svůj Debut na legendárním Dribbble, poté co jsem, nedávno, dostal vytoužené pozvaní.",
+  "@helloDribbble": {},
+  "iAm": "Jsem oceněným „T-shaped“ specialistou jakožto Flutter vývojář a grafik, s velkou láskou k interaktivním animacím a dobrému UX. Udělejme něco úžasného společně!\n\nChcete vědět více?",
+  "@iAm": {},
   "inAction": "v akci",
-  "@inAction": {
-    "type": "text"
-  },
+  "@inAction": {},
   "language": "Jazyk",
-  "@language": {
-    "type": "text"
-  },
+  "@language": {},
+  "planetBGame": "Hra Plan-et-а B",
+  "@planetBGame": {},
+  "planetBGameDesc": "Tato PWA hra je jedním z vítězů v letošním oficiálním, dvoudenním hackathonu Společenství Flutter, kterého se zúčastnilo přes dva a pul tisíce lidi z celého světa.",
+  "@planetBGameDesc": {},
   "portfolio": "Portfolio",
-  "@portfolio": {
-    "type": "text"
-  },
+  "@portfolio": {},
   "projectsPortfolio": "projektů a repositářů.",
-  "@projectsPortfolio": {
-    "type": "text"
-  },
+  "@projectsPortfolio": {},
   "see": "Zhlédnout",
-  "@see": {
-    "type": "text"
-  },
+  "@see": {},
   "selectLang": "select your language",
-  "@selectLang": {
-    "type": "text"
-  },
+  "@selectLang": {},
   "somePortfilio": "některé z mých",
-  "@somePortfilio": {
-    "type": "text"
-  },
+  "@somePortfilio": {},
   "theCode": "kód",
-  "@theCode": {
-    "type": "text"
-  },
+  "@theCode": {},
   "theDesign": "design",
-  "@theDesign": {
-    "type": "text"
-  },
+  "@theDesign": {},
   "thisWeb": "Táto webová stránka",
-  "@thisWeb": {
-    "type": "text"
-  },
+  "@thisWeb": {},
   "thisWebDesc": "Samozřejmé, že celý tento web je vytvořen ve Flutteru a je napsán na čistém Dartu. Závislost jedné a jediné, třetí strany je animace v sekci \"O mně\", která byla vytvořena v Rive.",
-  "@thisWebDesc": {
-    "type": "text"
-  },
+  "@thisWebDesc": {},
   "tongueTwisters": "Jazykolamy",
-  "@tongueTwisters": {
-    "type": "text"
-  },
+  "@tongueTwisters": {},
   "tongueTwistersDesc": "Aplikace pro testování jazykolamů, se zaměřením na design. Vytvořeno ve spolupráci s ilustrátorem — proto licence mi neumožňuje otevřít zdroj (tj. i ilustrace).",
-  "@tongueTwistersDesc": {
-    "type": "text"
-  }
+  "@tongueTwistersDesc": {}
 }

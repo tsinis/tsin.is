@@ -24,7 +24,7 @@ class MyWeb extends StatelessWidget {
   const MyWeb([Key key]) : super(key: key);
   @override
   Widget build(BuildContext context) => LocaleBuilder((context) => MaterialApp(
-          localizationsDelegates: [
+          localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
@@ -61,13 +61,11 @@ class _MyHomePageState extends State<_MyHomePage> {
 
   double get _height => MediaQuery.of(context).size.height;
 
-  bool get _isSmartPhone =>
-      (MediaQuery.of(context).size.width < 646.5 || offset > _height);
+  bool get _isSmartPhone => MediaQuery.of(context).size.width < 646.5 || offset > _height;
 
   Color get _grey => Theme.of(context).primaryColor;
 
-  double get offset =>
-      _scrollController.hasClients ? _scrollController.offset : 0;
+  double get offset => _scrollController.hasClients ? _scrollController.offset : 0;
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -82,8 +80,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               height: _height,
               child: RepaintBoundary(child: AnimatedBackground()),
             ),
-            Positioned(
-                top: 0.2 * _height, left: 0, right: 0, child: MainText(offset)),
+            Positioned(top: 0.2 * _height, left: 0, right: 0, child: MainText(offset)),
             Positioned(
               top: _height * 0.8 - offset,
               left: 0,
@@ -95,7 +92,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                   gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      stops: [0, 0.8],
+                      stops: const [0, 0.8],
                       colors: [_grey.withOpacity(0), _grey]),
                 ),
               ),
@@ -105,8 +102,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               left: 0,
               right: 0,
               height: _height / 3.0,
-              child: Container(
-                  height: _height / 3.0, width: double.infinity, color: _grey),
+              child: Container(height: _height / 3.0, width: double.infinity, color: _grey),
             ),
             ListView(
               scrollDirection: Axis.vertical,
@@ -123,40 +119,37 @@ class _MyHomePageState extends State<_MyHomePage> {
             Positioned(
                 right: -(_height / 3.0),
                 top: _height / 2.0,
-                height: 2.0,
+                height: 2,
                 width: _height * 0.75,
                 child: _scrollController.hasClients
-                    ? ScrollProgress(
-                        height: _height,
-                        offset: offset,
-                        scrollController: _scrollController)
+                    ? ScrollProgress(height: _height, offset: offset, scrollController: _scrollController)
                     : const SizedBox.shrink()),
-            (_height > MediaQuery.of(context).size.width)
-                ? const SizedBox.shrink()
-                : Positioned(
-                    left: 80.0,
-                    bottom: 70.0,
-                    child: CircularText(
-                      textStyle: Theme.of(context).textTheme.overline.copyWith(
-                            fontSize: 10.0,
-                            color: Colors.white
-                                .withOpacity(min(offset / 1000.0, 0.3)),
-                          ),
-                      startAngle: -pi / 2.0 + offset / 500.0,
-                    ),
-                  ),
+            if (_height > MediaQuery.of(context).size.width)
+              const SizedBox.shrink()
+            else
+              Positioned(
+                left: 80,
+                bottom: 70,
+                child: CircularText(
+                  textStyle: Theme.of(context).textTheme.overline.copyWith(
+                        fontSize: 10,
+                        color: Colors.white.withOpacity(min(offset / 1000.0, 0.3)),
+                      ),
+                  startAngle: -pi / 2.0 + offset / 500.0,
+                ),
+              ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Opacity(
                   opacity: max(0, 1.0 - offset / _height),
                   child: Padding(
-                    padding: EdgeInsets.only(
-                        top: 30.0, left: _isSmartPhone ? 30.0 : 50.0),
+                    padding: EdgeInsets.only(top: 30, left: _isSmartPhone ? 30 : 50),
                     child: LanguageMenu(
                         isSmartphone: _isSmartPhone,
                         language: S.of(context).language,
                         tooltip: S.of(context).selectLang,
+                        // ignore: avoid_types_on_closure_parameters
                         onSelected: (String _selectedLang) {
                           LocaleBuilder.language = _selectedLang;
                           LocaleBuilder.of(context).rebuild();
@@ -164,18 +157,14 @@ class _MyHomePageState extends State<_MyHomePage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(
-                      top: 30.0, right: _isSmartPhone ? 20.0 : 50.0),
+                  padding: EdgeInsets.only(top: 30, right: _isSmartPhone ? 20 : 50),
                   child: _isSmartPhone
                       ? IconButton(
                           icon: const Icon(MyIcon.menu),
                           color: Theme.of(context).accentColor,
-                          onPressed: () =>
-                              _scaffoldKey.currentState.openEndDrawer(),
+                          onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
                         ).showCursorOnHover.moveUpOnHover
-                      : Opacity(
-                          opacity: max(0, 1.0 - offset / _height),
-                          child: Header(_scrollController)),
+                      : Opacity(opacity: max(0, 1.0 - offset / _height), child: Header(_scrollController)),
                 )
               ],
             )

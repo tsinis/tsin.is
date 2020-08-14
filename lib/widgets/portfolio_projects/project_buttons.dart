@@ -8,8 +8,7 @@ import '../../generated/my_icons.dart';
 import '../../services/url_click.dart';
 
 class ProjectButtonBar extends ButtonBar {
-  const ProjectButtonBar(this._designURL, this._appURL, {this.isWide, Key key})
-      : super(key: key);
+  const ProjectButtonBar(this._designURL, this._appURL, {this.isWide, Key key}) : super(key: key);
 
   final bool isWide;
 
@@ -21,20 +20,19 @@ class ProjectButtonBar extends ButtonBar {
 
   @override
   Widget build(BuildContext context) {
-    final bool _isSmartWatch = MediaQuery.of(context).size.width < 321.0;
+    final bool _isSmartWatch = MediaQuery.of(context).size.width < 321;
     return ButtonBar(
-      buttonPadding:
-          const EdgeInsets.symmetric(vertical: 10.0, horizontal: 5.0),
-      buttonMinWidth: 220.0,
+      buttonPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+      buttonMinWidth: 220,
       alignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Tooltip(
           message: _designURL.shorten(),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10.0),
+            padding: const EdgeInsets.symmetric(vertical: 10),
             child: _video
                 ? OutlineButton(
-                    borderSide: BorderSide(width: 2.4, color: Colors.cyan[300]),
+                    borderSide: BorderSide(width: 3.2, color: Colors.cyan[300]),
                     highlightedBorderColor: Colors.cyanAccent[400],
                     hoverColor: Colors.cyan.withOpacity(0.1),
                     textColor: Colors.cyanAccent[700],
@@ -43,23 +41,16 @@ class ProjectButtonBar extends ButtonBar {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        _isSmartWatch
-                            ? const SizedBox.shrink()
-                            : Icon(MyIcon.vimeo_v, color: Colors.cyan[400]),
-                        ConstrainedBox(
-                            constraints: const BoxConstraints(
-                                minWidth: 10.0, maxWidth: 15.0)),
+                        if (_isSmartWatch) const SizedBox.shrink() else Icon(MyIcon.vimeo_v, color: Colors.cyan[400]),
+                        ConstrainedBox(constraints: const BoxConstraints(minWidth: 10, maxWidth: 15)),
                         AutoSizeText(
-                            ((isWide ? '${S.of(context).see} ' : '') +
-                                    S.of(context).inAction)
-                                .capitalizeFirstLetter(),
+                            ((isWide ? '${S.of(context).see} ' : '') + S.of(context).inAction).capitalizeFirstLetter(),
                             maxLines: 1),
                       ],
                     ),
                   ).showCursorOnHover
                 : OutlineButton(
-                    borderSide:
-                        BorderSide(width: 2.4, color: Colors.pinkAccent[100]),
+                    borderSide: BorderSide(width: 3.2, color: Colors.pinkAccent[100]),
                     highlightedBorderColor: Colors.pink[200],
                     hoverColor: Colors.pink.withOpacity(0.1),
                     textColor: Colors.pink[400],
@@ -68,16 +59,10 @@ class ProjectButtonBar extends ButtonBar {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        _isSmartWatch
-                            ? const SizedBox.shrink()
-                            : Icon(MyIcon.dribbble, color: Colors.pink[300]),
-                        ConstrainedBox(
-                            constraints: const BoxConstraints(
-                                minWidth: 10.0, maxWidth: 15.0)),
+                        if (_isSmartWatch) const SizedBox.shrink() else Icon(MyIcon.dribbble, color: Colors.pink[300]),
+                        ConstrainedBox(constraints: const BoxConstraints(minWidth: 10, maxWidth: 15)),
                         AutoSizeText(
-                            ((isWide ? '${S.of(context).see} ' : '') +
-                                    S.of(context).theDesign)
-                                .capitalizeFirstLetter(),
+                            ((isWide ? '${S.of(context).see} ' : '') + S.of(context).theDesign).capitalizeFirstLetter(),
                             maxLines: 1),
                       ],
                     ),
@@ -87,41 +72,30 @@ class ProjectButtonBar extends ButtonBar {
         Tooltip(
           message: _appURL,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10.0),
+            padding: const EdgeInsets.symmetric(vertical: 10),
             child: RaisedButton(
-              color: _openSource
-                  ? Theme.of(context).primaryColorLight
-                  : Colors.lightGreen,
+              color: _openSource ? Theme.of(context).primaryColorLight : Colors.lightGreen,
               elevation: 1.5,
               hoverElevation: 2.5,
-              highlightElevation: 3.0,
+              highlightElevation: 3,
               onPressed: () => Open.url(_appURL),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: _openSource
                     ? <Widget>[
-                        _isSmartWatch
-                            ? const SizedBox.shrink()
-                            : const Icon(MyIcon.github),
-                        ConstrainedBox(
-                            constraints: const BoxConstraints(
-                                minWidth: 5.0, maxWidth: 10.0)),
+                        if (_isSmartWatch) const SizedBox.shrink() else const Icon(MyIcon.github),
+                        ConstrainedBox(constraints: const BoxConstraints(minWidth: 5, maxWidth: 10)),
                         AutoSizeText(
-                            ((isWide ? '${S.of(context).check} ' : '') +
-                                    S.of(context).theCode)
-                                .capitalizeFirstLetter(),
+                            ((isWide ? '${S.of(context).check} ' : '') + S.of(context).theCode).capitalizeFirstLetter(),
                             maxLines: 1,
-                            style: TextStyle(
-                                color: Theme.of(context).primaryColorDark)),
+                            style: TextStyle(color: Theme.of(context).primaryColorDark)),
                       ]
                     : <Widget>[
-                        _isSmartWatch
-                            ? const SizedBox.shrink()
-                            : const Icon(MyIcon.google_play,
-                                color: Colors.white),
-                        ConstrainedBox(
-                            constraints: const BoxConstraints(
-                                minWidth: 10.0, maxWidth: 15.0)),
+                        if (_isSmartWatch)
+                          const SizedBox.shrink()
+                        else
+                          const Icon(MyIcon.google_play, color: Colors.white),
+                        ConstrainedBox(constraints: const BoxConstraints(minWidth: 10, maxWidth: 15)),
                         AutoSizeText(
                           isWide ? 'Google Play' : 'Play',
                           maxLines: 1,
