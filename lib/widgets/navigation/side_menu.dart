@@ -2,7 +2,6 @@ import 'dart:ui' show ImageFilter;
 
 import 'package:flutter/material.dart';
 
-import '../../extensions/hover_extensions.dart';
 import '../../generated/my_icons.dart';
 import 'navigation_menu_list.dart';
 
@@ -30,7 +29,7 @@ class SideMenu extends Drawer {
                         icon: const Icon(MyIcon.arrow_left),
                         color: Theme.of(context).accentColor,
                         onPressed: () => Scaffold.of(context).openDrawer(),
-                      ).showCursorOnHover,
+                      ),
                     ),
                   ),
                   NavigationMenu(_scrollController),

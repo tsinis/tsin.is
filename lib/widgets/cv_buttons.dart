@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-import '../extensions/hover_extensions.dart';
 import '../generated/l10n.dart';
 import '../generated/my_icons.dart';
 import '../services/url_click.dart';
@@ -11,7 +10,7 @@ class CVButtons extends ButtonBar {
 
   @override
   Widget build(BuildContext context) {
-    final bool _isSmartWatch = MediaQuery.of(context).size.width < 300.0;
+    final bool _isSmartWatch = MediaQuery.of(context).size.width < 300;
     return ButtonBar(
       buttonPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       buttonMinWidth: 300,
@@ -19,15 +18,15 @@ class CVButtons extends ButtonBar {
       children: <Widget>[
         Tooltip(
           preferBelow: MediaQuery.of(context).size.width > 1439,
-          message: Open.cvURL(),
+          message: '🔗 ${Open.cvURL}',
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: RaisedButton(
               color: Theme.of(context).dividerColor,
-              elevation: 1.5,
-              hoverElevation: 2.5,
-              highlightElevation: 3,
-              onPressed: () => Open.url(Open.cvURL()),
+              elevation: 2,
+              hoverElevation: 4,
+              highlightElevation: 6,
+              onPressed: () => Open.url(Open.cvURL),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -36,15 +35,15 @@ class CVButtons extends ButtonBar {
                   AutoSizeText(S.of(context).cv, maxLines: 1, style: Theme.of(context).textTheme.button),
                 ],
               ),
-            ).showCursorOnHover,
+            ),
           ),
         ),
         Tooltip(
-          message: 'Microsoft OneDrive',
+          message: '🔗 Microsoft OneDrive',
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: OutlineButton(
-              borderSide: const BorderSide(width: 3.2, color: Colors.blueGrey),
+              borderSide: const BorderSide(width: 4, color: Colors.blueGrey),
               highlightedBorderColor: Colors.blueGrey[400],
               hoverColor: Colors.blueGrey.withOpacity(0.1),
               textColor: Colors.blueGrey[600],
@@ -58,7 +57,7 @@ class CVButtons extends ButtonBar {
                   AutoSizeText(S.of(context).cloud, maxLines: 1, style: Theme.of(context).textTheme.button),
                 ],
               ),
-            ).showCursorOnHover,
+            ),
           ),
         ),
       ],

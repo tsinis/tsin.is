@@ -17,10 +17,7 @@ class LanguageMenu<String> extends StatelessWidget {
       .map<String, PopupMenuItem<String>>(
         (_langCode, _langName) => MapEntry<String, PopupMenuItem<String>>(
           _langCode as String,
-          PopupMenuItem<String>(
-            value: _langCode as String,
-            child: Center(child: Text(_langName.toString())),
-          ),
+          PopupMenuItem<String>(value: _langCode as String, child: Center(child: Text(_langName.toString()))),
         ),
       )
       .values
@@ -32,12 +29,10 @@ class LanguageMenu<String> extends StatelessWidget {
         tooltip: tooltip.toString(),
         onSelected: onSelected,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.baseline,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Icon(
-              MyIcon.globe_europe,
-              color: Theme.of(context).primaryColorDark,
-            ),
+            Icon(MyIcon.globe_europe, color: Theme.of(context).primaryColorDark),
             const SizedBox(width: 10),
             if (isSmartphone)
               const SizedBox.shrink()

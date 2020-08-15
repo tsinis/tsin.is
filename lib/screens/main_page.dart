@@ -101,8 +101,8 @@ class _MyHomePageState extends State<_MyHomePage> {
               top: _height * 0.95 - offset,
               left: 0,
               right: 0,
-              height: _height / 3.0,
-              child: Container(height: _height / 3.0, width: double.infinity, color: _grey),
+              height: _height / 3,
+              child: Container(height: _height / 3, width: double.infinity, color: _grey),
             ),
             ListView(
               scrollDirection: Axis.vertical,
@@ -117,8 +117,8 @@ class _MyHomePageState extends State<_MyHomePage> {
               ],
             ),
             Positioned(
-                right: -(_height / 3.0),
-                top: _height / 2.0,
+                right: -(_height / 3),
+                top: _height / 2,
                 height: 2,
                 width: _height * 0.75,
                 child: _scrollController.hasClients
@@ -129,20 +129,20 @@ class _MyHomePageState extends State<_MyHomePage> {
             else
               Positioned(
                 left: 80,
-                bottom: 70,
+                bottom: 80,
                 child: CircularText(
                   textStyle: Theme.of(context).textTheme.overline.copyWith(
                         fontSize: 10,
-                        color: Colors.white.withOpacity(min(offset / 1000.0, 0.3)),
+                        color: Colors.white.withOpacity(min(offset / 1000, 0.3)),
                       ),
-                  startAngle: -pi / 2.0 + offset / 500.0,
+                  startAngle: -pi / 2 + offset / 500,
                 ),
               ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Opacity(
-                  opacity: max(0, 1.0 - offset / _height),
+                  opacity: max(0, 1 - offset / _height),
                   child: Padding(
                     padding: EdgeInsets.only(top: 30, left: _isSmartPhone ? 30 : 50),
                     child: LanguageMenu(
@@ -153,7 +153,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                         onSelected: (String _selectedLang) {
                           LocaleBuilder.language = _selectedLang;
                           LocaleBuilder.of(context).rebuild();
-                        }).showCursorOnHover,
+                        }),
                   ),
                 ),
                 Padding(
@@ -163,8 +163,8 @@ class _MyHomePageState extends State<_MyHomePage> {
                           icon: const Icon(MyIcon.menu),
                           color: Theme.of(context).accentColor,
                           onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
-                        ).showCursorOnHover.moveUpOnHover
-                      : Opacity(opacity: max(0, 1.0 - offset / _height), child: Header(_scrollController)),
+                        ).moveUpOnHover
+                      : Opacity(opacity: max(0, 1 - offset / _height), child: Header(_scrollController)),
                 )
               ],
             )

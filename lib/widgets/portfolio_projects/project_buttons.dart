@@ -1,7 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../extensions/hover_extensions.dart';
 import '../../extensions/regular_expressions.dart';
 import '../../generated/l10n.dart';
 import '../../generated/my_icons.dart';
@@ -27,30 +26,30 @@ class ProjectButtonBar extends ButtonBar {
       alignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Tooltip(
-          message: _designURL.shorten(),
+          message: '🔗 ${_designURL.short}',
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: _video
                 ? OutlineButton(
-                    borderSide: BorderSide(width: 3.2, color: Colors.cyan[300]),
-                    highlightedBorderColor: Colors.cyanAccent[400],
+                    borderSide: BorderSide(width: 4, color: Colors.cyan[400]),
+                    highlightedBorderColor: Colors.cyanAccent,
                     hoverColor: Colors.cyan.withOpacity(0.1),
-                    textColor: Colors.cyanAccent[700],
+                    textColor: Colors.cyan[800],
                     color: Colors.cyan[600],
                     onPressed: () => Open.url(_designURL),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        if (_isSmartWatch) const SizedBox.shrink() else Icon(MyIcon.vimeo_v, color: Colors.cyan[400]),
+                        if (_isSmartWatch) const SizedBox.shrink() else const Icon(MyIcon.vimeo_v, color: Colors.cyan),
                         ConstrainedBox(constraints: const BoxConstraints(minWidth: 10, maxWidth: 15)),
                         AutoSizeText(
-                            ((isWide ? '${S.of(context).see} ' : '') + S.of(context).inAction).capitalizeFirstLetter(),
+                            ((isWide ? '${S.of(context).see} ' : '') + S.of(context).inAction).capitalizeFirstLetter,
                             maxLines: 1),
                       ],
                     ),
-                  ).showCursorOnHover
+                  )
                 : OutlineButton(
-                    borderSide: BorderSide(width: 3.2, color: Colors.pinkAccent[100]),
+                    borderSide: BorderSide(width: 4, color: Colors.pinkAccent[100]),
                     highlightedBorderColor: Colors.pink[200],
                     hoverColor: Colors.pink.withOpacity(0.1),
                     textColor: Colors.pink[400],
@@ -62,15 +61,15 @@ class ProjectButtonBar extends ButtonBar {
                         if (_isSmartWatch) const SizedBox.shrink() else Icon(MyIcon.dribbble, color: Colors.pink[300]),
                         ConstrainedBox(constraints: const BoxConstraints(minWidth: 10, maxWidth: 15)),
                         AutoSizeText(
-                            ((isWide ? '${S.of(context).see} ' : '') + S.of(context).theDesign).capitalizeFirstLetter(),
+                            ((isWide ? '${S.of(context).see} ' : '') + S.of(context).theDesign).capitalizeFirstLetter,
                             maxLines: 1),
                       ],
                     ),
-                  ).showCursorOnHover,
+                  ),
           ),
         ),
         Tooltip(
-          message: _appURL,
+          message: '🔗 $_appURL',
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: RaisedButton(
@@ -86,7 +85,7 @@ class ProjectButtonBar extends ButtonBar {
                         if (_isSmartWatch) const SizedBox.shrink() else const Icon(MyIcon.github),
                         ConstrainedBox(constraints: const BoxConstraints(minWidth: 5, maxWidth: 10)),
                         AutoSizeText(
-                            ((isWide ? '${S.of(context).check} ' : '') + S.of(context).theCode).capitalizeFirstLetter(),
+                            ((isWide ? '${S.of(context).check} ' : '') + S.of(context).theCode).capitalizeFirstLetter,
                             maxLines: 1,
                             style: TextStyle(color: Theme.of(context).primaryColorDark)),
                       ]
@@ -103,7 +102,7 @@ class ProjectButtonBar extends ButtonBar {
                         ),
                       ],
               ),
-            ).showCursorOnHover,
+            ),
           ),
         ),
       ],

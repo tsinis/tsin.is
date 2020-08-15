@@ -6,13 +6,13 @@ import 'package:flutter/widgets.dart';
 class CircularText extends StatelessWidget {
   const CircularText({
     Key key,
-    this.radius = 18.7,
+    this.radius = 26,
     this.text = '· tsin.is · Roman Cinis',
     this.textStyle,
     this.startAngle = 0,
   }) : super(key: key);
 
-  final double radius;
+  final int radius;
   final double startAngle;
   final String text;
   final TextStyle textStyle;
@@ -40,10 +40,10 @@ class _TextPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.translate(size.width / 2.0, size.height / 2.0 - radius);
+    canvas.translate(size.width / 2, size.height / 2 - radius);
 
     if (initialAngle != 0) {
-      final d = 2.0 * radius * math.sin(initialAngle / 2.0);
+      final d = 2.0 * radius * math.sin(initialAngle / 2);
       final rotationAngle = _calculateRotationAngle(0, initialAngle);
       canvas
         ..rotate(rotationAngle)
@@ -65,7 +65,7 @@ class _TextPainter extends CustomPainter {
       ..layout(minWidth: 0, maxWidth: double.maxFinite);
 
     final double d = _textPainter.width;
-    final double alpha = 2.0 * math.asin(d / (2.0 * radius));
+    final double alpha = 2 * math.asin(d / (2 * radius));
 
     final double newAngle = _calculateRotationAngle(prevAngle, alpha);
     canvas.rotate(newAngle);
@@ -76,5 +76,5 @@ class _TextPainter extends CustomPainter {
     return alpha;
   }
 
-  double _calculateRotationAngle(double prevAngle, double alpha) => (alpha + prevAngle) / 2.0;
+  double _calculateRotationAngle(double prevAngle, double alpha) => (alpha + prevAngle) / 2;
 }

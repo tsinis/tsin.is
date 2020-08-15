@@ -29,8 +29,10 @@ class MyIcon {
   static const _kFontFam = 'MyIcon';
   static const _kFontPkg = null;
 
-  static const IconData rive = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData rive = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData codepen = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData map = IconData(0xe802, fontFamily: _kFontFam, fontPackage: _kFontPkg);
+  static const IconData telegram = IconData(0xe803, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData heart = IconData(0xf004, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData arrow_left = IconData(0xf060, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData linkedin = IconData(0xf08c, fontFamily: _kFontFam, fontPackage: _kFontPkg);

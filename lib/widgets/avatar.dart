@@ -7,20 +7,12 @@ import 'package:flutter/services.dart' show rootBundle;
 
 import '../animations/head_controller.dart';
 
-class Avatar extends StatefulWidget {
-  const Avatar([Key key]) : super(key: key);
+class Avatar extends StatelessWidget {
+  Avatar([Key key]) : super(key: key);
 
   static AssetProvider cache = AssetFlare(bundle: rootBundle, name: 'assets/images/avatar.flr');
-
-  @override
-  _AvatarState createState() => _AvatarState();
-
   AssetProvider get _cache => cache;
 
-  // set cache(AssetProvider asset) => asset = _cache;
-}
-
-class _AvatarState extends State<Avatar> {
   final HeadController _headController = HeadController();
 
   void _pointerHover(PointerHoverEvent pointer) =>
@@ -33,7 +25,7 @@ class _AvatarState extends State<Avatar> {
           onExit: (_) => _headController.notHovering(),
           onEnter: (_) => _headController.isHovering(),
           onHover: _pointerHover,
-          child: FlareActor.asset(widget._cache,
+          child: FlareActor.asset(_cache,
               controller: _headController, alignment: Alignment.bottomCenter, fit: BoxFit.fitWidth, animation: 'blink'),
         ),
       );

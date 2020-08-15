@@ -32,7 +32,7 @@ class About extends StatelessWidget {
           SizedBox(
               width: MediaQuery.of(context).size.shortestSide * 0.6,
               height: MediaQuery.of(context).size.shortestSide * 0.6,
-              child: const Avatar())
+              child: Avatar())
         ],
       ),
     );

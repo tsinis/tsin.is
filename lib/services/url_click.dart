@@ -3,12 +3,11 @@ import 'package:url_launcher/url_launcher.dart';
 import 'locale_builder.dart';
 
 class Open {
-  static const String _cloudURL =
-      'https://1drv.ms/f/s!Aoc8-1_hYIfGiFYW3PppEoagkHAh';
+  static const String _cloudURL = 'https://1drv.ms/f/s!Aoc8-1_hYIfGiFYW3PppEoagkHAh';
 
   static final Uri _mail = Uri(scheme: 'mailto', path: 'my@mail.com');
 
-  static String cvURL() {
+  static String get cvURL {
     String _langCode = 'en';
     switch (LocaleBuilder.language) {
       case 'sk':

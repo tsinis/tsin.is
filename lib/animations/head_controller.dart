@@ -69,11 +69,11 @@ class HeadController implements FlareController {
     _headControl = _artboard.getNode('head_control');
     _exitAnimation = FlareAnimationLayer()
       ..animation = _artboard.getAnimation('exit')
-      ..mixSeconds = 1.0
-      ..mix = 1.0;
+      ..mixSeconds = 1
+      ..mix = 1;
     _backgroundAnimation = FlareAnimationLayer()
       ..animation = _artboard.getAnimation('background')
-      ..mix = 1.0;
+      ..mix = 1;
   }
 
   @override

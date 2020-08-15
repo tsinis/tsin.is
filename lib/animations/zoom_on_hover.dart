@@ -17,10 +17,7 @@ class _TranslateOnHoverState extends State<ZoomOnHover> with SingleTickerProvide
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-      duration: const Duration(seconds: 1),
-      vsync: this,
-    );
+    _animationController = AnimationController(duration: const Duration(seconds: 1), vsync: this);
     _animationCurve = CurvedAnimation(
         parent: _animationController, curve: Curves.easeInOutQuint, reverseCurve: Curves.easeInOutQuart);
     _animationController.forward();

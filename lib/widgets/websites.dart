@@ -1,70 +1,55 @@
 import 'package:flutter/material.dart';
 
-import '../extensions/hover_extensions.dart';
 import '../generated/my_icons.dart';
 import '../services/url_click.dart';
 
-class Website extends StatelessWidget {
-  const Website(this._url, [Key key]) : super(key: key);
+class Websites extends StatelessWidget {
+  const Websites([Key key]) : super(key: key);
 
-  final String _url;
+  static const Map<String, MapEntry<IconData, Color>> _websites = {
+    'LinkedIn.com/in/': MapEntry(MyIcon.linkedin, Color(0xFF2867B2)),
+    'GitHub.com/': MapEntry(MyIcon.github_square, Color(0xFF24292e)),
+    'Dribbble.com/': MapEntry(MyIcon.dribbble_square, Color(0xFFea4c89)),
+    'Medium.com/@': MapEntry(MyIcon.medium, Colors.black),
+    'Codepen.io/': MapEntry(MyIcon.codepen, Color(0xFF333333)),
+    'Vimeo.com/': MapEntry(MyIcon.vimeo_square, Color(0xFF1ab7ea)),
+    'Telegram.me/': MapEntry(MyIcon.telegram, Color(0xFF0088cc)),
+    'Rive.app/a/': MapEntry(MyIcon.rive, Colors.white)
+  };
 
-  // Color get _color => _getColor();
+  @override
+  Widget build(BuildContext context) => Wrap(
+      alignment: WrapAlignment.center,
+      spacing: 1,
+      children: _websites.entries
+          .map<_WebsiteButton>((_webSiteData) =>
+              _WebsiteButton(url: _webSiteData.key, icon: _webSiteData.value.key, color: _webSiteData.value.value))
+          .toList());
+}
 
-  String get _contactURL => '${_url.toLowerCase()}tsinis';
+class _WebsiteButton extends StatelessWidget {
+  const _WebsiteButton({this.url, this.icon, this.color, Key key}) : super(key: key);
+  final String url;
+  final IconData icon;
+  final Color color;
 
-  IconData get _icon => _getIcon();
-
-  String get _name => _url.substring(0, _url.indexOf('.'));
-
-  IconData _getIcon() {
-    switch (_url) {
-      case 'Dribbble.com/':
-        return MyIcon.dribbble_square;
-      case 'LinkedIn.com/in/':
-        return MyIcon.linkedin;
-      case 'GitHub.com/':
-        return MyIcon.github_square;
-      case 'Medium.com/@':
-        return MyIcon.medium;
-      case 'Vimeo.com/':
-        return MyIcon.vimeo_square;
-      default:
-        return MyIcon.rive;
-    }
-  }
-
-  Color get _color {
-    switch (_url) {
-      case 'Dribbble.com/':
-        return Colors.pink[600];
-      case 'LinkedIn.com/in/':
-        return Colors.blue;
-      case 'Rive.app/a/':
-        return Colors.white;
-      // case 'Medium.com/@':
-      //   return Colors.black;
-      case 'Vimeo.com/':
-        return Colors.cyan[600];
-      default:
-        return Colors.black;
-    }
-  }
+  String get _fullURL => '${url.toLowerCase()}tsinis';
 
   @override
   Widget build(BuildContext context) => Tooltip(
         preferBelow: false,
-        message: _contactURL,
+        message: '🔗 $_fullURL',
         child: SizedBox(
-          width: 140,
+          width: 143,
           child: FlatButton.icon(
             textColor: Theme.of(context).disabledColor,
-            hoverColor: _color.withOpacity(0.25),
-            highlightColor: _color,
-            icon: Icon(_icon, color: _color.withOpacity(0.66)),
-            label: Text(_name),
-            onPressed: () => Open.url(_contactURL),
-          ).showCursorOnHover,
+            hoverColor: color.withOpacity(0.25),
+            highlightColor: color.withOpacity(0.33),
+            icon: Icon(icon, color: color),
+            label: Text(url.substring(0, url.indexOf('.')),
+                style: Theme.of(context).textTheme.overline.copyWith(fontSize: 15, letterSpacing: 0.33)),
+            onPressed: () => Open.url(_fullURL),
+          ),
         ),
       );
 }

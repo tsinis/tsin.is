@@ -17,11 +17,11 @@ extension MenuExtension on Menu {
     final bool _isSmartPhone = MediaQuery.of(context).size.height > MediaQuery.of(context).size.width;
     switch (this) {
       case Menu.contacts:
-        return scrollController.position.maxScrollExtent - (_isSmartPhone ? 70.0 : 40.0);
+        return scrollController.position.maxScrollExtent - (_isSmartPhone ? 70 : 40);
       case Menu.portfolio:
         return scrollController.position.extentInside +
             310000 / MediaQuery.of(context).size.height +
-            MediaQuery.of(context).size.shortestSide / (_isSmartPhone ? 1.2 : 3.0);
+            MediaQuery.of(context).size.shortestSide / (_isSmartPhone ? 1.2 : 3);
       default:
         return MediaQuery.of(context).size.height;
     }

@@ -8,10 +8,10 @@ class _PulseAnimation extends CustomPainter {
   _PulseAnimation(this._animation) : super(repaint: _animation);
 
   void circle(Canvas _canvas, Rect _rect, double _value) {
-    final double _opacity = (1.0 - (_value / 3)).clamp(0.0, 1.0).toDouble();
+    final double _opacity = (1 - (_value / 3)).clamp(0, 1).toDouble();
     final Color color = Color.fromRGBO(120, 120, 120, _opacity);
 
-    final double _size = _rect.width / 20;
+    final double _size = _rect.width * 4;
     final double area = _size * _size;
     final double _radius = sqrt(area * _value * 4);
 
@@ -32,7 +32,8 @@ class _PulseAnimation extends CustomPainter {
 }
 
 class Brno extends StatefulWidget {
-  const Brno([Key key]) : super(key: key);
+  const Brno({this.mapWidth, Key key}) : super(key: key);
+  final double mapWidth;
   @override
   _BrnoState createState() => _BrnoState();
 }
@@ -62,5 +63,5 @@ class _BrnoState extends State<Brno> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) =>
-      CustomPaint(painter: _PulseAnimation(_controller), child: const SizedBox(width: 4, height: 4));
+      CustomPaint(painter: _PulseAnimation(_controller), child: SizedBox(width: widget.mapWidth / 300));
 }

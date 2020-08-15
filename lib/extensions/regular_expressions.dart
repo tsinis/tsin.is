@@ -1,5 +1,5 @@
 extension StringExtension on String {
-  String capitalizeFirstLetter() => '${this[0].toUpperCase()}${substring(1)}';
+  String get capitalizeFirstLetter => '${this[0].toUpperCase()}${substring(1)}';
 
-  String shorten() => replaceAll(RegExp('[0-9]'), ' ').replaceAll(RegExp(r'\s+'), '…');
+  String get short => replaceAll(RegExp('[0-9]'), ' ').replaceAll(RegExp(r'\s+'), '…');
 }

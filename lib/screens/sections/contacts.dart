@@ -15,31 +15,31 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     final double _height = MediaQuery.of(context).size.height;
     final double _width = MediaQuery.of(context).size.width;
+
     return Container(
       color: Theme.of(context).primaryColor,
       child: Stack(
         alignment: Alignment.center,
         children: [
           Positioned(
-            top: (_width > _height) ? -_height / 1.6 : 1,
-            bottom: (_width > _height) ? -_height / 1.6 : -10,
-            child: SizedBox(
-              width: _width,
-              child: FittedBox(
-                alignment: (_width > _height) ? Alignment.center : Alignment.bottomCenter,
-                fit: BoxFit.cover,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Icon(MyIcon.map, color: Theme.of(context).backgroundColor.withOpacity(0.2)),
-                    const Brno(),
-                  ],
-                ),
+            width: _width * 1.14,
+            top: (_width > _height) ? -_height / 1.6 : 0,
+            bottom: ((_width > _height) ? -_height / 1.6 : 1.0) - (8 / (_height / 1000)),
+            child: FittedBox(
+              alignment: (_width > _height) ? Alignment.center : Alignment.bottomCenter,
+              fit: BoxFit.cover,
+              child: Stack(
+                // fit: StackFit.passthrough,
+                alignment: Alignment.center,
+                children: [
+                  Icon(MyIcon.map, size: _width, color: Theme.of(context).backgroundColor.withOpacity(0.2)),
+                  Brno(mapWidth: _width),
+                ],
               ),
             ),
           ),
           FractionallySizedBox(
-            widthFactor: 0.7,
+            widthFactor: 0.8,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
@@ -48,18 +48,7 @@ class Contact extends StatelessWidget {
                 SizedBox(height: _height * 0.05),
                 AutoSizeText(S.of(context).contactsDesc, textAlign: TextAlign.center, maxLines: 6),
                 SizedBox(height: _height * 0.03),
-                Wrap(
-                  alignment: WrapAlignment.center,
-                  spacing: 5,
-                  children: const <Website>[
-                    Website('LinkedIn.com/in/'),
-                    Website('GitHub.com/'),
-                    Website('Dribbble.com/'),
-                    Website('Medium.com/@'),
-                    Website('Vimeo.com/'),
-                    Website('Rive.app/a/')
-                  ],
-                ),
+                const Websites(),
                 SizedBox(height: _height * 0.02),
                 Wrap(
                   spacing: 10,
@@ -70,7 +59,7 @@ class Contact extends StatelessWidget {
                     IconButton(
                       onPressed: Open.mail, //TODO: Add email address.
                       icon: Icon(MyIcon.mail_alt, color: Theme.of(context).primaryColorLight),
-                    ).showCursorOnHover.moveUpOnHover
+                    ).moveUpOnHover
                   ],
                 ),
                 SizedBox(height: _height * 0.025),
