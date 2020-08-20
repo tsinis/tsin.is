@@ -32,8 +32,7 @@ class _PulseAnimation extends CustomPainter {
 }
 
 class Brno extends StatefulWidget {
-  const Brno({this.mapWidth, Key key}) : super(key: key);
-  final double mapWidth;
+  const Brno({Key key}) : super(key: key);
   @override
   _BrnoState createState() => _BrnoState();
 }
@@ -63,5 +62,5 @@ class _BrnoState extends State<Brno> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) =>
-      CustomPaint(painter: _PulseAnimation(_controller), child: SizedBox(width: widget.mapWidth / 300));
+      CustomPaint(painter: _PulseAnimation(_controller), child: const SizedBox(width: 4.2));
 }

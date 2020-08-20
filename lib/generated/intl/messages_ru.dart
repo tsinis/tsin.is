@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "cloud" : MessageLookupByLibrary.simpleMessage("Все языки"),
     "contacts" : MessageLookupByLibrary.simpleMessage("Контакты"),
     "contactsDesc" : MessageLookupByLibrary.simpleMessage("Физически нахожусь в Брно, в этих интернетах я известен как «tsinis»:"),
+    "currentLocale" : MessageLookupByLibrary.simpleMessage("ru"),
     "cv" : MessageLookupByLibrary.simpleMessage("Скачать CV"),
     "devAndDesigner" : MessageLookupByLibrary.simpleMessage("Flutter разработчик и дизайнер"),
     "email" : MessageLookupByLibrary.simpleMessage("или же просто напишите мне на электронную почту:"),
