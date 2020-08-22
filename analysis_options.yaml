@@ -60,6 +60,7 @@ linter:
     sort_constructors_first: false
     sort_unnamed_constructors_first: false
     use_key_in_widget_constructors: false
+    avoid_classes_with_only_static_members: false
 
     # Enabled
     always_put_control_body_on_new_line: true
@@ -205,7 +206,6 @@ linter:
     avoid_catching_errors: true
     use_to_and_as_if_applicable: true
     one_member_abstracts: true
-    avoid_classes_with_only_static_members: true
     prefer_mixin: true
     use_setters_to_change_properties: true
     avoid_setters_without_getters: true

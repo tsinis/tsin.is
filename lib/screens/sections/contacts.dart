@@ -28,16 +28,19 @@ class Contact extends StatelessWidget {
           SizedBox(
             width: max(_width, 400),
             height: max(_height / ((_width > _height) ? 1.6 : 1.2), (_width > _height) ? 500 : 1200),
-            child: Map(
-              controller: MapOfEurope.controller,
-              provider: MapOfEurope(S.of(context).currentLocale),
+            child: Opacity(
+              opacity: 0.3,
+              child: Map(
+                controller: MapOfEurope.controller,
+                provider: MapOfEurope(S.of(context).currentLocale),
+              ),
             ),
           ),
           const Brno(),
           FractionallySizedBox(
             widthFactor: 0.8,
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 SizedBox(height: _height * 0.05),
                 AutoSizeText(S.of(context).contacts, maxLines: 1, style: Theme.of(context).textTheme.headline4),
