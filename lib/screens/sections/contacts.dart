@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:map/map.dart';
+
 import '../../animations/brno_on_map.dart';
 import '../../extensions/hover_extensions.dart';
 import '../../generated/l10n.dart';
@@ -18,7 +18,7 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     final double _height = MediaQuery.of(context).size.height;
     final double _width = MediaQuery.of(context).size.width;
-    // MapOfEurope.controller.tileSize = 256 / MediaQuery.of(context).devicePixelRatio;
+    MapProvider.controller.tileSize = 256 / MediaQuery.of(context).devicePixelRatio;
 
     return Container(
       color: Theme.of(context).primaryColor,
@@ -30,9 +30,9 @@ class Contact extends StatelessWidget {
             height: max(_height / ((_width > _height) ? 1.6 : 1.2), (_width > _height) ? 500 : 1200),
             child: Opacity(
               opacity: 0.3,
-              child: Map(
-                controller: MapOfEurope.controller,
-                provider: MapOfEurope(S.of(context).currentLocale),
+              child: MapOfEurope(
+                controller: MapProvider.controller,
+                provider: MapProvider(S.of(context).currentLocale),
               ),
             ),
           ),

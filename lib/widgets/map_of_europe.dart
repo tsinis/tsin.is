@@ -1,9 +1,160 @@
-import 'package:flutter/rendering.dart';
-import 'package:map/map.dart';
-import 'package:latlng/latlng.dart';
+import 'dart:math';
 
-class MapOfEurope extends GoogleMapProvider {
-  const MapOfEurope(this._locale);
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:latlng/latlng.dart';
+import 'package:map/map.dart';
+
+class MapOfEurope extends StatefulWidget {
+  final MapProvider provider;
+  final MapController controller;
+  final void Function() onTap;
+  final void Function() onLongPress;
+
+  const MapOfEurope({
+    @required this.controller,
+    Key key,
+    this.provider,
+    this.onTap,
+    this.onLongPress,
+  }) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _MapState();
+}
+
+class _MapState extends State<MapOfEurope> {
+  @override
+  void initState() {
+    super.initState();
+    widget.controller.addListener(() => setState(() {}));
+  }
+
+  @override
+  Widget build(BuildContext context) => LayoutBuilder(builder: _build);
+
+  Widget _build(BuildContext context, BoxConstraints constraints) {
+    final controller = widget.controller;
+    final tileSize = controller.tileSize;
+    final size = constraints.biggest;
+    final projection = controller._projection;
+
+    final screenWidth = size.width;
+    final screenHeight = size.height;
+
+    final centerX = screenWidth / 2.0;
+    final centerY = screenHeight / 2.0;
+
+    final scale = pow(2.0, controller._zoom);
+
+    final norm = projection.fromLngLatToTileIndex(controller._location);
+    final ttl = TileIndex(norm.x * tileSize * scale, norm.y * tileSize * scale);
+
+    final fixedZoom = (controller._zoom + 0.0000001).toInt();
+    final fixedPowZoom = pow(2, fixedZoom);
+
+    final centerTileIndexX = (norm.x * fixedPowZoom).floor();
+    final centerTileIndexY = (norm.y * fixedPowZoom).floor();
+
+    final scaleValue = pow(2.0, controller._zoom % 1);
+    final tileSizeScaled = tileSize * scaleValue;
+    final numGrids = pow(2.0, controller._zoom).floor();
+
+    final numTilesX = (screenWidth / tileSize / 2.0).ceil();
+    final numTilesY = (screenHeight / tileSize / 2.0).ceil();
+
+    final children = <Widget>[];
+
+    for (int i = centerTileIndexX - numTilesX; i <= centerTileIndexX + numTilesX; i++) {
+      for (int j = centerTileIndexY - numTilesY; j <= centerTileIndexY + numTilesY; j++) {
+        if (i < 0 || i >= numGrids || j < 0 || j >= numGrids) {
+          continue;
+        }
+
+        final ox = (i * tileSizeScaled) + centerX - ttl.x;
+        final oy = (j * tileSizeScaled) + centerY - ttl.y;
+
+        final tile = widget.provider.getTile(i, j, (controller._zoom + 0.0000001).floor());
+
+        final child = Positioned(
+          width: tileSizeScaled.ceilToDouble(),
+          height: tileSizeScaled.ceilToDouble(),
+          left: ox.floorToDouble(),
+          top: oy.floorToDouble(),
+          child: Container(
+            color: Colors.grey,
+            child: Image(
+              image: tile,
+              fit: BoxFit.fill,
+            ),
+          ),
+        );
+
+        children.add(child);
+      }
+    }
+
+    final stack = Stack(children: children);
+
+    final gesture = GestureDetector(
+      onDoubleTap: _onDoubleTap,
+      onTap: _onDoubleTap,
+      onLongPress: _onLongPress,
+      child: stack,
+    );
+
+    return gesture;
+  }
+
+  void _onLongPress() => widget.controller.zoom -= 0.5;
+  void _onDoubleTap() => widget.controller.zoom += 0.5;
+}
+
+class MapController extends ChangeNotifier {
+  LatLng _location;
+  double _zoom;
+  double tileSize;
+
+  final _projection = const EPSG4326();
+
+  MapController({
+    @required LatLng location,
+    double zoom = 14,
+    this.tileSize = 256,
+  }) {
+    _location = location;
+    _zoom = zoom;
+  }
+
+  void drag(double dx, double dy) {
+    final scale = pow(2.0, _zoom);
+    final mon = _projection.fromLngLatToTileIndex(_location);
+
+    // ignore: cascade_invocations
+    mon.x -= (dx / tileSize) / scale;
+    // ignore: cascade_invocations
+    mon.y -= (dy / tileSize) / scale;
+
+    location = _projection.fromTileIndexToLngLat(mon);
+  }
+
+  LatLng get location => _location;
+
+  set location(LatLng location) {
+    _location = location;
+    notifyListeners();
+  }
+
+  double get zoom => _zoom;
+
+  set zoom(double zoom) {
+    _zoom = zoom;
+    notifyListeners();
+  }
+}
+
+class MapProvider extends GoogleMapProvider {
+  const MapProvider(this._locale);
   final String _locale;
 
   static MapController get controller => MapController(location: LatLng(49.18, 16.56), zoom: 5);
