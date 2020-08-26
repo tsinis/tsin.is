@@ -9,7 +9,7 @@ class _PulseAnimation extends CustomPainter {
 
   void circle(Canvas _canvas, Rect _rect, double _value) {
     final double _opacity = (1 - (_value / 3)).clamp(0, 1).toDouble();
-    final Color color = Color.fromRGBO(120, 120, 120, _opacity);
+    final Color color = Color.fromRGBO(145, 145, 145, _opacity);
 
     final double _size = _rect.width * 4;
     final double area = _size * _size;

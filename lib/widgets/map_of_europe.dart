@@ -8,8 +8,7 @@ import 'package:map/map.dart';
 class MapOfEurope extends StatefulWidget {
   final MapProvider provider;
   final MapController controller;
-  final void Function() onTap;
-  final void Function() onLongPress;
+  final void Function() onTap, onLongPress;
 
   const MapOfEurope({
     @required this.controller,
@@ -42,10 +41,10 @@ class _MapState extends State<MapOfEurope> {
     final screenWidth = size.width;
     final screenHeight = size.height;
 
-    final centerX = screenWidth / 2.0;
-    final centerY = screenHeight / 2.0;
+    final centerX = screenWidth / 2;
+    final centerY = screenHeight / 2;
 
-    final scale = pow(2.0, controller._zoom);
+    final scale = pow(2, controller._zoom);
 
     final norm = projection.fromLngLatToTileIndex(controller._location);
     final ttl = TileIndex(norm.x * tileSize * scale, norm.y * tileSize * scale);
@@ -56,12 +55,12 @@ class _MapState extends State<MapOfEurope> {
     final centerTileIndexX = (norm.x * fixedPowZoom).floor();
     final centerTileIndexY = (norm.y * fixedPowZoom).floor();
 
-    final scaleValue = pow(2.0, controller._zoom % 1);
+    final scaleValue = pow(2, controller._zoom % 1);
     final tileSizeScaled = tileSize * scaleValue;
-    final numGrids = pow(2.0, controller._zoom).floor();
+    final numGrids = pow(2, controller._zoom).floor();
 
-    final numTilesX = (screenWidth / tileSize / 2.0).ceil();
-    final numTilesY = (screenHeight / tileSize / 2.0).ceil();
+    final numTilesX = (screenWidth / tileSize / 2).ceil();
+    final numTilesY = (screenHeight / tileSize / 2).ceil();
 
     final children = <Widget>[];
 
@@ -119,23 +118,11 @@ class MapController extends ChangeNotifier {
 
   MapController({
     @required LatLng location,
-    double zoom = 14,
+    double zoom = 5,
     this.tileSize = 256,
   }) {
     _location = location;
     _zoom = zoom;
-  }
-
-  void drag(double dx, double dy) {
-    final scale = pow(2.0, _zoom);
-    final mon = _projection.fromLngLatToTileIndex(_location);
-
-    // ignore: cascade_invocations
-    mon.x -= (dx / tileSize) / scale;
-    // ignore: cascade_invocations
-    mon.y -= (dy / tileSize) / scale;
-
-    location = _projection.fromTileIndexToLngLat(mon);
   }
 
   LatLng get location => _location;
@@ -148,7 +135,7 @@ class MapController extends ChangeNotifier {
   double get zoom => _zoom;
 
   set zoom(double zoom) {
-    _zoom = zoom;
+    _zoom = zoom.clamp(3.5, 10.5) as double;
     notifyListeners();
   }
 }
@@ -156,8 +143,8 @@ class MapController extends ChangeNotifier {
 class MapProvider extends GoogleMapProvider {
   const MapProvider(this._locale);
   final String _locale;
-
-  static MapController get controller => MapController(location: LatLng(49.18, 16.56), zoom: 5);
+  static MapController get controller => MapController(location: LatLng(49.18, 16.56));
+  // Sorry, but no -- it's not my exact location, folks...
   @override
   ImageProvider getTile(int x, int y, int z) => NetworkImage(
       'https://www.google.com/maps/vt/pb=!1m4!1m3!1i$z!2i$x!3i$y!2m2!1e0!2sh!3i420120484!3m1!2s$_locale!5e1105!12m1!1e68!2m2!1sset!2sRoadmap!4e0!5m0!1e0!23i8289918');

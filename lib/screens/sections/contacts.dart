@@ -29,7 +29,7 @@ class Contact extends StatelessWidget {
             width: max(_width, 400),
             height: max(_height / ((_width > _height) ? 1.6 : 1.2), (_width > _height) ? 500 : 1200),
             child: Opacity(
-              opacity: 0.3,
+              opacity: 0.2,
               child: MapOfEurope(
                 controller: MapProvider.controller,
                 provider: MapProvider(S.of(context).currentLocale),
