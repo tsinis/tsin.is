@@ -4,11 +4,10 @@ import 'package:flutter/material.dart';
 
 class ScrollProgress extends StatelessWidget {
   const ScrollProgress({
-    Key key,
     this.height,
     this.offset,
     this.scrollController,
-  }) : super(key: key);
+  });
 
   final double height;
   final double offset;

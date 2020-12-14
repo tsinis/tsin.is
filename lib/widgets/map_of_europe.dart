@@ -12,11 +12,10 @@ class MapOfEurope extends StatefulWidget {
 
   const MapOfEurope({
     @required this.controller,
-    Key key,
     this.provider,
     this.onTap,
     this.onLongPress,
-  }) : super(key: key);
+  });
 
   @override
   State<StatefulWidget> createState() => _MapState();

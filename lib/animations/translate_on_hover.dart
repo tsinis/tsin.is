@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TranslateOnHover extends StatefulWidget {
-  const TranslateOnHover({Key key, this.child}) : super(key: key);
+  const TranslateOnHover({this.child});
 
   final Widget child;
 
@@ -18,12 +18,12 @@ class _TranslateOnHoverState extends State<TranslateOnHover> {
 
   @override
   Widget build(BuildContext context) => MouseRegion(
-      onEnter: (_) => _mouseEnter(true),
-      onExit: (_) => _mouseEnter(false),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 200),
-        transform: _hovering ? _hoverTransform : _nonHoverTransform,
-        child: widget.child,
-      ),
-    );
+        onEnter: (_) => _mouseEnter(true),
+        onExit: (_) => _mouseEnter(false),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          transform: _hovering ? _hoverTransform : _nonHoverTransform,
+          child: widget.child,
+        ),
+      );
 }

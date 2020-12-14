@@ -12,7 +12,7 @@ import '../../widgets/map_of_europe.dart';
 import '../../widgets/websites.dart';
 
 class Contact extends StatelessWidget {
-  const Contact([Key key]) : super(key: key);
+  const Contact();
 
   @override
   Widget build(BuildContext context) {

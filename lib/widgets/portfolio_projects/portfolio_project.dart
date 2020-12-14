@@ -10,8 +10,7 @@ import '../../generated/my_icons.dart';
 import 'project_buttons.dart';
 
 class Project extends StatelessWidget {
-  const Project({Key key, this.projectName, this.projectDesc, this.pathToImage, this.designURL, this.appURL})
-      : super(key: key);
+  const Project({this.projectName, this.projectDesc, this.pathToImage, this.designURL, this.appURL});
 
   final String projectName, projectDesc, pathToImage, designURL, appURL;
 

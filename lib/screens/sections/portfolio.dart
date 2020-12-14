@@ -5,7 +5,7 @@ import '../../generated/l10n.dart';
 import '../../widgets/portfolio_projects/portfolio_project.dart';
 
 class Portfolio extends StatelessWidget {
-  const Portfolio([Key key]) : super(key: key);
+  const Portfolio();
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,6 @@ class Portfolio extends StatelessWidget {
             SizedBox(height: _height * 0.025, width: 0),
             Wrap(
               spacing: _width * 0.025,
-              direction: Axis.horizontal,
               alignment: WrapAlignment.spaceBetween,
               children: [
                 Project(
@@ -59,7 +58,6 @@ class Portfolio extends StatelessWidget {
             ),
             Wrap(
               spacing: _width * 0.025,
-              direction: Axis.horizontal,
               children: [
                 Project(
                     projectName: S.of(context).planetBGame,

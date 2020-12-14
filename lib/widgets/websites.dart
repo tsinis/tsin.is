@@ -4,7 +4,7 @@ import '../generated/my_icons.dart';
 import '../services/url_click.dart';
 
 class Websites extends StatelessWidget {
-  const Websites([Key key]) : super(key: key);
+  const Websites();
 
   static const Map<String, MapEntry<IconData, Color>> _websites = {
     'LinkedIn.com/in/': MapEntry(MyIcon.linkedin, Color(0xFF2867B2)),
@@ -28,7 +28,7 @@ class Websites extends StatelessWidget {
 }
 
 class _WebsiteButton extends StatelessWidget {
-  const _WebsiteButton({this.url, this.icon, this.color, Key key}) : super(key: key);
+  const _WebsiteButton({this.url, this.icon, this.color});
   final String url;
   final IconData icon;
   final Color color;

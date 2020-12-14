@@ -6,7 +6,7 @@ import '../../generated/my_icons.dart';
 import 'navigation_menu_list.dart';
 
 class SideMenu extends Drawer {
-  const SideMenu(this._scrollController, [Key key]) : super(key: key);
+  const SideMenu(this._scrollController);
 
   final ScrollController _scrollController;
 

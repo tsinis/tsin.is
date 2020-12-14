@@ -8,7 +8,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import '../animations/head_controller.dart';
 
 class Avatar extends StatelessWidget {
-  Avatar([Key key]) : super(key: key);
+  Avatar();
 
   static AssetProvider cache = AssetFlare(bundle: rootBundle, name: 'assets/images/avatar.flr');
   AssetProvider get _cache => cache;
@@ -16,7 +16,7 @@ class Avatar extends StatelessWidget {
   final HeadController _headController = HeadController();
 
   void _pointerHover(PointerHoverEvent pointer) =>
-      _headController.move = Offset(pointer.position.dx, pointer.position.dy);
+      _headController.move = Offset(pointer.position.dx, pointer.localPosition.dy);
 
   @override
   Widget build(BuildContext context) => GestureDetector(

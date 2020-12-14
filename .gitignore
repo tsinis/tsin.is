@@ -62,9 +62,6 @@ lib/generated_plugin_registrant.dart
 **/.pub/
 **/build/
 
-# Remove pubspec.lock for libraries
-flutter_clock_helper/pubspec.lock
-
 # Other items grabbed from flutter/flutter repo
 flutter_*.png
 linked_*.ds
@@ -114,3 +111,6 @@ unlinked_spec.ds
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 fvm
 # .vscode/launch.json
+**/windows/
+**/macos/
+**/linux/

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../widgets/navigation/navigation_menu_list.dart';
 
 class Header extends StatelessWidget {
-  const Header(this._scrollController, [Key key]) : super(key: key);
+  const Header(this._scrollController);
 
   final ScrollController _scrollController;
 

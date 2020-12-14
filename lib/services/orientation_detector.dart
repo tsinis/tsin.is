@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class OrientationSwitcher extends StatelessWidget {
-  const OrientationSwitcher({Key key, this.children, this.rowIfWide}) : super(key: key);
+  const OrientationSwitcher({this.children, this.rowIfWide});
 
   final List<Widget> children;
   final bool rowIfWide;

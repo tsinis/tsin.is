@@ -25,32 +25,32 @@ analyzer:
 
   errors:
     # Info
-    todo: info
-    directives_ordering: info
     always_declare_return_types: info
+    directives_ordering: info
+    todo: info
+    unsafe_html: info
 
     # Warning
-    unsafe_html: warning
     prefer_relative_imports: warning
     no_logic_in_create_state: warning
     empty_catches: warning
 
     # Error
+    always_require_non_null_named_parameters: error
     avoid_relative_lib_imports: error
     avoid_slow_async_io: error
     avoid_types_as_parameter_names: error
     cancel_subscriptions: error
     close_sinks: error
     valid_regexps: error
-    always_require_non_null_named_parameters: error
 
 linter:
   rules:
     # Disabled
     always_specify_types: false
-    avoid_as: false
-    avoid_redundant_argument_values: false
-    comment_references: false # Unused because https://github.com/dart-lang/sdk/issues/36974
+    avoid_annotating_with_dynamic: false
+    avoid_types_on_closure_parameters: false
+    comment_references: false
     diagnostic_describe_all_properties: false
     flutter_style_todos: false
     lines_longer_than_80_chars: false
@@ -59,20 +59,22 @@ linter:
     public_member_api_docs: false
     sort_constructors_first: false
     sort_unnamed_constructors_first: false
+    unsafe_html: false
     use_key_in_widget_constructors: false
-    avoid_classes_with_only_static_members: false
 
     # Enabled
     always_put_control_body_on_new_line: true
     always_put_required_named_parameters_first: true
-    avoid_annotating_with_dynamic: true
+    avoid_as: true
     avoid_bool_literals_in_conditional_expressions: true
+    avoid_classes_with_only_static_members: true
     avoid_double_and_int_checks: true
     avoid_escaping_inner_quotes: true
     avoid_field_initializers_in_const_classes: true
     avoid_implementing_value_types: true
     avoid_js_rounded_ints: true
     avoid_print: true
+    avoid_redundant_argument_values: true
     avoid_renaming_method_parameters: true
     avoid_returning_null_for_future: true
     avoid_returning_null_for_void: true
@@ -134,7 +136,6 @@ linter:
     unnecessary_statements: true
     unnecessary_string_escapes: true
     unnecessary_string_interpolations: true
-    unsafe_html: true
     use_full_hex_values_for_flutter_colors: true
     use_raw_strings: true
     use_string_buffers: true
@@ -212,7 +213,6 @@ linter:
     avoid_returning_null: true
     avoid_returning_this: true
     type_annotate_public_apis: true
-    avoid_types_on_closure_parameters: true
     avoid_private_typedef_functions: true
     avoid_positional_boolean_parameters: true
     hash_and_equals: true

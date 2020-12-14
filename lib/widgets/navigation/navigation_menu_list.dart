@@ -6,7 +6,7 @@ import '../../services/orientation_detector.dart';
 import 'navigation_menu_items.dart';
 
 class NavigationMenu extends StatelessWidget {
-  const NavigationMenu(this._scrollController, {this.isWide = false, Key key}) : super(key: key);
+  const NavigationMenu(this._scrollController, {this.isWide = false});
 
   final bool isWide;
 

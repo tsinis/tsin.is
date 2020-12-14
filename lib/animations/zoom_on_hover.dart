@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ZoomOnHover extends StatefulWidget {
-  const ZoomOnHover({Key key, this.child}) : super(key: key);
+  const ZoomOnHover({this.child});
 
   final Widget child;
 

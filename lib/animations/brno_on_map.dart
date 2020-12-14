@@ -32,7 +32,7 @@ class _PulseAnimation extends CustomPainter {
 }
 
 class Brno extends StatefulWidget {
-  const Brno({Key key}) : super(key: key);
+  const Brno();
   @override
   _BrnoState createState() => _BrnoState();
 }

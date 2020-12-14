@@ -6,7 +6,7 @@ import '../generated/my_icons.dart';
 import '../services/url_click.dart';
 
 class CVButtons extends ButtonBar {
-  const CVButtons([Key key]) : super(key: key);
+  const CVButtons();
 
   @override
   Widget build(BuildContext context) {

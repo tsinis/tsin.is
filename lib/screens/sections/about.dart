@@ -7,7 +7,7 @@ import '../../widgets/avatar.dart';
 import '../../widgets/cv_buttons.dart';
 
 class About extends StatelessWidget {
-  const About([Key key]) : super(key: key);
+  const About();
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // TODO!: Check status of ColorFiltered for Flutter Web - not implemented yet
 
 class ColorOnHover extends StatefulWidget {
-  const ColorOnHover({Key key, this.child}) : super(key: key);
+  const ColorOnHover({this.child});
 
   final Widget child;
 

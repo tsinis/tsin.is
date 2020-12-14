@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../generated/my_icons.dart';
 
 class LanguageMenu<String> extends StatelessWidget {
-  LanguageMenu({Key key, this.onSelected, this.tooltip, this.language, this.isSmartphone}) : super(key: key);
+  LanguageMenu({this.onSelected, this.tooltip, this.language, this.isSmartphone});
 
   @required
   final bool isSmartphone;
@@ -29,7 +29,7 @@ class LanguageMenu<String> extends StatelessWidget {
         tooltip: tooltip.toString(),
         onSelected: onSelected,
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.baseline,
+          // crossAxisAlignment: CrossAxisAlignment.baseline,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Icon(MyIcon.globe_europe, color: Theme.of(context).primaryColorDark),
