@@ -134,7 +134,7 @@ class MapController extends ChangeNotifier {
   double get zoom => _zoom;
 
   set zoom(double zoom) {
-    _zoom = zoom.clamp(3.5, 10.5) as double;
+    _zoom = zoom.clamp(3.5, 10.5).toDouble();
     notifyListeners();
   }
 }

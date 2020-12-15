@@ -9,9 +9,10 @@ class LocaleBuilder extends StatefulWidget {
   @override
   _LocaleBuilderState createState() => _LocaleBuilderState();
 
-  final Function(BuildContext) _builder;
+  final Widget Function(BuildContext) _builder;
 
   static _LocaleBuilderState of(BuildContext context) =>
+      // ignore: avoid_as
       context.findAncestorStateOfType<State<LocaleBuilder>>() as _LocaleBuilderState;
 }
 
@@ -19,5 +20,5 @@ class _LocaleBuilderState extends State<LocaleBuilder> {
   void rebuild() => S.load(Locale(LocaleBuilder.language)).whenComplete(() => setState(() {}));
 
   @override
-  Widget build(BuildContext context) => widget._builder(context) as Widget;
+  Widget build(BuildContext context) => widget._builder(context);
 }

@@ -14,7 +14,8 @@ class CVButtons extends ButtonBar {
     return ButtonBar(
       buttonPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       buttonMinWidth: 300,
-      alignment: MainAxisAlignment.spaceEvenly,
+      buttonHeight: 50,
+      alignment: MainAxisAlignment.center,
       children: <Widget>[
         Tooltip(
           preferBelow: MediaQuery.of(context).size.width > 1439,
@@ -28,6 +29,7 @@ class CVButtons extends ButtonBar {
               highlightElevation: 6,
               onPressed: () => Open.url(Open.cvURL),
               child: Row(
+                mainAxisSize: _isSmartWatch ? MainAxisSize.max : MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   if (_isSmartWatch) const SizedBox.shrink() else const Icon(MyIcon.file_pdf, color: Colors.redAccent),
@@ -38,18 +40,20 @@ class CVButtons extends ButtonBar {
             ),
           ),
         ),
+        const SizedBox(width: 20),
         Tooltip(
           message: '🔗 Microsoft OneDrive',
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5),
+            padding: const EdgeInsets.only(top: 5),
             child: OutlineButton(
-              borderSide: const BorderSide(width: 4, color: Colors.blueGrey),
+              borderSide: const BorderSide(width: 2.6, color: Colors.blueGrey),
               highlightedBorderColor: Colors.blueGrey[400],
               hoverColor: Colors.blueGrey.withOpacity(0.1),
               textColor: Colors.blueGrey[600],
               color: Colors.blueGrey,
               onPressed: Open.cloud,
               child: Row(
+                mainAxisSize: _isSmartWatch ? MainAxisSize.max : MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   if (_isSmartWatch) const SizedBox.shrink() else Icon(MyIcon.docs, color: Colors.blueGrey[400]),

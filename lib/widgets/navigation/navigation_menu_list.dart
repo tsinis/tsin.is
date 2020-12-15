@@ -18,11 +18,11 @@ class NavigationMenu extends StatelessWidget {
         children: <Widget>[
           MenuItem(menuItem: S.of(context).about, onTap: () => Menu.about.scrollTo(context, _scrollController)),
           ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: double.infinity, minHeight: 8.5, minWidth: 30),
+            constraints: const BoxConstraints(minHeight: 8.5, minWidth: 30),
           ),
           MenuItem(menuItem: S.of(context).portfolio, onTap: () => Menu.portfolio.scrollTo(context, _scrollController)),
           ConstrainedBox(
-            constraints: const BoxConstraints(maxHeight: double.infinity, minHeight: 8.5, minWidth: 30),
+            constraints: const BoxConstraints(minHeight: 8.5, minWidth: 30),
           ),
           MenuItem(menuItem: S.of(context).contacts, onTap: () => Menu.contacts.scrollTo(context, _scrollController)),
         ],

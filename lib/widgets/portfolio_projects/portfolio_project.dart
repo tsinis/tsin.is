@@ -34,7 +34,7 @@ class Project extends StatelessWidget {
               clipBehavior: Clip.hardEdge,
               elevation: 0,
               margin: const EdgeInsets.only(bottom: 10),
-              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(bottom: Radius.zero)),
+              shape: const RoundedRectangleBorder(),
               child: (pathToImage != 'assets/images/header.gif')
                   ? Image.asset(pathToImage).zoomInOnHover
                   : Stack(
@@ -44,7 +44,7 @@ class Project extends StatelessWidget {
                           aspectRatio: 5 / 3,
                           child: Container(
                             color: Theme.of(context).primaryColor,
-                            child: FractionallySizedBox(
+                            child: const FractionallySizedBox(
                               widthFactor: 0.5,
                               heightFactor: 0.5,
                               child: AnimatedBackground(),

@@ -8,12 +8,12 @@ import 'package:flutter/services.dart' show rootBundle;
 import '../animations/head_controller.dart';
 
 class Avatar extends StatelessWidget {
-  Avatar();
+  const Avatar();
 
   static AssetProvider cache = AssetFlare(bundle: rootBundle, name: 'assets/images/avatar.flr');
   AssetProvider get _cache => cache;
 
-  final HeadController _headController = HeadController();
+  static final HeadController _headController = HeadController();
 
   void _pointerHover(PointerHoverEvent pointer) =>
       _headController.move = Offset(pointer.position.dx, pointer.localPosition.dy);

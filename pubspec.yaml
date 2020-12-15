@@ -15,7 +15,6 @@ dependencies:
     sdk: flutter
   map:
   url_launcher:
-  url_launcher_web:
 
 dev_dependencies:
   # flutter_test:

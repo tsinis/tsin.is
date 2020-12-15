@@ -14,5 +14,5 @@ Future<void> main() async {
   await _cacheAvatar();
   await findSystemLocale()
       .then<String>((_detectedLocale) => LocaleBuilder.language = _detectedLocale.substring(0, 2))
-      .whenComplete(() => runApp(MyWeb()));
+      .whenComplete(() => runApp(const MyWeb()));
 }

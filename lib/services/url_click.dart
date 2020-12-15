@@ -2,6 +2,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'locale_builder.dart';
 
+// ignore: avoid_classes_with_only_static_members
 class Open {
   static const String _cloudURL = 'https://1drv.ms/f/s!Aoc8-1_hYIfGiFYW3PppEoagkHAh';
 

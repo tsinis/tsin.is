@@ -23,16 +23,17 @@ class About extends StatelessWidget {
               children: [
                 AutoSizeText(S.of(context).fullName, maxLines: 1, style: Theme.of(context).textTheme.headline4),
                 const SizedBox(height: 15),
-                AutoSizeText(S.of(context).iAm, maxLines: _isWide ? 8 : 16, strutStyle: const StrutStyle(height: 1.75)),
-                const SizedBox(width: 10, height: 10),
+                AutoSizeText(S.of(context).iAm, maxLines: _isWide ? 8 : 16, strutStyle: const StrutStyle(height: 1.25)),
+                // const SizedBox(width: 10, height: 10),
                 const CVButtons(),
+                // const SizedBox(height: 10),
               ],
             ),
           ),
           SizedBox(
               width: MediaQuery.of(context).size.shortestSide * 0.6,
               height: MediaQuery.of(context).size.shortestSide * 0.6,
-              child: Avatar())
+              child: const Avatar())
         ],
       ),
     );
