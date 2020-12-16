@@ -2,7 +2,7 @@ name: tsin.is
 description: Personal website of Roman Cinis.
 
 environment:
-  sdk: '>=2.10.0 <3.0.0'
+  sdk: '>=2.10.0'
   flutter: '>1.22.0'
 
 dependencies:
@@ -16,7 +16,7 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
   map:
-  url_launcher:
+  url_launcher: ^5.7.10
 
 dev_dependencies:
   # flutter_test:

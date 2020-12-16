@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 class ScrollProgress extends StatelessWidget {
   const ScrollProgress({
-    this.height,
-    this.offset,
-    this.scrollController,
+    @required this.height,
+    @required this.offset,
+    @required this.scrollController,
   });
 
   final double height;

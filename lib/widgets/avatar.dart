@@ -1,5 +1,8 @@
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flare_flutter/asset_provider.dart' show AssetProvider;
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flare_flutter/flare_actor.dart' show FlareActor;
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flare_flutter/provider/asset_flare.dart' show AssetFlare;
 import 'package:flutter/gestures.dart' show PointerHoverEvent;
 import 'package:flutter/material.dart';

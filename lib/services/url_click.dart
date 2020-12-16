@@ -32,15 +32,9 @@ class Open {
   static Future<void> url(String _url) async => await launch('https://$_url');
 
   static Future<void> mail() async {
-    // print('checking mail SW');
     if (await canLaunch(_mail.toString())) {
-      // print('exists mail SW');
-      print(_mail.toString());
       await launch(_mail.toString());
-    } else {
-      // print('no mail SW');
     }
-    // print('done');
   }
 
   static Future<void> cloud() async {

@@ -2,19 +2,21 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:latlng/latlng.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:map/map.dart';
 
 class MapOfEurope extends StatefulWidget {
   final MapProvider provider;
   final MapController controller;
-  final void Function() onTap, onLongPress;
+  // final void Function() onTap, onLongPress;
 
   const MapOfEurope({
     @required this.controller,
-    this.provider,
-    this.onTap,
-    this.onLongPress,
+    @required this.provider,
+    // @required this.onTap,
+    // @required this.onLongPress,
   });
 
   @override
@@ -106,9 +108,9 @@ class _MapState extends State<MapOfEurope> {
 }
 
 class MapController extends ChangeNotifier {
-  LatLng _location;
-  double _zoom;
-  double tileSize;
+  LatLng _location = LatLng(49.18, 16.56);
+  double _zoom = 4.8;
+  double tileSize = 256;
 
   final _projection = const EPSG4326();
 

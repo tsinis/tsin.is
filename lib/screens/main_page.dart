@@ -30,7 +30,7 @@ class MyWeb extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate
           ],
-          locale: Locale(LocaleBuilder.language ?? 'en'),
+          locale: Locale(LocaleBuilder.language),
           supportedLocales: S.delegate.supportedLocales,
           debugShowCheckedModeBanner: false,
           theme: MyTheme.defaultTheme,
@@ -130,9 +130,9 @@ class _MyHomePageState extends State<_MyHomePage> {
                 left: 80,
                 bottom: 80,
                 child: CircularText(
-                  textStyle: Theme.of(context).textTheme.overline.copyWith(
+                  textStyle: Theme.of(context).textTheme.overline?.copyWith(
                         fontSize: 10,
-                        color: Colors.white.withOpacity(min(offset / 1000, 0.5)),
+                        color: Colors.white.withOpacity(min(offset / 1000, 0.7)),
                       ),
                   startAngle: -pi / 2 + offset / 500,
                 ),
@@ -161,7 +161,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                       ? IconButton(
                           icon: const Icon(MyIcon.menu),
                           color: Theme.of(context).accentColor,
-                          onPressed: () => _scaffoldKey.currentState.openEndDrawer(),
+                          onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
                         ).moveUpOnHover
                       : Opacity(opacity: max(0, 1 - offset / _height), child: Header(_scrollController)),
                 )

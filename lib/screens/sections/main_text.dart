@@ -7,7 +7,7 @@ import '../../generated/l10n.dart';
 import '../../generated/my_icons.dart';
 
 class MainText extends StatelessWidget {
-  const MainText(this._offset, [Key key]) : super(key: key);
+  const MainText(this._offset);
 
   final double _offset;
 
@@ -19,7 +19,7 @@ class MainText extends StatelessWidget {
       children: <Widget>[
         SizedBox(height: _shortestSide / 9 - ((_height < 351) ? 22 : 0)),
         AutoSizeText(S.of(context).greeting,
-            maxLines: 1, style: Theme.of(context).textTheme.bodyText2.copyWith(color: Theme.of(context).accentColor)),
+            maxLines: 1, style: Theme.of(context).textTheme.bodyText2?.copyWith(color: Theme.of(context).accentColor)),
         SizedBox(height: _shortestSide / 100),
         Container(
           margin: EdgeInsets.all(_shortestSide / 20),
@@ -27,7 +27,7 @@ class MainText extends StatelessWidget {
             opacity: max(0, 0.6 - _offset / _height),
             child: Text(S.of(context).devAndDesigner,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline6.copyWith(
+                style: Theme.of(context).textTheme.headline6?.copyWith(
                     height: 1.4,
                     fontSize: _shortestSide > 530 ? 60 + (_shortestSide / 100) : 40 - (_shortestSide / 50))),
           ),

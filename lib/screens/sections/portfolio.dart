@@ -19,7 +19,10 @@ class Portfolio extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             SizedBox(height: _height * 0.1, width: 0),
-            AutoSizeText(S.of(context).portfolio, maxLines: 1, style: Theme.of(context).textTheme.headline4),
+            FittedBox(
+                fit: BoxFit.scaleDown,
+                child:
+                    AutoSizeText(S.of(context).portfolio, maxLines: 1, style: Theme.of(context).textTheme.headline4)),
             SizedBox(height: _height * 0.05, width: 0),
             AutoSizeText.rich(
                 TextSpan(
@@ -29,7 +32,7 @@ class Portfolio extends StatelessWidget {
                     ),
                     TextSpan(
                       text: S.of(context).projectsPortfolio,
-                      style: Theme.of(context).textTheme.bodyText2.copyWith(
+                      style: Theme.of(context).textTheme.bodyText2?.copyWith(
                             color: Theme.of(context).primaryColorLight,
                           ),
                     ),

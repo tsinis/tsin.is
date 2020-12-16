@@ -4,12 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class CircularText extends StatelessWidget {
-  const CircularText({
-    this.radius = 26,
-    this.text = '· tsin.is · Roman Cinis',
-    this.textStyle,
-    this.startAngle = 0,
-  });
+  const CircularText(
+      {@required this.textStyle, this.radius = 26, this.text = '· tsin.is · Roman Cinis', this.startAngle = 0});
 
   final int radius;
   final double startAngle;
@@ -61,7 +57,7 @@ class _TextPainter extends CustomPainter {
   double _drawLetter(Canvas canvas, String letter, double prevAngle) {
     _textPainter
       ..text = TextSpan(text: letter, style: textStyle)
-      ..layout(minWidth: 0, maxWidth: double.maxFinite);
+      ..layout(maxWidth: double.maxFinite);
 
     final double d = _textPainter.width;
     final double alpha = 2 * math.asin(d / (2 * radius));

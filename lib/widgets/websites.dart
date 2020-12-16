@@ -28,7 +28,7 @@ class Websites extends StatelessWidget {
 }
 
 class _WebsiteButton extends StatelessWidget {
-  const _WebsiteButton({this.url, this.icon, this.color});
+  const _WebsiteButton({@required this.url, @required this.icon, @required this.color});
   final String url;
   final IconData icon;
   final Color color;
@@ -45,16 +45,16 @@ class _WebsiteButton extends StatelessWidget {
             width: 156,
             child: FlatButton.icon(
               height: 46,
-              color: Colors.grey[300].withOpacity(0.5),
+              color: Colors.grey[300]?.withOpacity(0.5),
               textColor: Theme.of(context).disabledColor,
-              hoverColor: color.withOpacity(0.5),
-              highlightColor: color.withOpacity(0.66),
+              hoverColor: color.withOpacity(0.25),
+              highlightColor: color.withOpacity(0.5),
               icon: Icon(icon, color: color),
               label: Text(url.substring(0, url.indexOf('.')),
                   style: Theme.of(context)
                       .textTheme
                       .overline
-                      .copyWith(fontSize: 18, letterSpacing: 0.33, fontWeight: FontWeight.w400, color: Colors.black)),
+                      ?.copyWith(fontSize: 18, letterSpacing: 0.33, fontWeight: FontWeight.w400, color: Colors.black)),
               onPressed: () => Open.url(_fullURL),
             ),
           ),

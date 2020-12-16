@@ -1,4 +1,5 @@
 import 'package:auto_size_text/auto_size_text.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -8,7 +9,12 @@ import '../../generated/my_icons.dart';
 import 'project_buttons.dart';
 
 class Project extends StatelessWidget {
-  const Project({this.projectName, this.projectDesc, this.pathToImage, this.designURL, this.appURL});
+  const Project(
+      {@required this.projectName,
+      @required this.projectDesc,
+      @required this.pathToImage,
+      @required this.designURL,
+      @required this.appURL});
 
   final String projectName, projectDesc, pathToImage, designURL, appURL;
 

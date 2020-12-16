@@ -51,7 +51,7 @@ class Contact extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .bodyText2
-                        .copyWith(fontWeight: FontWeight.w400, color: Colors.white)),
+                        ?.copyWith(fontWeight: FontWeight.w400, color: Colors.white)),
                 SizedBox(height: _height * 0.03),
                 const Websites(),
                 SizedBox(height: _height * 0.02),
@@ -66,7 +66,7 @@ class Contact extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .bodyText2
-                            .copyWith(fontWeight: FontWeight.w400, color: Colors.white)),
+                            ?.copyWith(fontWeight: FontWeight.w400, color: Colors.white)),
                     Tooltip(
                       preferBelow: false,
                       message: Open.fullEmailName,

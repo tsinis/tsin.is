@@ -1,11 +1,15 @@
 import 'dart:ui';
 
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart' show ValueNotifier;
-
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flare_flutter/flare.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flare_flutter/flare_controller.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flare_dart/math/mat2d.dart' show Mat2D;
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:flare_dart/math/vec2d.dart' show Vec2D;
 
 class HeadController implements FlareController {

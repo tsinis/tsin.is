@@ -4,15 +4,13 @@ import '../generated/my_icons.dart';
 import '../helpers/languages.dart';
 
 class LanguageMenu<String> extends StatelessWidget {
-  const LanguageMenu({this.onSelected, this.tooltip, this.language, this.isSmartphone});
+  const LanguageMenu(
+      {@required this.onSelected, @required this.tooltip, @required this.language, @required this.isSmartphone});
 
-  @required
   final bool isSmartphone;
 
-  @required
   final String tooltip, language;
 
-  @required
   final PopupMenuItemSelected<String> onSelected;
 
   @override

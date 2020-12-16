@@ -11,7 +11,7 @@ class TranslateOnHover extends StatefulWidget {
 
 class _TranslateOnHoverState extends State<TranslateOnHover> {
   bool _hovering = false;
-  final Matrix4 _hoverTransform = Matrix4.identity()..translate(0, -5, 0);
+  final Matrix4 _hoverTransform = Matrix4.identity()..translate(0, -5);
   final Matrix4 _nonHoverTransform = Matrix4.identity();
 
   void _mouseEnter(bool hovering) => setState(() => _hovering = hovering);

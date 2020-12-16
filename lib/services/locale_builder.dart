@@ -4,7 +4,7 @@ import '../generated/l10n.dart';
 class LocaleBuilder extends StatefulWidget {
   const LocaleBuilder(this._builder);
 
-  static String language;
+  static String language = 'en';
 
   @override
   _LocaleBuilderState createState() => _LocaleBuilderState();

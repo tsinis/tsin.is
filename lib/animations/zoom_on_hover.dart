@@ -11,8 +11,8 @@ class ZoomOnHover extends StatefulWidget {
 
 class _TranslateOnHoverState extends State<ZoomOnHover> with SingleTickerProviderStateMixin {
   AnimationController _animationController;
-  bool _hovering = false;
   Animation<double> _animationCurve;
+  bool _hovering = false;
 
   @override
   void initState() {

@@ -7,7 +7,7 @@ import '../../generated/my_icons.dart';
 import '../../services/url_click.dart';
 
 class ProjectButtonBar extends ButtonBar {
-  const ProjectButtonBar(this._designURL, this._appURL, {this.isWide});
+  const ProjectButtonBar(this._designURL, this._appURL, {this.isWide = false});
 
   final bool isWide;
 
