@@ -28,6 +28,7 @@
   "theDesign": "dizajn",
   "thisWeb": "Táto webová stránka",
   "thisWebDesc": "Samozrejmé, že celý tento web je vytvorený vo Flutter a je napísaný na čistom Dart. Závislosť jednej a jediné, tretie strany je animácia v sekcii \"O mne\", ktorá bola vytvorená v Rive.",
+  "iconTools": "Sada nástrojov pre jednoduché vytváranie ikon Flutter aplikácií. Podpora všetkých platforiem, vrátane mobilných, ale navrhnuté hlavne ako \"Desktop First\" riešenie.",
   "tongueTwisters": "Jazykolamy",
   "tongueTwistersDesc": "Aplikácia pre testovanie jazykolamov, so zameraním na dizajn. Vytvorené v spolupráci s ilustrátorom - preto licencie mi neumožňuje otvoriť zdroj (tj. aj ilustrácie)."
 }

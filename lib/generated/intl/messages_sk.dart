@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "greeting" : MessageLookupByLibrary.simpleMessage("Vitajte, som"),
     "helloDribbble" : MessageLookupByLibrary.simpleMessage("Toto je projekt ukazujúce Interaktívne animácie, ktoré som vytvoril ako svoj Debut na legendárnom Dribbble, potom čo som, nedávno, dostal vytúžené pozvaní."),
     "iAm" : MessageLookupByLibrary.simpleMessage("Som oceneným „T-shaped“ špecialistom ako Flutter vývojár a grafik, s veľkou láskou k interaktívnym animáciám a dobrému UX. Urobme niečo úžasné spoločne!\n\nChcete vedieť viac?"),
+    "iconTools" : MessageLookupByLibrary.simpleMessage("Sada nástrojov pre jednoduché vytváranie ikon Flutter aplikácií. Podpora všetkých platforiem, vrátane mobilných, ale navrhnuté hlavne ako \"Desktop First\" riešenie."),
     "inAction" : MessageLookupByLibrary.simpleMessage("v akcii"),
     "language" : MessageLookupByLibrary.simpleMessage("Jazyk"),
     "planetBGame" : MessageLookupByLibrary.simpleMessage("Hra Plan-et-а B"),

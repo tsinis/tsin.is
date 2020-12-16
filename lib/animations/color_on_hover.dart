@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-// TODO!: Check status of ColorFiltered for Flutter Web - not implemented yet
 
 class ColorOnHover extends StatefulWidget {
   const ColorOnHover({this.child});
@@ -23,7 +22,7 @@ class _ColorOnHoverState extends State<ColorOnHover> {
           duration: const Duration(seconds: 1),
           child: ColorFiltered(
               colorFilter: ColorFilter.mode(
-                  _hovering ? Theme.of(context).primaryColor : Colors.transparent, BlendMode.saturation),
+                  _hovering ? Colors.transparent : Theme.of(context).primaryColor, BlendMode.saturation),
               child: widget.child),
         ),
       );

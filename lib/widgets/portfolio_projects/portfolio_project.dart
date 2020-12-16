@@ -3,9 +3,7 @@ import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import '../../animations/background.dart';
 import '../../extensions/hover_extensions.dart';
-import '../../generated/l10n.dart';
 import '../../generated/my_icons.dart';
 import 'project_buttons.dart';
 
@@ -30,44 +28,12 @@ class Project extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Card(
-              borderOnForeground: false,
-              clipBehavior: Clip.hardEdge,
-              elevation: 0,
-              margin: const EdgeInsets.only(bottom: 10),
-              shape: const RoundedRectangleBorder(),
-              child: (pathToImage != 'assets/images/header.gif')
-                  ? Image.asset(pathToImage).zoomInOnHover
-                  : Stack(
-                      alignment: Alignment.center,
-                      children: <Widget>[
-                        AspectRatio(
-                          aspectRatio: 5 / 3,
-                          child: Container(
-                            color: Theme.of(context).primaryColor,
-                            child: const FractionallySizedBox(
-                              widthFactor: 0.5,
-                              heightFactor: 0.5,
-                              child: AnimatedBackground(),
-                            ),
-                          ),
-                        ),
-                        FractionallySizedBox(
-                          alignment: FractionalOffset.bottomRight,
-                          widthFactor: 0.3,
-                          child: FittedBox(
-                            child: Text(
-                              S.of(context).devAndDesigner,
-                              textAlign: TextAlign.center,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline6
-                                  .copyWith(fontSize: 60, color: Theme.of(context).accentColor),
-                            ),
-                          ),
-                        )
-                      ],
-                    ).zoomInOnHover,
-            ),
+                borderOnForeground: false,
+                clipBehavior: Clip.hardEdge,
+                elevation: 0,
+                margin: const EdgeInsets.only(bottom: 10),
+                shape: const RoundedRectangleBorder(),
+                child: Image.asset(pathToImage).zoomInOnHover.colorOnHover),
             ExpandablePanel(
               theme: const ExpandableThemeData(
                   iconColor: Colors.black26,

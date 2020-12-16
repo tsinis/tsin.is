@@ -80,7 +80,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               height: _height,
               child: const RepaintBoundary(child: AnimatedBackground()),
             ),
-            Positioned(top: 0.2 * _height, left: 0, right: 0, child: MainText(offset)),
+            Positioned(top: 0.2 * _height, height: _height, left: 0, right: 0, child: MainText(offset)),
             Positioned(
               top: _height * 0.8 - offset,
               left: 0,
@@ -132,7 +132,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                 child: CircularText(
                   textStyle: Theme.of(context).textTheme.overline.copyWith(
                         fontSize: 10,
-                        color: Colors.white.withOpacity(min(offset / 1000, 0.3)),
+                        color: Colors.white.withOpacity(min(offset / 1000, 0.5)),
                       ),
                   startAngle: -pi / 2 + offset / 500,
                 ),

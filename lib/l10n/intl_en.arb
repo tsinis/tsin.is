@@ -28,6 +28,7 @@
   "theDesign": "Design",
   "thisWeb": "This Website",
   "thisWebDesc": "Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.",
+  "iconTools": "A set of tools for creating Flutter application icons. Support all platforms, including mobile but designed as “Desktop First” solution.",
   "tongueTwisters": "Tongue Twisters",
   "tongueTwistersDesc": "Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations)."
 }

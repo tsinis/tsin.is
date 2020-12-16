@@ -6,6 +6,10 @@
             "type": "dart",
             "request": "launch",
             "flutterMode": "debug",
+            "args": [
+                // "--dart-define=FLUTTER_WEB_USE_SKIA=true",
+                // "--dart-define=FLUTTER_WEB_USE_EXPERIMENTAL_CANVAS_TEXT=true"
+            ]
         },
         {
             "name": "Release Chrome",

@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "greeting" : MessageLookupByLibrary.simpleMessage("Hello there, I\'m"),
     "helloDribbble" : MessageLookupByLibrary.simpleMessage("Interactive animations showcase project, I\'ve made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”)."),
     "iAm" : MessageLookupByLibrary.simpleMessage("I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!\n\nWant to know more?"),
+    "iconTools" : MessageLookupByLibrary.simpleMessage("A set of tools for creating Flutter application icons. Support all platforms, including mobile but designed as “Desktop First” solution."),
     "inAction" : MessageLookupByLibrary.simpleMessage("Video"),
     "language" : MessageLookupByLibrary.simpleMessage("Language"),
     "planetBGame" : MessageLookupByLibrary.simpleMessage("Plan-et-B Game"),

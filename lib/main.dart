@@ -1,5 +1,6 @@
 import 'package:flare_flutter/flare_cache.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:intl/intl_browser.dart';
 
 import 'screens/main_page.dart';
@@ -9,6 +10,7 @@ import 'widgets/avatar.dart';
 Future<void> _cacheAvatar() async => await cachedActor(Avatar.cache);
 
 Future<void> main() async {
+  setUrlStrategy(PathUrlStrategy());
   WidgetsFlutterBinding.ensureInitialized();
   FlareCache.doesPrune = false;
   await _cacheAvatar();

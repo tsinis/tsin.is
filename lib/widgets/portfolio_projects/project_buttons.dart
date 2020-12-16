@@ -23,6 +23,7 @@ class ProjectButtonBar extends ButtonBar {
     return ButtonBar(
       buttonPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       buttonMinWidth: 220,
+      buttonHeight: 50,
       alignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Tooltip(
@@ -31,7 +32,7 @@ class ProjectButtonBar extends ButtonBar {
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: _video
                 ? OutlineButton(
-                    borderSide: BorderSide(width: 4, color: Colors.cyan[400]),
+                    borderSide: BorderSide(width: 2.4, color: Colors.cyan[400]),
                     highlightedBorderColor: Colors.cyanAccent,
                     hoverColor: Colors.cyan.withOpacity(0.1),
                     textColor: Colors.cyan[800],
@@ -49,7 +50,7 @@ class ProjectButtonBar extends ButtonBar {
                     ),
                   )
                 : OutlineButton(
-                    borderSide: BorderSide(width: 4, color: Colors.pinkAccent[100]),
+                    borderSide: BorderSide(width: 2.4, color: Colors.pinkAccent[100]),
                     highlightedBorderColor: Colors.pink[200],
                     hoverColor: Colors.pink.withOpacity(0.1),
                     textColor: Colors.pink[400],
@@ -72,7 +73,8 @@ class ProjectButtonBar extends ButtonBar {
           message: '🔗 $_appURL',
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
-            child: RaisedButton(
+            child: MaterialButton(
+              height: 52,
               color: _openSource ? Theme.of(context).primaryColorLight : Colors.lightGreen,
               elevation: 1.5,
               hoverElevation: 2.5,

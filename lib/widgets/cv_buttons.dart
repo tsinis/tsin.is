@@ -22,7 +22,8 @@ class CVButtons extends ButtonBar {
           message: '🔗 ${Open.cvURL}',
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
-            child: RaisedButton(
+            child: MaterialButton(
+              height: 52,
               color: Theme.of(context).dividerColor,
               elevation: 2,
               hoverElevation: 4,

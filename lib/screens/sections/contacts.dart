@@ -29,7 +29,7 @@ class Contact extends StatelessWidget {
             width: max(_width, 400),
             height: max(_height / ((_width > _height) ? 1.6 : 1.2), (_width > _height) ? 500 : 1200),
             child: Opacity(
-              opacity: 0.2,
+              opacity: 0.3,
               child: MapOfEurope(
                 controller: MapProvider.controller,
                 provider: MapProvider(S.of(context).currentLocale),
@@ -45,7 +45,13 @@ class Contact extends StatelessWidget {
                 SizedBox(height: _height * 0.05),
                 AutoSizeText(S.of(context).contacts, maxLines: 1, style: Theme.of(context).textTheme.headline4),
                 SizedBox(height: _height * 0.05),
-                AutoSizeText(S.of(context).contactsDesc, textAlign: TextAlign.center, maxLines: 6),
+                AutoSizeText(S.of(context).contactsDesc,
+                    textAlign: TextAlign.center,
+                    maxLines: 6,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyText2
+                        .copyWith(fontWeight: FontWeight.w400, color: Colors.white)),
                 SizedBox(height: _height * 0.03),
                 const Websites(),
                 SizedBox(height: _height * 0.02),
@@ -54,11 +60,20 @@ class Contact extends StatelessWidget {
                   alignment: WrapAlignment.center,
                   crossAxisAlignment: WrapCrossAlignment.center,
                   children: <Widget>[
-                    AutoSizeText(S.of(context).email, textAlign: TextAlign.center, maxLines: 4),
-                    IconButton(
-                      onPressed: Open.mail, //TODO: Add email address.
-                      icon: Icon(MyIcon.mail_alt, color: Theme.of(context).primaryColorLight),
-                    ).moveUpOnHover
+                    AutoSizeText(S.of(context).email,
+                        textAlign: TextAlign.center,
+                        maxLines: 4,
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText2
+                            .copyWith(fontWeight: FontWeight.w400, color: Colors.white)),
+                    Tooltip(
+                      preferBelow: false,
+                      message: Open.fullEmailName,
+                      textStyle: const TextStyle(fontSize: 16),
+                      child: const IconButton(onPressed: Open.mail, icon: Icon(MyIcon.mail_alt, color: Colors.white))
+                          .moveUpOnHover,
+                    )
                   ],
                 ),
                 SizedBox(height: _height * 0.025),

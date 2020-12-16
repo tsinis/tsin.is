@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+
 import '../generated/my_icons.dart';
+import '../helpers/languages.dart';
 
 class LanguageMenu<String> extends StatelessWidget {
-  LanguageMenu({this.onSelected, this.tooltip, this.language, this.isSmartphone});
+  const LanguageMenu({this.onSelected, this.tooltip, this.language, this.isSmartphone});
 
   @required
   final bool isSmartphone;
@@ -13,23 +15,13 @@ class LanguageMenu<String> extends StatelessWidget {
   @required
   final PopupMenuItemSelected<String> onSelected;
 
-  final List<PopupMenuItem<String>> _langList = _languagesMap
-      .map<String, PopupMenuItem<String>>(
-        (_langCode, _langName) => MapEntry<String, PopupMenuItem<String>>(
-          _langCode as String,
-          PopupMenuItem<String>(value: _langCode as String, child: Center(child: Text(_langName.toString()))),
-        ),
-      )
-      .values
-      .toList();
-
   @override
-  Widget build(BuildContext context) => PopupMenuButton(
-        itemBuilder: (_) => _langList,
+  Widget build(BuildContext context) => PopupMenuButton<String>(
+        // ignore: avoid_as
+        itemBuilder: (_) => langList as List<PopupMenuEntry<String>>,
         tooltip: tooltip.toString(),
         onSelected: onSelected,
         child: Row(
-          // crossAxisAlignment: CrossAxisAlignment.baseline,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Icon(MyIcon.globe_europe, color: Theme.of(context).primaryColorDark),
@@ -42,15 +34,3 @@ class LanguageMenu<String> extends StatelessWidget {
         ),
       );
 }
-
-const Map<String, String> _languagesMap = <String, String>{
-  'cs': 'Čeština',
-  // 'de': 'Deutsch',
-  'en': 'English',
-  // 'hr': "Hrvatski",
-  // 'pl': "Polski",
-  'ru': 'Русский',
-  'sk': 'Slovenčina',
-  // 'sl': "Slovenščina",
-  // 'sr': "Српски",
-};

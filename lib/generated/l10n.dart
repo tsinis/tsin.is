@@ -315,6 +315,16 @@ class S {
     );
   }
 
+  /// `A set of tools for creating Flutter application icons. Support all platforms, including mobile but designed as “Desktop First” solution.`
+  String get iconTools {
+    return Intl.message(
+      'A set of tools for creating Flutter application icons. Support all platforms, including mobile but designed as “Desktop First” solution.',
+      name: 'iconTools',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Tongue Twisters`
   String get tongueTwisters {
     return Intl.message(

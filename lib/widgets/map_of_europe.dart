@@ -79,12 +79,9 @@ class _MapState extends State<MapOfEurope> {
           height: tileSizeScaled.ceilToDouble(),
           left: ox.floorToDouble(),
           top: oy.floorToDouble(),
-          child: Container(
-            color: Colors.grey,
-            child: Image(
-              image: tile,
-              fit: BoxFit.fill,
-            ),
+          child: ColorFiltered(
+            colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.saturation),
+            child: Image(image: tile, fit: BoxFit.fill),
           ),
         );
 
@@ -115,11 +112,7 @@ class MapController extends ChangeNotifier {
 
   final _projection = const EPSG4326();
 
-  MapController({
-    @required LatLng location,
-    double zoom = 5,
-    this.tileSize = 256,
-  }) {
+  MapController({@required LatLng location, double zoom = 4.8, this.tileSize = 256}) {
     _location = location;
     _zoom = zoom;
   }

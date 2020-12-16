@@ -27,10 +27,9 @@ class MainText extends StatelessWidget {
             opacity: max(0, 0.6 - _offset / _height),
             child: Text(S.of(context).devAndDesigner,
                 textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .headline6
-                    .copyWith(fontSize: _shortestSide > 530 ? 60 + (_shortestSide / 100) : 40 - (_shortestSide / 50))),
+                style: Theme.of(context).textTheme.headline6.copyWith(
+                    height: 1.4,
+                    fontSize: _shortestSide > 530 ? 60 + (_shortestSide / 100) : 40 - (_shortestSide / 50))),
           ),
         ),
         SizedBox(height: _height / 4),

@@ -66,11 +66,11 @@ class Portfolio extends StatelessWidget {
                     designURL: 'vimeo.com/tsinis/hack20',
                     appURL: 'github.com/tsinis/plan_et_b'),
                 Project(
-                    projectName: S.of(context).thisWeb,
-                    pathToImage: 'assets/images/header.gif',
-                    projectDesc: S.of(context).thisWebDesc,
-                    designURL: 'dribbble.com/shots/',
-                    appURL: 'github.com/tsinis/tsin.is'),
+                    projectName: 'App Icon Tools',
+                    pathToImage: 'assets/images/projects/tools.jpg',
+                    projectDesc: S.of(context).iconTools,
+                    designURL: 'vimeo.com/tsinis/app-icon-tools',
+                    appURL: 'github.com/tsinis/app_icon_tools'),
               ],
             ),
             //TODO: Add Tongue Twisters Project Later

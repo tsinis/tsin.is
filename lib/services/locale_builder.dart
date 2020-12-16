@@ -11,9 +11,7 @@ class LocaleBuilder extends StatefulWidget {
 
   final Widget Function(BuildContext) _builder;
 
-  static _LocaleBuilderState of(BuildContext context) =>
-      // ignore: avoid_as
-      context.findAncestorStateOfType<State<LocaleBuilder>>() as _LocaleBuilderState;
+  static _LocaleBuilderState of(BuildContext context) => context.findAncestorStateOfType<_LocaleBuilderState>();
 }
 
 class _LocaleBuilderState extends State<LocaleBuilder> {

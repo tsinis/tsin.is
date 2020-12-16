@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "greeting" : MessageLookupByLibrary.simpleMessage("Приветствую, я"),
     "helloDribbble" : MessageLookupByLibrary.simpleMessage("Этот проект — демонстрация интерактивных анимаций, сделанных в качестве Дебюта на легендарном Dribbble, на который я получил долгожданное приглашение."),
     "iAm" : MessageLookupByLibrary.simpleMessage("Я награждённый T-специалист в области Flutter разработки и дизайна, с большой любовью к интерактивным анимациям и хорошему UX. Давайте сделаем что-то классное вместе!\n\nХотите узнать больше?"),
+    "iconTools" : MessageLookupByLibrary.simpleMessage("Набор инструментов для создания иконок приложения Flutter аппликаций. Поддерживает и мобильные платформы, но ориенторованна скорее на стационарные компьютеры."),
     "inAction" : MessageLookupByLibrary.simpleMessage("видео"),
     "language" : MessageLookupByLibrary.simpleMessage("Язык"),
     "planetBGame" : MessageLookupByLibrary.simpleMessage("Игра План-ет-а Б"),
