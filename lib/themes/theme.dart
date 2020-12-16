@@ -10,16 +10,16 @@ class MyTheme {
     final ThemeData _theme = ThemeData.light();
 
     return _theme.copyWith(
-      primaryColor: Colors.grey,
-      primaryColorLight: Colors.grey[300],
+      primaryColor: Colors.grey[400],
+      primaryColorLight: Colors.grey[100],
       primaryColorDark: Colors.grey[800],
       accentColor: Colors.grey[700],
       backgroundColor: Colors.grey[600],
-      scaffoldBackgroundColor: Colors.grey,
+      scaffoldBackgroundColor: Colors.grey[400],
       hoverColor: Colors.grey.withOpacity(0.33),
       canvasColor: Colors.grey.withOpacity(0.5),
       disabledColor: Colors.grey[900],
-      dividerColor: Colors.grey[400],
+      dividerColor: Colors.grey[300],
       textTheme: _theme.textTheme.copyWith(
         headline6: _theme.textTheme.headline6.copyWith(fontFamily: _displayFont, fontWeight: FontWeight.w900),
         headline5: _theme.textTheme.headline5
@@ -48,7 +48,7 @@ class MyTheme {
         textStyle: TextStyle(fontFamily: _textFont, fontSize: 13, color: Colors.grey[900]),
       ),
       popupMenuTheme: PopupMenuThemeData(
-        color: Colors.grey[400].withOpacity(0.85),
+        color: Colors.grey[300].withOpacity(0.85),
         elevation: 0.5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         textStyle:
