@@ -7,8 +7,10 @@ import '../animations/background.dart';
 import '../extensions/hover_extensions.dart';
 import '../generated/l10n.dart';
 import '../generated/my_icons.dart';
-import '../services/locale_builder.dart';
-import '../themes/theme.dart';
+import '../services/locale/locale.dart';
+import '../services/locale/locale_builder.dart';
+import '../themes/colors.dart';
+import '../themes/fonts.dart';
 import '../widgets/circular_text.dart';
 import '../widgets/language_menu.dart';
 import '../widgets/navigation/scroll_progress_bar.dart';
@@ -22,29 +24,31 @@ import 'sections/portfolio.dart';
 
 class MyWeb extends StatelessWidget {
   const MyWeb();
+
   @override
-  Widget build(BuildContext context) => LocaleBuilder((context) => MaterialApp(
+  Widget build(BuildContext context) => LocaleBuilder((_) => WidgetsApp(
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate
+            // GlobalWidgetsLocalizations.delegate,
+            // GlobalCupertinoLocalizations.delegate
           ],
-          locale: Locale(LocaleBuilder.language),
+          locale: Locale(language),
           supportedLocales: S.delegate.supportedLocales,
-          debugShowCheckedModeBanner: false,
-          theme: MyTheme.defaultTheme,
-          home: _MyHomePage()));
+          textStyle: MyTextStyles.bodyText1,
+          color: MyColors.primaryColor,
+          pageRouteBuilder: <T>(_, __) => MaterialPageRoute(settings: _, builder: __),
+          home: const _MyHomePage()));
 }
 
 class _MyHomePage extends StatefulWidget {
+  const _MyHomePage();
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<_MyHomePage> {
-  static ScrollController _scrollController;
-
+  final ScrollController _scrollController = ScrollController();
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -56,30 +60,28 @@ class _MyHomePageState extends State<_MyHomePage> {
   @override
   void initState() {
     super.initState();
-    _scrollController = ScrollController()..addListener(() => setState(() {}));
+    _scrollController.addListener(() => setState(() {}));
   }
 
   double get _height => MediaQuery.of(context).size.height;
 
   bool get _isSmartPhone => MediaQuery.of(context).size.width < 646.5 || offset > _height;
 
-  Color get _grey => Theme.of(context).primaryColor;
-
   double get offset => _scrollController.hasClients ? _scrollController.offset : 0;
 
   @override
   Widget build(BuildContext context) => Scaffold(
+        backgroundColor: MyColors.primaryColor,
         key: _scaffoldKey,
         endDrawer: SideMenu(_scrollController),
         body: Stack(
           children: <Widget>[
             Positioned(
-              top: -0.3 * offset,
-              left: 0,
-              right: 0,
-              height: _height,
-              child: const RepaintBoundary(child: AnimatedBackground()),
-            ),
+                top: -0.3 * offset,
+                left: 0,
+                right: 0,
+                height: _height,
+                child: const RepaintBoundary(child: AnimatedBackground())),
             Positioned(top: 0.2 * _height, height: _height, left: 0, right: 0, child: MainText(offset)),
             Positioned(
               top: _height * 0.8 - offset,
@@ -93,7 +95,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       stops: const [0, 0.8],
-                      colors: [_grey.withOpacity(0), _grey]),
+                      colors: [MyColors.primaryColor.withOpacity(0), MyColors.primaryColor]),
                 ),
               ),
             ),
@@ -102,14 +104,14 @@ class _MyHomePageState extends State<_MyHomePage> {
               left: 0,
               right: 0,
               height: _height / 3,
-              child: Container(height: _height / 3, width: double.infinity, color: _grey),
+              child: Container(height: _height / 3, width: double.infinity, color: MyColors.primaryColor),
             ),
             ListView(
               cacheExtent: double.infinity,
               controller: _scrollController,
               children: <Widget>[
-                Container(height: _height),
-                Container(color: _grey, child: const About()),
+                SizedBox(height: _height),
+                const DecoratedBox(decoration: BoxDecoration(color: MyColors.primaryColor), child: About()),
                 const Portfolio(),
                 const Contact(),
                 const Footer()
@@ -130,10 +132,8 @@ class _MyHomePageState extends State<_MyHomePage> {
                 left: 80,
                 bottom: 80,
                 child: CircularText(
-                  textStyle: Theme.of(context).textTheme.overline?.copyWith(
-                        fontSize: 10,
-                        color: Colors.white.withOpacity(min(offset / 1000, 0.7)),
-                      ),
+                  textStyle: MyTextStyles.overline
+                      .copyWith(color: MyColors.contrastColorLight.withOpacity(min(offset / 1000, 0.7))),
                   startAngle: -pi / 2 + offset / 500,
                 ),
               ),
@@ -148,9 +148,8 @@ class _MyHomePageState extends State<_MyHomePage> {
                         isSmartphone: _isSmartPhone,
                         language: S.of(context).language,
                         tooltip: S.of(context).selectLang,
-                        // ignore: avoid_types_on_closure_parameters
                         onSelected: (String _selectedLang) {
-                          LocaleBuilder.language = _selectedLang;
+                          language = _selectedLang;
                           LocaleBuilder.of(context).rebuild();
                         }),
                   ),
@@ -160,7 +159,7 @@ class _MyHomePageState extends State<_MyHomePage> {
                   child: _isSmartPhone
                       ? IconButton(
                           icon: const Icon(MyIcon.menu),
-                          color: Theme.of(context).accentColor,
+                          color: MyColors.accentColor,
                           onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
                         ).moveUpOnHover
                       : Opacity(opacity: max(0, 1 - offset / _height), child: Header(_scrollController)),

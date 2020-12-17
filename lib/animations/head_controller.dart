@@ -23,20 +23,20 @@ class HeadController implements FlareController {
   ValueNotifier<bool> isActive;
 
   @override
-  bool advance(FlutterActorArtboard _artboard, double _elapsed) {
+  bool advance(FlutterActorArtboard artboard, double elapsed) {
     if (_notHovering) {
       if (_exitAnimation.time < _exitAnimation.animation.duration) {
         _exitAnimation
-          ..time += _elapsed
-          ..apply(_artboard);
+          ..time += elapsed
+          ..apply(artboard);
       }
       return true;
     } else {
       if (_clicked) {
         if (_backgroundAnimation.time < _backgroundAnimation.animation.duration) {
           _backgroundAnimation
-            ..time += _elapsed
-            ..apply(_artboard);
+            ..time += elapsed
+            ..apply(artboard);
         } else {
           _clicked = false;
         }
@@ -68,15 +68,15 @@ class HeadController implements FlareController {
   }
 
   @override
-  void initialize(FlutterActorArtboard _artboard) {
-    _eyesControl = _artboard.getNode('eye_control');
-    _headControl = _artboard.getNode('head_control');
+  void initialize(FlutterActorArtboard artboard) {
+    _eyesControl = artboard.getNode('eye_control');
+    _headControl = artboard.getNode('head_control');
     _exitAnimation = FlareAnimationLayer()
-      ..animation = _artboard.getAnimation('exit')
+      ..animation = artboard.getAnimation('exit')
       ..mixSeconds = 1
       ..mix = 1;
     _backgroundAnimation = FlareAnimationLayer()
-      ..animation = _artboard.getAnimation('background')
+      ..animation = artboard.getAnimation('background')
       ..mix = 1;
   }
 
@@ -84,7 +84,7 @@ class HeadController implements FlareController {
   void setViewTransform(Mat2D viewTransform) => _viewTransform = viewTransform;
 
   // ignore: avoid_setters_without_getters
-  set move(Offset _offset) => _pointer = _offset;
+  set move(Offset offset) => _pointer = offset;
 
   void isHovering() {
     _exitAnimation.time = 0;

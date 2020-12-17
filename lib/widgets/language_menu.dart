@@ -2,32 +2,34 @@ import 'package:flutter/material.dart';
 
 import '../generated/my_icons.dart';
 import '../helpers/languages.dart';
+import '../themes/button_style.dart';
+import '../themes/colors.dart';
+import '../themes/fonts.dart';
 
-class LanguageMenu<String> extends StatelessWidget {
+class LanguageMenu extends StatelessWidget {
   const LanguageMenu(
       {@required this.onSelected, @required this.tooltip, @required this.language, @required this.isSmartphone});
 
   final bool isSmartphone;
-
   final String tooltip, language;
-
   final PopupMenuItemSelected<String> onSelected;
 
   @override
   Widget build(BuildContext context) => PopupMenuButton<String>(
-        // ignore: avoid_as
-        itemBuilder: (_) => langList as List<PopupMenuEntry<String>>,
-        tooltip: tooltip.toString(),
+        itemBuilder: (_) => langList,
+        tooltip: tooltip,
+        shape: MyButtons.shape,
+        color: Colors.white70,
         onSelected: onSelected,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Icon(MyIcon.globe_europe, color: Theme.of(context).primaryColorDark),
+            const Icon(MyIcon.globe_europe, color: MyColors.primaryColorDark),
             const SizedBox(width: 10),
             if (isSmartphone)
               const SizedBox.shrink()
             else
-              Text(language.toString(), style: TextStyle(color: Theme.of(context).accentColor)),
+              Text(language, style: MyTextStyles.bodyText1.copyWith(color: MyColors.accentColor)),
           ],
         ),
       );

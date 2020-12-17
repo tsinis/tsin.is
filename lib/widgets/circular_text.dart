@@ -14,12 +14,7 @@ class CircularText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => CustomPaint(
-        painter: _TextPainter(
-          radius,
-          text,
-          textStyle,
-          initialAngle: startAngle,
-        ),
+        painter: _TextPainter(radius, text, textStyle, initialAngle: startAngle),
       );
 }
 
@@ -56,7 +51,7 @@ class _TextPainter extends CustomPainter {
 
   double _drawLetter(Canvas canvas, String letter, double prevAngle) {
     _textPainter
-      ..text = TextSpan(text: letter, style: textStyle)
+      ..text = TextSpan(text: letter, style: textStyle.copyWith(letterSpacing: 1.5))
       ..layout(maxWidth: double.maxFinite);
 
     final double d = _textPainter.width;

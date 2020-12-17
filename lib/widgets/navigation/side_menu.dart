@@ -3,6 +3,7 @@ import 'dart:ui' show ImageFilter;
 import 'package:flutter/material.dart';
 
 import '../../generated/my_icons.dart';
+import '../../themes/colors.dart';
 import 'navigation_menu_list.dart';
 
 class SideMenu extends Drawer {
@@ -17,7 +18,7 @@ class SideMenu extends Drawer {
           filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
           child: Drawer(
             child: Container(
-              color: Theme.of(context).backgroundColor,
+              color: MyColors.backgroundColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -27,7 +28,7 @@ class SideMenu extends Drawer {
                       padding: const EdgeInsets.only(top: 30, right: 20),
                       child: IconButton(
                         icon: const Icon(MyIcon.arrow_left),
-                        color: Theme.of(context).accentColor,
+                        color: MyColors.accentColor,
                         onPressed: () => Scaffold.of(context).openDrawer(),
                       ),
                     ),

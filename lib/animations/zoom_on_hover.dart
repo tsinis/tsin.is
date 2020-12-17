@@ -10,41 +10,38 @@ class ZoomOnHover extends StatefulWidget {
 }
 
 class _TranslateOnHoverState extends State<ZoomOnHover> with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
-  Animation<double> _animationCurve;
-  bool _hovering = false;
+  AnimationController animationController;
+  Animation<double> animationCurve;
+  bool hovering = false;
 
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(duration: const Duration(milliseconds: 1300), vsync: this);
-    _animationCurve = CurvedAnimation(
-        parent: _animationController, curve: Curves.easeInOutQuint, reverseCurve: Curves.easeInOutQuart);
-    _animationController.forward();
+    animationController = AnimationController(duration: const Duration(milliseconds: 1300), vsync: this);
+    animationCurve =
+        CurvedAnimation(parent: animationController, curve: Curves.easeInOutQuint, reverseCurve: Curves.easeInOutQuart);
+    animationController.forward();
   }
 
   @override
   void dispose() {
-    _animationController.dispose();
+    animationController.dispose();
     super.dispose();
   }
 
-  void _mouseEnter(bool hovering) => setState(() => _hovering = hovering);
+  void _mouseEnter(bool _hovering) => setState(() => hovering = _hovering);
 
   @override
   Widget build(BuildContext context) {
-    final Animation<double> _animation = Tween<double>(begin: 0, end: 1).animate(_animationCurve);
+    final Animation<double> _animation = Tween<double>(begin: 0, end: 1).animate(animationCurve);
     return MouseRegion(
       onEnter: (_) => _mouseEnter(true),
       onExit: (_) => _mouseEnter(false),
       child: AnimatedBuilder(
         animation: _animation,
         builder: (context, child) {
-          _hovering ? _animationController.forward() : _animationController.reverse();
-          return Transform.scale(
-            scale: (_animationCurve.value * 1.15) + 1,
-            child: widget.child,
-          );
+          hovering ? animationController.forward() : animationController.reverse();
+          return Transform.scale(scale: (animationCurve.value * 1.15) + 1, child: widget.child);
         },
       ),
     );

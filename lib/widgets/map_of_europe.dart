@@ -8,16 +8,16 @@ import 'package:latlng/latlng.dart';
 import 'package:map/map.dart';
 
 class MapOfEurope extends StatefulWidget {
-  final MapProvider provider;
-  final MapController controller;
-  // final void Function() onTap, onLongPress;
-
   const MapOfEurope({
     @required this.controller,
     @required this.provider,
     // @required this.onTap,
     // @required this.onLongPress,
   });
+
+  final MapProvider provider;
+  final MapController controller;
+  // final void Function() onTap, onLongPress;
 
   @override
   State<StatefulWidget> createState() => _MapState();

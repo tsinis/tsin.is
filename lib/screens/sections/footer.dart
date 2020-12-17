@@ -7,8 +7,8 @@ class Footer extends StatelessWidget {
   const Footer();
 
   @override
-  Widget build(BuildContext context) => Container(
-        color: Colors.amber[300],
+  Widget build(BuildContext context) => DecoratedBox(
+        decoration: const BoxDecoration(color: Color(0xFFFFD54F)),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 5),
           child: Wrap(

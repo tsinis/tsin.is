@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../themes/colors.dart';
 
 class ColorOnHover extends StatefulWidget {
   const ColorOnHover({this.child});
@@ -10,9 +11,9 @@ class ColorOnHover extends StatefulWidget {
 }
 
 class _ColorOnHoverState extends State<ColorOnHover> {
-  bool _hovering = false;
+  bool hovering = false;
 
-  void _mouseEnter(bool hovering) => setState(() => _hovering = hovering);
+  void _mouseEnter(bool _hovering) => setState(() => hovering = _hovering);
 
   @override
   Widget build(BuildContext context) => MouseRegion(
@@ -21,8 +22,8 @@ class _ColorOnHoverState extends State<ColorOnHover> {
         child: AnimatedContainer(
           duration: const Duration(seconds: 1),
           child: ColorFiltered(
-              colorFilter: ColorFilter.mode(
-                  _hovering ? Colors.transparent : Theme.of(context).primaryColor, BlendMode.saturation),
+              colorFilter:
+                  ColorFilter.mode(hovering ? MyColors.transparent : MyColors.primaryColor, BlendMode.saturation),
               child: widget.child),
         ),
       );

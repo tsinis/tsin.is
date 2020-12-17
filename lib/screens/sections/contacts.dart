@@ -8,6 +8,8 @@ import '../../extensions/hover_extensions.dart';
 import '../../generated/l10n.dart';
 import '../../generated/my_icons.dart';
 import '../../services/url_click.dart';
+import '../../themes/colors.dart';
+import '../../themes/fonts.dart';
 import '../../widgets/map_of_europe.dart';
 import '../../widgets/websites.dart';
 
@@ -16,18 +18,18 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double _height = MediaQuery.of(context).size.height;
-    final double _width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     MapProvider.controller.tileSize = 256 / MediaQuery.of(context).devicePixelRatio;
 
     return Container(
-      color: Theme.of(context).primaryColor,
+      color: MyColors.primaryColor,
       child: Stack(
         alignment: Alignment.center,
         children: [
           SizedBox(
-            width: max(_width, 400),
-            height: max(_height / ((_width > _height) ? 1.6 : 1.2), (_width > _height) ? 500 : 1200),
+            width: max(width, 400),
+            height: max(height / ((width > height) ? 1.6 : 1.2), (width > height) ? 500 : 1200),
             child: Opacity(
               opacity: 0.3,
               child: MapOfEurope(
@@ -42,19 +44,17 @@ class Contact extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                SizedBox(height: _height * 0.05),
-                AutoSizeText(S.of(context).contacts, maxLines: 1, style: Theme.of(context).textTheme.headline4),
-                SizedBox(height: _height * 0.05),
+                SizedBox(height: height * 0.05),
+                AutoSizeText(S.of(context).contacts, maxLines: 1, style: MyTextStyles.headline4),
+                SizedBox(height: height * 0.05),
                 AutoSizeText(S.of(context).contactsDesc,
                     textAlign: TextAlign.center,
                     maxLines: 6,
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyText2
-                        ?.copyWith(fontWeight: FontWeight.w400, color: Colors.white)),
-                SizedBox(height: _height * 0.03),
+                    style: MyTextStyles.bodyText2
+                        .copyWith(fontWeight: FontWeight.w400, color: MyColors.contrastColorLight)),
+                SizedBox(height: height * 0.03),
                 const Websites(),
-                SizedBox(height: _height * 0.02),
+                SizedBox(height: height * 0.02),
                 Wrap(
                   spacing: 10,
                   alignment: WrapAlignment.center,
@@ -63,20 +63,19 @@ class Contact extends StatelessWidget {
                     AutoSizeText(S.of(context).email,
                         textAlign: TextAlign.center,
                         maxLines: 4,
-                        style: Theme.of(context)
-                            .textTheme
-                            .bodyText2
-                            ?.copyWith(fontWeight: FontWeight.w400, color: Colors.white)),
+                        style: MyTextStyles.bodyText2
+                            .copyWith(fontWeight: FontWeight.w400, color: MyColors.contrastColorLight)),
                     Tooltip(
                       preferBelow: false,
                       message: Open.fullEmailName,
-                      textStyle: const TextStyle(fontSize: 16),
-                      child: const IconButton(onPressed: Open.mail, icon: Icon(MyIcon.mail_alt, color: Colors.white))
+                      textStyle: MyTextStyles.caption,
+                      child: const IconButton(
+                              onPressed: Open.mail, icon: Icon(MyIcon.mail_alt, color: MyColors.contrastColorLight))
                           .moveUpOnHover,
                     )
                   ],
                 ),
-                SizedBox(height: _height * 0.025),
+                SizedBox(height: height * 0.025),
               ],
             ),
           )

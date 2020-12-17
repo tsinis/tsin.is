@@ -115,10 +115,10 @@ class S {
     );
   }
 
-  /// `or just simply write me the good old e-mail here:`
+  /// `or just simply write me a good old e-mail here:`
   String get email {
     return Intl.message(
-      'or just simply write me the good old e-mail here:',
+      'or just simply write me a good old e-mail here:',
       name: 'email',
       desc: '',
       args: [],
@@ -135,10 +135,10 @@ class S {
     );
   }
 
-  /// `This project is one of the winning submissions in Official Google's & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).`
+  /// `This project is one of the winning submissions in the Official Google's & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).`
   String get flutterClock {
     return Intl.message(
-      'This project is one of the winning submissions in Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).',
+      'This project is one of the winning submissions in the Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide).',
       name: 'flutterClock',
       desc: '',
       args: [],
@@ -175,10 +175,10 @@ class S {
     );
   }
 
-  /// `I'm awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let's make something awesome together!\n\nWant to know more?`
+  /// `I'm awarded T-shaped specialist in the fields of Flutter Development and Design, with a great love for interactive animations and good UX. Let's make something awesome together!\n\nWant to know more?`
   String get iAm {
     return Intl.message(
-      'I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with great love for interactive animations and good UX. Let\'s make something awesome together!\n\nWant to know more?',
+      'I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with a great love for interactive animations and good UX. Let\'s make something awesome together!\n\nWant to know more?',
       name: 'iAm',
       desc: '',
       args: [],
@@ -315,10 +315,10 @@ class S {
     );
   }
 
-  /// `A set of tools for creating Flutter application icons. Support all platforms, including mobile but designed as “Desktop First” solution.`
+  /// `A set of tools, for creating and previewing Flutter application icons. Support all platforms, including mobile but designed as “Desktop First” solution.`
   String get iconTools {
     return Intl.message(
-      'A set of tools for creating Flutter application icons. Support all platforms, including mobile but designed as “Desktop First” solution.',
+      'A set of tools, for creating and previewing Flutter application icons. Support all platforms, including mobile but designed as “Desktop First” solution.',
       name: 'iconTools',
       desc: '',
       args: [],

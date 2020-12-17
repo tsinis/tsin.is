@@ -38,29 +38,27 @@ class Brno extends StatefulWidget {
 }
 
 class _BrnoState extends State<Brno> with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+  AnimationController controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = AnimationController(vsync: this);
+    controller = AnimationController(vsync: this);
     _startAnimation();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+    controller.dispose();
     super.dispose();
   }
 
-  void _startAnimation() {
-    _controller
-      ..stop()
-      ..reset()
-      ..repeat(period: const Duration(seconds: 3));
-  }
+  void _startAnimation() => controller
+    ..stop()
+    ..reset()
+    ..repeat(period: const Duration(seconds: 3));
 
   @override
   Widget build(BuildContext context) =>
-      CustomPaint(painter: _PulseAnimation(_controller), child: const SizedBox(width: 4.2));
+      CustomPaint(painter: _PulseAnimation(controller), child: const SizedBox(width: 4.2));
 }

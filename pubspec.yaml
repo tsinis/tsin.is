@@ -42,60 +42,60 @@ flutter:
 
     - family: Hagrid Text
       fonts:
-        - asset: third-party/fonts/Hagrid/Hagrid-Text-Heavy-trial.otf
-          weight: 900
-        - asset: third-party/fonts/Hagrid/Hagrid-Text-Heavy-Italic-trial.otf
-          weight: 900
-          style: italic
-        - asset: third-party/fonts/Hagrid/Hagrid-Text-Extrabold-trial.otf
-          weight: 800
-        - asset: third-party/fonts/Hagrid/Hagrid-Text-Extrabold-Italic-trial.otf
-          weight: 800
-          style: italic
-        - asset: third-party/fonts/Hagrid/Hagrid-Text-Bold-trial.otf
-          weight: 700
-        - asset: third-party/fonts/Hagrid/Hagrid-Text-Bold-Italic-trial.otf
-          weight: 700
-          style: italic
-        - asset: third-party/fonts/Hagrid/Hagrid-Text-Medium-trial.otf
-          weight: 500
-        - asset: third-party/fonts/Hagrid/Hagrid-Text-Medium-Italic-trial.otf
-          weight: 500
-          style: italic
+        # - asset: third-party/fonts/Hagrid/Hagrid-Text-Heavy-trial.otf
+        #   weight: 900
+        # - asset: third-party/fonts/Hagrid/Hagrid-Text-Heavy-Italic-trial.otf
+        #   weight: 900
+        #   style: italic
+        # - asset: third-party/fonts/Hagrid/Hagrid-Text-Extrabold-trial.otf
+        #   weight: 800
+        # - asset: third-party/fonts/Hagrid/Hagrid-Text-Extrabold-Italic-trial.otf
+        #   weight: 800
+        #   style: italic
+        # - asset: third-party/fonts/Hagrid/Hagrid-Text-Bold-trial.otf
+        #   weight: 700
+        # - asset: third-party/fonts/Hagrid/Hagrid-Text-Bold-Italic-trial.otf
+        #   weight: 700
+        #   style: italic
+        # - asset: third-party/fonts/Hagrid/Hagrid-Text-Medium-trial.otf
+        #   weight: 500
+        # - asset: third-party/fonts/Hagrid/Hagrid-Text-Medium-Italic-trial.otf
+        #   weight: 500
+        #   style: italic
         - asset: third-party/fonts/Hagrid/Hagrid-Text-Regular-trial.otf
           weight: 400
         - asset: third-party/fonts/Hagrid/Hagrid-Text-Light-trial.otf
           weight: 300
-        - asset: third-party/fonts/Hagrid/Hagrid-Text-Light-Italic-trial.otf
-          weight: 300
-          style: italic
+        # - asset: third-party/fonts/Hagrid/Hagrid-Text-Light-Italic-trial.otf
+        #   weight: 300
+        #   style: italic
 
     - family: Hagrid
       fonts:
         - asset: third-party/fonts/Hagrid/Hagrid-Heavy-trial.otf
           weight: 900
-        - asset: third-party/fonts/Hagrid/Hagrid-Heavy-Italic-trial.otf
-          weight: 900
-          style: italic
+        # - asset: third-party/fonts/Hagrid/Hagrid-Heavy-Italic-trial.otf
+        #   weight: 900
+        #   style: italic
         - asset: third-party/fonts/Hagrid/Hagrid-Extrabold-trial.otf
           weight: 800
-        - asset: third-party/fonts/Hagrid/Hagrid-Extrabold-Italic-trial.otf
-          weight: 800
-          style: italic
-        - asset: third-party/fonts/Hagrid/Hagrid-Medium-trial.otf
-          weight: 500
-        - asset: third-party/fonts/Hagrid/Hagrid-Medium-Italic-trial.otf
-          weight: 500
-          style: italic
+        # - asset: third-party/fonts/Hagrid/Hagrid-Extrabold-Italic-trial.otf
+        #   weight: 800
+        #   style: italic
+        # - asset: third-party/fonts/Hagrid/Hagrid-Medium-trial.otf
+        #   weight: 500
+        # - asset: third-party/fonts/Hagrid/Hagrid-Medium-Italic-trial.otf
+        #   weight: 500
+        #   style: italic
         - asset: third-party/fonts/Hagrid/Hagrid-Regular-trial.otf
           weight: 400
-        - asset: third-party/fonts/Hagrid/Hagrid-Light-trial.otf
-          weight: 300
-        - asset: third-party/fonts/Hagrid/Hagrid-Light-Italic-trial.otf
-          weight: 300
-          style: italic
-        - asset: third-party/fonts/Hagrid/Hagrid-Thin-trial.otf
-          weight: 100
-        - asset: third-party/fonts/Hagrid/Hagrid-Thin-Italic-trial.otf
-          weight: 100
-          style: italic
+        # - asset: third-party/fonts/Hagrid/Hagrid-Light-trial.otf
+        #   weight: 300
+        # - asset: third-party/fonts/Hagrid/Hagrid-Light-Italic-trial.otf
+        #   weight: 300
+        #   style: italic
+        # - asset: third-party/fonts/Hagrid/Hagrid-Thin-trial.otf
+        #   weight: 100
+        # - asset: third-party/fonts/Hagrid/Hagrid-Thin-Italic-trial.otf
+        #   weight: 100
+        #   style: italic

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum Menu {
-  about,
-  portfolio,
-  contacts,
-}
+enum Menu { about, portfolio, contacts }
 
 extension MenuExtension on Menu {
   void scrollTo(BuildContext context, ScrollController _scrollController) {

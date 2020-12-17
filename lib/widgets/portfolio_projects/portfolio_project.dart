@@ -6,6 +6,8 @@ import 'package:flutter/rendering.dart';
 
 import '../../extensions/hover_extensions.dart';
 import '../../generated/my_icons.dart';
+import '../../themes/colors.dart';
+import '../../themes/fonts.dart';
 import 'project_buttons.dart';
 
 class Project extends StatelessWidget {
@@ -20,11 +22,11 @@ class Project extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double _width = MediaQuery.of(context).size.width;
+    final double width = MediaQuery.of(context).size.width;
     return SizedBox(
-      width: (_width > 1023) ? _width / 3 : _width,
+      width: (width > 1023) ? width / 3 : width,
       child: Card(
-        color: Theme.of(context).dividerColor,
+        color: MyColors.primaryColorLight,
         borderOnForeground: false,
         clipBehavior: Clip.hardEdge,
         elevation: 10,
@@ -42,7 +44,7 @@ class Project extends StatelessWidget {
                 child: Image.asset(pathToImage).zoomInOnHover.colorOnHover),
             ExpandablePanel(
               theme: const ExpandableThemeData(
-                  iconColor: Colors.black26,
+                  iconColor: MyColors.accentColor,
                   iconPadding: EdgeInsets.symmetric(horizontal: 15),
                   iconSize: 18,
                   fadeCurve: Curves.fastOutSlowIn,
@@ -62,7 +64,7 @@ class Project extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const SizedBox(width: 35),
-                        Text(projectName, textAlign: TextAlign.center, softWrap: true),
+                        Text(projectName, textAlign: TextAlign.center, softWrap: true, style: MyTextStyles.bodyText2),
                       ],
                     ),
                   ),
@@ -74,11 +76,15 @@ class Project extends StatelessWidget {
                   FractionallySizedBox(
                     widthFactor: 0.85,
                     child: AutoSizeText(projectDesc,
-                        textAlign: TextAlign.justify, maxLines: 8, maxFontSize: 20, softWrap: true),
+                        textAlign: TextAlign.justify,
+                        maxLines: 8,
+                        maxFontSize: 20,
+                        softWrap: true,
+                        style: MyTextStyles.bodyText1),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: ProjectButtonBar(designURL, appURL, isWide: _width > 399),
+                    child: ProjectButtonBar(designURL, appURL, isWide: width > 399),
                   ),
                 ],
               ),

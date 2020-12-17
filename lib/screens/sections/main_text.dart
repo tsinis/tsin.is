@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
 import '../../generated/my_icons.dart';
+import '../../themes/colors.dart';
+import '../../themes/fonts.dart';
 
 class MainText extends StatelessWidget {
   const MainText(this._offset);
@@ -13,27 +15,26 @@ class MainText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double _height = MediaQuery.of(context).size.height;
-    final double _shortestSide = MediaQuery.of(context).size.shortestSide;
+    final double height = MediaQuery.of(context).size.height;
+    final double shortestSide = MediaQuery.of(context).size.shortestSide;
     return Column(
       children: <Widget>[
-        SizedBox(height: _shortestSide / 9 - ((_height < 351) ? 22 : 0)),
+        SizedBox(height: shortestSide / 9 - ((height < 351) ? 22 : 0)),
         AutoSizeText(S.of(context).greeting,
-            maxLines: 1, style: Theme.of(context).textTheme.bodyText2?.copyWith(color: Theme.of(context).accentColor)),
-        SizedBox(height: _shortestSide / 100),
+            maxLines: 1, style: MyTextStyles.bodyText2.copyWith(color: MyColors.accentColor)),
+        SizedBox(height: shortestSide / 100),
         Container(
-          margin: EdgeInsets.all(_shortestSide / 20),
+          margin: EdgeInsets.all(shortestSide / 20),
           child: Opacity(
-            opacity: max(0, 0.6 - _offset / _height),
+            opacity: max(0, 0.6 - _offset / height),
             child: Text(S.of(context).devAndDesigner,
                 textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.headline6?.copyWith(
-                    height: 1.4,
-                    fontSize: _shortestSide > 530 ? 60 + (_shortestSide / 100) : 40 - (_shortestSide / 50))),
+                style: MyTextStyles.headline6.copyWith(
+                    height: 1.4, fontSize: shortestSide > 530 ? 60 + (shortestSide / 100) : 40 - (shortestSide / 50))),
           ),
         ),
-        SizedBox(height: _height / 4),
-        Icon(MyIcon.angle_double_down, color: Theme.of(context).backgroundColor)
+        SizedBox(height: height / 4),
+        const Icon(MyIcon.angle_double_down, color: MyColors.backgroundColor)
       ],
     );
   }
