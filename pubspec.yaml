@@ -22,7 +22,6 @@ dev_dependencies:
   # flutter_test:
   #   sdk: flutter
   pedantic: any
-  # effective_dart: any
 
 flutter_intl:
   enabled: true
@@ -33,7 +32,6 @@ flutter:
   assets:
     - assets/images/
     - assets/images/projects/
-    # - assets/cv/
 
   fonts:
     - family: MyIcon
