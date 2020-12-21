@@ -6,7 +6,7 @@
 
 ## About
 
-You will definitely not find here fancy architecture, or advanced navigations, there is no business at all and therefore no business logic. It's a simple, one-page static website made in Flutter. Perhaps you will like animations or design solutions — then you are in the right place. Thanks.
+You will definitely not find here fancy architecture and state managment (since there is no global states at all), or advanced navigations, there is no business and therefore no business logic. It's a simple, one-page static website made in Flutter. Perhaps you will like animations or design solutions — then you are in the right place. Thank you for the visit!
 
 > **Note:**  At the moment, the website has clear scrolling problems in non-Chromium browsers (e.g. Mozilla Firefox) and on mobile Safari. The Google team is working on fixing these issues, please have patience.
 
