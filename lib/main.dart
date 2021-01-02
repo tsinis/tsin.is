@@ -5,11 +5,13 @@ import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:intl/intl_browser.dart';
 
 import 'screens/main_page.dart';
+import 'services/div_remover.dart';
 import 'services/locale/locale.dart';
 import 'widgets/avatar.dart';
 
 Future<void> main() async {
   setUrlStrategy(PathUrlStrategy());
+  DivRemover.removeFromHTML();
   WidgetsFlutterBinding.ensureInitialized();
   FlareCache.doesPrune = false;
   await cachedActor(Avatar.cache);
