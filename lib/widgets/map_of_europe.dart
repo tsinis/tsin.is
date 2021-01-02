@@ -13,16 +13,19 @@ class MapOfEurope extends StatelessWidget {
 
   static final MapController _controller = MapController(location: LatLng(49.18, 16.56), zoom: 5);
   @override
-  Widget build(BuildContext context) => ColorFiltered(
-        colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.saturation),
-        child: Map(
-          controller: _controller,
-          builder: (context, x, y, z) {
-            final String locale = S.of(context).currentLocale;
-            final String url =
-                'https://www.google.com/maps/vt/pb=!1m4!1m3!1i$z!2i$x!3i$y!2m2!1e0!2sh!3i420120484!3m1!2s$locale!5e1105!12m1!1e68!2m2!1sset!2sRoadmap!4e0!5m0!1e0!23i8289918';
-            return Opacity(opacity: 0.45, child: CachedNetworkImage(imageUrl: url, fit: BoxFit.fill));
-          },
+  Widget build(BuildContext context) => Opacity(
+        opacity: 0.3,
+        child: ColorFiltered(
+          colorFilter: const ColorFilter.mode(Colors.grey, BlendMode.color),
+          child: Map(
+            controller: _controller,
+            builder: (context, x, y, z) {
+              final String locale = S.of(context).currentLocale;
+              final String url =
+                  'https://www.google.com/maps/vt/pb=!1m4!1m3!1i$z!2i$x!3i$y!2m2!1e0!2sh!3i420120484!3m1!2s$locale!5e1105!12m1!1e68!2m2!1sset!2sRoadmap!4e0!5m0!1e0!23i8289918';
+              return CachedNetworkImage(imageUrl: url, fit: BoxFit.fill);
+            },
+          ),
         ),
       );
 }
