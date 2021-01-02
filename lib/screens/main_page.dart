@@ -27,18 +27,13 @@ class MyWeb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => LocaleBuilder((_) => WidgetsApp(
-          localizationsDelegates: const [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            // GlobalWidgetsLocalizations.delegate,
-            // GlobalCupertinoLocalizations.delegate
-          ],
-          locale: Locale(language),
-          supportedLocales: S.delegate.supportedLocales,
-          textStyle: MyTextStyles.bodyText1,
-          color: MyColors.primaryColor,
-          pageRouteBuilder: <T>(_, __) => MaterialPageRoute(settings: _, builder: __),
-          home: const _MyHomePage()));
+      localizationsDelegates: const [S.delegate, GlobalMaterialLocalizations.delegate],
+      locale: Locale(language),
+      supportedLocales: S.delegate.supportedLocales,
+      textStyle: MyTextStyles.bodyText1,
+      color: MyColors.primaryColor,
+      pageRouteBuilder: <T>(_, __) => MaterialPageRoute(settings: _, builder: __),
+      home: const _MyHomePage()));
 }
 
 class _MyHomePage extends StatefulWidget {
@@ -48,46 +43,46 @@ class _MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<_MyHomePage> {
-  final ScrollController _scrollController = ScrollController();
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final ScrollController scrollController = ScrollController();
+  final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    scrollController.dispose();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    _scrollController.addListener(() => setState(() {}));
+    scrollController.addListener(() => setState(() {}));
   }
 
-  double get _height => MediaQuery.of(context).size.height;
+  double get height => MediaQuery.of(context).size.height;
 
-  bool get _isSmartPhone => MediaQuery.of(context).size.width < 646.5 || offset > _height;
+  bool get isSmartPhone => MediaQuery.of(context).size.width < 646.5 || offset > height;
 
-  double get offset => _scrollController.hasClients ? _scrollController.offset : 0;
+  double get offset => scrollController.hasClients ? scrollController.offset : 0;
 
   @override
   Widget build(BuildContext context) => Scaffold(
         backgroundColor: MyColors.primaryColor,
-        key: _scaffoldKey,
-        endDrawer: SideMenu(_scrollController),
+        key: scaffoldKey,
+        endDrawer: SideMenu(scrollController),
         body: Stack(
           children: <Widget>[
             Positioned(
                 top: -0.3 * offset,
                 left: 0,
                 right: 0,
-                height: _height,
+                height: height,
                 child: const RepaintBoundary(child: AnimatedBackground())),
-            Positioned(top: 0.2 * _height, height: _height, left: 0, right: 0, child: MainText(offset)),
+            Positioned(top: 0.2 * height, height: height, left: 0, right: 0, child: MainText(offset)),
             Positioned(
-              top: _height * 0.8 - offset,
+              top: height * 0.8 - offset,
               left: 0,
               right: 0,
-              height: _height * 0.2,
+              height: height * 0.2,
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -100,17 +95,17 @@ class _MyHomePageState extends State<_MyHomePage> {
               ),
             ),
             Positioned(
-              top: _height * 0.95 - offset,
+              top: height * 0.95 - offset,
               left: 0,
               right: 0,
-              height: _height / 3,
-              child: Container(height: _height / 3, width: double.infinity, color: MyColors.primaryColor),
+              height: height / 3,
+              child: Container(height: height / 3, width: double.infinity, color: MyColors.primaryColor),
             ),
             ListView(
               cacheExtent: double.infinity,
-              controller: _scrollController,
+              controller: scrollController,
               children: <Widget>[
-                SizedBox(height: _height),
+                SizedBox(height: height),
                 const ColoredBox(color: MyColors.primaryColor, child: About()),
                 const Portfolio(),
                 const Contact(),
@@ -118,14 +113,14 @@ class _MyHomePageState extends State<_MyHomePage> {
               ],
             ),
             Positioned(
-                right: -(_height / 3),
-                top: _height / 2,
+                right: -(height / 3),
+                top: height / 2,
                 height: 2,
-                width: _height * 0.75,
-                child: _scrollController.hasClients
-                    ? ScrollProgress(height: _height, offset: offset, scrollController: _scrollController)
+                width: height * 0.75,
+                child: scrollController.hasClients
+                    ? ScrollProgress(height: height, offset: offset, scrollController: scrollController)
                     : const SizedBox.shrink()),
-            if (_height > MediaQuery.of(context).size.width)
+            if (height > MediaQuery.of(context).size.width)
               const SizedBox.shrink()
             else
               Positioned(
@@ -141,11 +136,11 @@ class _MyHomePageState extends State<_MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Opacity(
-                  opacity: max(0, 1 - offset / _height),
+                  opacity: max(0, 1 - offset / height),
                   child: Padding(
-                    padding: EdgeInsets.only(top: 30, left: _isSmartPhone ? 30 : 50),
+                    padding: EdgeInsets.only(top: 30, left: isSmartPhone ? 30 : 50),
                     child: LanguageMenu(
-                        isSmartphone: _isSmartPhone,
+                        isSmartphone: isSmartPhone,
                         language: S.of(context).language,
                         tooltip: S.of(context).selectLang,
                         onSelected: (String _selectedLang) {
@@ -155,14 +150,14 @@ class _MyHomePageState extends State<_MyHomePage> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(top: 30, right: _isSmartPhone ? 20 : 50),
-                  child: _isSmartPhone
+                  padding: EdgeInsets.only(top: 30, right: isSmartPhone ? 20 : 50),
+                  child: isSmartPhone
                       ? IconButton(
                           icon: const Icon(MyIcon.menu),
                           color: MyColors.accentColor,
-                          onPressed: () => _scaffoldKey.currentState?.openEndDrawer(),
+                          onPressed: () => scaffoldKey.currentState?.openEndDrawer(),
                         ).moveUpOnHover
-                      : Opacity(opacity: max(0, 1 - offset / _height), child: Header(_scrollController)),
+                      : Opacity(opacity: max(0, 1 - offset / height), child: Header(scrollController)),
                 )
               ],
             )

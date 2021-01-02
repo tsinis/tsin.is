@@ -18,19 +18,21 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height;
-    final double width = MediaQuery.of(context).size.width;
-    // MapProvider.controller.tileSize = 256 / MediaQuery.of(context).devicePixelRatio;
+    final Size size = MediaQuery.of(context).size;
 
     return ColoredBox(
       color: MyColors.primaryColor,
       child: Stack(
         alignment: Alignment.center,
         children: [
-          SizedBox(
-            width: max(width, 400),
-            height: max(height / ((width > height) ? 1.6 : 1.2), (width > height) ? 500 : 1200),
-            child: const MapOfEurope(),
+          ClipRect(
+            //WORKAROUND FOR BLENDING MODE AT 1.26.0-2.0.pre.167.
+            child: SizedBox(
+              width: max(size.width, 400),
+              height:
+                  max(size.height / ((size.width > size.height) ? 1.6 : 1.2), (size.width > size.height) ? 500 : 1200),
+              child: const MapOfEurope(),
+            ),
           ),
           const Brno(),
           FractionallySizedBox(
@@ -38,17 +40,17 @@ class Contact extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                SizedBox(height: height * 0.05),
+                SizedBox(height: size.height * 0.05),
                 AutoSizeText(S.of(context).contacts, maxLines: 1, style: MyTextStyles.headline4),
-                SizedBox(height: height * 0.05),
+                SizedBox(height: size.height * 0.05),
                 AutoSizeText(S.of(context).contactsDesc,
                     textAlign: TextAlign.center,
                     maxLines: 6,
                     style: MyTextStyles.bodyText2
                         .copyWith(fontWeight: FontWeight.w400, color: MyColors.contrastColorLight)),
-                SizedBox(height: height * 0.03),
+                SizedBox(height: size.height * 0.03),
                 const Websites(),
-                SizedBox(height: height * 0.02),
+                SizedBox(height: size.height * 0.02),
                 Wrap(
                   spacing: 10,
                   alignment: WrapAlignment.center,
@@ -69,7 +71,7 @@ class Contact extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: height * 0.025),
+                SizedBox(height: size.height * 0.025),
               ],
             ),
           )

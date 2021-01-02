@@ -1,15 +1,16 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import '../themes/colors.dart';
 
 class _PulseAnimation extends CustomPainter {
-  final Animation<double> _animation;
+  final Animation<double> animation;
 
-  _PulseAnimation(this._animation) : super(repaint: _animation);
+  _PulseAnimation(this.animation) : super(repaint: animation);
 
   void circle(Canvas _canvas, Rect _rect, double _value) {
     final double _opacity = (1 - (_value / 3)).clamp(0, 1).toDouble();
-    final Color color = Color.fromRGBO(145, 145, 145, _opacity);
+    final Color color = MyColors.primaryColorDark.withOpacity(_opacity);
 
     final double _size = _rect.width * 4;
     final double area = _size * _size;
@@ -23,7 +24,7 @@ class _PulseAnimation extends CustomPainter {
   void paint(Canvas _canvas, Size _size) {
     final Rect rect = Rect.fromLTRB(0, 0, _size.width, _size.height);
     for (int wave = 3; wave >= 0; wave--) {
-      circle(_canvas, rect, wave + _animation.value);
+      circle(_canvas, rect, wave + animation.value);
     }
   }
 
@@ -44,7 +45,7 @@ class _BrnoState extends State<Brno> with SingleTickerProviderStateMixin {
   void initState() {
     super.initState();
     controller = AnimationController(vsync: this);
-    _startAnimation();
+    startAnimation();
   }
 
   @override
@@ -53,7 +54,7 @@ class _BrnoState extends State<Brno> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
-  void _startAnimation() => controller
+  void startAnimation() => controller
     ..stop()
     ..reset()
     ..repeat(period: const Duration(seconds: 3));
