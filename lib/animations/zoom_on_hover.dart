@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ZoomOnHover extends StatefulWidget {
-  const ZoomOnHover({this.child});
+  const ZoomOnHover({@required this.isExpanded, this.child});
 
   final Widget child;
+  final bool isExpanded;
 
   @override
   _TranslateOnHoverState createState() => _TranslateOnHoverState();
@@ -40,7 +41,7 @@ class _TranslateOnHoverState extends State<ZoomOnHover> with SingleTickerProvide
       child: AnimatedBuilder(
         animation: _animation,
         builder: (context, child) {
-          hovering ? animationController.forward() : animationController.reverse();
+          (hovering || widget.isExpanded) ? animationController.forward() : animationController.reverse();
           return Transform.scale(scale: (animationCurve.value * 1.15) + 1, child: widget.child);
         },
       ),

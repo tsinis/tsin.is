@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import '../themes/colors.dart';
 
 class ColorOnHover extends StatefulWidget {
-  const ColorOnHover({this.child});
+  const ColorOnHover({@required this.isExpanded, this.child});
 
   final Widget child;
+  final bool isExpanded;
 
   @override
   _ColorOnHoverState createState() => _ColorOnHoverState();
@@ -22,8 +23,10 @@ class _ColorOnHoverState extends State<ColorOnHover> {
         child: AnimatedContainer(
           duration: const Duration(seconds: 1),
           child: ColorFiltered(
-              colorFilter:
-                  ColorFilter.mode(hovering ? MyColors.transparent : MyColors.primaryColor, BlendMode.saturation),
+              colorFilter: ColorFilter.mode(
+                (hovering || widget.isExpanded) ? MyColors.transparent : MyColors.primaryColor,
+                BlendMode.saturation,
+              ),
               child: widget.child),
         ),
       );

@@ -6,6 +6,6 @@ import '../animations/zoom_on_hover.dart';
 
 extension HoverExtensions on Widget {
   Widget get moveUpOnHover => TranslateOnHover(child: this);
-  Widget get zoomInOnHover => ZoomOnHover(child: this);
-  Widget get colorOnHover => ColorOnHover(child: this);
+  Widget zoomInOnHover({bool isExpanded = false}) => ZoomOnHover(isExpanded: isExpanded, child: this);
+  Widget colorOnHover({bool isExpanded = false}) => ColorOnHover(isExpanded: isExpanded, child: this);
 }
