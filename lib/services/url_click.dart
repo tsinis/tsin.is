@@ -26,7 +26,7 @@ class Open {
       default:
         break;
     }
-    return 'tsin.is/cv/cv_tsinis_$langCode.pdf';
+    return 'tsinis.github.io/cv/cv_tsinis_$langCode.pdf';
   }
 
   static Future<void> url(String url) async => await launch('https://$url');
@@ -41,7 +41,7 @@ class Open {
     if (await canLaunch(_cloudURL)) {
       await launch(_cloudURL);
     } else {
-      await launch('https://tsin.is/cv');
+      await launch('https://tsinis.github.io/cv');
     }
   }
 }

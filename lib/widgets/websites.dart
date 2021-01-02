@@ -42,7 +42,7 @@ class _WebsiteButton extends StatelessWidget {
   Widget build(BuildContext context) => Tooltip(
         textStyle: MyTextStyles.caption,
         preferBelow: false,
-        message: '🔗 $fullURL',
+        message: fullURL,
         child: Padding(
           padding: const EdgeInsets.only(bottom: 10),
           child: SizedBox(

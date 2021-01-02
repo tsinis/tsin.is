@@ -215,10 +215,10 @@ class S {
     );
   }
 
-  /// `This project is one of the winners of this year's official Flutter Community Hackaton. More than two and a half thousand developers from all over the world took part in it.`
+  /// `This project is one of the winners of last year's official Flutter Community Hackaton. More than two and a half thousand developers from all over the world took part in it.`
   String get planetBGameDesc {
     return Intl.message(
-      'This project is one of the winners of this year\'s official Flutter Community Hackaton. More than two and a half thousand developers from all over the world took part in it.',
+      'This project is one of the winners of last year\'s official Flutter Community Hackaton. More than two and a half thousand developers from all over the world took part in it.',
       name: 'planetBGameDesc',
       desc: '',
       args: [],

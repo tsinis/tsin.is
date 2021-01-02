@@ -31,7 +31,7 @@ class ProjectButtonBar extends ButtonBar {
       children: <Widget>[
         Tooltip(
           textStyle: MyTextStyles.caption,
-          message: '🔗 ${_designURL.short}',
+          message: _designURL.short,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: _video
@@ -85,7 +85,7 @@ class ProjectButtonBar extends ButtonBar {
         ),
         Tooltip(
           textStyle: MyTextStyles.caption,
-          message: '🔗 $_appURL',
+          message: _appURL,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
             child: MaterialButton(

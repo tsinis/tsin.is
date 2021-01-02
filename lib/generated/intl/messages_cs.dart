@@ -40,7 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "inAction" : MessageLookupByLibrary.simpleMessage("v akci"),
     "language" : MessageLookupByLibrary.simpleMessage("Jazyk"),
     "planetBGame" : MessageLookupByLibrary.simpleMessage("Hra Plan-et-а B"),
-    "planetBGameDesc" : MessageLookupByLibrary.simpleMessage("Tato PWA hra je jedním z vítězů v letošním oficiálním, dvoudenním hackathonu Společenství Flutter, kterého se zúčastnilo přes dva a pul tisíce lidi z celého světa."),
+    "planetBGameDesc" : MessageLookupByLibrary.simpleMessage("Tato PWA hra je jedním z vítězů v loňském oficiálním, dvoudenním hackathonu Společenství Flutter, kterého se zúčastnilo přes dva a pul tisíce lidi z celého světa."),
     "portfolio" : MessageLookupByLibrary.simpleMessage("Portfolio"),
     "projectsPortfolio" : MessageLookupByLibrary.simpleMessage("projektů a repositářů."),
     "see" : MessageLookupByLibrary.simpleMessage("Zhlédnout"),

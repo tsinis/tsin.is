@@ -20,7 +20,7 @@ class Contact extends StatelessWidget {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
-    MapProvider.controller.tileSize = 256 / MediaQuery.of(context).devicePixelRatio;
+    // MapProvider.controller.tileSize = 256 / MediaQuery.of(context).devicePixelRatio;
 
     return Container(
       color: MyColors.primaryColor,
@@ -30,13 +30,7 @@ class Contact extends StatelessWidget {
           SizedBox(
             width: max(width, 400),
             height: max(height / ((width > height) ? 1.6 : 1.2), (width > height) ? 500 : 1200),
-            child: Opacity(
-              opacity: 0.3,
-              child: MapOfEurope(
-                controller: MapProvider.controller,
-                provider: MapProvider(S.of(context).currentLocale),
-              ),
-            ),
+            child: const MapOfEurope(),
           ),
           const Brno(),
           FractionallySizedBox(

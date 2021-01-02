@@ -1,27 +1,32 @@
 name: tsin.is
 description: Personal website of Roman Cinis.
+author: Roman Cinis
+repository: https://github.com/tsinis/tsin.is
+
+publish_to: 'none'
 
 environment:
   sdk: '>=2.10.0'
   flutter: '>1.22.0'
 
 dependencies:
-  auto_size_text:
-  expandable:
-  flare_flutter:
+  auto_size_text: ^2.1.0
+  cached_network_image: ^2.5.0
+  expandable: ^4.1.4
+  flare_flutter: ^2.0.6
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  map:
+  map: ^0.2.0+1
   url_launcher: ^5.7.10
 
 dev_dependencies:
   # flutter_test:
   #   sdk: flutter
-  pedantic: any
+  pedantic: ^1.9.2
 
 flutter_intl:
   enabled: true

@@ -23,7 +23,7 @@ class CVButtons extends ButtonBar {
         Tooltip(
           textStyle: MyTextStyles.caption,
           preferBelow: MediaQuery.of(context).size.width > 1439,
-          message: '🔗 ${Open.cvURL}',
+          message: Open.cvURL,
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 5),
             child: MaterialButton(
@@ -50,7 +50,7 @@ class CVButtons extends ButtonBar {
         const SizedBox(width: 20),
         Tooltip(
           textStyle: MyTextStyles.caption,
-          message: '🔗 Microsoft OneDrive',
+          message: 'Microsoft OneDrive',
           child: Padding(
             padding: const EdgeInsets.only(top: 5),
             child: OutlineButton(

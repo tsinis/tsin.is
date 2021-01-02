@@ -40,7 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "inAction" : MessageLookupByLibrary.simpleMessage("видео"),
     "language" : MessageLookupByLibrary.simpleMessage("Язык"),
     "planetBGame" : MessageLookupByLibrary.simpleMessage("Игра План-ет-а Б"),
-    "planetBGameDesc" : MessageLookupByLibrary.simpleMessage("Этот проект - стал одним из победителей официального двухдневного хакатона Flutter Сообщества в этом году. В хакатоне приняли участие более двух с половиной тысяч человек со всего мира."),
+    "planetBGameDesc" : MessageLookupByLibrary.simpleMessage("Этот проект - стал одним из победителей официального двухдневного хакатона Flutter Сообщества в прошлом году. В хакатоне приняли участие более двух с половиной тысяч человек со всего мира."),
     "portfolio" : MessageLookupByLibrary.simpleMessage("Портфолио"),
     "projectsPortfolio" : MessageLookupByLibrary.simpleMessage("проектов и репозиториев"),
     "see" : MessageLookupByLibrary.simpleMessage("Смотреть"),
