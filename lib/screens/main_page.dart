@@ -111,7 +111,7 @@ class _MyHomePageState extends State<_MyHomePage> {
               controller: _scrollController,
               children: <Widget>[
                 SizedBox(height: _height),
-                const DecoratedBox(decoration: BoxDecoration(color: MyColors.primaryColor), child: About()),
+                const ColoredBox(color: MyColors.primaryColor, child: About()),
                 const Portfolio(),
                 const Contact(),
                 const Footer()

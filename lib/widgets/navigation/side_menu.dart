@@ -17,7 +17,7 @@ class SideMenu extends Drawer {
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
           child: Drawer(
-            child: Container(
+            child: ColoredBox(
               color: MyColors.backgroundColor,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

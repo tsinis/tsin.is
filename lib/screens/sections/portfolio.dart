@@ -13,7 +13,7 @@ class Portfolio extends StatelessWidget {
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
     final double width = MediaQuery.of(context).size.width;
-    return Container(
+    return ColoredBox(
       color: MyColors.backgroundColor,
       child: FractionallySizedBox(
         widthFactor: 0.7,
