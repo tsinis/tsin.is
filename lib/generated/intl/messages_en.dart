@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "about" : MessageLookupByLibrary.simpleMessage("About"),
     "check" : MessageLookupByLibrary.simpleMessage("Check the"),
     "cloud" : MessageLookupByLibrary.simpleMessage("All languages"),
+    "colorsAiDesc" : MessageLookupByLibrary.simpleMessage("Colors AI is an open-source gesture-first color scheme generator that uses deep learning from Colormind API. App is made with a reactive style BLoC pattern, in four-layered architecture."),
     "contacts" : MessageLookupByLibrary.simpleMessage("Contacts"),
     "contactsDesc" : MessageLookupByLibrary.simpleMessage("Physically in the city of Brno, on the internets, I\'m known as a “tsinis”:"),
     "currentLocale" : MessageLookupByLibrary.simpleMessage("en"),
@@ -34,7 +35,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "flutterClock" : MessageLookupByLibrary.simpleMessage("This project is one of the winning submissions in the Official Google\'s & Lenovo dev/design contest, called “Flutter Clock” (with almost a thousand entries worldwide)."),
     "fullName" : MessageLookupByLibrary.simpleMessage("Roman Cinis"),
     "greeting" : MessageLookupByLibrary.simpleMessage("Hello there, I\'m"),
-    "helloDribbble" : MessageLookupByLibrary.simpleMessage("Interactive animations showcase project, I\'ve made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”)."),
     "iAm" : MessageLookupByLibrary.simpleMessage("I\'m awarded T-shaped specialist in the fields of Flutter Development and Design, with a great love for interactive animations and good UX. Let\'s make something awesome together!\n\nWant to know more?"),
     "iconTools" : MessageLookupByLibrary.simpleMessage("A set of tools, for creating and previewing Flutter application icons. Support all platforms, including mobile but designed as “Desktop First” solution."),
     "inAction" : MessageLookupByLibrary.simpleMessage("Video"),
@@ -48,8 +48,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "somePortfilio" : MessageLookupByLibrary.simpleMessage("some of my "),
     "theCode" : MessageLookupByLibrary.simpleMessage("Code"),
     "theDesign" : MessageLookupByLibrary.simpleMessage("Design"),
-    "thisWeb" : MessageLookupByLibrary.simpleMessage("This Website"),
-    "thisWebDesc" : MessageLookupByLibrary.simpleMessage("Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive."),
     "tongueTwisters" : MessageLookupByLibrary.simpleMessage("Tongue Twisters"),
     "tongueTwistersDesc" : MessageLookupByLibrary.simpleMessage("Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations).")
   };

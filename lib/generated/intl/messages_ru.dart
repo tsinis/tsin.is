@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "about" : MessageLookupByLibrary.simpleMessage("Обо мне"),
     "check" : MessageLookupByLibrary.simpleMessage("Проверьте"),
     "cloud" : MessageLookupByLibrary.simpleMessage("Все языки"),
+    "colorsAiDesc" : MessageLookupByLibrary.simpleMessage("Генератор цветовых схем использующий глубокое обучение из Colormind API, с упором на управление жестами. Приложение выполнено в реактивном стиле с использованием паттерна BLoC, в четырехслойной архитектуре."),
     "contacts" : MessageLookupByLibrary.simpleMessage("Контакты"),
     "contactsDesc" : MessageLookupByLibrary.simpleMessage("Физически нахожусь в Брно, в этих интернетах я известен как «tsinis»:"),
     "currentLocale" : MessageLookupByLibrary.simpleMessage("ru"),
@@ -34,7 +35,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "flutterClock" : MessageLookupByLibrary.simpleMessage("Этот проект является одним из победителей совместного конкурса, компаний Google и Lenovo, под названием «Flutter Clock» (с почти тысячей проектов со всего мира)."),
     "fullName" : MessageLookupByLibrary.simpleMessage("Роман Цинис"),
     "greeting" : MessageLookupByLibrary.simpleMessage("Приветствую, я"),
-    "helloDribbble" : MessageLookupByLibrary.simpleMessage("Этот проект — демонстрация интерактивных анимаций, сделанных в качестве Дебюта на легендарном Dribbble, на который я получил долгожданное приглашение."),
     "iAm" : MessageLookupByLibrary.simpleMessage("Я награждённый T-специалист в области Flutter разработки и дизайна, с большой любовью к интерактивным анимациям и хорошему UX. Давайте сделаем что-то классное вместе!\n\nХотите узнать больше?"),
     "iconTools" : MessageLookupByLibrary.simpleMessage("Набор инструментов для создания иконок приложения Flutter аппликаций. Поддерживает и мобильные платформы, но ориенторованна скорее на стационарные компьютеры."),
     "inAction" : MessageLookupByLibrary.simpleMessage("видео"),
@@ -48,8 +48,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "somePortfilio" : MessageLookupByLibrary.simpleMessage("некоторые из моих"),
     "theCode" : MessageLookupByLibrary.simpleMessage("код"),
     "theDesign" : MessageLookupByLibrary.simpleMessage("дизайн"),
-    "thisWeb" : MessageLookupByLibrary.simpleMessage("Этот веб-сайт"),
-    "thisWebDesc" : MessageLookupByLibrary.simpleMessage("Разумеется, весь этот сайт написан в Flutter на чистейшем Dart. Единственная сторонняя зависимость тут — это анимация в секции «Обо мне», которая сделана в Rive."),
     "tongueTwisters" : MessageLookupByLibrary.simpleMessage("Скороговорки"),
     "tongueTwistersDesc" : MessageLookupByLibrary.simpleMessage("Аппликация создана для тестирования скороговорок с главным упором на дизайн. Создана совместно с иллюстратором, потому правила лицензии не позволяет мне выложить проект (т.е. и иллюстрации) в открытый доступ.")
   };

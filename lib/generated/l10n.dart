@@ -165,16 +165,6 @@ class S {
     );
   }
 
-  /// `Interactive animations showcase project, I've made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”).`
-  String get helloDribbble {
-    return Intl.message(
-      'Interactive animations showcase project, I\'ve made, as my Debut Shot for legendary Dribbble.com, аfter I won the invitation (so now as a “Player”).',
-      name: 'helloDribbble',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `I'm awarded T-shaped specialist in the fields of Flutter Development and Design, with a great love for interactive animations and good UX. Let's make something awesome together!\n\nWant to know more?`
   String get iAm {
     return Intl.message(
@@ -295,26 +285,6 @@ class S {
     );
   }
 
-  /// `This Website`
-  String get thisWeb {
-    return Intl.message(
-      'This Website',
-      name: 'thisWeb',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.`
-  String get thisWebDesc {
-    return Intl.message(
-      'Obviously, this entire website is made in Flutter and written on pure Dart. The one and only third-party dependency is the animation in the About section, which was made in Rive.',
-      name: 'thisWebDesc',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `A set of tools, for creating and previewing Flutter application icons. Support all platforms, including mobile but designed as “Desktop First” solution.`
   String get iconTools {
     return Intl.message(
@@ -340,6 +310,16 @@ class S {
     return Intl.message(
       'Application for testing tongue twisters with focus on the design. Created it in coop with illustrator – license do not allow me to open source (i.e. illustrations).',
       name: 'tongueTwistersDesc',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Colors AI is an open-source gesture-first color scheme generator that uses deep learning from Colormind API. App is made with a reactive style BLoC pattern, in four-layered architecture.`
+  String get colorsAiDesc {
+    return Intl.message(
+      'Colors AI is an open-source gesture-first color scheme generator that uses deep learning from Colormind API. App is made with a reactive style BLoC pattern, in four-layered architecture.',
+      name: 'colorsAiDesc',
       desc: '',
       args: [],
     );

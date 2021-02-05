@@ -46,11 +46,11 @@ class Portfolio extends StatelessWidget {
               alignment: WrapAlignment.spaceBetween,
               children: [
                 Project(
-                    projectName: 'Steampunk Flutter Clock',
-                    pathToImage: 'assets/images/projects/clock.jpg',
-                    projectDesc: S.of(context).flutterClock,
-                    designURL: 'vimeo.com/tsinis/flutterclock',
-                    appURL: 'github.com/tsinis/flutter_clock'),
+                    projectName: 'Colors AI',
+                    pathToImage: 'assets/images/projects/colors.jpg',
+                    projectDesc: S.of(context).colorsAiDesc,
+                    designURL: 'vimeo.com/tsinis/colors-ai',
+                    appURL: 'play.google.com/store/apps/details?id=is.tsin.colors_ai.colors_ai'),
                 Project(
                     projectName: S.of(context).planetBGame,
                     pathToImage: 'assets/images/projects/planet.jpg',
@@ -63,17 +63,17 @@ class Portfolio extends StatelessWidget {
               spacing: width * 0.025,
               children: [
                 Project(
+                    projectName: 'Steampunk Flutter Clock',
+                    pathToImage: 'assets/images/projects/clock.jpg',
+                    projectDesc: S.of(context).flutterClock,
+                    designURL: 'vimeo.com/tsinis/flutterclock',
+                    appURL: 'github.com/tsinis/flutter_clock'),
+                Project(
                     projectName: 'App Icon Tools',
                     pathToImage: 'assets/images/projects/tools.jpg',
                     projectDesc: S.of(context).iconTools,
                     designURL: 'vimeo.com/tsinis/app-icon-tools',
                     appURL: 'github.com/tsinis/app_icon_tools'),
-                Project(
-                    projectName: 'Hello Dribbble',
-                    pathToImage: 'assets/images/projects/dribbble.jpg',
-                    projectDesc: S.of(context).helloDribbble,
-                    designURL: 'dribbble.com/shots/10772196-hello-dribbble-interactive-animation',
-                    appURL: 'github.com/tsinis/hello_dribbble'),
               ],
             ),
             SizedBox(height: height * 0.1),

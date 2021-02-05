@@ -13,7 +13,6 @@
   "flutterClock": "Tento projekt je jedným z víťazov v spoločnej vývojárske/dizajn súťaži firiem Google a Lenovo, pod názvom \"Flutter Clock\" (sa skoro tisíckou príspevkov z celého sveta).",
   "fullName": "Roman Cinis",
   "greeting": "Vitajte, som",
-  "helloDribbble": "Toto je projekt ukazujúce Interaktívne animácie, ktoré som vytvoril ako svoj Debut na legendárnom Dribbble, potom čo som, nedávno, dostal vytúžené pozvaní.",
   "iAm": "Som oceneným „T-shaped“ špecialistom ako Flutter vývojár a grafik, s veľkou láskou k interaktívnym animáciám a dobrému UX. Urobme niečo úžasné spoločne!\n\nChcete vedieť viac?",
   "inAction": "v akcii",
   "language": "Jazyk",
@@ -26,9 +25,8 @@
   "somePortfilio": "niektoré z mojich",
   "theCode": "kód",
   "theDesign": "dizajn",
-  "thisWeb": "Táto webová stránka",
-  "thisWebDesc": "Samozrejmé, že celý tento web je vytvorený vo Flutter a je napísaný na čistom Dart. Závislosť jednej a jediné, tretie strany je animácia v sekcii \"O mne\", ktorá bola vytvorená v Rive.",
   "iconTools": "Sada nástrojov pre jednoduché vytváranie ikon Flutter aplikácií. Podpora všetkých platforiem, vrátane mobilných, ale navrhnuté hlavne ako \"Desktop First\" riešenie.",
   "tongueTwisters": "Jazykolamy",
-  "tongueTwistersDesc": "Aplikácia pre testovanie jazykolamov, so zameraním na dizajn. Vytvorené v spolupráci s ilustrátorom - preto licencie mi neumožňuje otvoriť zdroj (tj. aj ilustrácie)."
+  "tongueTwistersDesc": "Aplikácia pre testovanie jazykolamov, so zameraním na dizajn. Vytvorené v spolupráci s ilustrátorom - preto licencie mi neumožňuje otvoriť zdroj (tj. aj ilustrácie).",
+  "colorsAiDesc": "Colors AI je open-source generátor farebných schém, ktorý využíva hlboké učenie z Colormind API. Aplikácia je vyrobená s reaktívnym patternom BLoC, vo štvorvrstvové architektúre."
 }

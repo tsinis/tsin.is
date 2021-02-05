@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "about" : MessageLookupByLibrary.simpleMessage("O mne"),
     "check" : MessageLookupByLibrary.simpleMessage("Skúmať"),
     "cloud" : MessageLookupByLibrary.simpleMessage("Všetky jazyky"),
+    "colorsAiDesc" : MessageLookupByLibrary.simpleMessage("Colors AI je open-source generátor farebných schém, ktorý využíva hlboké učenie z Colormind API. Aplikácia je vyrobená s reaktívnym patternom BLoC, vo štvorvrstvové architektúre."),
     "contacts" : MessageLookupByLibrary.simpleMessage("Kontakty"),
     "contactsDesc" : MessageLookupByLibrary.simpleMessage("Fyzicky som v Brne, na internete, známy skôr ako „tsinis“:"),
     "currentLocale" : MessageLookupByLibrary.simpleMessage("sk"),
@@ -34,7 +35,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "flutterClock" : MessageLookupByLibrary.simpleMessage("Tento projekt je jedným z víťazov v spoločnej vývojárske/dizajn súťaži firiem Google a Lenovo, pod názvom \"Flutter Clock\" (sa skoro tisíckou príspevkov z celého sveta)."),
     "fullName" : MessageLookupByLibrary.simpleMessage("Roman Cinis"),
     "greeting" : MessageLookupByLibrary.simpleMessage("Vitajte, som"),
-    "helloDribbble" : MessageLookupByLibrary.simpleMessage("Toto je projekt ukazujúce Interaktívne animácie, ktoré som vytvoril ako svoj Debut na legendárnom Dribbble, potom čo som, nedávno, dostal vytúžené pozvaní."),
     "iAm" : MessageLookupByLibrary.simpleMessage("Som oceneným „T-shaped“ špecialistom ako Flutter vývojár a grafik, s veľkou láskou k interaktívnym animáciám a dobrému UX. Urobme niečo úžasné spoločne!\n\nChcete vedieť viac?"),
     "iconTools" : MessageLookupByLibrary.simpleMessage("Sada nástrojov pre jednoduché vytváranie ikon Flutter aplikácií. Podpora všetkých platforiem, vrátane mobilných, ale navrhnuté hlavne ako \"Desktop First\" riešenie."),
     "inAction" : MessageLookupByLibrary.simpleMessage("v akcii"),
@@ -48,8 +48,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "somePortfilio" : MessageLookupByLibrary.simpleMessage("niektoré z mojich"),
     "theCode" : MessageLookupByLibrary.simpleMessage("kód"),
     "theDesign" : MessageLookupByLibrary.simpleMessage("dizajn"),
-    "thisWeb" : MessageLookupByLibrary.simpleMessage("Táto webová stránka"),
-    "thisWebDesc" : MessageLookupByLibrary.simpleMessage("Samozrejmé, že celý tento web je vytvorený vo Flutter a je napísaný na čistom Dart. Závislosť jednej a jediné, tretie strany je animácia v sekcii \"O mne\", ktorá bola vytvorená v Rive."),
     "tongueTwisters" : MessageLookupByLibrary.simpleMessage("Jazykolamy"),
     "tongueTwistersDesc" : MessageLookupByLibrary.simpleMessage("Aplikácia pre testovanie jazykolamov, so zameraním na dizajn. Vytvorené v spolupráci s ilustrátorom - preto licencie mi neumožňuje otvoriť zdroj (tj. aj ilustrácie).")
   };
