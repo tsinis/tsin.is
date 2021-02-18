@@ -17,7 +17,7 @@ class Websites extends StatelessWidget {
     // 'Codepen.io/': MapEntry(MyIcon.codepen, Color(0xFF333333)),
     'Vimeo.com/': MapEntry(MyIcon.vimeo_square, Color(0xFF1ab7ea)),
     'Telegram.me/': MapEntry(MyIcon.telegram, Color(0xFF0088cc)),
-    'Rive.app/a/': MapEntry(MyIcon.rive, Colors.white)
+    'Flare.rive.app/a/': MapEntry(MyIcon.rive, Colors.white)
   };
 
   @override
